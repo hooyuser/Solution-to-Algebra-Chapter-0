@@ -1,0 +1,6 @@
+\contentsline {section}{Chapter I.\hskip 1em\relax Preliminaries: Set theory and categories}{1}{section*.2}
+\contentsline {subsection}{\textsection 4. Morphisms}{1}{section*.3}
+\contentsline {section}{Chapter II.\hskip 1em\relax Groups, first encounter}{2}{section*.4}
+\contentsline {subsection}{\textsection 1. Definition of group}{2}{section*.5}
+\contentsline {subsection}{\textsection 2. Examples of groups}{3}{section*.6}
+\contentsline {subsection}{\textsection 3. The category $\mathsf {Grp}$}{7}{section*.7}

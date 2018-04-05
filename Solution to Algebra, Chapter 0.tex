@@ -11,9 +11,16 @@
 \usepackage{amssymb}
 \usepackage[all]{xy}
 
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[colorlinks,linkcolor=NavyBlue,anchorcolor=red,citecolor=green]{hyperref}
+
+
+
 \usepackage{setspace}
 
 \renewcommand{\baselinestretch}{1.05} 
+
+\renewcommand\appendix{\setcounter{secnumdepth}{-2}}
 
 % info for header block in upper right hand corner
 \name{Huyi Chen}
@@ -23,7 +30,78 @@
 		
 \problemlist{\textbf{Algebra, Chapter 0}\\By Paolo Aluffi}
 
+\tableofcontents
+\appendix
 
+\section{Chapter I.\quad Preliminaries: Set theory and categories}
+\subsection{\textsection4. Morphisms}
+\begin{problem}[4.2]
+	In Example 3.3 we have seen how to construct a category from a set endowed	with a relation, provided this latter is reflexive and transitive. For what types of relations is the corresponding category a groupoid (cf. Example 4.6)? [\textsection4.1]
+\end{problem}
+\begin{solution}
+    For a reflexive and transitive relation $\sim$ on a set $S$, define the category $\mathsf{C}$ as follows:
+    \begin{itemize}
+    	\item Objects: $\mathrm{Obj}(\mathsf{C})=S$;
+    	\item Morphisms: if $a, b$ are objects (that is: if $a, b \in S$) then let 
+    	\[
+    	\mathrm{Hom}_\mathsf{C}(a, b)=
+    	\left\{
+    	\begin{aligned}
+    	&(a, b)\in S\times S &\text{ if } a\sim b\\	
+    	& \emptyset &\text{ otherwise}\\
+    	\end{aligned}
+    	\right.
+    	\]
+    \end{itemize}
+    In Example 3.3 we have shown the category. If the relation $\sim$ is endowed with symmetry, we have
+    \[
+    (a,b)\in\mathrm{Hom}_\mathsf{C}(a, b)\implies a\sim b\implies b\sim a\implies (b,a)\in\mathrm{Hom}_\mathsf{C}(b, a).
+    \]
+    Since
+    \[
+    (a,b)(b, a)=(a,a)=1_a,\quad(b, a)(a,b)=(b,b)=1_b,
+    \]
+    in fact $(a,b)$ is an isomorphism. From the arbitrariness of the choice of $(a,b)$, we show that $\mathsf{C}$ is a groupoid. Conversely, if $\mathsf{C}$ is a groupoid, we can show the relation $\sim$ is symmetric. To sum up, the category $\mathsf{C}$ is a groupoid
+    if and only if the corresponding relation $\sim$ is an equivalence relation.
+\end{solution}
+~\\
+
+
+\section{Chapter II.\quad Groups, first encounter}
+
+\subsection{\textsection1. Definition of group}
+\begin{problem}[1.1]
+	Write a careful proof that every group is the group of isomorphisms of a groupoid. In particular, every group is the group of automorphisms of some object in some category.
+\end{problem}
+\begin{solution}
+	Assume $G$ is a group. Define a category $\mathsf{C}$ as follows:
+	\begin{itemize}
+		\item Objects: $\mathrm{Obj}(\mathsf{C})=\{*\}$;
+		\item Morphisms: $\mathrm{Hom}_\mathsf{C}(*,*)=\mathrm{End}_\mathsf{C}(*)=G$.
+	\end{itemize}	
+	The composition of homomorphism is corresponding to the multiplication between two elements in $G$. The identity morphism on $*$ is $1_*=e_G$, which satisfies for all $g\in \mathrm{Hom}_\mathsf{C}(*,*)$,
+	\[
+	ge_G=e_Gg=g,
+	\]
+	and
+	\[
+	gg^{-1}=e_G,\;g^{-1}g=e_G.
+	\]
+	Thus any homomorphism $g\in \mathrm{Hom}_\mathsf{C}(*,*)$ is an isomorphism and accordingly $\mathsf{C}$ is a groupoid.
+\end{solution}
+~\\
+
+\begin{problem}[1.4]
+	Suppose that $g^2 = e$ for all elements $g$ of a group $G$; prove that $G$ is commutative.
+\end{problem}
+\begin{solution}
+	\[
+	abab=e\implies a(abab)b=ab\implies (aa)ba(bb)=ab\implies ba=ab.
+	\]
+\end{solution}
+~\\
+
+\subsection{\textsection2. Examples of groups}
 \begin{problem}[2.1]
 	One can associate an $n\times n$ matrix $M_\sigma$ with a permutation $\sigma \in S_n$, by
 	letting the entry at $(i, \sigma(i))$ be 1, and letting all other entries be 0. For example,
@@ -67,7 +145,11 @@
 	\]
 	and the entry at $(i,j)$ of the matrix $M_{\sigma}M_{\tau}$ can be written as
 	\[
-	(M_{\sigma}M_{\tau})_{i,j}=\sum_{k=1}^{n}(M_{\sigma})_{i,k}(M_{\tau})_{k,j}=\sum_{k=1}^{n}\delta_{\sigma(i),k}\cdot\delta_{\tau(k),j}=\sum_{k=1}^{n}\delta_{\sigma(i),k}\cdot\delta_{k,\tau^{-1}(j)}=\delta_{\sigma(i),\tau^{-1}(j)}.
+	(M_{\sigma}M_{\tau})_{i,j}=\sum_{k=1}^{n}(M_{\sigma})_{i,k}(M_{\tau})_{k,j}=\sum_{k=1}^{n}\delta_{\sigma(i),k}\cdot\delta_{\tau(k),j}=\sum_{k=1}^{n}\delta_{\sigma(i),k}\cdot\delta_{k,\tau^{-1}(j)}=\delta_{\sigma(i),\tau^{-1}(j)},
+	\]
+	where the last but one equality holds by the fact 
+	\[
+	\tau(k)=j\iff k=\tau^{-1}(j).
 	\]
 	Note that
 	\[
@@ -75,8 +157,6 @@
 	\]
     we see $M_{\sigma\tau}=M_{\sigma}M_{\tau}$
     for all $\sigma,\tau\in S_n$.
-    
-   
 \end{solution}
 ~\\
 
@@ -171,7 +251,7 @@ is an element of order $d$ in $S_n$.
 \end{problem}
 \begin{solution}
 	\begin{itemize}
-		\item According to 2.13,
+		\item According to Exercise 2.13,
 		\[
 		\gcd(m, n) = 1\implies am+bn=1\implies \frac{a}{2}(2m+n)+\left(b-\frac{a}{2}\right)n=1.
 		\]
@@ -203,12 +283,38 @@ is an element of order $d$ in $S_n$.
 		\[
 		f\left(\left[\frac{r+n}{2}\right]_n\right)=[r+2n]_{2n}=[r]_{2n},
 		\]
-		which indicates that $f$ is surjective.
+		which indicates that $f$ is surjective. Thus we show $f$ is a bijection.
 	\end{itemize}
-	
 \end{solution}
 
 ~\\
+
+\begin{problem}[2.16]	
+	Find the last digit of $1238237^{18238456}$. (Work in $\mathbb{Z}/10\mathbb{Z}$.)
+\end{problem}
+\begin{solution}
+	\[
+	1238237^{18238456}\equiv7^{18238456}\equiv(7^4)^{4559614}\equiv2401^{4559614} \equiv 1 \mod 10,
+	\]
+	which indicates that the last digit of $1238237^{18238456}$ is 1.
+\end{solution}
+
+
+~\\
+
+\begin{problem}[2.17]	
+	Show that if $m\equiv m'\mod n$, then $\gcd(m,n) = 1$ if and only if $\gcd(m',n)=1$. [\textsection 2.3]
+\end{problem}
+\begin{solution}
+	Assume that $m-m'=kn$. If $\gcd(m,n) = 1$, for any common divisor $d$ of $m'$ and $n$
+	\[
+	d|m',\;d|n\implies d|(m'+kn)\implies d|m\implies d=1,
+	\]
+	which means $\gcd(m',n)=1$. Likewise, we can show $\gcd(m',n) = 1\implies\gcd(m,n)=1$
+\end{solution}
+
+~\\
+\subsection{\textsection3. The category $\mathsf{Grp}$} 
 
 \begin{problem}[3.1]	
 	Let $\varphi : G\rightarrow H$ be a morphism in a category $\mathsf{C}$ with products. Explain why
@@ -317,43 +423,151 @@ is an element of order $d$ in $S_n$.
 
 ~\\
 
-\begin{problem}[3.3]	
+\begin{problem}[3.4]	
+	Let $G, H$ be groups, and assume that $G\cong H\times G$. Can you conclude that $H$ is trivial? (Hint: No. Can you construct a counterexample?)
+\end{problem}
+\begin{solution}
+	Consider the function
+	\[
+	\begin{aligned}
+	\varphi:\;&\mathbb{Z}\times\mathbb{Z}[x]\longrightarrow\mathbb{Z}[x]\\  
+	  &(n,f(x))\longmapsto n+xf(x)
+	\end{aligned}
+	\]
+	Firstly, we can show $\varphi$ is a homomorphism as follows
+	\[
+	\begin{aligned}
+	\varphi((n_1,f_1(x))+(n_2,f_2(x)))&=\varphi((n_1+n_2,f_1(x)+f_2(x)))\\
+	&=(n_1+n_2)+x(f_1(x)+f_2(x))\\
+	&=(n_1+xf_1(x))+(n_2+xf_2(x))\\
+	&=\varphi((n_1,f_1(x)))+\varphi((n_2,f_2(x))).
+	\end{aligned}
+	\]
+	Secondly, we are to show $\varphi$ is a monomorphism. It follows by
+	\[
+	\varphi((n,f(x)))=n+xf(x)=0\implies n=0,\;f(x)=0\implies \ker\varphi=\{(0,0)\}.
+	\]
+	Lastly, since the cardinal numbers of both $\mathbb{Z}\times\mathbb{Z}[x]$ and $\mathbb{Z}[x]$ are $\aleph_0$, $\varphi$ is indeed a isomorphism.
+\end{solution}
+
+~\\
+
+\begin{problem}[3.5]	
 	Prove that $\mathbb{Q}$ is not the direct product of two nontrivial groups.
 \end{problem}
 \begin{solution}
-	\[\xymatrix{
-		G\ar[rd]^{g}\ar[d]_{i_G}  \\
-		G \times H\ar[r]^{\varphi} &  \mathbb{Q}\\
-		H\ar[ru]_{h}\ar[u]^{i_H}  
-	}\]
-    Consider the additive group of rationals $(\mathbb{Q},+)$. Assume the product $G\times H=\{(a,b)|a\in G,b\in H\}$ is isomorphic to $(\mathbb{Q},+)$. Note that $\{e_G\}\times H$ and $G\times \{e_H\}$ are subgroups in $G\times H$ and there intersection is trivial group $\{e_G\}\times \{e_H\}$. The commutative diagram implies 
+    Consider the additive group of rationals $(\mathbb{Q},+)$. Assume that $\varphi$ is a isomorphism between the product $G\times H=\{(a,b)|a\in G,b\in H\}$ and $(\mathbb{Q},+)$. Note that $\{e_G\}\times H$ and $G\times \{e_H\}$ are subgroups in $G\times H$ and their intersection is the trivial group $\{(e_G,e_H)\}$. It is easy to check that bijection $\varphi$ satisfies $\varphi(A\cap B)=\varphi(A)\cap\varphi (B)$. So applying the fact we have
     \[
-    \varphi(\{e_G\}\times H)=\varphi(i_H(H))=h(H),
-    \]
-    \[
-    \varphi(G\times \{e_H\})=\varphi(i_G(G))=g(G).
-    \]
-    It is easy to check bijection $\varphi$ satisfies $\varphi(A\cap B)=\varphi(A)\cap\varphi (B)$. Hence we have
-    \[
-    \varphi(\{(e_G,e_H)\})=\varphi(\{e_G\}\times H\cap G\times \{e_H\})=\varphi(\{e_G\}\times H)\cap \varphi(G\times \{e_H\})=h(H)\cap g(G)=\{0\}.
+    \varphi(\{(e_G,e_H)\})=\varphi(\{e_G\}\times H\cap G\times \{e_H\})=\varphi(\{e_G\}\times H)\cap \varphi(G\times \{e_H\})=\{0\}.
     \] 
-    Suppose both $g(G)$ and $h(H)$ are nontrivial groups. If $\dfrac{p}{q}\in h(H)-\{0\}$ and $\dfrac{r}{s}\in g(G)-\{0\}$, there must be 
+    Suppose both $\varphi(\{e_G\}\times H)$ and $\varphi(G\times \{e_H\})$ are nontrivial groups. If $\dfrac{p}{q}\in \varphi(\{e_G\}\times H)-\{0\}$ and $\dfrac{r}{s}\in \varphi(G\times \{e_H\})-\{0\}$, there must be 
     \[
-    rp=rq\cdot\dfrac{p}{q}=ps\cdot\dfrac{r}{s}\in h(H)\cap g(G). 
+    rp=rq\cdot\dfrac{p}{q}=ps\cdot\dfrac{r}{s}\in \varphi(\{e_G\}\times H)\cap\varphi(G\times \{e_H\}). 
     \]
-    Since $rp\ne0$, it leads to a contradiction. Thus we can assume $g(G)$ is a trivial group. According to the dual commutative diagram,
-    \[\xymatrix{
-    	G\ar[rrd]^{g}\ar[d]_{i_G}  \\
-    	G \times H &  &\mathbb{Q}\ar[ll]_{\varphi^{-1}}\\
-    	H\ar[rru]_{h}\ar[u]^{i_H}  
-    }\]
-    we see that for all $a\in G$,
+    Since $rp\ne0$, it leads to a contradiction. Thus without loss of generality we can assume $\varphi(\{e_G\}\times H)$ is a trivial group $\{0\}$. 
+    Since $\varphi$ is isomorphism, we see that for all $h\in H$,
     \[
-    (a,e_H)=i_(a)=\varphi^{-1}(g(a))=\varphi(0)=(e_G,e_H)\implies a=e_G.
+    \varphi(e_G,h)=\varphi(e_G,e_H)=0\implies h=e_H.
     \]
-    that is, $G$ is a trivial group. Therefore, we have shown $(\mathbb{Q},+)$ will never be isomorphic to the direct product of two nontrivial groups.
+    That is, $H$ is a trivial group. Therefore, we have shown $(\mathbb{Q},+)$ will never be isomorphic to the direct product of two nontrivial groups.
+\end{solution}
+
+~\\
+
+\begin{problem}[3.6]	
+	Consider the product of the cyclic groups $C_2,C_3$ (cf. \textsection 2.3): $C_2 \times C_3$. By Exercise 3.3, this group is a coproduct of $C_2$ and $C_3$ in $\mathsf{Ab}$. Show that it is not a coproduct of $C_2$ and $C_3$ in $\mathsf{Grp}$, as follows:
+	\begin{itemize}
+		\item find injective homomorphisms $C_2\rightarrow S_3$, $C_3 \rightarrow S_3$;
+		\item arguing by contradiction, assume that $C_2\times C_3$ is a coproduct of $C_2, C_3$, and deduce that there would be a group homomorphism $C_2\times C_3\rightarrow S_3$ with certain properties;
+		\item show that there is no such homomorphism.
+	\end{itemize}
+\end{problem}
+\begin{solution}
+	\begin{itemize}
+	\item 
+	Monomorphisms $g:C_2\rightarrow S_3$, $h:C_3 \rightarrow S_3$ can be constructed as follows:
+	\[
+	g([0]_2)=e,g([1]_2)=\left(
+	\begin{matrix}	
+	1 & 2 & 3\\	
+	1 & 3 & 2	
+	\end{matrix}
+	\right).
+	\]
+	\[
+	h([0]_3)=e,h([1]_3)=\left(
+	\begin{matrix}	
+	1 & 2 & 3\\	
+	3 & 1 & 2	
+	\end{matrix}
+	\right),h([2]_3)=\left(
+	\begin{matrix}	
+	1 & 2 & 3\\	
+	2 & 3 & 1	
+	\end{matrix}
+	\right).
+	\]
+	\item Supposing that $C_2\times C_3$ is a coproduct of $C_2, C_3$, there would be a unique group homomorphism $\varphi :C_2\times C_3\rightarrow S_3$ such that the following diagram commutes
+	\[\xymatrix{
+		C_2\ar[rd]^{g}\ar[d]_{i_{C_2}}  \\
+		C_2 \times C_3\ar[r]^{\varphi} &  S_3\\
+		C_3\ar[ru]_{h}\ar[u]^{i_{C_3}}  
+	}\]
+    In other words, for all $a\in C_2,b\in C_3$,
+    \[
+    \begin{aligned}
+    \varphi(a,b)&=\varphi(([0]_2,b)+(a,[0]_3))=\varphi(([0]_2,b))\varphi((a,[0]_3))=\varphi(i_{C_3}(b))\varphi(i_{C_2}(a))=h(b)g(a)\\
+    &=\varphi((a,[0]_3)+([0]_2,b))=\varphi((a,[0]_3))\varphi(([0]_2,b))=\varphi(i_{C_2}(a))\varphi(i_{C_3}(b))=g(a)h(b).
+    \end{aligned}
+    \]
+	\item Since
+	\[
+	g([1]_2)h([1]_3)=\left(
+	\begin{matrix}	
+	1 & 2 & 3\\	
+	1 & 3 & 2	
+	\end{matrix}
+	\right)
+	\left(
+	\begin{matrix}	
+	1 & 2 & 3\\	
+	3 & 1 & 2	
+	\end{matrix}
+	\right)=
+	\left(
+	\begin{matrix}	
+	1 & 2 & 3\\	
+	3 & 2 & 1	
+	\end{matrix}
+	\right),
+	\]
+	\[
+	h([1]_3)g([1]_2)=
+	\left(
+	\begin{matrix}	
+	1 & 2 & 3\\	
+	3 & 1 & 2	
+	\end{matrix}
+	\right)
+	\left(
+	\begin{matrix}	
+	1 & 2 & 3\\	
+	1 & 3 & 2	
+	\end{matrix}
+	\right)
+	=
+	\left(
+	\begin{matrix}	
+	1 & 2 & 3\\	
+	2 & 1 & 3	
+	\end{matrix}
+	\right),
+	\]
+	we see $g(a)h(b)\ne h(b)g(a)$ not always holds. The derived contradiction shows that $C_2\times C_3$ is not a coproduct of $C_2, C_3$ in $\mathsf{Grp}$. 
+\end{itemize}	
 \end{solution}
 
 
+~\\
 
 \end{document}
