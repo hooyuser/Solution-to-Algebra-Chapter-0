@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.25)  5 APR 2018 13:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.25)  5 APR 2018 18:01
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -412,52 +412,76 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 111.
- <xymatrix 2x3 313>
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
-[2] <xymatrix 3x3 325> <xymatrix 3x3 626>
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
 
  []
 
-[3] <xymatrix 2x3 223>
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
+
+ []
+
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
+
+ []
+
+<xymatrix 2x3 313>
 Underfull \hbox (badness 10000) in paragraph at lines 230--231
 
  []
 
-[4] <xymatrix 2x3 223> <xymatrix 3x3 227>
-Underfull \hbox (badness 10000) in paragraph at lines 269--270
+[4] <xymatrix 3x3 325> <xymatrix 3x3 626>
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
-[5] [6] [7] (./Solution to Algebra, Chapter 0.aux) ) 
+[5] <xymatrix 2x3 223>
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
+
+ []
+
+[6] <xymatrix 2x3 223> <xymatrix 3x3 227> [7]
+(./Solution to Algebra, Chapter 0.aux) ) 
 Here is how much of TeX's memory you used:
- 5644 strings out of 493013
- 72603 string characters out of 6136993
- 198300 words of memory out of 5000000
- 9066 multiletter control sequences out of 15000+600000
+ 5645 strings out of 493013
+ 72617 string characters out of 6136993
+ 197300 words of memory out of 5000000
+ 9067 multiletter control sequences out of 15000+600000
  11847 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,13n,32p,3245b,834s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2016/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2016/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi6.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8
-.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2016
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2016/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2016/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy6.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y8.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pf
-b><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c
-:/texlive/2016/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb><c:/texlive/201
-6/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on "Solution to Algebra, Chapter 0.pdf" (7 pages, 162869 bytes).
+<c:/texlive/2016/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmex10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.p
+fb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2016/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2016/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2016/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmss12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmssbx10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6
+.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/t
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb><c:/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/20
+16/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb><c:/texlive/2016/texmf-dist
+/fonts/type1/public/xypic/xybtip10.pfb>
+Output written on "Solution to Algebra, Chapter 0.pdf" (7 pages, 167408 bytes).
 
 PDF statistics:
  96 PDF objects out of 1000 (max. 8388607)

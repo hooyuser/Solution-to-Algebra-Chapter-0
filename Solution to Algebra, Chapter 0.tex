@@ -122,6 +122,94 @@ is an element of order $d$ in $S_n$.
 \end{solution}
 
 ~\\
+
+\begin{problem}[2.11]	
+	Prove that the square of every odd integer is congruent to 1 modulo 8.
+\end{problem}
+\begin{solution}
+	Given an odd integer $2k+1$, we have
+	\[
+	(2k+1)^2=4k(k+1)+1,
+	\]
+	where $k(k+1)$ is an even integer. So $(2k+1)^2\equiv1\mod 8$.
+\end{solution}
+
+~\\
+
+\begin{problem}[2.12]	
+	Prove that there are no integers $a, b, c$ such that $a^2+b^2=3c^2$. (Hint: studying the equation $[a]^2_4+[b]^2_4=3[c]^2_4$ in $\mathbb{Z}/4\mathbb{Z}$, show that $a, b, c$ would all have to be even. Letting $a=2k, b=2l,c=2m$, you would have $k^2+l^2=3m^2$. What's wrong with that?)
+\end{problem}
+\begin{solution}
+	\[
+	a^2+b^2=3c^2\implies [a]^2_4+[b]^2_4=3[c]_4^2.
+	\]
+	Noting that $[0]^2_4=[0]_4,[1]^2_4=[1]_4,[2]^2_4=[0]_4,[3]^2_4=[1]_4$, we see $[c]_4^2$ must be $[0]_4$ and so do $[a]_4^2$ and $[b]_4^2$. Hence  $[a]_4,[b]_4,[b]_4$ can only be $[0]_4$ or $[2]_4$, which justifies letting $a=2k_1, b=2l_2,c=2m_1$. After substitution we have $k^2+l^2=3m^2$. Repeating this process $n$ times yields $a=2^nk_n, b=2^nl_n,c=2^nm_n$. For a sufficiently large number $N$, the absolute value of $k_N,l_N,m_N$ must be less than 1. Thus we conclude that $a=b=c=0$ is the unique solution to the equation $a^2+b^2=3c^2$.
+\end{solution}
+    
+~\\
+
+\begin{problem}[2.13]	
+	Prove that if $\gcd(m, n) = 1$, then there exist integers $a$ and $b$ such that $am + bn = 1$. (Use Corollary 2.5.) Conversely, prove that if $am+ bn = 1$ for some integers $a$ and $b$, then $\gcd(m, n) = 1$. [2.15, \textsection V.2.1, V.2.4]
+\end{problem}
+\begin{solution}
+	Applying corollary 2.5, we have $\gcd(m, n) = 1$ if and only if $[m]_n$ generates $\mathbb{Z}/n\mathbb{Z}$. Hence
+	\[
+	\gcd(m, n) = 1\iff a[m]_n=[1]_n\iff [am]_n=[1]_n\iff am+ bn = 1.
+	\]
+\end{solution}
+    
+~\\
+
+\begin{problem}[2.15]	
+	Let $n > 0$ be an odd integer.
+	\begin{itemize}
+		\item Prove that if $\gcd(m, n) = 1$, then $\gcd(2m+ n, 2n) = 1$. (Use Exercise 2.13.)
+		\item Prove that if $\gcd(r, 2n) = 1$, then $\gcd(\frac{r+n}{2}, n) = 1$. (Ditto.)		
+		\item Conclude that the function $[m]_n\rightarrow[2m + n]_{2n}$ is a bijection between $(\mathbb{Z}/n\mathbb{Z})^*$ and $(\mathbb{Z}/2n\mathbb{Z})^*$. 
+	\end{itemize}
+	The number $\phi(n)$ of elements of $(\mathbb{Z}/n\mathbb{Z})^*$ is Euler’s $\phi(n)$-function. The reader has just	proved that if $n$ is odd, then $\phi(2n) = \phi(n)$. Much more general formulas will be given later on (cf. Exercise V.6.8). [VII.5.11]
+\end{problem}
+\begin{solution}
+	\begin{itemize}
+		\item According to 2.13,
+		\[
+		\gcd(m, n) = 1\implies am+bn=1\implies \frac{a}{2}(2m+n)+\left(b-\frac{a}{2}\right)n=1.
+		\]
+		If $a$ is even, we have shown $\gcd(2m+ n, 2n) = 1$. Otherwise we can let $a'=a+n$ be an even integer and $b'=b-m$. Then it holds that
+		\[
+		\frac{a'}{2}(2m+n)+\left(b'-\frac{a'}{2}\right)n=1,
+		\]
+		which also indicates $\gcd(2m+ n, 2n) = 1$.
+		\item If $\gcd(r, 2n) = 1$, then $r$ must be an odd integer and accordingly
+		\[
+		\gcd(2r+2n, 4n) = 1\implies a(2r+2n)+b(4n)=1\implies 4a \frac{r+n}{2}+4bn=1,
+		\]
+		which is $\gcd(\frac{r+n}{2}, n) = 1$.
+		\item It is easy to check that the function $f:(\mathbb{Z}/n\mathbb{Z})^*\rightarrow(\mathbb{Z}/2n\mathbb{Z})^*,\;[m]_n\mapsto[2m + n]_{2n}$ is well-defined. The fact
+		\[
+		\begin{aligned}
+		f([m_1]_n)=f([m_2]_n)&\implies
+		f([2m_1 + n]_{2n})=f([2m_2 + n]_{2n})\\
+		&\implies (2m_1 + n)-(2m_2 + n)=2kn\\
+		&\implies m_1-m_2=kn\\
+		&\implies [m_1]_n=[m_2]_n
+		\end{aligned}
+		\]
+		indicates that $f$ is injective. For any $[r]_{2n}\in(\mathbb{Z}/2n\mathbb{Z})^*$, we have
+		\[
+		\gcd(r, 2n) = 1\implies\gcd\left(\frac{r+n}{2},n\right) = 1\implies \left[\frac{r+n}{2}\right]_n\in(\mathbb{Z}/n\mathbb{Z})^*,
+		\]
+		and
+		\[
+		f\left(\left[\frac{r+n}{2}\right]_n\right)=[r+2n]_{2n}=[r]_{2n},
+		\]
+		which indicates that $f$ is surjective.
+	\end{itemize}
+	
+\end{solution}
+
+~\\
+
 \begin{problem}[3.1]	
 	Let $\varphi : G\rightarrow H$ be a morphism in a category $\mathsf{C}$ with products. Explain why
 	there is a unique morphism
@@ -266,78 +354,6 @@ is an element of order $d$ in $S_n$.
     that is, $G$ is a trivial group. Therefore, we have shown $(\mathbb{Q},+)$ will never be isomorphic to the direct product of two nontrivial groups.
 \end{solution}
 
-~\\
 
-
-\newpage
-\newpage
-\newpage
- Assume
-\[
-\varphi(a_1,b_1)=g(a_1)+h(b_1)=1,
-\]
-By induction we can show for all $p\in\mathbb{N}$.
-\[
-\varphi(a_1^p,b_1^p)=pg(a_1)+ph(b_1)=p,
-\]
-For all $q\in\mathbb{N}-\{0\}$, there exist unique $(c_q,d_q)\in G\times H$ such that
-\[
-\varphi(c_q,d_q)=g(c_q)+h(d_q)=\frac{1}{q},
-\]
-namely
-\[
-\varphi(c_q^q,d_q^q)=q\varphi(c_q,d_q)=1=\varphi(a_1,b_1)\implies (c_q^q,d_q^q)=(a_1,b_1).
-\]
-Denote $c_q=a_1^{\frac{1}{q}},\;d_q=b_1^{\frac{1}{q}}$. 
-\[
-\varphi([(a_1^{\frac{1}{q}})^p]^q,[(b_1^{\frac{1}{q}})^p]^q)=\varphi((a_1^{\frac{1}{q}})^{pq},(b_1^{\frac{1}{q}})^{pq})=pq\varphi((a_1^{\frac{1}{q}},b_1^{\frac{1}{q}}))=pq\frac{1}{q}=\varphi(a_1^p,b_1^p)
-\]
-implies
-\[
-[(a_1^{\frac{1}{q}})^p]^q=a_1^p,\;[(b_1^{\frac{1}{q}})^p]^q=b_1^p
-\]
-Denote $(a_1^{\frac{1}{q}})^p=(a_1^p)^{\frac{1}{q}}=a_1^{\frac{p}{q}},\;(b_1^{\frac{1}{q}})^p=(b_1^p)^{\frac{1}{q}}=b_1^{\frac{p}{q}}$. 
-Then 
-\[
-g(a_1^{\frac{p}{q}})=pg(a_1^{\frac{1}{q}})=\frac{p}{q}g(a_1)
-\]
-\[
-h(b_1^{\frac{p}{q}})=ph(b_1^{\frac{1}{q}})=\frac{p}{q}h(b_1).
-\] 
-For all $p\in \mathbb{N}$, if $h(b_1)\ne 0$,   
-\[
-\begin{aligned}
-p&=\varphi\left(a_1^p,b_1^p\right)\\
-&=(p+1)g(a_1)+\left(p-\frac{g(a_1)}{h(b_1)}\right)h(b_1)\\
-&=g(a_1^{p+1})+h\left(b_1^{p-\frac{g(a_1)}{h(b_1)}}\right)\\
-&=\varphi\left(a_1^{p+1},b_1^{p-\frac{g(a_1)}{h(b_1)}}\right)
-\end{aligned}
-\]
-Therefore, $a_1^p=a_1^{p+1}\implies a_1=e_G$
-
-
-
-
-
-Hence for all $\dfrac{p}{q}\in\mathbb{Q}$, it holds that
-\[
-\frac{p}{q}=p\varphi(a_1^{\frac{1}{q}},b_1^{\frac{1}{q}})=\varphi(a_1^{\frac{p}{q}},b_1^{\frac{p}{q}})=\frac{p}{q}g(a_1)+\frac{p}{q}h(b_1).
-\]
-Suppose
-\[
-\varphi(a_1,e_H)=\dfrac{r}{s}=\varphi(c_{s}^{r},d_{s}^{r}),
-\]
-which indicates
-\[
-(a_1,e_H)=(c_{s}^{r},d_{s}^{r})\implies d_{s}^{r}=e_H.
-\]
-Likewise, we suppose 
-\[
-\varphi(e_G,d_q^p)=\dfrac{m}{n}=\varphi(c_{n}^{m},d_{n}^{m}),
-\]
-and get $c_{n}^{m}=e_G$.
-\[
-\varphi(c_q^p,d_q^p)=\varphi(c_q^p,e_H)+\varphi(e_G,d_q^p)=rg(c_s)+mh(d_n)
-\]
 
 \end{document}
