@@ -22,6 +22,11 @@
 
 \renewcommand\appendix{\setcounter{secnumdepth}{-2}}
 
+\newcommand{\Obj}{\mathrm{Obj}} 
+\newcommand{\Hom}{\mathrm{Hom}} 
+\newcommand{\Grp}{\mathsf{Grp}} 
+
+
 % info for header block in upper right hand corner
 \name{Huyi Chen}
 \updatedate{2018/03/31}
@@ -34,6 +39,41 @@
 \appendix
 
 \section{Chapter I.\quad Preliminaries: Set theory and categories}
+
+\subsection{\textsection3. Categories}
+\begin{problem}[3.1]
+	Let $\mathsf{C}$ be a category. Consider a structure $\mathsf{C}^{op}$ with:
+	\begin{itemize}
+	\item $\Obj(\mathsf{C}^{op}) := \Obj(\mathsf{C})$;
+	\item for $A$, $B$ objects of $\mathsf{C}^{op}$ (hence, objects of $\mathsf{C}$), $\Hom_{\mathsf{C}^{op}} (A,B) := \Hom_\mathsf{C}(B,A)$
+	\end{itemize}
+	Show how to make this into a category (that is, define composition of morphisms
+	in $\mathsf{C}^{op}$ and verify the properties listed in \textsection3.1).
+	Intuitively, the 'opposite' category $\mathsf{C}^{op}$ is simply obtained by 'reversing all the
+	arrows' in C. [5.1, \textsection VIII.1.1, \textsection IX.1.2, IX.1.10]
+\end{problem}
+\begin{solution}
+	\begin{itemize}
+		\item For every object $A$ of $\mathsf{C}$, there exists one identity morphism $1_A\in\Hom_\mathsf{C}(A,A)$. Since $\Obj(\mathsf{C}^{op}) := \Obj(\mathsf{C})$ and $\Hom_{\mathsf{C}^{op}} (A,A) := \Hom_\mathsf{C}(A,A)$, for every object $A$ of $\mathsf{C}^{op}$, the identity on $A$ coincides with $1_A\in\mathsf{C}$. 
+		\item For $A$, $B$, $C$ objects of $\mathsf{C}^{op}$ and $f\in\Hom_{\mathsf{C}^{op}} (A,B)=\Hom_\mathsf{C}(B,A)$, $g\in\Hom_{\mathsf{C}^{op}} (B,C)=\Hom_\mathsf{C}(C,B)$, the composition laws in $\mathsf{C}$ determines a morphism $f*g$ in $\Hom_{\mathsf{C}} (C,A)$, which deduces the composition defined on $\mathsf{C}^{op}$:
+		\[
+		\begin{aligned}
+		\Hom_{\mathsf{C}^{op}} (A,B)\times\Hom_{\mathsf{C}^{op}} (B,C)&\longrightarrow \Hom_{\mathsf{C}^{op}} (A,C)\\
+		(f,g)&\longmapsto g\circ f:=f*g
+		\end{aligned}
+		\]
+		\item Associativity. If $f\in\Hom_{\mathsf{C}^{op}} (A,B)$, $g\in\Hom_{\mathsf{C}^{op}} (B,C)$, $h\in\Hom_{\mathsf{C}^{op}} (C,D)$, then
+		\[
+		f\circ(g\circ h)=f\circ(h*g)=(h*g)*f=h*(g*f)=(g*f)\circ h=(f\circ g)\circ h.
+		\]
+		\item Identity. For all $f\in\Hom_{\mathsf{C}^{op}} (A,B)$, we have
+		\[
+		f\circ 1_A=1_A*f=f,\quad 1_B\circ f=f*1_B=f.
+		\]
+	\end{itemize}
+	Thus we get the full construction of $\mathsf{C}^{op}$.
+\end{solution}
+
 \subsection{\textsection4. Morphisms}
 \begin{problem}[4.2]
 	In Example 3.3 we have seen how to construct a category from a set endowed	with a relation, provided this latter is reflexive and transitive. For what types of relations is the corresponding category a groupoid (cf. Example 4.6)? [\textsection4.1]
@@ -64,7 +104,23 @@
     in fact $(a,b)$ is an isomorphism. From the arbitrariness of the choice of $(a,b)$, we show that $\mathsf{C}$ is a groupoid. Conversely, if $\mathsf{C}$ is a groupoid, we can show the relation $\sim$ is symmetric. To sum up, the category $\mathsf{C}$ is a groupoid
     if and only if the corresponding relation $\sim$ is an equivalence relation.
 \end{solution}
-~\\
+~\\ 
+
+\subsection{\textsection5. Universal properties}
+\begin{problem}[5.1]
+	Prove that a final object in a category $\mathsf{C}$ is initial in the opposite category $\mathsf{C}_{op}$	(cf. Exercise 3.1).
+\end{problem}
+\begin{solution}
+	An object $F$ of $\mathsf{C}$ is final in $\mathsf{C}$ if and only if
+	\[
+	\forall A \in \Obj(\mathsf{C}) : \Hom_\mathsf{C}(A,F) \text{ is a singleton.}
+	\]
+	That is equivalent to
+	\[
+	\forall A \in \Obj(\mathsf{C}_{op}) : \Hom_{\mathsf{C}_{op}}(F,A) \text{ is a singleton,}
+	\]
+	which means $F$ is initial in the opposite category $\mathsf{C}_{op}$.	
+\end{solution}
 
 
 \section{Chapter II.\quad Groups, first encounter}
@@ -95,6 +151,7 @@
 	Suppose that $g^2 = e$ for all elements $g$ of a group $G$; prove that $G$ is commutative.
 \end{problem}
 \begin{solution}
+	For all $a,b\in G$,
 	\[
 	abab=e\implies a(abab)b=ab\implies (aa)ba(bb)=ab\implies ba=ab.
 	\]
@@ -131,7 +188,7 @@
 	for all $\sigma,\tau\in S_n$, where the product on the right is the ordinary product of matrices.
 \end{problem}
 \begin{solution}
-	With Kronecker delta function	
+	By introducing the Kronecker delta function	
     \[
     \delta _{{i,j}}=
     	\begin{cases}
@@ -151,7 +208,7 @@
 	\[
 	\tau(k)=j\iff k=\tau^{-1}(j).
 	\]
-	Note that
+	Noticing that
 	\[
 	\tau(\sigma(i))=j\iff \sigma(i)=\tau^{-1}(j),
 	\]
@@ -447,7 +504,7 @@ is an element of order $d$ in $S_n$.
 	\[
 	\varphi((n,f(x)))=n+xf(x)=0\implies n=0,\;f(x)=0\implies \ker\varphi=\{(0,0)\}.
 	\]
-	Lastly, since the cardinal numbers of both $\mathbb{Z}\times\mathbb{Z}[x]$ and $\mathbb{Z}[x]$ are $\aleph_0$, $\varphi$ is indeed a isomorphism.
+	Lastly, since the cardinal numbers of both $\mathbb{Z}\times\mathbb{Z}[x]$ and $\mathbb{Z}[x]$ are $\aleph_0$, $\varphi$ is indeed an isomorphism. Therefore, as a counterexample we have $\mathbb{Z}[x]\cong\mathbb{Z}\times\mathbb{Z}[x]$.
 \end{solution}
 
 ~\\
@@ -462,12 +519,12 @@ is an element of order $d$ in $S_n$.
     \] 
     Suppose both $\varphi(\{e_G\}\times H)$ and $\varphi(G\times \{e_H\})$ are nontrivial groups. If $\dfrac{p}{q}\in \varphi(\{e_G\}\times H)-\{0\}$ and $\dfrac{r}{s}\in \varphi(G\times \{e_H\})-\{0\}$, there must be 
     \[
-    rp=rq\cdot\dfrac{p}{q}=ps\cdot\dfrac{r}{s}\in \varphi(\{e_G\}\times H)\cap\varphi(G\times \{e_H\}). 
+    rp=rq\cdot\dfrac{p}{q}=ps\cdot\dfrac{r}{s}\in \varphi(\{e_G\}\times H)\cap\varphi(G\times \{e_H\}),
     \]
-    Since $rp\ne0$, it leads to a contradiction. Thus without loss of generality we can assume $\varphi(\{e_G\}\times H)$ is a trivial group $\{0\}$. 
+    which implies $rp=0$. Since both $\dfrac{p}{q}$ and $\dfrac{r}{s}$ are non-zero, it leads to a contradiction. Thus without loss of generality we can assume $\varphi(\{e_G\}\times H)$ is a trivial group $\{0\}$. 
     Since $\varphi$ is isomorphism, we see that for all $h\in H$,
     \[
-    \varphi(e_G,h)=\varphi(e_G,e_H)=0\implies h=e_H.
+    \varphi(e_G,h)=\varphi(e_G,e_H)=0\iff h=e_H.
     \]
     That is, $H$ is a trivial group. Therefore, we have shown $(\mathbb{Q},+)$ will never be isomorphic to the direct product of two nontrivial groups.
 \end{solution}
@@ -566,6 +623,62 @@ is an element of order $d$ in $S_n$.
 	we see $g(a)h(b)\ne h(b)g(a)$ not always holds. The derived contradiction shows that $C_2\times C_3$ is not a coproduct of $C_2, C_3$ in $\mathsf{Grp}$. 
 \end{itemize}	
 \end{solution}
+
+\begin{problem}[3.7]	
+	Show that there is a surjective homomorphism $Z*Z\rightarrow C_2*C_3$. ($*$ denotes coproduct in $\mathsf{Grp}$.)
+	
+\end{problem}
+
+\begin{solution}
+	Consider the mapping
+	\[
+	\begin{aligned}
+	\varphi:\;&\mathbb{Z}*\mathbb{Z}\longrightarrow C_2*C_3\\  
+	&x^{m_1}y^{n_1}\cdots x^{m_k}y^{n_k}\longmapsto x^{[m_1]_2}y^{[n_1]_3}\cdots x^{[m_k]_2}y^{[n_k]_3}
+	\end{aligned}
+	\]
+	Since
+	\[
+	\begin{aligned}
+	&\varphi(x^{m_1}y^{n_1}\cdots x^{m_k}y^{n_k}x^{m_1'}y^{n_1'}\cdots x^{m_{k'}'}y^{n_{k}'})\\
+	=&x^{[m_1]_2}y^{[n_1]_3}\cdots x^{[m_k]_2}y^{[n_k]_3}x^{[m_1']_2}y^{[n_1']_3}\cdots x^{[m_k']_2}y^{[n_k']_3}\\
+	=&\varphi(x^{m_1}y^{n_1}\cdots x^{m_k}y^{n_k})\varphi(x^{m_1'}y^{n_1'}\cdots x^{m_{k'}'}y^{n_{k}'})
+	\end{aligned},
+	\]
+	$\varphi$ is a homomorphism. It is clear that $\varphi$ is surjective. Thus we show there exists a surjective homomorphism $Z*Z\rightarrow C_2*C_3$.
+\end{solution}
+~\\
+\begin{problem}[3.8]	
+	Define a group $G$ with two generators $x, y$, subject (only) to the relations $x^2 = e_G, y^3 = e_G$. Prove that $G$ is a coproduct of $C_2$ and $C_3$ in $\Grp$. (The reader	will obtain an even more concrete description for $C_2*C_3$ in Exercise 9.14; it is called the modular group.) [\textsection3.4, 9.14]
+	
+\end{problem}
+
+\begin{solution}
+Given the maps $i_1:C_2\rightarrow G,[m]_2\mapsto x^m$ and $i_2:C_3\rightarrow G,[n]_3\mapsto y^n$, we can check that $i_1$, $i_2$ are homomorphisms. 
+We are to show that for every group $H$ endowed with two homomorphisms $f_1:C_2\rightarrow H$, $f_2:C_3\rightarrow H$ , there would be a unique group homomorphism $\varphi :G\rightarrow H$ such that the following diagram commutes
+\[\xymatrix{
+	C_2\ar[rd]^{f_1}\ar[d]_{i_1}  \\
+	G\ar[r]^{\varphi} &  H\\
+	C_3\ar[ru]_{f_2}\ar[u]^{i_2}  
+}\]	
+or
+\[
+\varphi(i_1([m]_2))=\varphi(x^m)=\varphi(x)^m=f_1([m]_2),
+\]
+\[
+\varphi(i_2([n]_3))=\varphi(y^n)=\varphi(y)^n=f_2([n]_3).
+\]
+Define $\phi:G\rightarrow H$ as $\phi(x^my^n)=f_1([m]_2)f_2([n]_3)$, $\phi(y^nx^m)=f_2([n]_3)f_1([m]_2)$. It is clear to see $\phi$ makes the diagram commute. Moreover, if $\varphi$ makes the diagram commute, it follows that for all $x^my^n,y^nx^m\in G$,
+\[
+\varphi(x^my^n)=\varphi(x^m)\varphi(y^n)=f_1([m]_2)f_2([n]_3),
+\]
+\[
+\varphi(y^nx^m)=\varphi(y^n)\varphi(x^m)=f_2([n]_3)f_1([m]_2),
+\]
+which implies $\varphi=\phi$. Thus we can conclude $G$ is the coproduct of $C_2$ and $C_3$ in $\Grp$.
+
+\end{solution}
+
 
 
 ~\\

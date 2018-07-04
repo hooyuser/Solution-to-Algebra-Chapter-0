@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.25)  6 APR 2018 00:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.25)  5 JUL 2018 00:39
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -393,20 +393,20 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 (./Solution to Algebra, Chapter 0.aux)
 \openout1 = `"Solution to Algebra, Chapter 0.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -472,19 +472,19 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 29.
+LaTeX Font Info:    Try loading font information for U+msa on input line 34.
 
 (c:/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 29.
+LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 
 (c:/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Package xypdf Info: Line width: 0.47998pt on input line 29.
+Package xypdf Info: Line width: 0.47998pt on input line 34.
 \AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring ON on input line 29.
+Package hyperref Info: Link coloring ON on input line 34.
 
 (c:/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -494,9 +494,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count129
 )
-LaTeX Info: Redefining \ref on input line 29.
-LaTeX Info: Redefining \pageref on input line 29.
-LaTeX Info: Redefining \nameref on input line 29.
+LaTeX Info: Redefining \ref on input line 34.
+LaTeX Info: Redefining \pageref on input line 34.
+LaTeX Info: Redefining \nameref on input line 34.
 
 (./Solution to Algebra, Chapter 0.out) (./Solution to Algebra, Chapter 0.out)
 \@outlinefile=\write4
@@ -519,145 +519,146 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 11.74988pt
-(hyperref)                replaced by space on input line 36.
+(hyperref)                replaced by space on input line 41.
 
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <14.4> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 37.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 43.
 [1
 
 {c:/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
-
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                \hskip 11.74988pt
-(hyperref)                replaced by space on input line 70.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \hskip 11.74988pt
+(hyperref)                replaced by space on input line 126.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--242
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
 
  []
 
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 290--291
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 316--317
-
- []
-
 [6]
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--361
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 373--374
+
+ []
+
+[7]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 317.
+(hyperref)                removing `math shift' on input line 374.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 317.
+(hyperref)                removing `math shift' on input line 374.
 
 <xymatrix 2x3 313>
-Underfull \hbox (badness 10000) in paragraph at lines 336--337
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
 
  []
 
-<xymatrix 3x3 325> [7] <xymatrix 3x3 626>
-Underfull \hbox (badness 10000) in paragraph at lines 372--373
+<xymatrix 3x3 325> [8] <xymatrix 3x3 626>
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
 
  []
 
-<xymatrix 2x3 223> [8]
-Underfull \hbox (badness 10000) in paragraph at lines 424--425
+<xymatrix 2x3 223> [9]
+Underfull \hbox (badness 10000) in paragraph at lines 481--482
 
  []
 
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 453--454
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 510--511
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 475--476
+Underfull \hbox (badness 10000) in paragraph at lines 532--533
 
  []
 
-[10] <xymatrix 2x3 223>
-Overfull \hbox (7.7385pt too wide) detected at line 522
+[11] <xymatrix 2x3 223>
+Overfull \hbox (7.7385pt too wide) detected at line 579
 [][]
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 571--572
+[12] <xymatrix 2x3 223>
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 573.
-[11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 573.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 686.
+[13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 686.
  (./Solution to Algebra, Chapter 0.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 573.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 573.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 686.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 686.
 Package rerunfilecheck Info: File `"Solution to Algebra, Chapter 0".out' has no
 t changed.
-(rerunfilecheck)             Checksum: 0AACCABC68E76B28463560A084B35CA8;432.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 573.
+(rerunfilecheck)             Checksum: 25C7923E495CC8A1188AD1DCB3F427FB;568.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 686.
  ) 
 Here is how much of TeX's memory you used:
- 9466 strings out of 493013
- 130868 string characters out of 6136993
- 280055 words of memory out of 5000000
- 12834 multiletter control sequences out of 15000+600000
+ 9475 strings out of 493013
+ 130935 string characters out of 6136993
+ 281079 words of memory out of 5000000
+ 12839 multiletter control sequences out of 15000+600000
  15921 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,13n,32p,3245b,834s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -678,11 +679,11 @@ onts/cm/cmsy8.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbo
 ls/msam7.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb><c:/
 texlive/2016/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on "Solution to Algebra, Chapter 0.pdf" (11 pages, 202581 bytes)
+Output written on "Solution to Algebra, Chapter 0.pdf" (13 pages, 214550 bytes)
 .
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 187 PDF objects out of 1000 (max. 8388607)
+ 151 compressed objects within 2 object streams
+ 23 named destinations out of 1000 (max. 500000)
+ 65 words of extra memory for PDF output out of 10000 (max. 10000000)
 
