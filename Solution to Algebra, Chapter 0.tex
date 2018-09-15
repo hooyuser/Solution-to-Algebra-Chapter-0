@@ -14,8 +14,9 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage[colorlinks,linkcolor=NavyBlue,anchorcolor=red,citecolor=green]{hyperref}
 
-
-
+\usepackage{mathrsfs}
+\usepackage{cancel}
+\usepackage{cite}
 \usepackage{setspace}
 
 \renewcommand{\baselinestretch}{1.05} 
@@ -39,6 +40,29 @@
 \appendix
 
 \section{Chapter I.\quad Preliminaries: Set theory and categories}
+
+\subsection{\textsection1. Naive Set Theory}
+
+\begin{problem}[1.6]
+Define a relation $\sim$ on the set $\mathbb{R}$ of real numbers, by setting $a\sim b\iff b-a \in\mathbb{Z}$. Prove that this is an equivalence relation, and find a \textquoteleft compelling' description for $\mathbb{R}/\sim$. Do the same for the relation $\approx$ on the plane $\mathbb{R}\times\mathbb{R}$ defined by declaring $(a_1, a_2)\approx(b_1, b_2)\iff b_1-a_1 \in\mathbb{Z}$ and $b_2-a_2 \in\mathbb{Z}$. [\textsection II.8.1, II.8.10]
+\end{problem}
+\begin{solution}
+Imaginatively, $\mathbb{R}/\sim$ can be viewed as a ring of length 1 by bending the real line $\mathbb{R}$.	Then we can rotate a ring around an axis of rotation to get $\mathbb{R}\times\mathbb{R}/\approx$, which makes a torus.
+\end{solution}	
+
+
+
+
+\subsection{\textsection2. Functions between sets}
+
+\begin{problem}[2.1]
+How many different bijections are there between a set $S$ with $n$ elements
+and itself? [\textsection II.2.1]
+\end{problem}
+\begin{solution}
+	There are $n!$ different bijections $S\rightarrow S$.
+\end{solution}
+
 
 \subsection{\textsection3. Categories}
 \begin{problem}[3.1]
@@ -104,7 +128,6 @@
     in fact $(a,b)$ is an isomorphism. From the arbitrariness of the choice of $(a,b)$, we show that $\mathsf{C}$ is a groupoid. Conversely, if $\mathsf{C}$ is a groupoid, we can show the relation $\sim$ is symmetric. To sum up, the category $\mathsf{C}$ is a groupoid
     if and only if the corresponding relation $\sim$ is an equivalence relation.
 \end{solution}
-~\\ 
 
 \subsection{\textsection5. Universal properties}
 \begin{problem}[5.1]
@@ -121,7 +144,6 @@
 	\]
 	which means $F$ is initial in the opposite category $\mathsf{C}_{op}$.	
 \end{solution}
-
 
 \section{Chapter II.\quad Groups, first encounter}
 
@@ -143,9 +165,8 @@
 	\[
 	gg^{-1}=e_G,\;g^{-1}g=e_G.
 	\]
-	Thus any homomorphism $g\in \mathrm{Hom}_\mathsf{C}(*,*)$ is an isomorphism and accordingly $\mathsf{C}$ is a groupoid.
+	Thus any homomorphism $g\in \mathrm{Hom}_\mathsf{C}(*,*)$ is an isomorphism and accordingly $\mathsf{C}$ is a groupoid. Now we see $G=\mathrm{End}_\mathsf{C}(*)$ is the group of isomorphisms of a groupoid. Moreover, supposing that $*$ is an object in some category $\mathsf{D}$, $G$ would be the group of automorphisms of $*$, which is denoted as $\mathrm{Aut}_\mathsf{D}(*)$.
 \end{solution}
-~\\
 
 \begin{problem}[1.4]
 	Suppose that $g^2 = e$ for all elements $g$ of a group $G$; prove that $G$ is commutative.
@@ -156,7 +177,6 @@
 	abab=e\implies a(abab)b=ab\implies (aa)ba(bb)=ab\implies ba=ab.
 	\]
 \end{solution}
-~\\
 
 \subsection{\textsection2. Examples of groups}
 \begin{problem}[2.1]
@@ -215,7 +235,7 @@
     we see $M_{\sigma\tau}=M_{\sigma}M_{\tau}$
     for all $\sigma,\tau\in S_n$.
 \end{solution}
-~\\
+
 
 \begin{problem}[2.2]
 	Prove that if $d \le n$, then $S_n$ contains elements of order $d$.
@@ -228,7 +248,7 @@
     is an element of order $d$ in $S_n$.
 \end{solution}
 
-~\\
+
 
 \begin{problem}[2.3]
 	For every positive integer $n$ find an element of order $n$ in $S_\mathbb{N}$.
@@ -241,7 +261,7 @@ The cyclic permutation
 is an element of order $d$ in $S_n$.
 \end{solution}
 
-~\\
+
 
 \begin{problem}[2.4]	
 	Define a homomorphism $D_8 \rightarrow S_4$ by labeling vertices of a square, as we did
@@ -258,7 +278,7 @@ is an element of order $d$ in $S_n$.
 	\]
 \end{solution}
 
-~\\
+
 
 \begin{problem}[2.11]	
 	Prove that the square of every odd integer is congruent to 1 modulo 8.
@@ -271,7 +291,7 @@ is an element of order $d$ in $S_n$.
 	where $k(k+1)$ is an even integer. So $(2k+1)^2\equiv1\mod 8$.
 \end{solution}
 
-~\\
+
 
 \begin{problem}[2.12]	
 	Prove that there are no integers $a, b, c$ such that $a^2+b^2=3c^2$. (Hint: studying the equation $[a]^2_4+[b]^2_4=3[c]^2_4$ in $\mathbb{Z}/4\mathbb{Z}$, show that $a, b, c$ would all have to be even. Letting $a=2k, b=2l,c=2m$, you would have $k^2+l^2=3m^2$. What's wrong with that?)
@@ -283,7 +303,7 @@ is an element of order $d$ in $S_n$.
 	Noting that $[0]^2_4=[0]_4,[1]^2_4=[1]_4,[2]^2_4=[0]_4,[3]^2_4=[1]_4$, we see $[c]_4^2$ must be $[0]_4$ and so do $[a]_4^2$ and $[b]_4^2$. Hence  $[a]_4,[b]_4,[b]_4$ can only be $[0]_4$ or $[2]_4$, which justifies letting $a=2k_1, b=2l_2,c=2m_1$. After substitution we have $k^2+l^2=3m^2$. Repeating this process $n$ times yields $a=2^nk_n, b=2^nl_n,c=2^nm_n$. For a sufficiently large number $N$, the absolute value of $k_N,l_N,m_N$ must be less than 1. Thus we conclude that $a=b=c=0$ is the unique solution to the equation $a^2+b^2=3c^2$.
 \end{solution}
     
-~\\
+
 
 \begin{problem}[2.13]	
 	Prove that if $\gcd(m, n) = 1$, then there exist integers $a$ and $b$ such that $am + bn = 1$. (Use Corollary 2.5.) Conversely, prove that if $am+ bn = 1$ for some integers $a$ and $b$, then $\gcd(m, n) = 1$. [2.15, \textsection V.2.1, V.2.4]
@@ -295,7 +315,7 @@ is an element of order $d$ in $S_n$.
 	\]
 \end{solution}
     
-~\\
+
 
 \begin{problem}[2.15]	
 	Let $n > 0$ be an odd integer.
@@ -344,7 +364,7 @@ is an element of order $d$ in $S_n$.
 	\end{itemize}
 \end{solution}
 
-~\\
+
 
 \begin{problem}[2.16]	
 	Find the last digit of $1238237^{18238456}$. (Work in $\mathbb{Z}/10\mathbb{Z}$.)
@@ -357,7 +377,7 @@ is an element of order $d$ in $S_n$.
 \end{solution}
 
 
-~\\
+
 
 \begin{problem}[2.17]	
 	Show that if $m\equiv m'\mod n$, then $\gcd(m,n) = 1$ if and only if $\gcd(m',n)=1$. [\textsection 2.3]
@@ -370,7 +390,7 @@ is an element of order $d$ in $S_n$.
 	which means $\gcd(m',n)=1$. Likewise, we can show $\gcd(m',n) = 1\implies\gcd(m,n)=1$
 \end{solution}
 
-~\\
+
 \subsection{\textsection3. The category $\mathsf{Grp}$} 
 
 \begin{problem}[3.1]	
@@ -390,7 +410,7 @@ is an element of order $d$ in $S_n$.
     }\]
 \end{solution}
 
-~\\
+
 
 \begin{problem}[3.2]	
 	Let $\varphi : G\rightarrow H, \psi : H \rightarrow K$ be morphisms in a category with products, and
@@ -402,7 +422,7 @@ is an element of order $d$ in $S_n$.
 	(This is part of the commutativity of the diagram displayed in \textsection 3.2.)
 \end{problem}
 \begin{solution}
-	By the universal property of product in $\mathsf{C}$, there exist a unique morphism 
+	By the universal property of product in $\mathsf{C}$, there exists a unique morphism 
 	\[
 	(\psi\varphi) \times(\psi\varphi):G\times G\rightarrow K\times K
 	\] 
@@ -426,7 +446,7 @@ is an element of order $d$ in $S_n$.
     
 \end{solution}
 
-~\\
+
 
 \begin{problem}[3.3]	
 	Show that if $G, H$ are abelian groups, then $G \times H$ satisfies the universal property for coproducts in $\mathsf{Ab}$.
@@ -439,7 +459,7 @@ is an element of order $d$ in $S_n$.
 	\[
 	i_H:H\longrightarrow G\times H,\;b\longmapsto (0_G,b)
 	\]
-	We are proving that for any two homomorphisms $g:G\rightarrow M$ and $h:H\rightarrow M$ in $\mathsf{Ab}$, the map
+	We are to show that for any two homomorphisms $g:G\rightarrow M$ and $h:H\rightarrow M$ in $\mathsf{Ab}$, the mapping
 	\[
 	\begin{aligned}
 	\varphi:\quad & G\times H\longrightarrow M,\\
@@ -478,7 +498,7 @@ is an element of order $d$ in $S_n$.
 	
 \end{solution}
 
-~\\
+
 
 \begin{problem}[3.4]	
 	Let $G, H$ be groups, and assume that $G\cong H\times G$. Can you conclude that $H$ is trivial? (Hint: No. Can you construct a counterexample?)
@@ -507,7 +527,7 @@ is an element of order $d$ in $S_n$.
 	Lastly, since the cardinal numbers of both $\mathbb{Z}\times\mathbb{Z}[x]$ and $\mathbb{Z}[x]$ are $\aleph_0$, $\varphi$ is indeed an isomorphism. Therefore, as a counterexample we have $\mathbb{Z}[x]\cong\mathbb{Z}\times\mathbb{Z}[x]$.
 \end{solution}
 
-~\\
+
 
 \begin{problem}[3.5]	
 	Prove that $\mathbb{Q}$ is not the direct product of two nontrivial groups.
@@ -529,7 +549,7 @@ is an element of order $d$ in $S_n$.
     That is, $H$ is a trivial group. Therefore, we have shown $(\mathbb{Q},+)$ will never be isomorphic to the direct product of two nontrivial groups.
 \end{solution}
 
-~\\
+
 
 \begin{problem}[3.6]	
 	Consider the product of the cyclic groups $C_2,C_3$ (cf. \textsection 2.3): $C_2 \times C_3$. By Exercise 3.3, this group is a coproduct of $C_2$ and $C_3$ in $\mathsf{Ab}$. Show that it is not a coproduct of $C_2$ and $C_3$ in $\mathsf{Grp}$, as follows:
@@ -647,7 +667,7 @@ is an element of order $d$ in $S_n$.
 	\]
 	$\varphi$ is a homomorphism. It is clear that $\varphi$ is surjective. Thus we show there exists a surjective homomorphism $Z*Z\rightarrow C_2*C_3$.
 \end{solution}
-~\\
+
 \begin{problem}[3.8]	
 	Define a group $G$ with two generators $x, y$, subject (only) to the relations $x^2 = e_G, y^3 = e_G$. Prove that $G$ is a coproduct of $C_2$ and $C_3$ in $\Grp$. (The reader	will obtain an even more concrete description for $C_2*C_3$ in Exercise 9.14; it is called the modular group.) [\textsection3.4, 9.14]
 	
@@ -679,8 +699,396 @@ which implies $\varphi=\phi$. Thus we can conclude $G$ is the coproduct of $C_2$
 
 \end{solution}
 
+\subsection{\textsection4. Group homomorphisms} 
+
+\begin{problem}[4.1]
+Check that the function $\pi_m^n$
+defined in \textsection4.1 is well-defined, and makes the
+diagram commute. Verify that it is a group homomorphism. Why is the hypothesis
+$m | n$ necessary? [\textsection4.1]
+\end{problem}
+
+\begin{solution}
+In \textsection4.1 the function $\pi_m^n$ is defined as
+\[
+\begin{aligned}
+\pi_m^n\;: \mathbb{Z}/n\mathbb{Z} &\longrightarrow \mathbb{Z}/m\mathbb{Z}\\  
+[a]_n&\longmapsto [a]_m
+\end{aligned}
+\]	
+with the condition $m|n$. We can check that $\pi_m^n$ is well-defined as
+\[
+[a_1]_n=[a_2]_n\iff a_1-a_2=kn=(kl)m \implies[a_1]_m=[a_2]_m\iff\pi_m^n([a_1]_n)=\pi_m^n([a_2]_n).
+\]	
+Note $\pi_m^n(\pi_n(a))=\pi_m^n([a]_n)=[a]_m=\pi_m(a)$. The diagram in \textsection4.1 must commute.
+\[\xymatrix{
+	\mathbb{Z}\ar[rd]^{\pi_m}\ar[d]_{\pi_n}  \\
+	\mathbb{Z}/n\mathbb{Z}\ar[r]_{\pi_m^n} &  \mathbb{Z}/m\mathbb{Z} 
+}\]
+Since
+\[
+\pi_m^n([a]_n+[b]_n)=[a+b]_m=[a]_m+[b]_m=\pi_m^n([a]_n)+\pi_m^n([b]_n),
+\]
+it follows that $\pi_m^n$ is a group homomorphism. Actually we have shown that without the hypothesis
+$m|n$, $\pi_m^n$ may not be well-defined.
+\end{solution}
 
 
-~\\
+\begin{problem}[4.2]
+ Show that the homomorphism $\pi_2^4\times\pi_2^4:C_4\rightarrow C_2\times C_2$ is not an isomorphism. In fact, is there any nontrivial isomorphism $C_4\rightarrow C_2\times C_2$?
+\end{problem}
+
+\begin{solution}
+	Let calculate the order of each non-zero element in both $C_4$ and $ C_2\times C_2$. For the group $C_4$,
+	\[
+	|[2]_4|=2,\quad\left|[1]_4\right|=\left|[3]_4\right|=4.
+	\]
+	For the group $C_2\times C_2$,
+	\[
+	|([1]_2,[0]_2)|=|([0]_2,[1]_2)|=|([1]_2,[1]_2)|=2.
+	\]
+	Since isomorphism must preserve the order, we can assert that there is no such isomorphism $C_4\rightarrow C_2\times C_2$.
+\end{solution}
+
+
+\begin{problem}[4.3]
+	Prove that a group of order $n$ is isomorphic to $\mathbb{Z}/n\mathbb{Z}$ if and only if it contains
+	an element of order $n$. [\textsection4.3]
+\end{problem}
+
+\begin{solution}
+	Assume some group $G$ is isomorphic to $\mathbb{Z}/n\mathbb{Z}$. Since $|[1]_n|=n$ and isomorphism preserves the order, we can affirm that there is an element of order $n$ in $G$. 
+	
+	\noindent Conversely, assume there is a group $G$ of order $n$ in which $g$ is an element of order $n$. By definition we see $g^0,g^1,g^2\cdots g^{n-1}$ are distinct pairwise. Noticing group $G$ has exactly $n$ elements, $G$ must consist of $g^0,g^1,g^2\cdots g^{n-1}$. We can easily check that the function
+	\[
+	\begin{aligned}
+	f\;: G&\longrightarrow \mathbb{Z}/n\mathbb{Z}\\  
+	g^k&\longmapsto [k]_n
+	\end{aligned}
+	\]	
+	is an isomorphism.	
+\end{solution}
+
+
+\begin{problem}[4.4]
+	Prove that no two of the groups $(\mathbb{Z}, +)$, $(\mathbb{Q}, +)$, $(\mathbb{R},+)$ are isomorphic to one another. Can you decide whether $(\mathbb{R}, +)$, $(\mathbb{C}, +)$ are isomorphic to one another? (Cf. Exercise VI.1.1.)
+\end{problem}
+
+\begin{solution}
+	Suppose there exists an isomorphism $f:\mathbb{Z}\rightarrow\mathbb{Q}$. Let $f(1)=p/q\ (p,q\in\mathbb{Z})$. If $p=1$, for all $n\in\mathbb{Z}$, we have
+	\[
+	f(n)=\frac{n}{q}\ne\frac{1}{2q}.
+	\]
+	If $p\ne1$, for all $n\in\mathbb{Z}$, we have
+	\[
+	f(n)=\frac{np}{q}\ne\frac{p+1}{q}.
+	\]
+	In both cases, it implies $f(\mathbb{Z})\nsubseteq\mathbb{Q}$.  Hence we see $f$ is not a surjection, which contradicts the fact that $f:\mathbb{Z}\rightarrow\mathbb{Q}$ is an isomorphism. Compare the cardinality of $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$
+	\[
+	|\mathbb{Z}|=|\mathbb{Q}|<|\mathbb{R}|
+	\] 
+	and we show there exists no such isomorphisms like $f:\mathbb{Z}\rightarrow \mathbb{R}$ or $f:\mathbb{Q}\rightarrow \mathbb{R}$. 
+	
+	\noindent We can prove $(\mathbb{R}, +)$, $(\mathbb{C}, +)$ are isomorphic, if considering the both as vector spaces over $\mathbb{Q}$.
+\end{solution}
+
+
+
+\begin{problem}[4.5]
+Prove that the groups $(\mathbb{R}\setminus\{0\},\cdot)$ and $(\mathbb{C}\setminus\{0\}, \cdot)$ are not isomorphic.
+\end{problem}
+
+\begin{solution}
+	Suppose $f:\mathbb{R}\rightarrow\mathbb{C}$ is an isomorphism. Then there exists a real number $x$ such that $f(x)=i$. 
+	\[
+	f(x^4)=f(x)^4=i^4=1.
+	\]
+	Since isomorphism preserves the identity, we have
+	\[
+	f(1)=1=f(x^4).
+	\]
+	which indicates $x^4=1$. Noticing that $x\in\mathbb{R}$, there must be $x^2=1$. Now we see
+	\[
+	f(1)=f(x^2)=f(x)^2=i^2=-1,
+	\]
+	which derives a contradiction. Thus we can conclude that groups $(\mathbb{R}\setminus\{0\},\cdot)$ and $(\mathbb{C}\setminus\{0\}, \cdot)$ are not isomorphic.
+
+\end{solution}
+
+
+
+\begin{problem}[4.6]
+	We have seen that $(\mathbb{R}, +)$ and $(\mathbb{R}_{>0},\cdot)$ are isomorphic (Example 4.4). Are the groups $(\mathbb{Q}, +)$ and $(\mathbb{Q}_{>0},\cdot)$ isomorphic?
+\end{problem}
+\begin{solution}
+	Suppose $f:\mathbb{Q}\rightarrow\mathbb{Q}_{>0}$ is an isomorphism. 
+	Since isomorphism preserves the multiplication, we have
+	\[
+	f(1)=f\left(n\cdot\frac{1}{n}\right)=f\left(\frac{1}{n}\right)^n\quad(n\in\mathbb{Z}_{>0}),
+	\]
+	which implies
+	\[
+	f\left(\frac{1}{n}\right)=f(1)^{\frac{1}{n}}.
+	\] 
+	Assume $f(1)=\dfrac{p}{q}=\dfrac{p_1^{r_1}p_2^{r_2}\cdots p_k^{r_k}}{q_1^{s_1}q_2^{s_2}\cdots q_l^{s_l}}$ where $p_i,q_i$ are pairwise distinct positive prime numbers. Then let $M=\max\{p,q\}+1>\max\{r_1,\cdots,r_k,s_1,\cdots,s_l\}$. Thus we assert
+	\[
+	f\left(\frac{1}{M}\right)=\left(\dfrac{p_1^{r_1}p_2^{r_2}\cdots p_k^{r_k}}{q_1^{s_1}q_2^{s_2}\cdots q_l^{s_l}}\right)^{\frac{1}{M}}\notin\mathbb{Q},
+	\]
+	which can be proved by contradiction. Suppose 
+	\[
+	\left(\dfrac{p}{q}\right)^{\tfrac{1}{M}}=\dfrac{a}{b}\in\mathbb{Q}
+	\] 
+	or say
+	\[
+	pb^M=qa^M,
+	\]
+	where $a$, $b$ are coprime. Note $b^M$, $a^M$ are also coprime and the prime factorization of $a^M$ can be written as $a_1^{Mt_1}a_2^{Mt_2}\cdots a_j^{Mt_j}$ where $a_i$ are pairwise distinct positive prime numbers. That forces 
+	\[
+	p=p_1^{r_1}p_2^{r_2}\cdots p_k^{r_k}=N\cdot a_1^{Mt_1}a_2^{Mt_2}\cdots a_j^{Mt_j}.
+	\]
+	Noticing that $a_i$ must coincide with one number in $\{p_1,p_2,\cdots p_k\}$, we can assume $a_1=p_1$ without loss of generality. However, since $M>\max\{r_1,\cdots,r_k\}$, we see the exponent of $p_1$ is distinct from that of $a_1$, which violates the unique factorization property of $\mathbb{Z}$. Hence we get a contradiction and conclude $	f\left(\frac{1}{M}\right)\notin \mathbb{Q}$. Moreover, it contradicts our assumption that $f:\mathbb{Q}\rightarrow\mathbb{Q}_{>0}$ is an isomorphism. Eventually we show that the groups $(\mathbb{Q}, +)$ and $(\mathbb{Q}_{>0},\cdot)$ are not isomorphic. 
+
+	
+
+	
+\end{solution}
+
+
+   
+
+
+
+\begin{problem}[4.7]	
+	Let $G$ be a group. Prove that the function $G\rightarrow G$ defined by $g\mapsto g^{-1}$ is a homomorphism if and only if $G$ is abelian. Prove that $g\mapsto g^2$ is a homomorphism
+	if and only if G is abelian.
+\end{problem}
+\begin{solution}
+	Given the function
+	\[
+	\begin{aligned}
+	f\;: G&\longrightarrow G\\  
+	g&\longmapsto g^{-1}
+	\end{aligned}
+	\]
+	we have
+	\[
+	f(g_1g_2)=(g_1g_2)^{-1}=g_2^{-1}g_1^{-1},\quad	f(g_1)f(g_2)=g_1^{-1}g_2^{-1}.
+	\]
+	If $G$ is abelian, it is clear to see $f(g_1g_2)=f(g_1)f(g_2)$. If $f$ is a homomorphism, $\forall h_1,h_2\in G$,
+	\[
+	h_1h_2=(h_2^{-1}h_1^{-1})^{-1}=f(h_2^{-1}h_1^{-1})=f(h_2^{-1})f(h_1^{-1})=h_2h_1.
+	\]
+	Given the function
+	\[
+	\begin{aligned}
+	h\;: G&\longrightarrow G\\  
+	g&\longmapsto g^{2}
+	\end{aligned}
+	\]
+	we have
+	\[
+	h(g_1g_2)=(g_1g_2)^{2}=g_1g_2g_1g_2,\quad h(g_1)h(g_2)=g_1^2g_2^2=g_1g_1g_2g_2.
+	\]
+	If $G$ is abelian, it is clear to see $h(g_1g_2)=h(g_1)h(g_2)$. If $h$ is a homomorphism, by cancellation we have 
+	\[
+	h(g_1g_2)=h(g_1)h(g_2)\implies g_2g_1=g_1g_2.
+	\]
+\end{solution}
+
+
+
+\begin{problem}[4.8]
+Let $G$ be a group, and $g\in G$. Prove that the function $\gamma_g : G\rightarrow G$ defined by $(\forall a \in G) : \gamma_g(a) = gag^{-1}$ is an automorphism of $G$. (The automorphisms $\gamma_g$ are
+called \textquoteleft inner' automorphisms of $G$.) Prove that the function $G\rightarrow \mathrm{Aut}(G)$ defined by $g \mapsto \gamma_g$ is a homomorphism. Prove that this homomorphism is trivial if and only if $G$ is abelian.
+\end{problem}
+\begin{solution}
+Since
+\[
+\gamma_g(ab)=gabg^{-1}=gag^{-1}gbg^{-1}=\gamma_g(a)\gamma_g(b),
+\]
+$\gamma_g$ is an automorphism of $G$. 
+For all $a\in G$, we have
+\[
+\gamma_{g_1g_2}(a)=g_1g_2ag_2^{-1}g_1^{-1}=\gamma_{g_1}(g_2ag_2^{-1})=(\gamma_{g_1}\circ \gamma_{g_2})(a),
+\]
+which implies $\gamma_{g_1g_2}=\gamma_{g_1}\circ \gamma_{g_2}$ and $g \mapsto\gamma_g$ is a homomorphism. If $G$ is abelian, for all $g$ the homomorphism
+\[
+\gamma_g(a) = gag^{-1}=gg^{-1}a=a
+\] 
+is the identity in $\mathrm{Aut}(G)$. That is, the homomorphism $g \mapsto \gamma_g$ is  trivial. If the homomorphism $g \mapsto \gamma_g$ is  trivial, we have for all $g,a\in G$,
+\[
+gag^{-1}=a,
+\] 
+which implies for all $a,b\in G$,
+\[
+ab=bab^{-1}b=ba.
+\]
+Thus we show the homomorphism $g \mapsto \gamma_g$ is trivial if and only if $G$ is abelian.
+\end{solution}
+
+
+
+
+\begin{problem}[4.9]
+Prove that if $m$, $n$ are positive integers such that $\gcd(m, n) = 1$, then $C_{mn}\cong C_{m}\times C_n$.
+\end{problem}
+\begin{solution}
+Define a function
+\[
+\begin{aligned}
+\varphi\;: C_{m}\times C_n&\longrightarrow C_{mn}\\  
+([a]_m,[b]_n)&\longmapsto [anp+bmq]_{mn}
+\end{aligned}
+\]	
+where $[pn]_m=[1]_m$ and $[qm]_n=[1]_n$, as $\gcd(m, n) = 1$ guarantees the existence of $p,q$ (see textbook p56). First of all, we have to check whether $\varphi$ is well-defined. Note that 		
+\[
+[(anp_1+bmq_1)-(anp_2+bmp_2)]_{m}=[a(p_1n-p_2n)+b(q_1m-q_2m)]_{m}=[0]_m
+\]	
+\[
+[(anp_1+bmq_1)-(anp_2+bmp_2)]_{n}=[a(p_1n-p_2n)+b(q_1m-q_2m)]_{n}=[0]_n
+\]
+and $\gcd(m, n) = 1$. Thus we have
+\[
+[(anp_1+bmq_1)-(anp_2+bmp_2)]_{mn}=[0]_{mn},
+\]
+or
+\[
+[anp_1+bmq_1]_{mn}=[anp_2+bmp_2]_{mn}.
+\]
+Then we show $\varphi$ is a homomorphism.
+\begin{align*}
+\varphi(([a_1]_m,[b_1]_n)+([a_2]_m,[b_2]_n))&=\varphi([a_1+a_2]_m,[b_1+b_2]_n)\\
+&=[(a_1+a_2)np+(b_1+b_2)mq]_{mn}\\
+&=[a_1np+b_1mq]_{mn}+[a_2np+b_2mq]_{mn}\\
+&=\varphi([a_1]_m,[b_1]_n)+\varphi([a_2]_m,[b_2]_n).
+\end{align*}
+In order to show $\varphi$ is a monomorphism, we can check 
+\begin{align*}
+&\varphi([a_1]_m,[b_1]_n)=\varphi([a_2]_m,[b_2]_n)\\
+\implies&[a_1np+b_1mq]_{mn}=[a_2np+b_2mq]_{mn}\\
+\implies&[(a_1-a_2)np+(b_1-b_2)mq]_{mn}=[0]_{mn}\\
+\implies&[(a_1-a_2)np+(b_1-b_2)mq]_{m}=[a_1-a_2]_{m}=[0]_m,\\
+&[(a_1-a_2)np+(b_1-b_2)mq]_{n}=[b_1-b_2]_{n}=[0]_n\\
+\implies&[a_1]_m=[a_2]_m,\ [b_1]_m=[b_2]_m.
+\end{align*}
+Since  $|C_{m}\times C_n|= |C_{mn}|=mn$, we can conclude $\varphi$ is an isomorphism. Thus we complete proving $C_{mn}\cong C_{m}\times C_n$.
+	
+\end{solution}
+
+\subsection{\textsection5. Free groups} 
+\begin{problem}[5.1]
+	Does the category $\mathscr{F}^A$ defined in \textsection5.2 have final objects? If so, what are they?
+\end{problem}
+\begin{solution}
+	Yes, they are functions from $A$ to any trivial group, for example $T=\{t\}$.
+	\[\xymatrix{
+		G \ar[r]^{\exists!\varphi} & \{t\}\\
+		A\ar[ru]_{e}\ar[u]^{j}  
+	}\]
+	For any object $(j,G)$ in $\mathscr{F}^A$, the trivial homomorphism $\varphi:g\mapsto t$ is the unique homomorphism such that the diagram commutes. That is, $\Hom((j,G),(e,T))=\{\varphi\}$.
+\end{solution}
+
+
+\begin{problem}[5.2]
+	Since trivial groups $T$ are initial in $\Grp$, one may be led to think that $(e,T)$ should be initial in $\mathscr{F}^A$, for every $A$: $e$ would be defined by sending every element of $A$ to the (only) element in $T$ ; and for any other group $G$, there is a unique homomorphism $T\rightarrow G$. Explain why $(e, T)$ is not initial in $\mathscr{F}^A$ (unless $A =\emptyset$).
+\end{problem}
+\begin{solution}
+	Let $G=C_2=\{[0]_2,[1]_2\}$. Note that $\varphi\circ e(A)$ must be the trivial subgroup $\{[0]_2\}$. If $x\in A$ and $j(x)=[1]_2$, we see $\varphi\circ e\ne j$ and the following diagram does not commute. 
+	\[\xymatrix{
+		T\ar[r]^{\varphi} & G\\
+		A\ar[ru]_{j}\ar[u]^{e}  
+	}\]
+	That implies $(e, T)$ is not initial in $\mathscr{F}^A$ unless $A =\emptyset$.
+\end{solution}
+
+
+
+\begin{problem}[5.3]
+	Use the universal property of free groups to prove that the map $j:A\rightarrow F(A)$ is injective, for all sets $A$. (Hint: it suffices to show that for every two elements $a, b$	of $A$ there is a group $G$ and a set-function $f : A\rightarrow G$ such that $f(a)=f(b)$. Why? and how do you construct $f$ and $G$?) [\textsection III.6.3]
+\end{problem}
+\begin{solution}
+	Let $G=S_A$ be the symmetric group over $A$. Define functions $g_a:A\rightarrow A,\;x\mapsto a$ sending every element of $A$ to $a$.
+	Since $g_a\in S_A$, we can define an injection
+	\[
+	\begin{aligned}
+	f\;: A&\longrightarrow S_A\\  
+	a&\longmapsto g_a
+	\end{aligned}
+	\]
+	In light of the commuting diagram
+	\[\xymatrix{
+		F(A) \ar[r]^{\varphi} &S_A\\
+		A\ar[ru]_{f}\ar[u]^{j}  
+	}\]	
+	we have $\forall a,b\in A$,
+	\[
+	j(a)=j(b)\implies\varphi(j(a))=\varphi(j(b))\implies f(a)=f(b)\implies a=b.
+	\]
+	
+	
+\end{solution}
+
+\begin{problem}[5.4]
+	In the \textquoteleft concrete’ construction of free groups, one can try to reduce words by performing cancellations in any order; the \textquoteleft elementary reductions' used in the text(that is, from left to right) is only one possibility. Prove that the result of iterating cancellations on a word is independent of the order in which the cancellations are performed. Deduce the associativity of the product in $F(A)$ from this. [\textsection 5.3]
+\end{problem}
+\begin{solution}
+	We use induction on the length of $w$. If $w$ is reduced, there is nothing to show. If not, there must be some pair of symbols that can be cancelled, say the underlined pair	
+	$$w = \cdots \underline{xx}^{-1}\cdots.$$
+	(Let's allow $x$ to denote any element of $A'$, with the understanding that if $x = a^{-1}$ then $x^{-1} = a$.) If we show that we can obtain every reduced form of $w$ by cancelling the pair $xx^{-1}$ first, the proposition will follow by induction, because the word $w^* = \cdots  \underline{\cancel{x}\cancel{x}}^{-1}\cdots$ is shorter.
+	
+	Let $w_0$ be a reduced form of $w$. It is obtained from $w$ by some sequence of cancellations. The first case is that our pair $xx^{-1}$ is cancelled at some step in this sequence. If so, we may as well cancel $xx^{-1}$ first. So this case is settled. On the other hand, since $w_0$ is reduced, the pair $xx^{-1}$ can not remain in $w_0$. At least one of the two symbols must be cancelled at some time. If the pair itself is not cancelled, the first cancellation involving the pair must look like
+	\[
+	 \cdots \cancel{x}^{-1}\underline{\cancel{x}x}^{-1}\cdots\quad \text{  or  }\quad  \cdots \underline{x\cancel{x}}^{-1}\cancel{x}\cdots
+	\]
+	Notice that the word obtained by this cancellation is the same as the one obtained by	cancelling the pair $xx^{-1}$. So at this stage we may cancel the original pair instead. Then we are back in the first case, so the  proposition is proved.
+
+\end{solution}
+
+\begin{problem}[5.5]
+Verify explicitly that $H^{\oplus A}$ is a group.
+\end{problem}
+\begin{solution}
+Assume the $A$ is a set and $H$ is an abelian group. $H^{\oplus A}$ are defined as follows 
+\[
+H^{\oplus A}:=\{\alpha:A\rightarrow H|\alpha(a)\ne e_H \text{ for only finitely many elements }a\in A\} .
+\]
+Now that $H^{\oplus A}\subset H^A:=\Hom_{\mathsf{Set}}(A,H)$, we can first show $(H^A,+)$ is a group, where for all $\phi,\psi\in H^A$, $\phi+\psi$ is defined by
+\[
+(\forall a\in A) : (\phi + \psi)(a) := \phi(a) + \psi(a) .
+\]
+Here is the verification:
+\begin{itemize}
+	\item Identity: Define a function $\varepsilon:A\rightarrow H,a\mapsto e_H$ sending all elements in $A$ to $e_H$. Then for any $\alpha\in H^A$ we have
+	\[
+	(\forall a\in A) : (\alpha + \varepsilon)(a) = \alpha(a) + \varepsilon(a)=\alpha(a),
+	\]
+	which is $\alpha + \varepsilon=\alpha$. Because of the commutativity of the operation $+$ defined on $H^A$, $\varepsilon$ is the identity indeed.
+	\item Associativity: This follows by the associativity in $H$:
+	\[
+	(\forall a\in A) : ((\alpha + \beta)+\gamma)(a) = (\alpha + \beta)(a) + \gamma(a)= \alpha(a)+ (\beta+ \gamma)(a)=(\alpha +(\beta+\gamma))(a).
+	\]
+	\item Inverse: Every function $\phi\in H^A$ has inverse $-\phi$ defined by 
+	\[
+	(\forall a\in A) :(-\phi)(a) = -\phi(a).
+	\]
+\end{itemize}
+	Thus $H^A$ makes a group. 
+	
+	Then it is time to show $H^{\oplus A}$ is a subgroup of $H^A$. For all $\alpha,\beta\in H^{\oplus A}$, let $N_\alpha=\{a\in A|\alpha(a)\ne e_H\}$, $N_\beta=\{a\in A|\beta(a)\ne e_H\}$, $N_{\alpha-\beta}=\{a\in A|(\alpha - \beta)(a)\ne e_H\}$. Since
+	\[
+	(\forall a\in A) :(\alpha - \beta)(a) = \alpha(a) - \beta(a),
+	\]
+	we have 
+	\[
+	(\alpha - \beta)(a)\ne e_H\implies \alpha(a)\ne e_H\text{ or }\beta(a)\ne e_H,
+	\]
+	which implies $N_{\alpha-\beta}\subset N_\alpha\cup N_\beta$. Note that $N_\alpha$, $N_\beta$ are both finite sets, which forces $N_{\alpha-\beta}$ to be finite. So there must be $\alpha - \beta\in H^{\oplus A}$. Now we see $H^{\oplus A}$ is closed under additions and inverses. And $e_{H^A}=\varepsilon\in H^{\oplus A}$ means that $H^{\oplus A}$ is nonempty. Finally we can conclude $H^{\oplus A}$ is a subgroup of $H^A$.
+\end{solution}
+
+
+
+\bibliographystyle{plain}
+\bibliography{mybibtex}
+
 
 \end{document}

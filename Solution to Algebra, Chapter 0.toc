@@ -1,8 +1,12 @@
 \contentsline {section}{Chapter I.\hskip 1em\relax Preliminaries: Set theory and categories}{1}{section*.2}
-\contentsline {subsection}{\textsection 3. Categories}{1}{section*.3}
-\contentsline {subsection}{\textsection 4. Morphisms}{2}{section*.4}
-\contentsline {subsection}{\textsection 5. Universal properties}{2}{section*.5}
-\contentsline {section}{Chapter II.\hskip 1em\relax Groups, first encounter}{3}{section*.6}
-\contentsline {subsection}{\textsection 1. Definition of group}{3}{section*.7}
-\contentsline {subsection}{\textsection 2. Examples of groups}{4}{section*.8}
-\contentsline {subsection}{\textsection 3. The category $\mathsf {Grp}$}{8}{section*.9}
+\contentsline {subsection}{\textsection 1. Naive Set Theory}{1}{section*.3}
+\contentsline {subsection}{\textsection 2. Functions between sets}{1}{section*.4}
+\contentsline {subsection}{\textsection 3. Categories}{2}{section*.5}
+\contentsline {subsection}{\textsection 4. Morphisms}{2}{section*.6}
+\contentsline {subsection}{\textsection 5. Universal properties}{3}{section*.7}
+\contentsline {section}{Chapter II.\hskip 1em\relax Groups, first encounter}{3}{section*.8}
+\contentsline {subsection}{\textsection 1. Definition of group}{3}{section*.9}
+\contentsline {subsection}{\textsection 2. Examples of groups}{4}{section*.10}
+\contentsline {subsection}{\textsection 3. The category $\mathsf {Grp}$}{8}{section*.11}
+\contentsline {subsection}{\textsection 4. Group homomorphisms}{13}{section*.12}
+\contentsline {subsection}{\textsection 5. Free groups}{18}{section*.13}
