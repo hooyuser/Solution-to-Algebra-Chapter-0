@@ -25,9 +25,16 @@
 
 \newcommand{\Obj}{\mathrm{Obj}} 
 \newcommand{\Hom}{\mathrm{Hom}} 
+\newcommand{\GL}{\mathrm{GL}} 
+\newcommand{\SL}{\mathrm{SL}} 
 \newcommand{\Grp}{\mathsf{Grp}} 
 \newcommand{\Set}{\mathsf{Set}}
 \newcommand{\Ab}{\mathsf{Ab}}  
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
 
 % info for header block in upper right hand corner
 \name{Huyi Chen}
@@ -1283,7 +1290,163 @@ It plain to check that $\varphi$ is a homomorphism
 \end{align*}
 Since $\ker\varphi=\{(0,0,\cdots)\}$ and $|G\times G|=|G|=\aleph_0$, we can conclude that $\varphi$ is an isomorphism and accordingly $G\times G\cong G$.
 \end{solution}
-	
+
+\subsection{\textsection6. Subgroups} 
+
+\begin{problem}[6.1]
+$\neg$ (If you know about matrices.) The group of invertible $n \times n$ matrices with entries in R is denoted $\GL_n(\R)$ (Example 1.5). Similarly, $\GL_n(\C)$ denotes the group of $n \times n$ invertible matrices with complex entries. Consider the following sets of
+matrices:
+\begin{itemize}
+	\item $\SL_n(\R) = \{M \in \GL_n(\R) | \det(M) = 1\}$;
+	\item $ \SL_n(\C) = \{M \in \GL_n(\C) | \det(M) = 1\}$;
+	\item $\mathrm{O}_n(\R) = \{M \in \GL_n(\R) |MM^t = M^tM = I_n\}$;
+	\item $\mathrm{SO}_n(\R) = \{M \in \mathrm{O}_n(\R) | \det (M) = 1\}$;
+	\item  $\mathrm{U}_n(\C) = \{M \in \GL_n(\C) |MM^\dag = M^\dag M = I_n\}$;
+	\item  $\mathrm{SU}_n(\C) = \{M \in \mathrm{U}_n(\C) | \det(M) = 1\}$.
+\end{itemize}
+
+Here In stands for the $n \times n$ identity matrix, $M^t$ is the transpose of $M$, $M\dag$ is the
+conjugate transpose of $M$, and $\det(M)$ denotes the determinant of $M$. Find all possible inclusions among these sets, and prove that in every case the smaller set is a subgroup of the larger one.
+
+These sets of matrices have compelling geometric interpretations: for example, $\mathrm{SO}^3(\R)$ is the group of ‘rotations’ in $\R^3$. [8.8, 9.1, III.1.4, VI.6.16]
+\end{problem}
+\begin{solution}
+The following diagram commutes, where all arrows are inclusions.
+\[\xymatrix{
+	\GL_n(\R)\ar[r] & \GL_n(\C)\\
+	\SL_n(\R)\ar[r]\ar[u] & \SL_n(\C)\ar[u]\\
+	\mathrm{O}_n(\R)\ar[r]\ar[u] & \mathrm{U}_n(\C)\ar[u]\\
+	\mathrm{SO}_n(\R)\ar[r]\ar[u] & \mathrm{SU}_n(\C) \ar[u]
+}\]
+\end{solution}
+
+\begin{problem}[6.2]
+$\neg$ Prove that the set of $2\times2$ matrices
+\[
+\begin{pmatrix}
+	a& b\\
+	0& d\\
+\end{pmatrix}
+\]
+with $a$, $b$, $d$ in $\C$ and $ad\ne 0$ is a subgroup of $\GL_2(\C)$. More generally, prove that the set of $n\times n$ complex matrices $(a_{ij})_{1\le i,j\le n}$ with $a_{ij} = 0$ for $i>j$, and $a_{11}\cdots a_{nn}\ne 0$, is a subgroup of $\GL_n(\C)$. (These matrices are called 'upper triangular', for evident reasons.) [IV.1.20]
+\end{problem}
+\begin{solution}
+Let $A, B$ are $n\times n$ upper triangular matrices. If $i>j$,
+\[
+(AB)_{ij}=\sum_{k=1}^{n}a_{ik}b_{kj}=\sum_{k=1}^{i-1}a_{ik}b_{kj}+\sum_{k=i}^{n}a_{ik}b_{kj}=\sum_{k=1}^{i-1}0b_{kj}+\sum_{k=i}^{n}a_{ik}0=0,
+\]
+which means the set of upper triangular matrices is closed with respect to the matrix multiplication. Thus it is a subgroup of $\GL_n(\C)$.
+\end{solution}
+
+
+\begin{problem}[6.3]
+$\neg$ Prove that every matrix in $\mathrm{SU}_2(\C)$ may be written in the form
+\[
+\begin{pmatrix}
+a + bi& c + di\\
+-c + di& a-bi\\
+\end{pmatrix}
+\]
+where $a, b, c, d \in \R$ and $a^2 + b^2 + c^2 + d^2 = 1$. (Thus, $\mathrm{SU}_2(\C)$ may be realized as a three-dimensional sphere embedded in $\R^4$; in particular, it is simply connected.)[8.9, III.2.5]
+\end{problem}
+\begin{solution}
+Let
+	\[
+	A=
+	\begin{pmatrix}
+	a_{11}& a_{12}\\
+    a_{21}& a_{22}\\
+	\end{pmatrix}
+	\in\mathrm{SU}_2(\C)
+	\]
+and we have
+\[
+AA^\dag=
+\begin{pmatrix}
+a_{11}& a_{12}\\
+a_{21}& a_{22}\\
+\end{pmatrix}
+\begin{pmatrix}
+\overline{a_{11}}& \overline{a_{21}}\\
+\overline{a_{12}}& \overline{a_{22}}\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+|a_{11}|^2+|a_{12}|^2& a_{11}\overline{a_{21}}+a_{12}\overline{a_{22}}\\
+ a_{21}\overline{a_{11}}+a_{22}\overline{a_{12}}& |a_{21}|^2+|a_{22}|^2\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+1& 0\\
+0& 1\\
+\end{pmatrix}
+\]
+and
+\[
+\det(A)=
+\begin{vmatrix}
+a_{11}& a_{12}\\
+a_{21}& a_{22}\\
+\end{vmatrix}=a_{11}a_{22}-a_{12}a_{21}=1
+\]
+\[
+\overline{a_{11}}\overline{a_{12}}=\overline{a_{11}}\overline{a_{12}}
+\begin{vmatrix}
+a_{11}& a_{12}\\
+a_{21}& a_{22}\\
+\end{vmatrix}
+=
+\begin{vmatrix}
+|a_{11}|^2& |a_{12}|^2\\
+a_{21}\overline{a_{11}}& a_{22}\overline{a_{12}}\\
+\end{vmatrix}
+=
+\begin{vmatrix}
+|a_{11}|^2&|a_{11}|^2+ |a_{12}|^2\\
+a_{21}\overline{a_{11}}&a_{21}\overline{a_{11}}+ a_{22}\overline{a_{12}}\\
+\end{vmatrix}
+=
+\begin{vmatrix}
+|a_{11}|^2&1\\
+a_{21}\overline{a_{11}}&0\\
+\end{vmatrix}
+=-a_{21}\overline{a_{11}}
+\]
+\[
+\implies\overline{a_{11}}(\overline{a_{12}}+a_{21})=0
+\]
+\[
+\overline{a_{21}}\overline{a_{22}}=\overline{a_{21}}\overline{a_{22}}
+\begin{vmatrix}
+a_{11}& a_{12}\\
+a_{21}& a_{22}\\
+\end{vmatrix}
+=
+\begin{vmatrix}
+a_{11}\overline{a_{21}}& a_{12}\overline{a_{22}}\\
+|a_{21}|^2& |a_{22}|^2\\
+\end{vmatrix}
+=
+\begin{vmatrix}
+a_{11}\overline{a_{21}}&a_{11}\overline{a_{21}}+ a_{12}\overline{a_{22}}\\
+|a_{21}|^2&|a_{21}|^2+ |a_{22}|^2\\
+\end{vmatrix}
+=
+\begin{vmatrix}
+a_{11}\overline{a_{21}}&0\\
+|a_{21}|^2&1\\
+\end{vmatrix}
+=a_{11}\overline{a_{21}}
+\]
+\[
+\implies\overline{a_{21}}(\overline{a_{11}}-a_{22})=0
+\]
+If $\overline{a_{11}}\ne0$, it must be $\overline{a_{12}}+a_{21}=0$. If $\overline{a_{11}}=0$, then $|a_{12}|^2=1$, $a_{12}\overline{a_{22}}=0$ and accordingly $a_{22}=0$. Since $-a_{12}a_{21}=1=a_{12}\overline{a_{12}}$, we also have $\overline{a_{12}}+a_{21}=0$, that is $a_{12}=c+di, a_{21}=-c+di$. Likewise, we can show $\overline{a_{11}}-a_{22}=0$ and $a_{11}=a+bi, a_{22}=a-bi$. And we have
+\[
+|a_{11}|^2+|a_{12}|^2=a^2 + b^2 + c^2 + d^2 = 1.
+\]
+\end{solution}
+
 \bibliographystyle{plain}
 \bibliography{mybibtex}
 
