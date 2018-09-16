@@ -26,7 +26,8 @@
 \newcommand{\Obj}{\mathrm{Obj}} 
 \newcommand{\Hom}{\mathrm{Hom}} 
 \newcommand{\Grp}{\mathsf{Grp}} 
-
+\newcommand{\Set}{\mathsf{Set}}
+\newcommand{\Ab}{\mathsf{Ab}}  
 
 % info for header block in upper right hand corner
 \name{Huyi Chen}
@@ -432,7 +433,7 @@ is an element of order $d$ in $S_n$.
 		G \times G\ar[u]^{\pi_G}\ar[d]_{\pi_G}\ar[rr]^{	(\psi\varphi) \times(\psi\varphi)} &&  H\times H\ar[u]_{\pi_H}\ar[d]^{\pi_H} \\
 		G\ar[rr]^{\psi\varphi} && H 
 	}\]
-    As the following commuting diagram tells us the composition 
+    As the following commutative diagram tells us the composition 
     \[
     (\psi \times \psi)(\varphi\times \varphi):G\times G\rightarrow K\times K
     \]
@@ -1015,7 +1016,7 @@ Since  $|C_{m}\times C_n|= |C_{mn}|=mn$, we can conclude $\varphi$ is an isomorp
 	a&\longmapsto g_a
 	\end{aligned}
 	\]
-	In light of the commuting diagram
+	In light of the commutative diagram
 	\[\xymatrix{
 		F(A) \ar[r]^{\varphi} &S_A\\
 		A\ar[ru]_{f}\ar[u]^{j}  
@@ -1085,8 +1086,204 @@ Here is the verification:
 	which implies $N_{\alpha-\beta}\subset N_\alpha\cup N_\beta$. Note that $N_\alpha$, $N_\beta$ are both finite sets, which forces $N_{\alpha-\beta}$ to be finite. So there must be $\alpha - \beta\in H^{\oplus A}$. Now we see $H^{\oplus A}$ is closed under additions and inverses. And $e_{H^A}=\varepsilon\in H^{\oplus A}$ means that $H^{\oplus A}$ is nonempty. Finally we can conclude $H^{\oplus A}$ is a subgroup of $H^A$.
 \end{solution}
 
+\begin{problem}[5.6]
+Prove that the group $F(\{x, y\})$ (visualized in Example 5.3) is a coproduct $\mathbb{Z}*\mathbb{Z}$ of $\mathbb{Z}$ by itself in the category $\Grp$. (Hint: with due care, the universal property for one turns into the universal property for the other.) [\textsection 3.4, 3.7, 5.7]
+\end{problem}
+\begin{solution}
+Define two homomorphisms 
+\begin{align*}
+i_1:\mathbb{Z}\longrightarrow F(\{x, y\}),\quad n\longmapsto x^n,\\ i_2:\mathbb{Z}\longrightarrow F(\{x, y\}),\quad n\longmapsto y^n.
+\end{align*}	
+We need to show that for any group $G$ with two homomorphisms $f_1,f_2:\mathbb{Z}\rightarrow G$, there exists a unique homomorphism $\varphi$ such that the following diagram commutes.
+\[\xymatrix{
+	\mathbb{Z}\ar[rd]^{f_1}\ar[d]_{i_1}  \\
+	F(\{x, y\})\ar[r]^{\quad\varphi} &  G\\
+	\mathbb{Z}\ar[ru]_{f_2}\ar[u]^{i_2}  
+}\]
+Given the notation of indicator function
+\[\mathbf{1}_A(x) :=
+\begin{cases}
+	1 &\text{if } x \in A, \\
+	0 &\text{if } x \notin A,
+\end{cases}
+\]
+we can define a function
+\begin{align*}
+\varphi:\ &F(\{x, y\})\longrightarrow G,\\
+&z_1^{n_1}\cdots z_k^{n_k} \longmapsto f_1(n_1)^{\mathbf{1}_{\{x\}}(z_1)}f_2(n_1)^{\mathbf{1}_{\{y\}}(z_1)}\cdots f_1(n_k)^{\mathbf{1}_{\{x\}}(z_n)}f_2(n_k)^{\mathbf{1}_{\{y\}}(z_n)},\ z_i\in\{x,y\}
+\end{align*}
+and check that it is a homomorphism indeed. For all $n\in \mathbb{Z}$, we have
+\begin{align*}
+(\varphi\circ i_1)(n)=\varphi(x^n)=f_1(n),\\
+(\varphi\circ i_2)(n)=\varphi(y^n)=f_2(n),
+\end{align*}	
+that is, the diagram commutes. Now we see $\varphi$ exists. For the uniqueness of $\varphi$, let $\varphi^*$ be another homomorphism that makes diagram commute. For all $z_1^{n_1}\cdots z_k^{n_k}\in F(\{x, y\}),\,z_i\in\{x, y\}$, we have
+\begin{align*}
+\varphi^*(z_1^{n_1}\cdots z_k^{n_k})&=\varphi^*(z^{n_1})\cdots \varphi^*(z^{n_k})\\
+&=\varphi^*(i_1(n_1))^{\mathbf{1}_{\{x\}}(z_1)}\varphi^*(i_2(n_1))^{\mathbf{1}_{\{y\}}(z_1)}\cdots \varphi^*(i_1(n_k))^{\mathbf{1}_{\{x\}}(z_1)}\varphi^*(i_2(n_k))^{\mathbf{1}_{\{y\}}(z_1)}\\
+&=f_1(n_1)^{\mathbf{1}_{\{x\}}(z_1)}f_2(n_1)^{\mathbf{1}_{\{y\}}(z_1)}\cdots f_1(n_k)^{\mathbf{1}_{\{x\}}(z_n)}f_2(n_k)^{\mathbf{1}_{\{y\}}(z_n)}\\
+&=\varphi(z_1^{n_1}\cdots z_k^{n_k}).
+\end{align*}	
+To sum up, we have shown that the group $F(\{x, y\})$ is a coproduct $\mathbb{Z}*\mathbb{Z}$ of $\mathbb{Z}$ by itself in the category $\Grp$.
+\end{solution}	
+	
+\begin{problem}[5.7]
+Extend the result of Exercise 5.6 to free groups $F(\{x_1,\dots, x_n\})$ and to free
+abelian groups $F^{ab}(\{x_1,\dots, x_n\})$. [§3.4, §5.4]	
+\end{problem}
+\begin{solution}
+
+Let $*$ be coproduct. Then we have $\underbrace{\mathbb{Z}*\mathbb{Z}*\dots*\mathbb{Z}}_{n\text{ times}}\cong F(\{x_1,\dots, x_n\})$, as the following diagram demonstrates:
+\[\xymatrix{
+		\mathbb{Z}\ar[rrrd]^{f_1}\ar[rd]_{\hspace{-5ex}{i_1}} \\
+		\hspace{4.2em}
+		\raisebox{2.35ex}{\vdots}
+		\raisebox{0ex}{\hspace{-0.63ex}\vdots}
+		\raisebox{-2.35ex}{\hspace{-0.63ex}\vdots}
+		\hspace{4em}
+		\vdots 
+		& F(\{x_1,\dots, x_n\})\ar[rr]^{\varphi} 
+		& &G\\
+		\mathbb{Z}\ar[rrru]_{f_n}\ar[ru]^{\hspace{-5ex}i_n}  
+}\]
+~\\
+Dually, let $\times$ be product. Then we have $\underbrace{\mathbb{Z}\times\mathbb{Z}\times\cdots\times\mathbb{Z}}_{n\text{ times}}\cong F^{ab}(\{x_1,\cdots, x_n\})$, as the following diagram demonstrates:	
+\[\xymatrix@R=12.7pt{
+	 	 & & &&\mathbb{Z} \\
+	 	 & & &&\\
+		G\ar[rrrruu]^{f_1}\ar[rrrrdd]_{f_n}\ar[rr]^{\hspace{-1.5em}\varphi} & &F^{ab}(\{x_1,\dots,x_n\})\ar[rruu]_{\hspace{1ex}\pi_1}\ar[rrdd]^{\hspace{1ex}\pi_n}&
+		&\hspace{-4.04em}
+		\vdots
+		\hspace{3.7em}
+		\raisebox{2.35ex}{\vdots}
+		\raisebox{0ex}{\hspace{-0.63ex}\vdots}
+		\raisebox{-2.35ex}{\hspace{-0.63ex}\vdots}\\
+		 & & &&\\
+		 & & &&\mathbb{Z} 
+}\]
+
+\end{solution}
 
 
+\begin{problem}[5.8]
+Still more generally, prove that $F(A\amalg B)=F(A)*F(B)$ and that $F^{ab}(A\amalg B) =F^{ab}(A)\oplus F^{ab}(B)$ for all sets $A, B$. (That is, the constructions $F$, $F^{ab}$ 'preserve coproducts'.)
+\end{problem}
+\begin{solution}
+In order to show $F(A)*F(B)$ is a free group generated by $A\amalg B$, we should first set an appropriate function $\psi:A\amalg B\rightarrow F(A)*F(B)$ and then prove that given any $(\theta,G)$ there exists a unique group homomorphism $g$ such that the following diagram commutes.
+	\[\xymatrix{
+		A\amalg B\ar[rr]^{\hspace{-1em}\psi}\ar@/_2pc/[rrrr]_{\theta} && F(A)*F(B)\ar@{-->}[rr]^{\hspace{1em}\exists!g}&&G\\
+	}\]
+The complete proof can be divided into three steps, by dividing the following diagram into parts.\\
+\[\xymatrix{
+	A\ar[r]^{j_1}\ar[d]^{i_1}&F(A)\ar@{-->}[rd]^{\varphi_1}\ar[d]^{f_1}  \\
+	A\amalg B\ar@{-->}[r]^{\hspace{-1em}\psi}\ar@/_2.4pc/[rr]^{\hspace{-2em}\theta}&F(A)*F(B)\ar@{-->}[r]^{\hspace{1.3em}g}&G\\	B\ar[r]^{j_1}\ar[u]_{i_2}&F(B)\ar@{-->}[ru]_{\varphi_2}\ar[u]_{f_2}    \\ 
+}\]
+\noindent\textbf{Step 1. Construct $\psi:A\amalg B\longrightarrow F(A)*F(B)$.} 
+
+\noindent Define injective functions 
+\begin{align*}
+i_1:\ &A\longrightarrow A\amalg B,\quad a\longmapsto (a,1),\\ 
+i_2:\ &B\longrightarrow A\amalg B,\quad b\longmapsto (b,2),\\
+j_1:\ &A\longrightarrow F(A),\quad a\longmapsto a,\\ 
+j_2:\ &B\longrightarrow F(B),\quad b\longmapsto b.
+\end{align*}
+Let $f_1,f_2$ be the homomorphisms specified by the coproduct in $\Grp$. Since $A\amalg B$ is a coproduct in $\Set$, the universal property guarantees a unique mapping $\psi:A\amalg B\rightarrow F(A)*F(B)$ such that the following diagram commutes
+\[\xymatrix{
+	A\ar[rr]^{j_1}\ar[d]^{i_1}&&F(A)\ar[d]^{f_1}  \\
+	A\amalg B\ar@{-->}[rr]^{\exists!\psi}  &&F(A)*F(B)\\
+	B\ar[rr]^{j_1}\ar[u]_{i_2}&&F(B)\ar[u]_{f_2}  \\ 
+}\]
+That is,
+\[
+\exists!\ \psi:A\amalg B\longrightarrow F(A)*F(B)\quad(\psi\circ i_1=f_1\circ j_1)\wedge (\psi\circ i_2=f_2\circ j_2).
+\]
+\noindent\textbf{Step 2. Prove the existence of $g$.}
+\[\xymatrix{
+	A\ar[r]^{j_1}\ar[d]^{i_1}&F(A)\ar@{-->}[rd]^{\exists!\varphi_1}  \\
+	A\amalg B\ar[rr]^{\theta}&  &G\\
+	B\ar[r]^{j_1}\ar[u]_{i_2}&F(B)\ar@{-->}[ru]_{\exists!\varphi_2}    \\ 
+}\]
+Given some $(\theta,G)$, according to the universal property of free groups $F(A)$, $F(B)$, we have
+\begin{align*}
+\exists!\ \varphi_1:F(A)\longrightarrow G\quad(\varphi_1\circ j_1=\theta\circ i_1),\\ 
+\exists!\ \varphi_2:F(B)\longrightarrow G\quad(\varphi_2\circ j_2=\theta\circ i_2).
+\end{align*} 
+\[\xymatrix{
+	F(A)\ar[d]^{f_1}\ar@{-->}[rd]^{\varphi_1}  \\
+    F(A)*F(B)\ar@{-->}[r]^{\hspace{1.3em}\exists!g} &G\\
+	F(B)\ar[u]_{f_2}\ar@{-->}[ru]_{\varphi_2}    \\ 
+}\]
+Then according to the universal property of coproduct $F(A)*F(B)$ in $\Grp$, we have
+\[
+\exists!\ g:F(A)*F(B)\longrightarrow G\quad(g\circ f_1= \varphi_1)\wedge (g\circ f_2= \varphi_2).
+\]
+The commutative diagram tells us
+\begin{align*}
+g\circ \psi\circ i_1=g\circ f_1\circ j_1=\varphi_1\circ j_1=\theta\circ i_1,\\
+g\circ \psi\circ i_2=g\circ f_2\circ j_2=\varphi_2\circ j_2=\theta\circ i_2.
+\end{align*}
+Note that $A\amalg B=i_1(A)\cup i_2(B)$. For all $x\in A\amalg B$, $x$ must be either $i_1(a)$ or $i_2(b)$. If $x=i_1(a)$, then
+\[
+g\circ \psi(x)=g\circ \psi\circ i_1(a)=\theta\circ i_1(a)=\theta(x).
+\]  
+If $x=i_2(b)$, then
+\[
+g\circ \psi(x)=g\circ \psi\circ i_2(b)=\theta\circ i_2(b)=\theta(x).
+\]  
+Hence we show that given some $(\theta,G)$ there exists $g:F(A)*F(B)\longrightarrow G$ such that $g\circ \psi=\theta$.\\
+
+\noindent\textbf{Step 3. Prove the uniqueness of $g$.}
+
+\noindent Assume there exists another homomorphism $h$ such that $h\circ \psi=\theta$. We have
+\begin{align*}
+h\circ f_1\circ j_1=h\circ \psi\circ i_1=\theta\circ i_1,\\
+h\circ f_2\circ j_2=h\circ \psi\circ i_2=\theta\circ i_2.
+\end{align*} 
+Since
+\begin{align*}
+\exists!\ \varphi_1:F(A)\longrightarrow G\quad(\varphi_1\circ j_1=\theta\circ i_1),\\ 
+\exists!\ \varphi_2:F(B)\longrightarrow G\quad(\varphi_2\circ j_2=\theta\circ i_2),
+\end{align*} 
+there must be
+\begin{align*}
+h\circ f_1&=\varphi_1,\\
+h\circ f_2&=\varphi_2.
+\end{align*}
+Again by universal property 
+\[
+\exists!\ g:F(A)*F(B)\longrightarrow G\quad(g\circ f_1= \varphi_1)\wedge (g\circ f_2= \varphi_2)
+\]
+we get $h=g$, which implies $g$ is unique.\\
+
+\noindent\textbf{Conclusion.}
+
+\noindent To sum up, we prove that there exists a unique group homomorphism $g$ such that the first diagram in this proof commutes. As a result, we have $F(A\amalg B)=F(A)*F(B)$. Note that if $\Grp$ turns into $\Ab$, the method of diagram chasing applied here also works. In the light of the following diagram, we can get $F^{ab}(A\amalg B) =F^{ab}(A)\oplus F^{ab}(B)$ step by step. 
+\[\xymatrix{
+	A\ar[r]^{j_1}\ar[d]^{i_1}&F^{ab}(A)\ar@{-->}[rd]^{\varphi_1}\ar[d]^{f_1}  \\
+	A\amalg B\ar@{-->}[r]^{\hspace{-2em}\psi}\ar@/_2.4pc/[rr]^{\hspace{-2em}\theta}&F^{ab}(A)\oplus F^{ab}(B)\ar@{-->}[r]^{\hspace{2em}g}&G\\	B\ar[r]^{j_1}\ar[u]_{i_2}&F^{ab}(B)\ar@{-->}[ru]_{\varphi_2}\ar[u]_{f_2}    \\ 
+}\]
+\end{solution}
+
+\begin{problem}[5.9]
+ Let $G = \mathbb{Z}^{\oplus\mathbb{N}}$. Prove that $G\times G\cong G$.
+\end{problem}
+\begin{solution}
+Define a function
+\begin{align*}
+\varphi:G\times G&\longrightarrow G\\
+((a_1,a_2,\cdots),(b_1,b_2,\cdots))&\longmapsto (a_1,b_1,a_2,b_2,\cdots)
+\end{align*}
+It plain to check that $\varphi$ is a homomorphism
+\begin{align*}
+&\varphi[((a_1,a_2,\cdots),(b_1,b_2,\cdots))+((a_1',a_2',\cdots),(b_1',b_2',\cdots))]\\
+=&\varphi[((a_1+a_1',a_2+a_2',\cdots),(b_1+b_1',b_2+b_2',\cdots))]\\
+=&(a_1+a_1',b_1+b_1',a_2+a_2',b_2+b_2',\cdots)\\
+=&(a_1,b_1,a_2,b_2,\cdots)+(a_1',b_1',a_2',b_2',\cdots)\\
+=&\varphi[((a_1,a_2,\cdots),(b_1,b_2,\cdots))]+\varphi[((a_1',a_2',\cdots),(b_1',b_2',\cdots))].
+\end{align*}
+Since $\ker\varphi=\{(0,0,\cdots)\}$ and $|G\times G|=|G|=\aleph_0$, we can conclude that $\varphi$ is an isomorphism and accordingly $G\times G\cong G$.
+\end{solution}
+	
 \bibliographystyle{plain}
 \bibliography{mybibtex}
 
