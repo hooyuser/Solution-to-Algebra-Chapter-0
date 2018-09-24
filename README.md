@@ -3,5 +3,5 @@ This is a solution manual for *ALGEBRA, Chapter 0*, an algebra textbook written 
 The way he introdues abstract algebra in a language of categories appeals to me very much.
 So I'm perfectly willing to share my solutions to the exercises in this book. 
 
-As a beginner, I'm trying to make my proof explict and detailed, but unfortunately it seems verbose and tedious sometimes.
-I would appreciate it if you can point out my mistakes, big or small.
+As a beginner, I'm trying to make my proof explict and detailed, but unfortunately it seems verbose and tedious sometimes. 
+And I would appreciate it if you can point out my mistakes, big or small.
