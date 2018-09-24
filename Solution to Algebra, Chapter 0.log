@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.25)  18 SEP 2018 01:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.25)  24 SEP 2018 03:15
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -612,27 +612,31 @@ Overfull \hbox (6.98085pt too wide) detected at line 1442
 [][] \OT1/cmr/m/n/12 = [][] [] = [] = [] = [] = \OML/cmm/m/it/12 a[][]
  []
 
-[28] [29] <xymatrix 2x2 137> [30] <xymatrix 2x2 137>
+[28] [29] <xymatrix 2x2 137> [30] <xymatrix 2x2 137> [31]
+Missing character: There is no â in font cmr12!
+Missing character: There is no ˆ in font cmr12!
+Missing character: There is no ˆ in font cmr12!
+
 (./Solution to Algebra, Chapter 0.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1591.
- [31]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1591.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1671.
+ [32]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1671.
  (./Solution to Algebra, Chapter 0.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1591.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1591.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1671.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1671.
 
 Package rerunfilecheck Info: File `"Solution to Algebra, Chapter 0".out' has no
 t changed.
 (rerunfilecheck)             Checksum: 74425757DAA4CBCAF9AE8EF153850A2C;919.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1591.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1671.
  ) 
 Here is how much of TeX's memory you used:
- 9679 strings out of 493013
- 133484 string characters out of 6136993
+ 9680 strings out of 493013
+ 133491 string characters out of 6136993
  286460 words of memory out of 5000000
  12997 multiletter control sequences out of 15000+600000
  17532 words of font info for 72 fonts, out of 8000000 for 9000
@@ -661,11 +665,11 @@ ist/fonts/type1/public/xypic/xyatip10.pfb><c:/texlive/2016/texmf-dist/fonts/typ
 e1/public/xypic/xybsql10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/xyp
 ic/xybtip10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/xypic/xydash10.p
 fb>
-Output written on "Solution to Algebra, Chapter 0.pdf" (31 pages, 313700 bytes)
+Output written on "Solution to Algebra, Chapter 0.pdf" (32 pages, 316656 bytes)
 .
 PDF statistics:
- 319 PDF objects out of 1000 (max. 8388607)
- 258 compressed objects within 3 object streams
- 47 named destinations out of 1000 (max. 500000)
+ 323 PDF objects out of 1000 (max. 8388607)
+ 261 compressed objects within 3 object streams
+ 48 named destinations out of 1000 (max. 500000)
  105 words of extra memory for PDF output out of 10000 (max. 10000000)
 
