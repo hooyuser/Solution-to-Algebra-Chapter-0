@@ -10,4 +10,4 @@
 \contentsline {subsection}{\textsection 3. The category $\mathsf {Grp}$}{8}{section*.11}
 \contentsline {subsection}{\textsection 4. Group homomorphisms}{13}{section*.12}
 \contentsline {subsection}{\textsection 5. Free groups}{18}{section*.13}
-\contentsline {subsection}{\textsection 6. Subgroups}{27}{section*.14}
+\contentsline {subsection}{\textsection 6. Subgroups}{26}{section*.14}
