@@ -4,4 +4,4 @@ The way he introdues abstract algebra in a language of categories appeals to me 
 So I'm perfectly willing to share my solutions to the exercises in this book. 
 
 As a beginner, I'm trying to make my proof explict and detailed, but unfortunately it seems verbose and tedious sometimes. 
-And I would appreciate it if you can point out my mistakes, big or small.
+Anyway, I would appreciate it if you can point out my mistakes, big or small.
