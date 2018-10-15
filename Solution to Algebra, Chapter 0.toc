@@ -1,6 +1,6 @@
 \contentsline {section}{Chapter I.\hskip 1em\relax Preliminaries: Set theory and categories}{1}{section*.2}
 \contentsline {subsection}{\textsection 1. Naive Set Theory}{1}{section*.3}
-\contentsline {subsection}{\textsection 2. Functions between sets}{1}{section*.4}
+\contentsline {subsection}{\textsection 2. Functions between sets}{2}{section*.4}
 \contentsline {subsection}{\textsection 3. Categories}{2}{section*.5}
 \contentsline {subsection}{\textsection 4. Morphisms}{2}{section*.6}
 \contentsline {subsection}{\textsection 5. Universal properties}{3}{section*.7}
@@ -11,3 +11,7 @@
 \contentsline {subsection}{\textsection 4. Group homomorphisms}{13}{section*.12}
 \contentsline {subsection}{\textsection 5. Free groups}{18}{section*.13}
 \contentsline {subsection}{\textsection 6. Subgroups}{26}{section*.14}
+\contentsline {section}{\textsection 7. Quotient groups}{34}{section*.15}
+\contentsline {section}{\textsection 8. Canonical decomposition and Lagrange’s theorem}{35}{section*.16}
+\contentsline {section}{\textsection 9. Group actions}{35}{section*.17}
+\contentsline {section}{\textsection 10. Group objects in categories}{35}{section*.18}
