@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.25)  15 OCT 2018 00:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.25)  15 OCT 2018 23:31
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -872,14 +872,12 @@ Package xcolor Warning: Incompatible color definition on input line 13.
 
 Package xcolor Warning: Incompatible color definition on input line 14.
 
-LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 14.
 
 Package xcolor Warning: Incompatible color definition on input line 15.
 
-Missing character: There is no â in font cmbx12!
-Missing character: There is no € in font cmbx12!
-Missing character: There is no ™ in font cmbx12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
 
 Package xcolor Warning: Incompatible color definition on input line 16.
 
@@ -948,57 +946,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 1274--1276
 
  []
 
-<xymatrix 3x3 488> [25]
+<xymatrix 3x3 488> [25] [26]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ˜ in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
- <xymatrix 2x4 374> [26] [27]
-Overfull \hbox (16.31421pt too wide) detected at line 1427
+ <xymatrix 2x4 374> [27] [28]
+Overfull \hbox (16.31421pt too wide) detected at line 1462
 [][] \OT1/cmr/m/n/12 = [][] [] = [] = [] = [] = \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/
 it/12 a[][]
  []
 
 
-Overfull \hbox (6.98085pt too wide) detected at line 1454
+Overfull \hbox (6.98085pt too wide) detected at line 1489
 [][] \OT1/cmr/m/n/12 = [][] [] = [] = [] = [] = \OML/cmm/m/it/12 a[][]
  []
 
-[28] [29] <xymatrix 2x2 137> <xymatrix 2x2 137> [30] [31] [32]
-LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <17.28> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 1826.
-
- [33]
+[29] [30] <xymatrix 2x2 137> <xymatrix 2x2 137> [31] [32] [33] [34]
 Missing character: There is no Â in font cmr12!
 Missing character: There is no § in font cmr12!
+ [35]
 Missing character: There is no â in font cmbx12!
 Missing character: There is no € in font cmbx12!
 Missing character: There is no ™ in font cmbx12!
- [34]
+
 (./Solution to Algebra, Chapter 0.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [35]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1883.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1883.
+) [36] [37]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1957.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1957.
  (./Solution to Algebra, Chapter 0.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1883.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1883.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1957.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1957.
 
 Package rerunfilecheck Info: File `"Solution to Algebra, Chapter 0".out' has no
 t changed.
-(rerunfilecheck)             Checksum: 604F3AF2CBE6EEAAC10D5B34E6B5A0FF;1203.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1883.
+(rerunfilecheck)             Checksum: 8C62C828D076235C8382FA89FFF10250;1243.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1957.
  ) 
 Here is how much of TeX's memory you used:
  20060 strings out of 493013
- 353364 string characters out of 6136993
- 482001 words of memory out of 5000000
- 23151 multiletter control sequences out of 15000+600000
- 18042 words of font info for 74 fonts, out of 8000000 for 9000
+ 353333 string characters out of 6136993
+ 481995 words of memory out of 5000000
+ 23148 multiletter control sequences out of 15000+600000
+ 17879 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,15n,54p,3245b,834s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/te
@@ -1015,20 +1010,20 @@ st/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2016/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy6.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy8.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10
-.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
-><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb><c:/
-texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texl
-ive/2016/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb><c:/texlive/2016/texmf-d
-ist/fonts/type1/public/xypic/xyatip10.pfb><c:/texlive/2016/texmf-dist/fonts/typ
-e1/public/xypic/xybsql10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/xyp
-ic/xybtip10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/xypic/xydash10.p
-fb>
-Output written on "Solution to Algebra, Chapter 0.pdf" (35 pages, 328247 bytes)
+sy8.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
+c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb><c:/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texl
+ive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb><c:/texlive/2
+016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2016/
+texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb><c:/texlive/2016/texmf-dist/fonts
+/type1/public/xypic/xyatip10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public
+/xypic/xybsql10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/xypic/xybtip
+10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/xypic/xydash10.pfb>
+Output written on "Solution to Algebra, Chapter 0.pdf" (37 pages, 343688 bytes)
 .
 PDF statistics:
- 360 PDF objects out of 1000 (max. 8388607)
- 295 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
+ 376 PDF objects out of 1000 (max. 8388607)
+ 307 compressed objects within 4 object streams
+ 57 named destinations out of 1000 (max. 500000)
  149 words of extra memory for PDF output out of 10000 (max. 10000000)
 
