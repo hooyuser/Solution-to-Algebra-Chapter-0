@@ -13,7 +13,6 @@
 
 \usepackage[usenames,dvipsnames]{color}
 \usepackage[colorlinks,linkcolor=NavyBlue,anchorcolor=red,citecolor=green]{hyperref}
-
 \usepackage{mathrsfs}
 \usepackage{cancel}
 \usepackage{cite}
@@ -464,7 +463,7 @@ is an element of order $d$ in $S_n$.
 \end{solution}
 
 
-
+\hypertarget{Exercise 3.3}{}
 \begin{problem}[3.3]	
 	Show that if $G, H$ are abelian groups, then $G \times H$ satisfies the universal property for coproducts in $\mathsf{Ab}$.
 \end{problem}
@@ -569,7 +568,7 @@ is an element of order $d$ in $S_n$.
 
 
 \begin{problem}[3.6]	
-	Consider the product of the cyclic groups $C_2,C_3$ (cf. \textsection 2.3): $C_2 \times C_3$. By Exercise 3.3, this group is a coproduct of $C_2$ and $C_3$ in $\mathsf{Ab}$. Show that it is not a coproduct of $C_2$ and $C_3$ in $\mathsf{Grp}$, as follows:
+	Consider the product of the cyclic groups $C_2,C_3$ (cf. \textsection 2.3): $C_2 \times C_3$. By \hyperlink{Exercise 3.3}{Exercise 3.3}, this group is a coproduct of $C_2$ and $C_3$ in $\mathsf{Ab}$. Show that it is not a coproduct of $C_2$ and $C_3$ in $\mathsf{Grp}$, as follows:
 	\begin{itemize}
 		\item find injective homomorphisms $C_2\rightarrow S_3$, $C_3 \rightarrow S_3$;
 		\item arguing by contradiction, assume that $C_2\times C_3$ is a coproduct of $C_2, C_3$, and deduce that there would be a group homomorphism $C_2\times C_3\rightarrow S_3$ with certain properties;
@@ -916,7 +915,7 @@ Prove that the groups $(\mathbb{R}\setminus\{0\},\cdot)$ and $(\mathbb{C}\setmin
 \end{solution}
 
 
-
+\hypertarget{Exercise 4.8}{}
 \begin{problem}[4.8]
 Let $G$ be a group, and $g\in G$. Prove that the function $\gamma_g : G\rightarrow G$ defined by $(\forall a \in G) : \gamma_g(a) = gag^{-1}$ is an automorphism of $G$. (The automorphisms $\gamma_g$ are
 called \textquoteleft inner' automorphisms of $G$.) Prove that the function $G\rightarrow \mathrm{Aut}(G)$ defined by $g \mapsto \gamma_g$ is a homomorphism. Prove that this homomorphism is trivial if and only if $G$ is abelian.
@@ -1304,7 +1303,7 @@ Since $\ker\varphi=\{(0,0,\cdots)\}$ and $|G\times G|=|G|=\aleph_0$, we can conc
 \end{solution}
 
 
-
+\hypertarget{Exercise 5.10}{}
 \begin{problem}[5.10]
 $\neg$ Let $F = F^{ab}(A)$.
 \begin{itemize}
@@ -1352,7 +1351,7 @@ matrices:
 	\item  $\mathrm{SU}_n(\C) = \{M \in \mathrm{U}_n(\C) | \det(M) = 1\}$.
 \end{itemize}
 
-Here In stands for the $n \times n$ identity matrix, $M^t$ is the transpose of $M$, $M\dag$ is the
+Here In stands for the $n \times n$ identity matrix, $M^t$ is the transpose of $M$, $M^\dag$ is the
 conjugate transpose of $M$, and $\det(M)$ denotes the determinant of $M$. Find all possible inclusions among these sets, and prove that in every case the smaller set is a subgroup of the larger one.
 
 These sets of matrices have compelling geometric interpretations: for example, $\mathrm{SO}^3(\R)$ is the group of ‘rotations’ in $\R^3$. [8.8, 9.1, III.1.4, VI.6.16]
@@ -1538,7 +1537,7 @@ a subgroup of $G$. In fact:
 
 
 \begin{problem}[6.7]
-$\neg$ Show that inner automorphisms (cf. Exercise 4.8) form a subgroup of
+$\neg$ Show that inner automorphisms (cf. \hyperlink{Exercise 4.8}{Exercise 4.8}) form a subgroup of
 $\Aut(G)$; this subgroup is denoted $\Inn(G)$. Prove that $\Inn(G)$ is cyclic if and only if $\Inn(G)$ is trivial if and only if $G$ is abelian. (Hint: Assume that $\Inn(G)$ is cyclic; with notation as in Exercise 4.8, this means that there exists an element $a \in G$ such that $\forall g \in  G\ \exists n\ \in Z\ \gamma_g = \gamma^n_a$. In particular, $gag^{-1} = a^naa^{-n} = a$. Thus a commutes with every $g$ in $G$. Therefore...) Deduce that if $\Aut(G)$ is cyclic then $G$ is abelian. [7.10, IV.1.5]
 \end{problem}
 \begin{solution}
@@ -1620,12 +1619,11 @@ a_1=\frac{p_1}{q_1}\in \Q,(p_1,q_1)=1,  \\
 a_2=\frac{p_2}{q_2}\in \Q,(p_2,q_2)=1 ,  
 \end{align*}	
 there exists $r=\frac{1}{q_1q_2}\in \Q$ such that $\langle a_1,a_2\rangle\le\langle r_1\rangle$. Then for some $a_3$ we have
-$\langle a_1,a_2,a_3\rangle\le\langle r_1,a_3\rangle\le\langle r_2\rangle$. In general, let's set $B_n=\{a_1,a_2,\cdots,a_n\}$. If $\langle B_n\rangle\le\langle r_{n-1}\rangle$. we have $\langle B_{n+1}\rangle=\langle B_n,a_{n+1}\rangle\le\langle r_{n-1}a_{n+1}\rangle\le\langle r_n\rangle$. By induction we can prove $\langle a_1,a_2,\cdots,a_n\rangle\le\langle r_{n-1}\rangle
-$ for $n\in\N_+$.	
-	
-	
+$\langle a_1,a_2,a_3\rangle\le\langle r_1,a_3\rangle\le\langle r_2\rangle$. In general, let's set $B_n=\{a_1,a_2,\cdots,a_n\}$. If $\langle B_n\rangle\le\langle r_{n-1}\rangle$. we have $\langle B_{n+1}\rangle=\langle B_n,a_{n+1}\rangle\le\langle r_{n-1},a_{n+1}\rangle\le\langle r_n\rangle$. By induction we can prove $\langle a_1,a_2,\cdots,a_n\rangle\le\langle r_{n-1}\rangle
+$ for $n\in\N_+$. Since the subgroups of a cyclic group are also cyclic, we see finitely generated subgroup $\langle a_1,a_2,\cdots,a_n\rangle$ is cyclic.	 
 \end{solution}	
 	
+\hypertarget{Exercise 6.10}{}	
 \begin{problem}[6.10]	
 $\neg$  The set of $2\times2$ matrices with integer entries and determinant 1 is denoted
 $\SL_2(\Z)$:
@@ -1656,7 +1654,7 @@ t =
 	
 \end{problem}
 \begin{solution}	
-	Let $H$ be the subgroup generated by $s$ and $t$. We can check that
+	Let $H$ be the subgroup generated by $s$ and $t$. We can check that both
 	\[
 	P =
 	\begin{pmatrix}
@@ -1670,7 +1668,7 @@ t =
 	1 & 0\\
 	-q & 1\\
 	\end{pmatrix}
-	=s^{-1}t^{q}s.
+	=s^{-1}t^{q}s
 	\]
 	are in $H$. Given an arbitrary matrix 
 	\[
@@ -1780,7 +1778,8 @@ m_{2N}=
 We have shown that we can obtain the identity $I_2$
 by multiplying $m$ by matrices in $H$, that is, $m$ can be represented as a product of matrices in $H$. Thus we can conclude $\SL_2(\Z)$ is generated by $s$ and $t$.
 \end{solution}		
-	
+
+\hypertarget{Exercise 6.13}{}
 \begin{problem}[6.13]	
 $\neg$ Draw and compare the lattices of subgroups of $C_2\times C_2$ and $C_4$. Drawthe lattice of subgroups of $S_3$, and compare it with the one for $C_6$. [7.1]
 \end{problem}
@@ -1860,7 +1859,7 @@ Lattices of subgroups $C_2\times C_2$ and $C_4$ are drawn as follows:
 
 \subsection{\textsection7. Quotient groups}
 \begin{problem}[7.1]
-$\vartriangleright$ List all subgroups of $S_3$ (cf. Exercise 6.13) and determine which subgroups are normal and which are not normal. [\textsection7.1]
+$\vartriangleright$ List all subgroups of $S_3$ (cf. \hyperlink{Exercise 6.13}{Exercise 6.13}) and determine which subgroups are normal and which are not normal. [\textsection7.1]
 \end{problem}
 \begin{solution}
 	The subgroups of $S_3$ are $\{(1)\},\{(1),(12)\},\{(1),(13)\},\{(1),(23)\},\{(1),(123),(132)\}$ and $S_3$. We can check that $\{(1)\},\{(1),(123),(132)\},S_3$ are normal subgroups while others are not.
@@ -1877,7 +1876,7 @@ No. According to exercise 7.1 we have seen not all subgroups are normal. Suppose
 $\vartriangleright$ Verify that the equivalent conditions for normality given in §7.1 are indeed equivalent. [\textsection7.1]
 \end{problem}
 \begin{solution}
-A subgroup $N$ of $G$ is normal has four equivalent conditions:
+That a subgroup $N$ of $G$ is normal has four equivalent conditions:
 \begin{enumerate}
 	\item[(i)] $\forall g\in G,\ gNg^{-1}= N$;
 	\item[(ii)] $\forall g\in G,\ gNg^{-1}\subseteq N$;
@@ -1898,7 +1897,7 @@ Hence we have $\forall g\in G,\ gNg^{-1}=N$.
 
 
 \begin{problem}[7.4]
-Prove that the relation defined in Exercise 5.10 on a free abelian group $F =F^{ab}(A)$ is compatible with the group structure. Determine the quotient $F/\sim$ as a better known group.
+Prove that the relation defined in \hyperlink{Exercise 5.10}{Exercise 5.10} on a free abelian group $F =F^{ab}(A)$ is compatible with the group structure. Determine the quotient $F/\sim$ as a better known group.
 \end{problem}
 \begin{solution}
 For all $f,f',h\in F$,
@@ -1907,14 +1906,14 @@ f\sim f'\iff f-f'=2g,\,(g\in F)\implies (h+f)-(h+f')=2g,\,(g\in F)\iff h+f\sim h
 \]
 Since $F$ is abelian, wee see the relation $\sim$ defined on a free abelian group $F =F^{ab}(A)$ is compatible with the group structure. By the notation of quotient group, we have 
 \[
-F/\hspace{-2pt}\sim\hspace{4pt}=F/2F
+F/\hspace{-2pt}\sim\hspace{4pt}=F/2F,
 \]
 where $2F=\{2g\in F\,|\,g\in F\}$.
 \end{solution}
 
 
 \begin{problem}[7.5]
-$\neg$ Define an equivalence relation $\sim$ on $\SL_2(\Z)$ by letting $A\sim A\iff A'=\pm A.$ Prove that $\sim$ is compatible with the group structure. The quotient $\SL_2(\Z)/\sim$ is denoted $\mathrm{PSL}_2(\Z)$, and is called the \emph{modular group}; it would be a serious contender in a context for \textquoteleft the most important group in mathematics', due to its role in algebraic geometry and number theory. Prove that $\mathrm{PSL}_2(\Z)$ is generated by the (cosets of the) matrices
+$\neg$ Define an equivalence relation $\sim$ on $\SL_2(\Z)$ by letting $A\sim A'\iff A'=\pm A.$ Prove that $\sim$ is compatible with the group structure. The quotient $\SL_2(\Z)/\sim$ is denoted $\mathrm{PSL}_2(\Z)$, and is called the \emph{modular group}; it would be a serious contender in a context for \textquoteleft the most important group in mathematics', due to its role in algebraic geometry and number theory. Prove that $\mathrm{PSL}_2(\Z)$ is generated by the (cosets of the) matrices
 \[
 \begin{pmatrix}
 0 & -1\\
@@ -1926,14 +1925,43 @@ $\neg$ Define an equivalence relation $\sim$ on $\SL_2(\Z)$ by letting $A\sim A\
 1 & 0\\
 \end{pmatrix}.
 \]
-(You will not need to work very hard, if you use the result of Exercise 6.10.) Note that the first has order 2 in $\mathrm{PSL}_2(\Z)$, the second has order 3, and their product has infinite order. [9.14]
+(You will not need to work very hard, if you use the result of \hyperlink{Exercise 6.10}{Exercise 6.10}.) Note that the first has order 2 in $\mathrm{PSL}_2(\Z)$, the second has order 3, and their product has infinite order. [9.14]
 \end{problem}
 \begin{solution}
-	
+For all $A_1,A_2,B\in \SL_2(\Z)$,
+\[
+A_1\sim A_2\iff A_2=\pm A_1\iff  BA_2=\pm BA_1\iff BA_1\sim BA_2.
+\]	
+Hence $\sim$ is compatible with the group structure and $\mathrm{PSL}_2(\Z)=\SL_2(\Z)/\{I_2,-I_2\}$. In \hyperlink{Exercise 6.10}{Exercise 6.10} we have shown $\SL_2(\Z)$ is generated by the matrices
+\[
+s =
+\begin{pmatrix}
+0 & -1\\
+1 & 0\\
+\end{pmatrix}
+\quad\text{ and }\quad 
+t =
+\begin{pmatrix}
+1 & 1\\
+0 & 1\\
+\end{pmatrix}.
+\] 
+It is clear that $\SL_2(\Z)$ can also be generated by the matrices
+\[
+s =
+\begin{pmatrix}
+0 & -1\\
+1 & 0\\
+\end{pmatrix}
+\quad\text{ and }\quad 
+ts =
+\begin{pmatrix}
+1 & -1\\
+1 & 0\\
+\end{pmatrix},
+\] 
+which implies $\mathrm{PSL}_2(\Z)$ is generated by the cosets of the matrices $s$ and $ts$.
 \end{solution}
-
-
-
 
 
 \subsection{\textsection8. Canonical decomposition and Lagrange’s theorem}
@@ -1944,8 +1972,23 @@ $\neg$ Define an equivalence relation $\sim$ on $\SL_2(\Z)$ by letting $A\sim A\
 does it follows that $G_1\cong G_2$. Give a proof or a counterexample.
 \end{problem}
 \begin{solution}
-	Take $H=C_3$, the cyclic group of order $3$. Take $G_1=D_6$ and $G_2=C_6$, then one sees both $G_1/H$ and  $G_2/H$ are $C_2$, but obviously $G_1$ and $G_2$ are not isomorphic, one being abelian while the other is not.
+	Take $H=C_3$, the cyclic group of order $3$. Take $G_1=D_6$ and $G_2=C_6$, then one sees both $G_1/H$ and  $G_2/H$ are $C_2$. But obviously $G_1$ and $G_2$ are not isomorphic, one being abelian while the other is not.
 \end{solution}
+
+\begin{problem}[8.2]
+$\neg$ Extend Example 8.6 as follows. Suppose $G$ is a group, and $H\subseteq G$ is a subgroup of index 2: that is, such that there are precisely two (say, left) cosets of $H$ in $G$. Prove that $H$ is normal in $G$. [9.11, IV.1.16]
+\end{problem}
+\begin{solution}
+Since $[G/H]=2$, there must be $G/H=\{H,G-H\}$. For any $g\in G	$: 
+\begin{itemize}
+	\item if $g\in H$, then $gH=Hg=H$;
+	\item if $g\in G-H$, then $gH\ne H$ and $Hg\ne H$. Thus we have $gH=Hg=G-H$.
+\end{itemize}
+To sum up, $gH=Hg$ follows for all $g\in G$, which implies $H$ is normal in $G$.
+\end{solution}
+
+
+
 \subsection{\textsection9. Group actions}
 
 \subsection{\textsection10. Group objects in categories}

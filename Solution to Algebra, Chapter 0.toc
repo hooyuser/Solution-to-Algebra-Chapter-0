@@ -12,6 +12,6 @@
 \contentsline {subsection}{\textsection 5. Free groups}{18}{section*.13}
 \contentsline {subsection}{\textsection 6. Subgroups}{27}{section*.14}
 \contentsline {subsection}{\textsection 7. Quotient groups}{35}{section*.15}
-\contentsline {subsection}{\textsection 8. Canonical decomposition and Lagrange’s theorem}{36}{section*.16}
+\contentsline {subsection}{\textsection 8. Canonical decomposition and Lagrange’s theorem}{37}{section*.16}
 \contentsline {subsection}{\textsection 9. Group actions}{37}{section*.17}
 \contentsline {subsection}{\textsection 10. Group objects in categories}{37}{section*.18}
