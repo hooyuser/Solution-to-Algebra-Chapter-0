@@ -2,16 +2,19 @@
 \contentsline {subsection}{\textsection 1. Naive Set Theory}{1}{section*.3}
 \contentsline {subsection}{\textsection 2. Functions between sets}{2}{section*.4}
 \contentsline {subsection}{\textsection 3. Categories}{2}{section*.5}
-\contentsline {subsection}{\textsection 4. Morphisms}{2}{section*.6}
+\contentsline {subsection}{\textsection 4. Morphisms}{3}{section*.6}
 \contentsline {subsection}{\textsection 5. Universal properties}{3}{section*.7}
-\contentsline {section}{Chapter II.\hskip 1em\relax Groups, first encounter}{3}{section*.8}
-\contentsline {subsection}{\textsection 1. Definition of group}{3}{section*.9}
-\contentsline {subsection}{\textsection 2. Examples of groups}{4}{section*.10}
+\contentsline {section}{Chapter II.\hskip 1em\relax Groups, first encounter}{4}{section*.8}
+\contentsline {subsection}{\textsection 1. Definition of group}{4}{section*.9}
+\contentsline {subsection}{\textsection 2. Examples of groups}{5}{section*.10}
 \contentsline {subsection}{\textsection 3. The category $\mathsf {Grp}$}{8}{section*.11}
-\contentsline {subsection}{\textsection 4. Group homomorphisms}{13}{section*.12}
-\contentsline {subsection}{\textsection 5. Free groups}{18}{section*.13}
-\contentsline {subsection}{\textsection 6. Subgroups}{27}{section*.14}
+\contentsline {subsection}{\textsection 4. Group homomorphisms}{14}{section*.12}
+\contentsline {subsection}{\textsection 5. Free groups}{19}{section*.13}
+\contentsline {subsection}{\textsection 6. Subgroups}{28}{section*.14}
 \contentsline {subsection}{\textsection 7. Quotient groups}{35}{section*.15}
-\contentsline {subsection}{\textsection 8. Canonical decomposition and Lagrange’s theorem}{37}{section*.16}
-\contentsline {subsection}{\textsection 9. Group actions}{37}{section*.17}
-\contentsline {subsection}{\textsection 10. Group objects in categories}{37}{section*.18}
+\contentsline {subsection}{\textsection 8. Canonical decomposition and Lagrange's theorem}{38}{section*.16}
+\contentsline {subsection}{\textsection 9. Group actions}{39}{section*.17}
+\contentsline {subsection}{\textsection 10. Group objects in categories}{39}{section*.18}
+\contentsline {section}{Chapter III\hskip 1em\relax Chapter Rings and modules}{39}{section*.19}
+\contentsline {subsection}{\textsection 1. Definition of ring}{39}{section*.20}
+\contentsline {subsection}{\textsection 2. The category $\mathsf {Ring}$}{46}{section*.21}

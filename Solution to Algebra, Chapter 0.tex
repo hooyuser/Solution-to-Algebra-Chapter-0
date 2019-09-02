@@ -114,6 +114,24 @@ and itself? [\textsection II.2.1]
 	Thus we get the full construction of $\mathsf{C}^{op}$.
 \end{solution}
 
+\begin{problem}[3.3]
+	$\vartriangleright$ Formulate precisely what it means to say that $1_a$ is an identity with respect to composition in Example 3.3, and prove this assertion. [\textsection3.2]
+\end{problem}
+\begin{solution}
+	Suppose $S$ is a set, and $\sim$ is a relation on $S$ satisfying the reflexive and transitive property. Then we can encode this data into a category $\mathsf{C}$:
+	\begin{itemize}
+		\item Objects: the elements of $S$;
+		\item Morphisms: if $a, b$ are objects (that is: if $a, b \in S$) then let $\Hom(a, b)$ be the set consisting of the element $(a, b) \in S \times S$ if $a \sim b$, and $\Hom(a, b) = \varnothing$.
+		otherwise.
+	\end{itemize}
+    Given the composition of two morphisms
+	\begin{align*}
+		\Hom_\mathsf{C}(A,B) \times\Hom_\mathsf{C}(B,C)&\longrightarrow\Hom_\mathsf{C}(A,C)\\
+		(a,b)\circ(b,c)&\longmapsto(a,c)
+	\end{align*}
+	we are asked to check $1_a = (a, a)$ is an identity with respect
+	to this composition.
+\end{solution}
 \subsection{\textsection4. Morphisms}
 \begin{problem}[4.2]
 	In Example 3.3 we have seen how to construct a category from a set endowed	with a relation, provided this latter is reflexive and transitive. For what types of relations is the corresponding category a groupoid (cf. Example 4.6)? [\textsection4.1]
@@ -128,7 +146,7 @@ and itself? [\textsection II.2.1]
     	\left\{
     	\begin{aligned}
     	&(a, b)\in S\times S &\text{ if } a\sim b\\	
-    	& \emptyset &\text{ otherwise}\\
+    	& \varnothing &\text{ otherwise}\\
     	\end{aligned}
     	\right.
     	\]
@@ -344,15 +362,15 @@ is an element of order $d$ in $S_n$.
 \end{problem}
 \begin{solution}
 	\begin{itemize}
-		\item According to Exercise 2.13,
+		\item Since $2m+n$ is an odd integer, $\gcd(2m+ n, 2n) = 1$ is actually equivalent to $\gcd(2m+ n, n) = 1$. According to Exercise 2.13,
 		\[
 		\gcd(m, n) = 1\implies am+bn=1\implies \frac{a}{2}(2m+n)+\left(b-\frac{a}{2}\right)n=1.
 		\]
-		If $a$ is even, we have shown $\gcd(2m+ n, 2n) = 1$. Otherwise we can let $a'=a+n$ be an even integer and $b'=b-m$. Then it holds that
+		If $a$ is even, we have shown $\gcd(2m+ n, n) = 1$. Otherwise we can let $a'=a+n$ be an even integer and $b'=b-m$. Then it holds that
 		\[
 		\frac{a'}{2}(2m+n)+\left(b'-\frac{a'}{2}\right)n=1,
 		\]
-		which also indicates $\gcd(2m+ n, 2n) = 1$.
+		which also implies $\gcd(2m+ n, n) = 1$.
 		\item If $\gcd(r, 2n) = 1$, then $r$ must be an odd integer and accordingly
 		\[
 		\gcd(2r+2n, 4n) = 1\implies a(2r+2n)+b(4n)=1\implies 4a \frac{r+n}{2}+4bn=1,
@@ -533,14 +551,15 @@ is an element of order $d$ in $S_n$.
 	\varphi((n_1,f_1(x))+(n_2,f_2(x)))&=\varphi((n_1+n_2,f_1(x)+f_2(x)))\\
 	&=(n_1+n_2)+x(f_1(x)+f_2(x))\\
 	&=(n_1+xf_1(x))+(n_2+xf_2(x))\\
-	&=\varphi((n_1,f_1(x)))+\varphi((n_2,f_2(x))).
+	&=\varphi(n_1,f_1(x))+\varphi(n_2,f_2(x)).
 	\end{aligned}
 	\]
 	Secondly, we are to show $\varphi$ is a monomorphism. It follows by
 	\[
-	\varphi((n,f(x)))=n+xf(x)=0\implies n=0,\;f(x)=0\implies \ker\varphi=\{(0,0)\}.
+	\varphi(n,f(x))=n+xf(x)=0\implies n=0,\;f(x)=0\implies \ker\varphi=\{(0,0)\}.
 	\]
-	Lastly, since the cardinal numbers of both $\mathbb{Z}\times\mathbb{Z}[x]$ and $\mathbb{Z}[x]$ are $\aleph_0$, $\varphi$ is indeed an isomorphism. Therefore, as a counterexample we have $\mathbb{Z}[x]\cong\mathbb{Z}\times\mathbb{Z}[x]$.
+	Lastly, since given any $f(x)=\sum_{n\ge0}a_nx^n\in\mathbb{Z}[x]$ we have $$\varphi\left(a_0,\sum_{n\ge1}a_nx^{n-1}\right)=a_0+\sum_{n\ge1}a_nx^n=f(x),$$ 
+	we claim $\varphi$ is surjective and indeed an isomorphism. Therefore, as a counterexample we have $\mathbb{Z}[x]\cong\mathbb{Z}\times\mathbb{Z}[x]$ where $\mathbb{Z}$ is non-trivial.
 \end{solution}
 
 
@@ -1009,7 +1028,7 @@ Since  $|C_{m}\times C_n|= |C_{mn}|=mn$, we can conclude $\varphi$ is an isomorp
 
 
 \begin{problem}[5.2]
-	Since trivial groups $T$ are initial in $\Grp$, one may be led to think that $(e,T)$ should be initial in $\mathscr{F}^A$, for every $A$: $e$ would be defined by sending every element of $A$ to the (only) element in $T$ ; and for any other group $G$, there is a unique homomorphism $T\rightarrow G$. Explain why $(e, T)$ is not initial in $\mathscr{F}^A$ (unless $A =\emptyset$).
+	Since trivial groups $T$ are initial in $\Grp$, one may be led to think that $(e,T)$ should be initial in $\mathscr{F}^A$, for every $A$: $e$ would be defined by sending every element of $A$ to the (only) element in $T$ ; and for any other group $G$, there is a unique homomorphism $T\rightarrow G$. Explain why $(e, T)$ is not initial in $\mathscr{F}^A$ (unless $A =\varnothing$).
 \end{problem}
 \begin{solution}
 	Let $G=C_2=\{[0]_2,[1]_2\}$. Note that $\varphi\circ e(A)$ must be the trivial subgroup $\{[0]_2\}$. If $x\in A$ and $j(x)=[1]_2$, we see $\varphi\circ e\ne j$ and the following diagram does not commute. 
@@ -1017,7 +1036,7 @@ Since  $|C_{m}\times C_n|= |C_{mn}|=mn$, we can conclude $\varphi$ is an isomorp
 		T\ar[r]^{\varphi} & G\\
 		A\ar[ru]_{j}\ar[u]^{e}  
 	}\]
-	That implies $(e, T)$ is not initial in $\mathscr{F}^A$ unless $A =\emptyset$.
+	That implies $(e, T)$ is not initial in $\mathscr{F}^A$ unless $A =\varnothing$.
 \end{solution}
 
 
@@ -1299,11 +1318,11 @@ It is plain to check that $\varphi$ is a homomorphism
 =&(a_1,b_1,a_2,b_2,\cdots)+(a_1',b_1',a_2',b_2',\cdots)\\
 =&\varphi[((a_1,a_2,\cdots),(b_1,b_2,\cdots))]+\varphi[((a_1',a_2',\cdots),(b_1',b_2',\cdots))].
 \end{align*}
-Since $\ker\varphi=\{(0,0,\cdots)\}$ and $|G\times G|=|G|=\aleph_0$, we can conclude that $\varphi$ is an isomorphism and accordingly $G\times G\cong G$.
+Since $\ker\varphi=\{(0,0,\cdots)\}$ and $\varphi(G\times G)=G$, we can conclude that $\varphi$ is an isomorphism and accordingly $G\times G\cong G$.
 \end{solution}
 
 
-\hypertarget{Exercise 5.10}{}
+\hypertarget{Exercise II.5.10}{}
 \begin{problem}[5.10]
 $\neg$ Let $F = F^{ab}(A)$.
 \begin{itemize}
@@ -1338,9 +1357,9 @@ $\neg$ Let $F = F^{ab}(A)$.
 
 
 \subsection{\textsection6. Subgroups} 
-
+\hypertarget{Exercise II.6.1}{}
 \begin{problem}[6.1]
-$\neg$ (If you know about matrices.) The group of invertible $n \times n$ matrices with entries in R is denoted $\GL_n(\R)$ (Example 1.5). Similarly, $\GL_n(\C)$ denotes the group of $n \times n$ invertible matrices with complex entries. Consider the following sets of
+$\neg$ (If you know about matrices.) The group of invertible $n \times n$ matrices with entries in $\R$ is denoted $\GL_n(\R)$ (Example 1.5). Similarly, $\GL_n(\C)$ denotes the group of $n \times n$ invertible matrices with complex entries. Consider the following sets of
 matrices:
 \begin{itemize}
 	\item $\SL_n(\R) = \{M \in \GL_n(\R) | \det(M) = 1\}$;
@@ -1620,7 +1639,8 @@ a_2=\frac{p_2}{q_2}\in \Q,(p_2,q_2)=1 ,
 \end{align*}	
 there exists $r=\frac{1}{q_1q_2}\in \Q$ such that $\langle a_1,a_2\rangle\le\langle r_1\rangle$. Then for some $a_3$ we have
 $\langle a_1,a_2,a_3\rangle\le\langle r_1,a_3\rangle\le\langle r_2\rangle$. In general, let's set $B_n=\{a_1,a_2,\cdots,a_n\}$. If $\langle B_n\rangle\le\langle r_{n-1}\rangle$. we have $\langle B_{n+1}\rangle=\langle B_n,a_{n+1}\rangle\le\langle r_{n-1},a_{n+1}\rangle\le\langle r_n\rangle$. By induction we can prove $\langle a_1,a_2,\cdots,a_n\rangle\le\langle r_{n-1}\rangle
-$ for $n\in\N_+$. Since the subgroups of a cyclic group are also cyclic, we see finitely generated subgroup $\langle a_1,a_2,\cdots,a_n\rangle$ is cyclic.	 
+$ for $n\in\N_+$. Since the subgroups of a cyclic group are also cyclic, we see finitely generated subgroup $\langle a_1,a_2,\cdots,a_n\rangle\le\mathbb{Q}$ is cyclic.\\
+Supposing $\mathbb{Q}$ is finitely generated, $\mathbb{Q}$ must be a cyclic group, which contradicts the fact. Thus we show $\mathbb{Q}$ is not finitely generated.
 \end{solution}	
 	
 \hypertarget{Exercise 6.10}{}	
@@ -1779,7 +1799,7 @@ We have shown that we can obtain the identity $I_2$
 by multiplying $m$ by matrices in $H$, that is, $m$ can be represented as a product of matrices in $H$. Thus we can conclude $\SL_2(\Z)$ is generated by $s$ and $t$.
 \end{solution}		
 
-\hypertarget{Exercise 6.13}{}
+\hypertarget{Exercise II.6.13}{}
 \begin{problem}[6.13]	
 $\neg$ Draw and compare the lattices of subgroups of $C_2\times C_2$ and $C_4$. Drawthe lattice of subgroups of $S_3$, and compare it with the one for $C_6$. [7.1]
 \end{problem}
@@ -1859,7 +1879,7 @@ Lattices of subgroups $C_2\times C_2$ and $C_4$ are drawn as follows:
 
 \subsection{\textsection7. Quotient groups}
 \begin{problem}[7.1]
-$\vartriangleright$ List all subgroups of $S_3$ (cf. \hyperlink{Exercise 6.13}{Exercise 6.13}) and determine which subgroups are normal and which are not normal. [\textsection7.1]
+$\vartriangleright$ List all subgroups of $S_3$ (cf. \hyperlink{Exercise II.6.13}{Exercise II.6.13}) and determine which subgroups are normal and which are not normal. [\textsection7.1]
 \end{problem}
 \begin{solution}
 	The subgroups of $S_3$ are $\{(1)\},\{(1),(12)\},\{(1),(13)\},\{(1),(23)\},\{(1),(123),(132)\}$ and $S_3$. We can check that $\{(1)\},\{(1),(123),(132)\},S_3$ are normal subgroups while others are not.
@@ -1897,7 +1917,7 @@ Hence we have $\forall g\in G,\ gNg^{-1}=N$.
 
 
 \begin{problem}[7.4]
-Prove that the relation defined in \hyperlink{Exercise 5.10}{Exercise 5.10} on a free abelian group $F =F^{ab}(A)$ is compatible with the group structure. Determine the quotient $F/\sim$ as a better known group.
+Prove that the relation defined in \hyperlink{Exercise II.5.10}{Exercise II.5.10} on a free abelian group $F =F^{ab}(A)$ is compatible with the group structure. Determine the quotient $F/\sim$ as a better known group.
 \end{problem}
 \begin{solution}
 For all $f,f',h\in F$,
@@ -1963,16 +1983,54 @@ ts =
 which implies $\mathrm{PSL}_2(\Z)$ is generated by the cosets of the matrices $s$ and $ts$.
 \end{solution}
 
+\begin{problem}[7.6]
+Let $G$ be a group, and let $n$ be a positive integer. Consider the relation
+\[
+a\sim b\iff(\exists g\in G)ab^{-1}=g^n.
+\]
+\begin{itemize}
+	\item Show that in general $\sim$ is not an equivalence relation.
+	\item Prove that $\sim$ is an equivalence relation if $G$ is commutative, and determine the corresponding subgroup of $G$.
+\end{itemize}
 
-\subsection{\textsection8. Canonical decomposition and Lagrange’s theorem}
-\begin{problem}[8.1]If a group $H$ may be realized as a subgroup of two groups $G_1$ and $G_2$, and
+\end{problem}
+\begin{solution}
+\begin{itemize}
+	\item Let $G$ be the symmetric group $S_4$ and let $n=2$. We can check that
+	\begin{align*}
+		&(3\ 4)(2\ 3)^{-1}=(2\ 4\ 3)=(2\ 3\ 4)^2\implies(3\ 4)\sim (2\ 3)\\
+		&(2\ 3)(1\ 2)^{-1}=(1\ 3\ 2)=(1\ 2\ 3)^2\implies(2\ 3)\sim (1\ 2)
+	\end{align*}
+	but $(3\ 4)(1\ 2)^{-1}=(1\ 2)(3\ 4)$ is not the square of any element in $S_4$.
+	\item Suppose that $G$ is commutative. $aa^{-1}=e^n$ implies $\sim$ is reflexive. Since
+	\[
+	a\sim b\implies ab^{-1}=g^n\;(g\in G)\implies b^{-1}a=g^{-n}\;(g^{-1}\in G)\implies b\sim a,
+	\]  
+	$\sim$ is symmetric. Since $G$ is commutative, we have
+	\begin{align*}
+		&a\sim b,b\sim c\implies ab^{-1}=g_1^n,bc^{-1}=g_2^n\;(g_1,g_2\in G)\\
+		\implies& ac^{-1}=ab^{-1}bc^{-1}=g_1^ng_2^n=(g_1g_2)^n\;(g_1g_2\in G)\implies a\sim c,
+	\end{align*}
+	which means $\sim$ is transitive. Thus we show that $\sim$ is an equivalence relation. Since
+	\[
+	a\sim b\implies ab^{-1}=g^n\implies ga(gb)^{-1}=(ag)(bg)^{-1}=g^n\implies ga\sim gb,ag\sim bg,
+	\]
+	we see $\sim$ is compatible with the group $G$ and the equivalence class of the identity $H=\{g^n|g\in G\}$ is a subgroup of $G$.
+\end{itemize}
+\end{solution}
+
+
+
+\subsection{\textsection8. Canonical decomposition and Lagrange's theorem}
+\begin{problem}[8.1]
+	If a group $H$ may be realized as a subgroup of two groups $G_1$ and $G_2$, and
 \[
 	\frac{G_1}{H}\cong \frac{G_2}{H},
 \]
 does it follows that $G_1\cong G_2$. Give a proof or a counterexample.
 \end{problem}
 \begin{solution}
-	Take $H=C_3$, the cyclic group of order $3$. Take $G_1=D_6$ and $G_2=C_6$, then one sees both $G_1/H$ and  $G_2/H$ are $C_2$. But obviously $G_1$ and $G_2$ are not isomorphic, one being abelian while the other is not.
+	A counterexample is given as follows. Take $H=C_3$, the cyclic group of order $3$. Take $G_1=D_6$ and $G_2=C_6$, then one sees both $G_1/H$ and  $G_2/H$ are $C_2$. But obviously $G_1$ and $G_2$ are not isomorphic, one being abelian while the other is not.
 \end{solution}
 
 \begin{problem}[8.2]
@@ -1984,7 +2042,7 @@ Since $[G/H]=2$, there must be $G/H=\{H,G-H\}$. For any $g\in G	$:
 	\item if $g\in H$, then $gH=Hg=H$;
 	\item if $g\in G-H$, then $gH\ne H$ and $Hg\ne H$. Thus we have $gH=Hg=G-H$.
 \end{itemize}
-To sum up, $gH=Hg$ follows for all $g\in G$, which implies $H$ is normal in $G$.
+In either case $gH=Hg$ holds for all $g\in G$, which implies $H$ is normal in $G$.
 \end{solution}
 
 
@@ -1992,7 +2050,393 @@ To sum up, $gH=Hg$ follows for all $g\in G$, which implies $H$ is normal in $G$.
 \subsection{\textsection9. Group actions}
 
 \subsection{\textsection10. Group objects in categories}
+
+\section{Chapter III\quad Chapter Rings and modules}
+
+\subsection{\textsection1. Definition of ring}
+\begin{problem}[1.1]
+	$\vartriangleright$ Prove that if $0 = 1$ in a ring $R$, then $R$ is a zero-ring. [\textsection1.2]
+\end{problem}
+\begin{solution}
+	For any $x$ in the ring $R$, we have
+	\[
+	1\cdot x=x,\qquad 0\cdot x=0.
+	\]
+	Since $0 = 1$ we see that $x=0$, which implies $R$ is a ring with only one element $0$.
+\end{solution}
+
+\begin{problem}[1.2]
+	$\neg$ Let $S$ be a set, and define operations on the power set $\mathscr{P}(S)$ of $S$ by setting $\forall A,B \in \mathscr{P}(S)$
+	\[
+	A+B :=(A \cup B) \backslash(A \cap B) \quad, \quad A \cdot B=A \cap B
+	\]
+	Prove that $(\mathscr{P}(S),+,\cdot)$ is a commutative ring. [2.3, 3.15]
+\end{problem}
+\begin{solution}
+	First, we need to check that $(\mathscr{P}(S),+)$ is an abelian group:
+	\begin{itemize}
+		\item associativity:	
+		\begin{align*}
+		&\hspace{1em}(A+B)+C\\
+		&=((A \cup B) \backslash(A \cap B))+C\\
+	    &=((A \cup B) \cap(A^C \cup B^C))+C\\
+	    &=(A\cap(A^C \cup B^C) )\cup (B\cap(A^C \cup B^C)) +C\\
+	    &=(A \cap B^C) \cup(A^C \cap B)+C\\
+	    &=(((A \cap B^C) \cup(A^C \cap B)) \cap C^C) \cup(((A \cap B^C) \cup(A^C \cap B))^C \cap C)\\
+	    &=((A \cap B^C\cap C^C )\cup(A^C \cap B\cap C^C) ) \cup((A^C \cup B) \cap(A\cup B^C)\cap C)\\
+	    &=((A \cap B^C\cap C^C )\cup(A^C \cap B\cap C^C) ) \cup((A^C\cap B^C) \cup( A\cap B) \cap C)\\
+	    &=(A \cap B^C\cap C^C )\cup(A^C \cap B\cap C^C)  \cup(A^C\cap B^C\cap C) \cup( A\cap B\cap C) \\
+	    &=(A \cap (B \cap C) \cup(B^C \cap C^C)) \cup((A^C \cap B \cap C^C) \cup (A^C \cap B^C \cap C))\\
+	    &=(A \cap (B^C \cup C) \cap(B \cup C^C)) \cup((A^C \cap B \cap C^C) \cup (A^C \cap B^C \cap C))\\
+	    &=(A \cap ((B \cap C^C) \cup(B^C \cap C))^C) \cup(A^C \cap ((B \cap C^C) \cup(B^C \cap C)))\\
+	    &=A+((B \cap C^C) \cup(B^C \cap C))\\
+	    &=A+(B+C);
+		\end{align*}
+		\item commutativity:
+		\[
+		A+B =(A \cup B) \backslash(A \cap B)=(B \cup A) \backslash(B \cap A)= B+A;
+		\]
+		\item additive identity: the additive identity is $\varnothing$ since
+		\[
+		A+\varnothing=(A \cup \varnothing) \backslash(A \cap \varnothing)=A; \backslash\varnothing=A
+		\] 
+		\item inverse: the inverse of some set $A$ is just itself since
+		\[
+		A+A=(A \cup A) \backslash(A \cap A)=A\backslash A=\varnothing.
+		\]
+	\end{itemize}
+	Then we have to show that $(\mathscr{P}(S),\cdot)$ is a commutative monoid, which clearly holds with the multiplicative identity $S$. What is left to show is the distributive properties and the check is straightforward.
+	\begin{align*}
+	&\hspace{1em}(A+B)\cdot C\\
+	&=((A \cap B^C) \cup(A^C \cap B))\cap C\\
+	&=(A \cap B^C\cap C) \cup(A^C \cap B\cap C)\\
+	&=(A\cap C \cap (B^C\cup C^C)) \cup((A^C\cup C^C) \cap (B\cap C))\\
+	&=(A\cap C \cap (B\cap C)^C) \cup((A\cap C)^C \cap (B\cap C))\\
+	&=A\cdot C+B\cdot C.
+	\end{align*}
+\end{solution}
+
+\begin{problem}[1.3]
+	$\neg$ Let $R$ be a ring, and let $S$ be any set. Explain how to endow the set $R^S$ of set-functions $S\to R$ of two operations $+$, $\cdot$ so as to make $R^S$ into a ring, such that $R^S$ is just a copy of $R$ if $S$ is a sigleton. [2.3]
+\end{problem}
+\begin{solution}
+	To make $(R^S,+,\cdot )$ a ring , for all $f,g\in R^S$ we define addition and multiplication as
+	\begin{align*}
+	f+g&:S\longrightarrow R,\quad x\longmapsto f(x)+g(x)\\
+	f\cdot g&:S\longrightarrow R,\quad x\longmapsto f(x)\cdot g(x).
+	\end{align*}
+\end{solution}
+
+\begin{problem}[1.4]
+	$\vartriangleright$ The set of $n\times n$ matrices with entries in a ring $R$ isdenoted $\mathcal{M}_n(R)$. Prove that componentwise addition and matrixmultiplication makes $\mathcal{M}_n(R)$ into a ring, for any ring $R$. The notation $\mathfrak{gl}_n(R)$ is also commonly used, especially $R=\mathbb{R}$ or $\mathbb{C}$ (although this indicates one is considering them as \emph{Lie algebras}) in parallel with the analogous notation for the corresponding groups of units, cf. \hyperlink{Exercise II.6.1}{Exercise II.6.1}. In
+	fact, the parallel continues with the definition of the following sets of matrices:
+	\begin{itemize}
+		\item $\mathfrak{sl}_n(\mathbb{R}) = \{M \in \mathfrak{gl}_n(\mathbb{R}) | \mathrm{tr}(M) = 0\}$;
+		\item $\mathfrak{sl}_n(\mathbb{C}) = \{M \in \mathfrak{gl}_n(\mathbb{C}) | \mathrm{tr}(M) = 0\}$;
+		\item $\mathfrak{so}_n(\mathbb{R}) = \{M \in \mathfrak{sl}_n(\mathbb{R}) |M +M^t = 0\}$;
+		\item $\mathfrak{su}_n(\mathbb{C}) = \{M \in \mathfrak{sl}_n(\mathbb{C}) |M +M^\dag = 0\}$.
+	\end{itemize}
+	Here $\mathrm{tr}(M)$ is the trace of $M$, that is, the sum of its diagonal entries. The other notation matches the notation used in Exercise II.6.1. Can we make rings of these sets, by endowing them of ordinary addition and multiplication of matrices? (These sets are all Lie algebras, cf. Exercise VI.1.4.) [\textsection1.2, 2.4, 5.9, VI.1.2, VI.1.4]
+\end{problem}
+\begin{solution}
+	It is plain to show $\mathcal{M}_n(R)$ is a ring according to the definition. For multiplicative associativity, it follows that for all $A,B,C\in\mathcal{M}_n(R)$,
+	\begin{align*}
+	&\hspace{1em}((A B) C)_{\alpha, \delta}\\
+	&=\sum_{i=1}^{n}(A B)_{\alpha, i} c_{i, \delta}\\
+	&=\sum_{i=1}^{n}\left(\sum_{j=1}^{n} a_{\alpha, j} b_{j, i}\right) c_{i, \delta}\\
+	&=\sum_{i=1}^{n} \sum_{j=1}^{n}\left(a_{\alpha, j} b_{j, i}\right) c_{i, \delta}\\
+	&=\sum_{j=1}^{n} \sum_{n=1}^{n} a_{\alpha, j}\left(b_{j, i} c_{i, \delta}\right)\\
+	&=\sum_{j=1}^{n} a_{\alpha, j}\left(\sum_{i=1}^{n} b_{j, i} c_{i, \delta}\right)\\
+	&=\sum_{j=1}^{n} a_{\alpha, j}(B C)_{j, \delta}\\
+	&=(A(B C))_{\alpha, \delta}.
+	\end{align*}
+	Under the ordinary addition and multiplication of matrices, $\mathfrak{sl}_n(\mathbb{R}),\mathfrak{sl}_n(\mathbb{C}),\mathfrak{so}_n(\mathbb{R}),\mathfrak{su}_n(\mathbb{C})$ are not rings. In fact, they are not closed under the multiplication.
+\end{solution} 
+
+\begin{problem}[1.5]
+	Let $R$ be a ring. If $a, b$ are zero-divisors in $R$, is $a+b$ necessarily a zero-divisor?
+\end{problem}
+\begin{solution}
+	That is not true. Let's take $\mathbb{Z}/6\mathbb{Z}$ as an counterexample. Though both $[2]_6$ and $[3]_6$ are zero-divisors, their sum $[5]_6$ is not a zero-divisor.
+\end{solution}
+
+\begin{problem}[1.6]
+	$\neg$ An element $a$ of a ring $R$ is \emph{nilpotent} if $a^n = 0$ for some $n$.
+	\begin{enumerate}
+	\item Prove that if $a$ and $b$ are nilpotent in $R$ and $ab = ba$, then $a+b$ is also nilpotent.
+	\item Is the hypothesis $ab = ba$ in the previous statement necessary for its conclusion to hold?
+	\end{enumerate}
+[3.12]
+\end{problem}
+\begin{solution}
+	\begin{enumerate}
+		\item Assume that $a^n=b^m=0$ and let $k=2\max\{n,m\}$. If $ab = ba$, we can get
+		\[
+		(a+b)^k=\sum_{p=0}^{\tfrac{k}{2}}\binom{k}{p}a^kb^{k-p}+\sum_{p=\tfrac{k}{2}+1}^{k}\binom{k}{p}a^kb^{k-p}=\sum_{p=0}^{\tfrac{k}{2}}\binom{k}{p}a^k\cdot 0+\sum_{p=\tfrac{k}{2}+1}^{k}\binom{k}{p}0\cdot b^{k-p}=0,
+		\]
+		which means $a+b$ is also nilpotent.
+		\item The hypothesis $ab = ba$ is necessary. A counterexample can be found in the ring $\mathfrak{gl}_2(\mathbb{R})$. Let
+		\[
+		a=\left(
+		\begin{matrix}	
+		0 & 1\\	
+		0 & 0	
+		\end{matrix}
+		\right),\quad
+		b=\left(
+		\begin{matrix}	
+		0 & 0\\	
+		1 & 0	
+		\end{matrix}
+		\right)
+		\]
+		and then we have $a^2=b^2=0$. In other words, $a$ and $b$ are nilpotent. However, by diagonalization we see that
+		\[
+		(a+b)^n=
+		\left(
+		\begin{matrix}	
+		0 & 1\\	
+		1 & 0	
+		\end{matrix}
+		\right)^n
+		=\left(
+		\begin{matrix}	
+		-1 & 1\\	
+		1 & 1	
+		\end{matrix}
+		\right)
+		\left(
+		\begin{matrix}	
+		-1 & 0\\	
+		0 & 1	
+		\end{matrix}
+		\right)^n
+		\left(
+		\begin{matrix}	
+		-1 & 1\\	
+		1 & 1	
+		\end{matrix}
+		\right)^{-1}\ne 
+		\left(
+		\begin{matrix}	
+		0 & 0\\	
+		0 & 0	
+		\end{matrix}
+		\right).
+		\]
+		Thus in such case, $a+b$ is no longer nilpotent.
+	\end{enumerate}
+\end{solution}
+
+\begin{problem}[1.8]
+	Prove that $x = \pm1$ are the only solutions to the equation $x^2 = 1$ in an integral	domain. Find a ring in which the equation $x^2 = 1$ has more than 2 solutions.
+\end{problem}
+\begin{solution}
+	It clearly holds that $1\cdot1=1$ and $(-1)\cdot(-1)=((-1)\times(-1))1\cdot1=1$. That is to say,  $x = \pm1$ are the solutions to the equation $x^2 = 1$. Note that if there exists $x$ in an integral	domain such that $x^2=1$, then we have
+	\[
+	(x-1)\cdot(x+1)=x^2-1=0,
+	\]
+	which implies $x-1=0$ or $x+1=0$. Therefore, we can assert $x = \pm1$ are the solutions. In the ring $\mathbb{Z}/8\mathbb{Z}$, $[3]_8$ and $[5]_8$ are also the solutions to the equation $x^2 = 1$.
+\end{solution}
+
+\begin{problem}[1.10]
+	Let $R$ be a ring. Prove that if $a \in R$ is a right unit, and has two or more left-inverses, then $a$ is not a left-zero-divisor, and is a right-zero-divisor.
+\end{problem}
+\begin{solution}
+	Since $a \in R$ is a right unit, it cannot be a left-zero-divisor. Assume there exist two distinct elements $x,y\in R$ such that $xa=ya=1$ and it deduces $(y-x)a=0$. Thus we show that $a$ a right-zero-divisor.
+\end{solution}
+
+\begin{problem}[1.11]
+	Construct a field with 4 elements: as mentioned in the text, the underlying
+	abelian group will have to be $\mathbb{Z}/2\mathbb{Z}\times\mathbb{Z}/2\mathbb{Z}$; $(0, 0)$ will be the zero element, and (1, 1) will be the multiplicative identity. The question is what $(0, 1)\cdot(0, 1)$, $(0, 1)\cdot(1, 0)$, $(1, 0)\cdot(1, 0)$ must be, in order to get a field. [\textsection1.2, \textsection V.5.1]
+\end{problem}
+\begin{solution}
+	Define 
+	\[
+	(0, 1)\cdot(0, 1)=(0, 1),\quad (0, 1)\cdot(1, 0)=(0,0),\quad (1, 0)\cdot(1, 0)=(1, 0),
+	\]
+	and the the rest definition of multiplication will be determined uniquely according to field properties. For example, we have no alternatives but to define
+	\[
+	(0, 1)\cdot(1,1)=(0, 1)\cdot((0,1)+(1,0))=(0, 1)\cdot(0,1)+(0, 1)\cdot(1,0)=(0, 1)+(0,0)=(0,1).
+	\]
+	Then we can check $\mathbb{Z}/2\mathbb{Z}\times\mathbb{Z}/2\mathbb{Z}$ forms a field by definition. 
+\end{solution}
+
+\hypertarget{Exercise III.1.14}{}
+\begin{problem}[1.14]
+	$\vartriangleright$ Let $R$ be a ring, and let $f(x),g(x)\in R[x]$ be nonzero polynomials. Prove that 
+	\[
+	\deg(f(x) + g(x))\le\max(\deg(f(x)), \deg(g(x))).
+	\]
+	Assuming that $R$ is an integral domain, prove that	
+	\[
+	\deg(f(x)\cdot g(x)) = \deg(f(x)) + \deg(g(x)).
+	\] 
+	[\textsection1.3]
+\end{problem}
+\begin{solution}
+	Assume
+	\[
+	f(x)=\sum_{i \ge 0} a_{i} x^{i},\quad g(x)=\sum_{i \ge 0} b_{i} x^{i}, \quad a_i,b_i\in R
+	\]
+	and $n,m$ are respectively the
+	largest integers $p,q$ for which $a_p$, $b_q$ are non-zero. In others words, we have $a_n\ne 0$, $a_i=0$ for $i>n$ and $b_m\ne 0$, $b_i=0$ for $i>m$. Since
+	\[
+	f(x)+g(x)=\sum_{i \ge 0} (a_{i}+b_i) x^{i}=\sum_{i =0}^{\max\{n,m\}} (a_{i}+b_i) x^{i},
+	\]
+	we see that
+	\[
+	\deg(f(x) + g(x))\le\max\{n,m\}=\max(\deg(f(x)), \deg(g(x))).
+	\]
+	Now Suppose that $R$ is an integral domain. Noticing $a_n\ne 0$ and $b_m\ne 0$ implies $a_nb_m\ne 0$, we can see
+	\[
+	f(x) \cdot g(x) =\sum_{k \geq 0} \sum_{i+j=k} a_{i} b_{j} x^{i+j}=\sum_{k = 0}^{n+m} \sum_{i+j=k} a_{i} b_{j} x^{i+j}
+	\]
+	has a degree of $n+m$. That is,
+	\[
+	\deg(f(x)\cdot g(x)) = \deg(f(x)) + \deg(g(x)).
+	\]
+\end{solution}
+
+\begin{problem}[1.15]
+	$\vartriangleright$ Prove that $R[x]$ is an integral domain if and only if $R$ is an integral domain.	[\textsection1.3]
+\end{problem}
+\begin{solution}
+	Assume $R$ is an integral domain. \hyperlink{Exercise III.1.14}{Exercise III.1.14} tells us if $f(x)$, $g(x)\in R[x]$ are nonzero polynomials, we have 
+	\[
+	\deg(f(x)\cdot g(x)) = \deg(f(x)) + \deg(g(x)),
+	\]
+	which implies $f(x)\cdot g(x)$ is also nonzero polynomial. Thus we show $R[x]$ is a integral domain. 
 	
+	Conversely, assume $R[x]$ is an integral domain. Note that given any $a,b\in R$, they also belong to $R[x]$. Hence we obtain
+	\[
+	a\ne0,b\ne0\implies ab\ne0,
+	\]
+    which means $R$ is an integral domain.
+\end{solution}
+
+\begin{problem}[1.16]
+	Let $R$ be a ring, and consider the ring of power series $R[[x]]$ (cf. \textsection1.3).
+	\begin{enumerate}
+		\item Prove that a power series $a_0+a_1x+a_2x^2+\cdots$ is a unit in $R[[x]]$ if and only if	$a_0$ is a unit in $R$. What is the inverse of $1-x$ in $R[[x]]$?
+		\item Prove that $R[[x]]$ is an integral domain if and only if $R$ is.
+	\end{enumerate}
+\end{problem}
+\begin{solution}
+	\begin{enumerate}
+		\item If $a_0$ is a unit in $R$ then we can assume there exists $b_0\in R$ such that $a_0b_0=1$. Let 
+		\[
+		f(x)=\sum_{n \ge 0} a_{n} x^{n},\quad g(x)=\sum_{n \ge 0} b_{n} x^{n}, 
+		\]
+		where
+		\[
+		b_n = -b_0 \sum_{i=1}^n a_i b_{n-i},\quad n\ge1.
+		\]
+		Noticing that 
+		\[
+		a_0b_n= -a_0b_0 \sum_{i=1}^n a_i b_{n-i}=- \sum_{i=1}^n a_i b_{n-i},\quad n\ge1,
+		\]
+		we have
+		\begin{align*}
+		f(x)g(x)&=\sum_{n \ge 0}\sum_{i=0}^na_{n-i}b_{i}x^n\\
+		&=1+\sum_{n \ge 1}\sum_{i=0}^na_{i}b_{n-i}x^n\\
+		&=1+\sum_{n \ge 1}\left(a_0b_n+\sum_{i=1}^na_{i}b_{n-i}\right)x^n\\
+		&=1+\sum_{n \ge 1}\left(a_0b_n-a_0b_n\right)x^n\\
+		&=1.
+		\end{align*}
+		Hence we show $f(x)=a_0+a_1x+a_2x^2+\cdots$ is a unit.
+		
+		For the other direction, supposing $f(x)=a_0+a_1x+a_2x^2+\cdots$ is a unit, then there exists $g(x)=b_0+b_1x+b_2x^2+\cdots$ such that 
+		\[
+		f(x)g(x)=a_0b_0+\sum_{n \ge 1}\sum_{i=0}^na_{i}b_{n-i}x^n=1.
+		\]
+		By comparing the both sides of the equality we can find $a_0b_0=1$, which implies $a_0$ is a unit in $R$.
+		
+		We can check that the inverse of $1-x$ in $R[[x]]$ is $1+x+x^2+\cdots$ since
+		\[
+		(1-x)\sum_{i \ge 0}x^i=\sum_{i \ge 0}x^i-\sum_{i \ge 0}x^{i+1}=1.
+		\]
+		\item Suppose $R$ is an integral domain. If $f(x)$, $g(x)\in R[x]$ are nonzero polynomials, we can assume that
+		\[
+		f(x)=\sum_{i \ge 0} a_{i} x^{i},\quad g(x)=\sum_{i \ge 0} b_{i} x^{i}, \quad a_i,b_i\in R
+		\]
+		and that $n,m$ are respectively the smallest integers $p,q$ for which $a_p$, $b_q$ are non-zero. In others words, we have $a_n\ne 0$, $a_i=0$ for $i<n$ and $b_m\ne 0$, $b_i=0$ for $i<m$.  Noticing $a_n\ne 0$ and $b_m\ne 0$ implies $a_nb_m\ne 0$, we can see
+		\[
+		f(x) \cdot g(x) =\sum_{k \geq 0} \sum_{i+j=k} a_{i} b_{j} x^{i+j}= a_{n} b_{m} x^{n+m}+\sum_{k\ge n+m+1}\sum_{i+j=k} a_{i} b_{j} x^{i+j}\ne 0.
+		\]
+		Thus we show $R[[x]]$ is an integral domain.
+		
+			
+		Conversely, assume that $R[[x]]$ is an integral domain. Note that given any $a,b\in R$, they also belong to $R[[x]]$. Hence we obtain 
+		\[
+		a\ne0,b\ne0\implies ab\ne0,
+		\]
+		which means that $R$ is also an integral domain.
+	\end{enumerate}
+\end{solution}
+
+
+\subsection{\textsection2. The category $\mathsf{Ring}$}
+
+\begin{problem}[2.6]
+	Verify the ‘extension property’ of polynomial rings, stated in Example 2.3.
+	[\textsection2.2]
+\end{problem}
+\begin{solution}
+	Define the following ring homomorphisms 
+	\begin{align*}
+	\alpha:\ &R\longrightarrow S,\quad r\longmapsto \alpha(r)\\
+	\epsilon:\ &R\longrightarrow R[x],\quad r\longmapsto r,
+	\end{align*}
+	and functions
+	\begin{align*}
+	j:\ &\{s\}\longrightarrow R[x],\quad s\longmapsto x,\\
+	i:\ &\{s\}\longrightarrow S,\quad s\longmapsto s.	
+	\end{align*}
+	Assume that $s \in S$ is an element commuting with $\alpha(r)$ for all $r \in R$, we are to show that there exists a unique ring homomorphism $\overline{\alpha}: R[x]\to S$ such that the following diagram commutes.
+	\[\xymatrix{
+		R\ar@{->}[d]_{\epsilon} \ar@{->}[rd]^{\alpha}\\
+		R[x]\ar@{-->}[r]^{\exists!\overline{\alpha}} & S\\
+		\{s\}\ar@{^{(}->}[ru]_{i}\ar@{|->}[u]^{j}  
+	}\]
+	\textbf{Uniqueness}. If $\overline{\alpha}$ exists, then the postulated commutativity of the diagram means that for all $f(x)=\sum_{n \ge 0} a_{n}\in R[x]$, there must be
+	\[
+	\overline{\alpha}\left(f(x)\right)=\overline{\alpha}\left(\sum_{n \ge 0} a_{n} x^{n}\right)=\sum_{n \ge 0} \overline{\alpha}\left( a_n\right)\overline{\alpha}\left(x\right)^{n}=\sum_{n \ge 0} \alpha\left( a_n\right)s^{n}.
+	\]
+	That is, $\overline{\alpha}$ is unique. 
+	
+	\noindent\textbf{Existence}. The only choice is to define
+	\[
+	\overline{\alpha}:\ R[x]\longrightarrow S,\quad \sum_{n \ge 0} a_{n} x^{n}\longmapsto \sum_{n \ge 0} \alpha\left( a_n\right)s^{n}
+	\] 
+	and to check whether it is a ring homomorphism.
+	\begin{enumerate}
+		\item Preserving addition:
+		\begin{align*}
+		\overline{\alpha}\left(\sum_{n \ge 0} a_{n} x^{n}+\sum_{n \ge 0} b_{n} x^{n}\right)&=\overline{\alpha}\left(\sum_{n \ge 0}(a_{n}+b_{n})x^{n}\right)\\
+		&=\sum_{n \ge 0}\alpha\left(a_{n}+b_{n}\right)s^{n}\\
+		&=\sum_{n \ge 0}\alpha\left(a_{n}\right)s^{n}+\sum_{n \ge 0}\alpha\left(b_{n}\right)s^{n}\\
+		&=\overline{\alpha}\left(\sum_{n \ge 0} a_{n} x^{n}\right)+\overline{\alpha}\left(\sum_{n \ge 0} b_{n} x^{n}\right).
+		\end{align*}
+		\item Preserving multiplication:
+		\begin{align*}
+		\overline{\alpha}\left(\sum_{n \ge 0} a_{n} x^{n}\sum_{n \ge 0} b_{n} x^{n}\right)&=\overline{\alpha}\left(\sum_{n \ge 0} \sum_{i+j=n} a_{i} b_{j} x^{n}\right)\\
+		&=\sum_{n \ge 0}\alpha\left(\sum_{i+j=n} a_{i} b_{j}\right)s^{n}\\
+		&=\sum_{n \ge 0}\sum_{i+j=n}\alpha\left(a_{i} \right)s^{i}\alpha\left( b_{j}\right)s^{j}\\
+		&=\left(\sum_{n \ge 0}\alpha\left(a_{n}\right)s^{n}\right)\left(\sum_{n \ge 0}\alpha\left(b_{n}\right)s^{n}\right)\\
+		&=\overline{\alpha}\left(\sum_{n \ge 0} a_{n} x^{n}\right)\overline{\alpha}\left(\sum_{n \ge 0} b_{n} x^{n}\right).
+		\end{align*}
+		\item Preserving identity element:
+		\begin{align*}
+		\overline{\alpha}(1_R)=\alpha(1_R)=1_S.
+		\end{align*}
+	\end{enumerate}
+	Integrating the two parts we finally conclude there exists a unique ring homomorphism $\overline{\alpha}$ such that the diagram commutes.
+	
+\end{solution}
+
+
+
 \bibliographystyle{plain}
 \bibliography{mybibtex}
 
