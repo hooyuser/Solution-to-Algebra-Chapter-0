@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.3.16)  3 SEP 2019 01:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.3.16)  4 SEP 2019 02:12
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -124,6 +124,10 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen119
 \Gm@dimlist=\toks20
 )
+(d:/texlive/2018/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks21
+)
 (d:/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -160,14 +164,14 @@ Loading kernel: messages; fonts; allocations: state,
 \D@c=\dimen125
 \L@c=\dimen126
 \R@c=\dimen127
-\Edge@c=\toks21
+\Edge@c=\toks22
 \X@p=\dimen128
 \Y@p=\dimen129
 \U@p=\dimen130
 \D@p=\dimen131
 \L@p=\dimen132
 \R@p=\dimen133
-\Edge@p=\toks22
+\Edge@p=\toks23
 \X@origin=\dimen134
 \Y@origin=\dimen135
 \X@xbase=\dimen136
@@ -195,10 +199,10 @@ Loading kernel: messages; fonts; allocations: state,
 \quotPTK@=\dimen149
 
 utility macros; pictures: \xy, positions,
-\swaptoks@@=\toks23
+\swaptoks@@=\toks24
 \connectobjectbox@@=\box30
  objects,
-\styletoks@=\toks24
+\styletoks@=\toks25
  decorations;
 kernel objects: directionals, circles, text; options; algorithms: directions,
 edges, connections;  Xy-pic loaded)
@@ -209,7 +213,7 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
 (d:/texlive/2018/texmf-dist/tex/generic/xypic/xycurve.tex
  Xy-pic option: Curve and Spline extension v.3.12 curve,
 \crv@cnt@=\count107
-\crvpts@=\toks25
+\crvpts@=\toks26
 \splinebox@=\box31
 \splineval@=\dimen150
 \splinedepth@=\dimen151
@@ -236,8 +240,8 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
  Xy-pic option: Matrix feature v.3.14
 \Row=\count108
 \Col=\count109
-\queue@=\toks26
-\queue@@=\toks27
+\queue@=\toks27
+\queue@@=\toks28
 \qcount@=\count110
 \qcount@@=\count111
 \matrixsize@=\count112
@@ -399,7 +403,7 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 (d:/texlive/2018/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (d:/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (d:/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks28
+\pgfutil@everybye=\toks29
 \pgfutil@tempdima=\dimen160
 \pgfutil@tempdimb=\dimen161
 
@@ -421,11 +425,11 @@ Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
 Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 
 (d:/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks29
-\pgfkeys@temptoks=\toks30
+\pgfkeys@pathtoks=\toks30
+\pgfkeys@temptoks=\toks31
 
 (d:/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks31
+\pgfkeys@tmptoks=\toks32
 ))
 \pgf@x=\dimen162
 \pgf@y=\dimen163
@@ -441,9 +445,9 @@ Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 \c@pgf@countb=\count124
 \c@pgf@countc=\count125
 \c@pgf@countd=\count126
-\t@pgf@toka=\toks32
-\t@pgf@tokb=\toks33
-\t@pgf@tokc=\toks34
+\t@pgf@toka=\toks33
+\t@pgf@tokb=\toks34
+\t@pgf@tokc=\toks35
  (d:/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
@@ -490,9 +494,9 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 \pgfmath@dimen=\dimen170
 \pgfmath@count=\count129
 \pgfmath@box=\box33
-\pgfmath@toks=\toks35
-\pgfmath@stack@operand=\toks36
-\pgfmath@stack@operation=\toks37
+\pgfmath@toks=\toks36
+\pgfmath@stack@operand=\toks37
+\pgfmath@stack@operation=\toks38
 )
 (d:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (d:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.te
@@ -625,8 +629,8 @@ Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 (d:/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen197
 \pgffor@skip=\dimen198
-\pgffor@stack=\toks38
-\pgffor@toks=\toks39
+\pgffor@stack=\toks39
+\pgffor@toks=\toks40
 ))
 (d:/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
@@ -700,20 +704,20 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 (./Solution to Algebra, Chapter 0.aux)
 \openout1 = `"Solution to Algebra, Chapter 0.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -756,12 +760,12 @@ LaTeX Font Info:    ... okay on input line 51.
 \scratchbox=\box43
 \nofMPsegments=\count147
 \nofMParguments=\count148
-\everyMPshowfont=\toks40
+\everyMPshowfont=\toks41
 \MPscratchCnt=\count149
 \MPscratchDim=\dimen272
 \MPnumerator=\count150
 \makeMPintoPDFobject=\count151
-\everyMPtoPDFconversion=\toks41
+\everyMPtoPDFconversion=\toks42
 ) (d:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -779,24 +783,24 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 51.
+LaTeX Font Info:    Try loading font information for U+msa on input line 53.
 
 (d:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 51.
+LaTeX Font Info:    Try loading font information for U+msb on input line 53.
 
 (d:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 51.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 53.
 
 (d:/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Package xypdf Info: Line width: 0.47998pt on input line 51.
+Package xypdf Info: Line width: 0.47998pt on input line 53.
 \AtBeginShipoutBox=\box44
-Package hyperref Info: Link coloring ON on input line 51.
+Package hyperref Info: Link coloring ON on input line 53.
 
 (d:/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -806,9 +810,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count152
 )
-LaTeX Info: Redefining \ref on input line 51.
-LaTeX Info: Redefining \pageref on input line 51.
-LaTeX Info: Redefining \nameref on input line 51.
+LaTeX Info: Redefining \ref on input line 53.
+LaTeX Info: Redefining \pageref on input line 53.
+LaTeX Info: Redefining \nameref on input line 53.
 
 (./Solution to Algebra, Chapter 0.out) (./Solution to Algebra, Chapter 0.out)
 \@outlinefile=\write5
@@ -891,34 +895,34 @@ Package xcolor Warning: Incompatible color definition on input line 20.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 11.74988pt
-(hyperref)                replaced by space on input line 58.
+(hyperref)                replaced by space on input line 60.
 
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <14.4> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 60.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 62.
 [1
 
 {d:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 11.74988pt
-(hyperref)                replaced by space on input line 182.
+(hyperref)                replaced by space on input line 184.
 
 [4] [5] [6] [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 428.
+(hyperref)                removing `math shift' on input line 430.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 428.
+(hyperref)                removing `math shift' on input line 430.
 
 <xymatrix 2x3 313> [8] <xymatrix 3x3 325> <xymatrix 3x3 626> [9] <xymatrix 2x3
 223> [10] [11]
 
-Package xcolor Warning: Incompatible color definition on input line 590.
+Package xcolor Warning: Incompatible color definition on input line 592.
 
 <xymatrix 2x3 223>
-Overfull \hbox (7.7385pt too wide) detected at line 634
+Overfull \hbox (7.7385pt too wide) detected at line 636
 [][]
  []
 
@@ -927,93 +931,98 @@ Overfull \hbox (7.7385pt too wide) detected at line 634
 <xymatrix 2x3 223> <xymatrix 4x3 231> [22] <xymatrix 5x5 307> <xymatrix 5x1
 152> <xymatrix 3x3 488> [23] <xymatrix 3x3 325> <xymatrix 3x3 317> [24]
 <xymatrix 2x3 223>
-Underfull \hbox (badness 10000) in paragraph at lines 1269--1271
+Underfull \hbox (badness 10000) in paragraph at lines 1271--1273
 
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 1292--1294
+Underfull \hbox (badness 10000) in paragraph at lines 1294--1296
 
  []
 
 <xymatrix 3x3 488> [26] [27] <xymatrix 2x4 374> [28]
-Overfull \hbox (16.31421pt too wide) detected at line 1480
+Overfull \hbox (16.31421pt too wide) detected at line 1482
 [][] \OT1/cmr/m/n/12 = [][] [] = [] = [] = [] = \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/
 it/12 a[][]
  []
 
 
-Overfull \hbox (6.98085pt too wide) detected at line 1507
+Overfull \hbox (6.98085pt too wide) detected at line 1509
 [][] \OT1/cmr/m/n/12 = [][] [] = [] = [] = [] = \OML/cmm/m/it/12 a[][]
  []
 
 [29]
 
-Package xcolor Warning: Incompatible color definition on input line 1559.
+Package xcolor Warning: Incompatible color definition on input line 1561.
 
 [30] <xymatrix 2x2 137> [31] <xymatrix 2x2 137> [32] [33] [34]
 
-Package xcolor Warning: Incompatible color definition on input line 1882.
+Package xcolor Warning: Incompatible color definition on input line 1884.
 
 [35]
 
-Package xcolor Warning: Incompatible color definition on input line 1920.
+Package xcolor Warning: Incompatible color definition on input line 1922.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1948.
+Package xcolor Warning: Incompatible color definition on input line 1950.
 
 [36]
 
-Package xcolor Warning: Incompatible color definition on input line 1955.
+Package xcolor Warning: Incompatible color definition on input line 1957.
 
 [37]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 11.74988pt
-(hyperref)                replaced by space on input line 2054.
+(hyperref)                replaced by space on input line 2056.
 
 [38] [39]
-LaTeX Font Info:    Try loading font information for U+euf on input line 2131.
+LaTeX Font Info:    Try loading font information for U+euf on input line 2133.
  (d:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 
-Package xcolor Warning: Incompatible color definition on input line 2131.
+Package xcolor Warning: Incompatible color definition on input line 2133.
 
-[40] [41] [42] [43]
+[40] [41] [42] [43] [44]
+Overfull \hbox (28.94682pt too wide) detected at line 2336
+[]
+ []
 
-Package xcolor Warning: Incompatible color definition on input line 2305.
+<xymatrix 2x3 227> [45] <xymatrix 2x3 227> [46] [47]
 
-[44] [45]
+Package xcolor Warning: Incompatible color definition on input line 2420.
+
+[48] [49]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2379.
+(hyperref)                removing `math shift' on input line 2494.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2379.
+(hyperref)                removing `math shift' on input line 2494.
 
-<xymatrix 2x3 223> [46] (./Solution to Algebra, Chapter 0.bbl
+<xymatrix 2x3 223> [50] (./Solution to Algebra, Chapter 0.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [47]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2444.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2444.
+) [51] [52]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2567.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2567.
  (./Solution to Algebra, Chapter 0.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2444.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2444.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2567.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2567.
 
 Package rerunfilecheck Info: File `"Solution to Algebra, Chapter 0".out' has no
 t changed.
 (rerunfilecheck)             Checksum: 196F6C2F0936D2EB7E5492824A10F925;1463.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2444.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2567.
  ) 
 Here is how much of TeX's memory you used:
- 19963 strings out of 492649
- 351398 string characters out of 6133384
- 485397 words of memory out of 5000000
- 23358 multiletter control sequences out of 15000+600000
+ 19999 strings out of 492649
+ 351783 string characters out of 6133384
+ 485751 words of memory out of 5000000
+ 23375 multiletter control sequences out of 15000+600000
  19913 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,15n,54p,3243b,834s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1041,11 +1050,11 @@ dist/fonts/type1/public/rsfs/rsfs10.pfb><d:/texlive/2018/texmf-dist/fonts/type1
 /public/xypic/xyatip10.pfb><d:/texlive/2018/texmf-dist/fonts/type1/public/xypic
 /xybsql10.pfb><d:/texlive/2018/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb
 ><d:/texlive/2018/texmf-dist/fonts/type1/public/xypic/xydash10.pfb>
-Output written on "Solution to Algebra, Chapter 0.pdf" (47 pages, 380665 bytes)
+Output written on "Solution to Algebra, Chapter 0.pdf" (52 pages, 395321 bytes)
 .
 PDF statistics:
- 468 PDF objects out of 1000 (max. 8388607)
- 388 compressed objects within 4 object streams
- 88 named destinations out of 1000 (max. 500000)
+ 505 PDF objects out of 1000 (max. 8388607)
+ 419 compressed objects within 5 object streams
+ 105 named destinations out of 1000 (max. 500000)
  173 words of extra memory for PDF output out of 10000 (max. 10000000)
 

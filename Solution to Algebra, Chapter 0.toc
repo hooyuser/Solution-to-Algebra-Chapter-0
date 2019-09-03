@@ -17,4 +17,4 @@
 \contentsline {subsection}{\textsection 10. Group objects in categories}{39}{section*.18}
 \contentsline {section}{Chapter III\hskip 1em\relax Chapter Rings and modules}{39}{section*.19}
 \contentsline {subsection}{\textsection 1. Definition of ring}{39}{section*.20}
-\contentsline {subsection}{\textsection 2. The category $\mathsf {Ring}$}{46}{section*.21}
+\contentsline {subsection}{\textsection 2. The category $\mathsf {Ring}$}{50}{section*.21}

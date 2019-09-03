@@ -6,9 +6,9 @@
 \usepackage[margin=1in]{geometry}
 
 % include this if you want to import graphics files with /includegraphics
-
+\usepackage{enumerate}
 \usepackage{graphicx}
-\usepackage{amssymb}
+\usepackage{amsmath,amssymb}
 \usepackage[all]{xy}
 
 \usepackage[usenames,dvipsnames]{color}
@@ -18,6 +18,7 @@
 \usepackage{cite}
 \usepackage{setspace}
 \usepackage{tikz}
+
 
 \usepackage{mathtools}
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
@@ -43,6 +44,7 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
+
 
 % info for header block in upper right hand corner
 \name{Huyi Chen}
@@ -2262,6 +2264,119 @@ In either case $gH=Hg$ holds for all $g\in G$, which implies $H$ is normal in $G
 	Then we can check $\mathbb{Z}/2\mathbb{Z}\times\mathbb{Z}/2\mathbb{Z}$ forms a field by definition. 
 \end{solution}
 
+\begin{problem}[1.12]
+	Just as complex numbers may be viewed as combinations $a+bi$, where
+	$a,b\in \R$, and $i$ satisfies the relation $i^2=-1$ (and commutes with $\R$), we may construct a ring $\mathbb{H}$ by considering linear combinations $a + bi + cj + dk$ where $a, b, c, d \in \R$, and $i, j, k$ commute with $\R$ and satisfy the following relations:
+	\[
+	i^{2}=j^{2}=k^{2}=-1 \quad, \quad i j=-j i=k \quad, \quad j k=-k j=i \quad, \quad k i=-i k=j.
+	\]
+	Addition in $\mathbb{H}$ is defined componentwise, while multiplication is defined by imposing	distributivity and applying the relations. For example,
+	\[
+	(1+i+j) \cdot(2+k)=1 \cdot 2+i \cdot 2+j \cdot 2+1 \cdot k+i \cdot k+j \cdot k=2+2 i+2 j+k-j+i=2+3 i+j+k.
+	\]
+	\begin{enumerate}[(i)]
+		\item Verify that this prescription does indeed define a ring.
+		\item Compute $(a+b i+c j+d k)(a-b i-c j-d k)$, where $a, b, c, d \in \R$.
+		\item Prove that $\mathbb{H}$ is a division ring. Elements of $\mathbb{H}$ are called quaternions. Note that $Q_8 := \{\pm1,\pm i,\pm j,\pm k\}$ forms a subgroup of the group of units of $\mathbb{H}$; it is a noncommutative group of order 8, called the quaternionic group.
+		\item  List all subgroups of $Q_8$, and prove that they are all normal.
+		\item  Prove that $Q_8$, $D_8$ are not isomorphic.
+		\item  Prove that $Q_8$ admits the presentation $\left(x, y | x^{2} y^{-2}, y^{4}, x y x^{-1} y\right)$.
+	\end{enumerate}
+	[\textsection II.7.1, 2.4, IV.1.12, IV.5.16, IV.5.17, V.6.19]
+\end{problem}
+\begin{solution}
+	\begin{enumerate}[(i)]
+		\item Verifying the $(\mathbb{H},+)$ is a abelian group is immediate and we just omitted it. It is easy to see the multiplicative identity is 1 and the distributive properties are guaranteed by definition. The check of the associativity of multiplication looks straightforward but tedious.
+		\begin{align*}
+			&\hspace{1.2em}((a_1+b_1i+c_1j+d_1k)\cdot(a_2+b_2i+c_2j+d_2k))\cdot(a_3+b_3i+c_3j+d_3k)\\
+			&=[-c_3 \left(a_ 2 c_ 1+a_ 1 c_ 2+b_ 2 d_ 1-b_ 1 d_ 2\right)-b_ 3
+			\left(a_ 2 b_ 1+a_ 1 b_ 2-c_ 2 d_ 1+c_ 1 d_ 2\right)\\
+			&\hspace{1em}+a_ 3 \left(a_ 1a_ 2-b_ 1b_ 2-c_ 1 c_ 2-d_ 1 d_ 2\right)-d_3\left(-b_2 c_ 1+b_ 1 c_ 2+a_ 2 d_1+a_ 1 d_ 2\right)  ]\\
+			&\hspace{1em}+[-c_3 \left(-b_2 c_ 1+b_ 1 c_ 2+a_ 2 d_ 1+a_ 1 d_ 2\right)+a_ 3 \left(a_ 2 b_ 1+a_ 1
+			b_ 2-c_ 2 d_ 1+c_ 1 d_ 2\right)\\
+			&\hspace{1em}+b_ 3 \left(a_ 1 a_ 2-b_ 1 b_ 2-c_ 1 c_ 2-d_ 1 d_ 2\right)+d_ 3\left(a_ 2 c_ 1+a_ 1 c_ 2+b_ 2 d_ 1-b_ 1 d_ 2\right) ]i\\
+			&\hspace{1em}+[b_ 3 \left(-b_2 c_ 1+b_ 1
+			c_ 2+a_ 2 d_ 1+a_ 1 d_ 2\right)+a_ 3 \left(a_ 2 c_ 1+a_ 1 c_ 2+b_ 2d_ 1-b_ 1 d_ 2\right)\\
+			&\hspace{1em}+c_ 3 \left(a_ 1 a_ 2-b_ 1 b_ 2-c_ 1 c_ 2-d_1d_2\right)-d_ 3\left(a_ 2 b_ 1+a_ 1 b_ 2-c_ 2d_ 1+c_ 1 d_ 2\right) ]j\\
+			&\hspace{1em}+[a_ 3 \left(-b_2 c_ 1+b_ 1 c_ 2+a_ 2 d_ 1+a_ 1 d_ 2\right)-b_ 3 \left(a_ 2 c_ 1+a_ 1 c_ 2+b_ 2 d_ 1-b_ 1 d_ 2\right)\\
+			&\hspace{1em}+c_ 3 \left(a_2b_ 1+a_ 1 b_ 2-c_ 2d_ 1+c_ 1 d_ 2\right)+d_ 3\left(a_ 1 a_ 2-b_ 1 b_ 2-c_ 1 c_ 2-d_ 1 d_ 2\right) ]k
+		\end{align*}
+		\begin{align*}
+		&\hspace{1.2em}(a_1+b_1i+c_1j+d_1k)\cdot((a_2+b_2i+c_2j+d_2k)\cdot(a_3+b_3i+c_3j+d_3k))\\
+		&=[-d_1 \left(a_3 d_2+a_2 d_3-b_3
+		c_2+b_2 c_3\right)-c_1 \left(a_3 c_2+a_2 c_3+b_3 d_2-b_2
+		d_3\right)\\
+		&\hspace{1em}-b_1 \left(a_3 b_2+a_2 b_3-c_3 d_2+c_2
+		d_3\right)+a_1 \left(a_2 a_3-b_2 b_3-c_2 c_3-d_2
+		d_3\right) ]\\
+		&\hspace{1em}+[c_1 \left(a_3 d_2+a_2 d_3-b_3 c_2+b_2
+		c_3\right)-d_1 \left(a_3 c_2+a_2 c_3+b_3 d_2-b_2
+		d_3\right)\\
+		&\hspace{1em}+a_1 \left(a_3 b_2+a_2 b_3-c_3 d_2+c_2
+		d_3\right)+b_1 \left(a_2 a_3-b_2 b_3-c_2 c_3-d_2
+		d_3\right) ]i\\
+		&\hspace{1em}+[-b_1 \left(a_3 d_2+a_2 d_3-b_3 c_2+b_2
+		c_3\right)+a_1 \left(a_3 c_2+a_2 c_3+b_3 d_2-b_2
+		d_3\right)\\
+		&\hspace{1em}+d_1 \left(a_3 b_2+a_2 b_3-c_3 d_2+c_2
+		d_3\right)+c_1 \left(a_2 a_3-b_2 b_3-c_2 c_3-d_2
+		d_3\right)]j\\
+		&\hspace{1em}+[a_1 \left(a_3 d_2+a_2 d_3-b_3 c_2+b_2
+		c_3\right)+b_1 \left(a_3 c_2+a_2 c_3+b_3 d_2-b_2
+		d_3\right)\\
+		&\hspace{1em}-c_1 \left(a_3 b_2+a_2 b_3-c_3 d_2+c_2
+		d_3\right)+d_1 \left(a_2 a_3-b_2 b_3-c_2 c_3-d_2
+		d_3\right) ]k
+		\end{align*}
+		\item Expand it by distributive properties and we get
+		\begin{align*}
+			&(a+b i+c j+d k)(a-b i-c j-d k)\\
+			&=a^2-abi-acj-adk+abi+b^2-bck+bdj+acj+bck+c^2-cdi+adk-bdj+cdi+d^2\\
+			&=a^2+b^2+c^2+d^2.
+		\end{align*}
+		\item Applying the results in (ii) we see that for any non-zero element $a+b i+c j+d k\in\mathbb{H}$,
+		\[
+		(a+b i+c j+d k)\cdot\frac{a-b i-c j-d k}{a^2+b^2+c^2+d^2}=\frac{a-b i-c j-d k}{a^2+b^2+c^2+d^2}\cdot(a+b i+c j+d k)=1,
+		\]
+		which implies $a+b i+c j+d k$ is a two-sided unit. Thus we show that $\mathbb{H}$ is a division ring. 
+		\item $Q_8$ has 6 subgroups: $\{1\}$, $\{1,-1\}$, $\{1,-1,i,-i\}$, $\{1,-1,j,-j\}$, $\{1,-1,k,-k\}$, $Q_8$. We can just prove that they are all normal by the definition of normal subgroups.
+		\item Note that $D_8=\{e,r,r^2,r^3,s_1,s_2,s_3,s_4\}$ has 7 subgroups: $\{e\}$, $\{e,r,r^2,r^3\}$, $\{e,s_1\}$, $\{e,s_2\}$, $\{e,s_3\}$, $\{e,s_4\}$, $D_8$, while $Q_8$ has 6 subgroups. Thus $Q_8$, $D_8$ are not isomorphic.
+		\item 	Let $P=\left(x, y | x^{2} y^{-2}, y^{4}, x y x^{-1} y\right)$. The relation $x^{2} y^{-2}=e$ implies $x^2=y^2$ and the relation $xyx^{-1}y=e$ implies $yx=yx^{-1}x^2=x^{-1}y^{-1}x^2=x^3y^3x^2=x^3y^5=x^3y$. First, we can always replace $yx$ by $x^3y$ until we obtain a word of the form $x^iy^j$. Then applying $x^4=y^4=e$ and replace $y^2$ by $x^2$, we can transform it into the form $x^iy^j$ with $0\le i\le 3$ and $0\le j \le 1$. Thus we see $P$ has at most 8 elements. 
+		
+		\textbf{Lemma.} (von Dyck)
+		Given a presentation $(A|\mathscr{R})=F(A)/R$, where $A$ is the set of generators, $\mathscr{R}\in F(A)$ is the set of relators and $R$ is the smallest normal subgroup of $F(A)$ containing $\mathscr{R}$. Define inclusion mapping $i:A\to F(A)$ and projection $\pi:F(A)\to F(A)/R$. If $f$ is a mapping from $A$ to a group $G$, and every relations in $\mathscr{R}$ holds in $G$ via $f$, that is, $\mathscr{R}\subset\ker\varphi$ where $\varphi$ is the unique homomorphism induced by the universal property of free group, then there exists a unique homomorphism $\psi:F(A)/R\to G$ such that $f=\psi\circ\pi\circ i$. If $G$ is generated by $f(A)$, then $\psi$ is surjective.
+		\[\xymatrix{
+			F(A)/R\ar@{-->}[rd]^{\exists!\psi}\\
+			F(A)\ar@{-->}[r]^{\varphi}\ar[u]^{\pi} &G\\
+			A\ar[ru]_{f}\ar[u]^{i}&    
+		}\]
+		\textbf{Proof of the lemma.} Since $R$ is the smallest normal subgroup of $F(A)$ containing $\mathscr{R}$ and the normal subgroup $\ker\varphi$ contains $\mathscr{R}$, we must have $R\subset\ker\varphi$. Then according to Theorem 7.12, there exists a unique homomorphism $\psi:F(A)/R\to G$ such that $\varphi=\psi\circ\pi$, which means the whole diagram commutes. If there exists a homomorphism $\zeta:F(A)/R\to G$ such that $f=\zeta\circ\pi\circ i$, then we have $\varphi\circ i=\zeta\circ\pi\circ i$, which implies $\varphi(t)= \zeta(\pi(t))$ for all $t\in A$. Note that a homomorphism  defined on $F(A)$ can be specified only by its valuation on the set of generators $A$, we can assert that $\varphi=\zeta\circ\pi$. Since there exists a unique homomorphism $\psi:F(A)/R\to G$ such that $\varphi=\psi\circ\pi$, we have $\zeta=\psi$. Thus we show that there exists a unique homomorphism $\psi:F(A)/R\to G$ such that $f=\psi\circ\pi\circ i$.
+		
+		Moreover, if $G$ is generated by $f(A)$, then $\mathrm{im}\psi=G$, since $f(A)=\psi(\pi( i(A)))\subset\mathrm{im}\psi$ implies $G\subset\mathrm{im}\psi$.\hfill$\lrcorner$
+		
+		Now we come back to continue our proof by means of the lemma we have obtained. Define a mapping
+		\begin{align*}
+		f:\{x,y\}\longrightarrow Q_8,\quad& x\longmapsto i,\\
+		& y\longmapsto j.
+		\end{align*}
+		Let $\varphi:F(\{x,y\})\to Q_8$ be the unique homomorphism induced by the universal property of free group. Since
+		\begin{align*}
+		&\varphi(x^{2} y^{-2})=i^2j^{-2}=1,\\
+		&\varphi(y^{4})=j^{4}=1,\\
+		&\varphi(x y x^{-1} y)=i j i^{-1} j=1,
+		\end{align*}
+		we see $\mathscr{R}=\{x^{2} y^{-2}, y^{4}, x y x^{-1} y\}\subset\ker\varphi$. And it is immediate to show that $Q_8$ can be generated by $\{i,j\}$. Thus according to the lemma, there exists a unique homomorphism $\psi:P\to Q_8$ such that $f=\psi\circ\pi\circ i$ and actually $\psi$ is surjective. 
+		\[\xymatrix{
+			P\ar@{-->}[rd]^{\exists!\psi}\\
+			F(\{x,y\})\ar@{-->}[r]^{\varphi}\ar[u]^{\pi} &Q_8\\
+			\{x,y\}\ar[ru]_{f}\ar[u]^{i}&    
+		}\]
+		Hence we get the inequality of cardinality $|P|\ge|Q|$. Since we have shown $|P|\le 8=|Q|$, there must be $|P|=|Q|=8$, which implies $\psi$ is indeed an isomorphism. Finally we conclude that $Q_8\cong\left(x, y | x^{2} y^{-2}, y^{4}, x y x^{-1} y\right)$ and complete our proof. 
+	
+	\end{enumerate}
+\end{solution}
+
+
 \hypertarget{Exercise III.1.14}{}
 \begin{problem}[1.14]
 	$\vartriangleright$ Let $R$ be a ring, and let $f(x),g(x)\in R[x]$ be nonzero polynomials. Prove that 
@@ -2377,6 +2492,14 @@ In either case $gH=Hg$ holds for all $g\in G$, which implies $H$ is normal in $G
 
 
 \subsection{\textsection2. The category $\mathsf{Ring}$}
+
+\begin{problem}[2.1]
+	Prove that if there is a homomorphism from a zero-ring to a ring $R$, then $R$ is a zero-ring [\textsection2.1]
+\end{problem}
+\begin{solution}
+	Suppose that $\varphi$ is a homomorphism from a zero-ring $O$ to a ring $R$. Since $\varphi(0_O)=0_R$, $\varphi(1_O)=1_R$, $0_O=1_O$, we have $0_R=1_R$, which implies that $R$ is a zero-ring.
+\end{solution}
+
 
 \begin{problem}[2.6]
 	Verify the ‘extension property’ of polynomial rings, stated in Example 2.3.
