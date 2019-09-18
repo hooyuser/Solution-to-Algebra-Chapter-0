@@ -2500,6 +2500,25 @@ In either case $gH=Hg$ holds for all $g\in G$, which implies $H$ is normal in $G
 	Suppose that $\varphi$ is a homomorphism from a zero-ring $O$ to a ring $R$. Since $\varphi(0_O)=0_R$, $\varphi(1_O)=1_R$, $0_O=1_O$, we have $0_R=1_R$, which implies that $R$ is a zero-ring.
 \end{solution}
 
+\begin{problem}[2.4]
+	Define functions $\mathbb{H} \rightarrow \mathfrak{g l}_{4}(\mathbb{R})$ and $\mathbb{H} \rightarrow \mathfrak{g l}_{4}(\mathbb{C})$ (cf. Exercises 1.4 and 1.12) by
+	\begin{align*}
+	a+b i+c j+d k& \longmapsto\left(\begin{array}{cccc}{a} & {b} & {c} & {d} \\ {-b} & {a} & {-d} & {c} \\ {-c} & {d} & {a} & {-b} \\ {-d} & {-c} & {b} & {a}\end{array}\right)\\
+	a+b i+c j+d k &\longmapsto\left(\begin{array}{cc}{a+b i} & {c+d i} \\ {-c+d i} & {a-b i}\end{array}\right)
+	\end{align*}
+	for all $a, b, c, d \in\R$. Prove that both functions are injective ring homomorphisms.
+	Thus, quaternions may be viewed as real or complex matrices.
+\end{problem}
+\begin{solution}
+	Let $f$ be the function $\mathbb{H} \rightarrow \mathfrak{g l}_{4}(\mathbb{R})$ described above. For simplicity, we omit trivial check and only verify $f$ preserves multiplication
+	\begin{align*}
+	&f((a_1+b_1i+c_1j+d_1k)\cdot(a_2+b_2i+c_2j+d_2k))\\
+	&=f((a_1 a_2-b_1 b_2-c_1 c_2-d_1 d_2)+(a_2
+	b_1+a_1 b_2-c_2 d_1+c_1 d_2)i\\
+	&\hspace{1em}+(a_2 c_1+a_1 c_2+b_2 d_1-b_1
+	d_2)j+(a_2 d_1+a_1 d_2-b_2 c_1+b_1 c_2)k)
+	\end{align*}
+\end{solution}
 
 \begin{problem}[2.6]
 	Verify the ‘extension property’ of polynomial rings, stated in Example 2.3.
@@ -2557,6 +2576,9 @@ In either case $gH=Hg$ holds for all $g\in G$, which implies $H$ is normal in $G
 	Integrating the two parts we finally conclude there exists a unique ring homomorphism $\overline{\alpha}$ such that the diagram commutes.
 	
 \end{solution}
+
+
+
 
 
 
