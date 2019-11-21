@@ -13,8 +13,8 @@
 \contentsline {subsection}{\textsection 6. Subgroups}{28}{section*.14}
 \contentsline {subsection}{\textsection 7. Quotient groups}{35}{section*.15}
 \contentsline {subsection}{\textsection 8. Canonical decomposition and Lagrange's theorem}{40}{section*.16}
-\contentsline {subsection}{\textsection 9. Group actions}{40}{section*.17}
-\contentsline {subsection}{\textsection 10. Group objects in categories}{40}{section*.18}
-\contentsline {section}{Chapter III\hskip 1em\relax Chapter Rings and modules}{40}{section*.19}
-\contentsline {subsection}{\textsection 1. Definition of ring}{40}{section*.20}
+\contentsline {subsection}{\textsection 9. Group actions}{41}{section*.17}
+\contentsline {subsection}{\textsection 10. Group objects in categories}{41}{section*.18}
+\contentsline {section}{Chapter III\hskip 1em\relax Chapter Rings and modules}{41}{section*.19}
+\contentsline {subsection}{\textsection 1. Definition of ring}{41}{section*.20}
 \contentsline {subsection}{\textsection 2. The category $\mathsf {Ring}$}{51}{section*.21}

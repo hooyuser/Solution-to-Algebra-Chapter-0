@@ -2085,17 +2085,18 @@ $\vartriangleright$ Let $F = F(A)$ be a free group, and let $f : A\to G$ be a se
 from the set $A$ to a commutative group $G$. Prove that $f$ induces a unique homomorphism $F/[F, F]\to G$, where $[F, F]$ is the commutator subgroup of $F$ defined in \hyperlink{Exercise II.7.11}{Exercise II.7.11}. (Use Theorem 7.12.) Conclude that $F/[F, F]\simeq F^{ab}(A)$. (Use Proposition I.5.4.) [\textsection6.4, 7.13, VI.1.20]
 \end{problem}
 \begin{solution}
-By the universal property of free group, there exists a unique homomorphism $\varphi:F\to G$ such that $\forall a\in A,\;\varphi(i(a))=f(a)$. Note that $G$ is commutative, we have
+By the universal property of free group, there exists a unique homomorphism $\varphi:F\to G$ such that $\forall a\in A,\;\varphi(j(a))=f(a)$ 
+where $j:A\to F(A)$ is a inclusion. Note that $G$ is commutative, we have
 \[
 \varphi(aba^{-1}b^{-1})=\varphi(a)\varphi(b)\varphi(a)^{-1}\varphi(b)^{-1}=e_G,
 \]
 which implies $[F,F]\subseteq \ker\varphi$. Theorem 7.12 indicates that there exists a unique group homomorphism $\tilde{\varphi}:F/[F, F]\to G$ so that $\tilde{\varphi}\circ\pi=\varphi$. Now we deduce that the diagram
 \[\xymatrix{
-	A\ar@{->}[d]_{i}\ar@{->}[rd]^{f} \\
+	A\ar@{->}[d]_{j}\ar@{->}[rd]^{f} \\
 	F\ar@{->}[r]^{\exists!\varphi}\ar@{->}[d]_{\pi} & G\\
 	F/[F,F]\ar@{->}[ru]_{\exists!\tilde{\varphi}}  
 }\]
-commutes. For the diagram we see $\tilde{\varphi}\circ\pi\circ i=f$. Suppose there exists $\psi$ such that $\psi\circ\pi\circ i=f$, which amounts to $(\psi\circ\pi)\circ i=\varphi\circ i$. By the uniqueness of $\varphi$ we have $\psi\circ\pi=\varphi$. Then by the uniqueness of $\tilde{\varphi}$ we have $\psi=\tilde{\varphi}$. Thus we show that there exists unique $\tilde{\varphi}$ such that $\tilde{\varphi}\circ\pi\circ i=f$. According to the property of free abelian group, we can conclude that $F/[F, F]\simeq F^{ab}(A)$.
+commutes. For the diagram we see $\tilde{\varphi}\circ\pi\circ j=f$. Suppose there exists $\psi$ such that $\psi\circ\pi\circ j=f$, which amounts to $(\psi\circ\pi)\circ j=\varphi\circ j$. By the uniqueness of $\varphi$ we have $\psi\circ\pi=\varphi$. Then by the uniqueness of $\tilde{\varphi}$ we have $\psi=\tilde{\varphi}$. Thus we show that there exists unique $\tilde{\varphi}$ such that $\tilde{\varphi}\circ\pi\circ j=f$. According to the property of free abelian group, we can conclude that $F/[F, F]\simeq F^{ab}(A)$.
 \end{solution}
 
 \begin{problem}[7.13]
@@ -2134,7 +2135,42 @@ Since $[G/H]=2$, there must be $G/H=\{H,G-H\}$. For any $g\in G	$:
 In either case $gH=Hg$ holds for all $g\in G$, which implies $H$ is normal in $G$.
 \end{solution}
 
+\begin{problem}[8.7]
+Let $(A|\mathscr{R})$, resp. $(A'|\mathscr{R}')$ be presentations for two groups $G$, resp. $G'$(cf. §8.2); we may assume that $A, A'$ are disjoint. Prove that the group $G*G'$ presented by
+\[
+(A\cup A'|\mathscr{R}\cup \mathscr{R}')
+\]
+satisfies the universal property for the \emph{coproduct} of $G$ and $G'$ in $\Grp$. (Use the universal properties of both free groups and quotients to construct natural homomorphisms $G\to G*G'$, $G'\to G* G'$.) [\textsection3.4, \textsection8.2, 9.14].
+\end{problem}
+\begin{solution}
+Assume that $F(A)/R=(A|\mathscr{R})$, $F(A')/R'=(A|\mathscr{R}')$, and $F(A\amalg A')/R''=(A\cup A'|\mathscr{R}\cup \mathscr{R}')$.
+	\[\xymatrix{
+		&G&\\
+		F(A)/R\ar[ru]^{f}\ar@{-->}[r]^{\psi\hspace{1em}}&F(A\amalg A')/R''\ar@{-->}[u]^{\delta}&F(A')/R'\ar[lu]_{f'}\ar@{-->}[l]_{\hspace{1em}\psi'}\\
+		A\ar[rd]_{i}\ar[u]^{k}&F(A\amalg A')\ar[u]_{\pi}&A'\ar[ld]^{i'}\ar[u]_{k'}\\
+		&A\amalg A'\ar[u]_{j} &
+	}\]
+According to \hyperlink{Lemma II.1}{Lemma II.1}, there exist unique $\psi$ and $\psi'$ such that 
+\[
+\psi\circ k=\pi\circ j\circ i,\ \psi'\circ k'=\pi\circ j\circ i'.
+\]
+Define 
+\begin{align*}
+\delta:&F(A\amalg A')/R''\longrightarrow G\\
+&[\{a_1\}*\{a_1'\}*\cdots*\{a_n\}*\{a_n'\}]\longmapsto f([\{a_1\}])f'([\{a_1'\}])\cdots f([\{a_n\}])f'([\{a_n'\}]).
+\end{align*}
+where $*$ means the junction of words and $\{a_i\}=a_{i1}*a_{i2}*\cdots *a_{im_i}$, $a_{ij}\in A$ $(1\le i\le n,1\le j\le m_i)$ and $\{a_i'\}=a_{i1}'*a_{i2}'*\cdots *a_{im_i'}$, $a_{ij'}\in A$ $(1\le i\le n,1\le j'\le m_i')$.
+It is routine to check that $\delta$ is a well-defined homomorphism such that 
+$$
+\delta\circ\psi=f,\ \delta\circ\psi'=f'.
+$$ 
+Then verify that if $\hat{\delta}$ is a homomorphism such that 
+$$
+\delta\circ\psi=f,\ \delta\circ\psi'=f',
+$$ 
+there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude that $F(A\amalg A')/R''$ satisfies the universal property of coproduct.
 
+\end{solution}
 
 \subsection{\textsection9. Group actions}
 
@@ -2430,18 +2466,7 @@ In either case $gH=Hg$ holds for all $g\in G$, which implies $H$ is normal in $G
 		\item Note that $D_8=\{e,r,r^2,r^3,s_1,s_2,s_3,s_4\}$ has 7 subgroups: $\{e\}$, $\{e,r,r^2,r^3\}$, $\{e,s_1\}$, $\{e,s_2\}$, $\{e,s_3\}$, $\{e,s_4\}$, $D_8$, while $Q_8$ has 6 subgroups. Thus $Q_8$, $D_8$ are not isomorphic.
 		\item 	Let $P=\left(x, y | x^{2} y^{-2}, y^{4}, x y x^{-1} y\right)$. The relation $x^{2} y^{-2}=e$ implies $x^2=y^2$ and the relation $xyx^{-1}y=e$ implies $yx=yx^{-1}x^2=x^{-1}y^{-1}x^2=x^3y^3x^2=x^3y^5=x^3y$. First, we can always replace $yx$ by $x^3y$ until we obtain a word of the form $x^iy^j$. Then applying $x^4=y^4=e$ and replace $y^2$ by $x^2$, we can transform it into the form $x^iy^j$ with $0\le i\le 3$ and $0\le j \le 1$. Thus we see $P$ has at most 8 elements. 
 		
-		\textbf{Lemma.} (von Dyck)
-		Given a presentation $(A|\mathscr{R})=F(A)/R$, where $A$ is the set of generators, $\mathscr{R}\in F(A)$ is the set of relators and $R$ is the smallest normal subgroup of $F(A)$ containing $\mathscr{R}$. Define inclusion mapping $i:A\to F(A)$ and projection $\pi:F(A)\to F(A)/R$. If $f$ is a mapping from $A$ to a group $G$, and every relations in $\mathscr{R}$ holds in $G$ via $f$, that is, $\mathscr{R}\subset\ker\varphi$ where $\varphi$ is the unique homomorphism induced by the universal property of free group, then there exists a unique homomorphism $\psi:F(A)/R\to G$ such that $f=\psi\circ\pi\circ i$. If $G$ is generated by $f(A)$, then $\psi$ is surjective.
-		\[\xymatrix{
-			F(A)/R\ar@{-->}[rd]^{\exists!\psi}\\
-			F(A)\ar@{-->}[r]^{\varphi}\ar[u]^{\pi} &G\\
-			A\ar[ru]_{f}\ar[u]^{i}&    
-		}\]
-		\textbf{Proof of the lemma.} Since $R$ is the smallest normal subgroup of $F(A)$ containing $\mathscr{R}$ and the normal subgroup $\ker\varphi$ contains $\mathscr{R}$, we must have $R\subset\ker\varphi$. Then according to Theorem 7.12, there exists a unique homomorphism $\psi:F(A)/R\to G$ such that $\varphi=\psi\circ\pi$, which means the whole diagram commutes. If there exists a homomorphism $\zeta:F(A)/R\to G$ such that $f=\zeta\circ\pi\circ i$, then we have $\varphi\circ i=\zeta\circ\pi\circ i$, which implies $\varphi(t)= \zeta(\pi(t))$ for all $t\in A$. Note that a homomorphism  defined on $F(A)$ can be specified only by its valuation on the set of generators $A$, we can assert that $\varphi=\zeta\circ\pi$. Since there exists a unique homomorphism $\psi:F(A)/R\to G$ such that $\varphi=\psi\circ\pi$, we have $\zeta=\psi$. Thus we show that there exists a unique homomorphism $\psi:F(A)/R\to G$ such that $f=\psi\circ\pi\circ i$.
-		
-		Moreover, if $G$ is generated by $f(A)$, then $\mathrm{im}\psi=G$, since $f(A)=\psi(\pi( i(A)))\subset\mathrm{im}\psi$ implies $G\subset\mathrm{im}\psi$.\hfill$\lrcorner$
-		
-		Now we come back to continue our proof by means of the lemma we have obtained. Define a mapping
+		Next we will complete our proof by means of the \hyperlink{Lemma II.1}{Lemma II.1} in the appendix. Define a mapping
 		\begin{align*}
 		f:\{x,y\}\longrightarrow Q_8,\quad& x\longmapsto i,\\
 		& y\longmapsto j.
@@ -2458,7 +2483,7 @@ In either case $gH=Hg$ holds for all $g\in G$, which implies $H$ is normal in $G
 			F(\{x,y\})\ar@{-->}[r]^{\varphi}\ar[u]^{\pi} &Q_8\\
 			\{x,y\}\ar[ru]_{f}\ar[u]^{i}&    
 		}\]
-		Hence we get the inequality of cardinality $|P|\ge|Q|$. Since we have shown $|P|\le 8=|Q|$, there must be $|P|=|Q|=8$, which implies $\psi$ is indeed an isomorphism. Finally we conclude that $Q_8\cong\left(x, y | x^{2} y^{-2}, y^{4}, x y x^{-1} y\right)$ and complete our proof. 
+		Hence we get the inequality of cardinality $|P|\ge|Q_8|$. Since we have shown $|P|\le 8=|Q_8|$, there must be $|P|=|Q_8|=8$, which implies $\psi$ is indeed an isomorphism. Finally we conclude that $Q_8\cong\left(x, y | x^{2} y^{-2}, y^{4}, x y x^{-1} y\right)$ and complete our proof. 
 	
 	\end{enumerate}
 \end{solution}
@@ -2667,7 +2692,18 @@ In either case $gH=Hg$ holds for all $g\in G$, which implies $H$ is normal in $G
 
 
 
+\section*{Appendix}
+\hypertarget{Lemma II.1}{}
+\textbf{Lemma II.1} (von Dyck)
+Given a presentation $(A|\mathscr{R})=F(A)/R$, where $A$ is the set of generators, $\mathscr{R}\in F(A)$ is the set of relators and $R$ is the smallest normal subgroup of $F(A)$ containing $\mathscr{R}$. Define inclusion mapping $i:A\to F(A)$ and projection $\pi:F(A)\to F(A)/R$. If $f$ is a mapping from $A$ to a group $G$, and every relations in $\mathscr{R}$ holds in $G$ via $f$, that is, $\mathscr{R}\subset\ker\varphi$ where $\varphi$ is the unique homomorphism induced by the universal property of free group, then there exists a unique homomorphism $\psi:F(A)/R\to G$ such that $f=\psi\circ\pi\circ i$. If $G$ is generated by $f(A)$, then $\psi$ is surjective.
+\[\xymatrix{
+	F(A)/R\ar@{-->}[rd]^{\exists!\psi}\\
+	F(A)\ar@{-->}[r]^{\varphi}\ar[u]^{\pi} &G\\
+	A\ar[ru]_{f}\ar[u]^{i}&    
+}\]
+\textbf{Proof of the lemma.} Since $R$ is the smallest normal subgroup of $F(A)$ containing $\mathscr{R}$ and the normal subgroup $\ker\varphi$ contains $\mathscr{R}$, we must have $R\subset\ker\varphi$. Then according to Theorem 7.12, there exists a unique homomorphism $\psi:F(A)/R\to G$ such that $\varphi=\psi\circ\pi$, which means the whole diagram commutes. If there exists a homomorphism $\zeta:F(A)/R\to G$ such that $f=\zeta\circ\pi\circ i$, then we have $\varphi\circ i=\zeta\circ\pi\circ i$, which implies $\varphi(t)= \zeta(\pi(t))$ for all $t\in A$. Note that a homomorphism  defined on $F(A)$ can be specified only by its valuation on the set of generators $A$, we can assert that $\varphi=\zeta\circ\pi$. Since there exists a unique homomorphism $\psi:F(A)/R\to G$ such that $\varphi=\psi\circ\pi$, we have $\zeta=\psi$. Thus we show that there exists a unique homomorphism $\psi:F(A)/R\to G$ such that $f=\psi\circ\pi\circ i$.
 
+Moreover, if $G$ is generated by $f(A)$, then $\mathrm{im}\psi=G$, since $f(A)=\psi(\pi( i(A)))\subset\mathrm{im}\psi$ implies $G\subset\mathrm{im}\psi$.\hfill$\lrcorner$
 
 \bibliographystyle{plain}
 \bibliography{mybibtex}
