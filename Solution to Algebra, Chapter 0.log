@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.3.16)  22 NOV 2019 18:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.3.16)  23 NOV 2019 01:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -893,6 +893,9 @@ Package xcolor Warning: Incompatible color definition on input line 21.
 
 Package xcolor Warning: Incompatible color definition on input line 22.
 
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
 )
 \tf@toc=\write6
 \openout6 = `"Solution to Algebra, Chapter 0.toc"'.
@@ -1028,59 +1031,73 @@ Package xcolor Warning: Incompatible color definition on input line 2260.
 {Exercise\040III.1.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2394 \hypertarget{Exercise III.1.4}{}
+l.2395 \hypertarget{Exercise III.1.4}{}
                                         [47]
-Overfull \hbox (28.94682pt too wide) detected at line 2464
+Overfull \hbox (28.94682pt too wide) detected at line 2465
 []
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2474.
+Package xcolor Warning: Incompatible color definition on input line 2475.
 
 [48] <xymatrix 2x3 227> [49]
 
-Package xcolor Warning: Incompatible color definition on input line 2537.
+Package xcolor Warning: Incompatible color definition on input line 2538.
 
 [50] [51]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2611.
+(hyperref)                removing `math shift' on input line 2612.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2611.
+(hyperref)                removing `math shift' on input line 2612.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2621.
+Package xcolor Warning: Incompatible color definition on input line 2622.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2621.
+Package xcolor Warning: Incompatible color definition on input line 2622.
 
 [52] <xymatrix 2x3 223> [53] [54] [55] <xymatrix 4x1 196> [56]
 
-Package xcolor Warning: Incompatible color definition on input line 2845.
+Package xcolor Warning: Incompatible color definition on input line 2848.
 
-[57] [58] <xymatrix 2x3 227> (./Solution to Algebra, Chapter 0.bbl
+[57]
+
+Package xcolor Warning: Incompatible color definition on input line 2869.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2874.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2878.
+
+[58]
+
+Package xcolor Warning: Incompatible color definition on input line 2921.
+
+[59] [60] <xymatrix 2x3 227> [61] (./Solution to Algebra, Chapter 0.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [59]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2888.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2888.
+) [62]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2973.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2973.
  (./Solution to Algebra, Chapter 0.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2888.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2888.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2973.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2973.
 
 Package rerunfilecheck Info: File `"Solution to Algebra, Chapter 0".out' has no
 t changed.
-(rerunfilecheck)             Checksum: 6CB1C98714CC093DD5349EE1E281B6F0;1590.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2888.
+(rerunfilecheck)             Checksum: A1D7371C5C3CB6C42A1C95F1AF90FB99;1714.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2973.
  ) 
 Here is how much of TeX's memory you used:
- 20032 strings out of 492649
- 352125 string characters out of 6133384
- 487286 words of memory out of 5000000
- 23384 multiletter control sequences out of 15000+600000
+ 20040 strings out of 492649
+ 352227 string characters out of 6133384
+ 487285 words of memory out of 5000000
+ 23385 multiletter control sequences out of 15000+600000
  21331 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,19n,54p,3243b,834s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1108,11 +1125,11 @@ dist/fonts/type1/public/rsfs/rsfs10.pfb><d:/texlive/2018/texmf-dist/fonts/type1
 /public/xypic/xyatip10.pfb><d:/texlive/2018/texmf-dist/fonts/type1/public/xypic
 /xybsql10.pfb><d:/texlive/2018/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb
 ><d:/texlive/2018/texmf-dist/fonts/type1/public/xypic/xydash10.pfb>
-Output written on "Solution to Algebra, Chapter 0.pdf" (59 pages, 423544 bytes)
+Output written on "Solution to Algebra, Chapter 0.pdf" (62 pages, 430653 bytes)
 .
 PDF statistics:
- 574 PDF objects out of 1000 (max. 8388607)
- 481 compressed objects within 5 object streams
- 126 named destinations out of 1000 (max. 500000)
- 189 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 602 PDF objects out of 1000 (max. 8388607)
+ 505 compressed objects within 6 object streams
+ 133 named destinations out of 1000 (max. 500000)
+ 197 words of extra memory for PDF output out of 10000 (max. 10000000)
 

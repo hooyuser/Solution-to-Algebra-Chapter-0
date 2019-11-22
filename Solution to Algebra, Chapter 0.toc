@@ -19,4 +19,5 @@
 \contentsline {subsection}{\textsection 1. Definition of ring}{42}{section*.20}
 \contentsline {subsection}{\textsection 2. The category $\mathsf {Ring}$}{52}{section*.21}
 \contentsline {subsection}{\textsection 3. Ideals and quotient rings}{56}{section*.22}
-\contentsline {section}{Appendix}{59}{section*.23}
+\contentsline {subsection}{\textsection 4. Ideals and quotients: remarks and examples. Prime and maximal ideals}{59}{section*.23}
+\contentsline {section}{Appendix}{61}{section*.24}

@@ -2289,6 +2289,7 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 	That is not true. Let's take $\mathbb{Z}/6\mathbb{Z}$ as an counterexample. Though both $[2]_6$ and $[3]_6$ are zero-divisors, their sum $[5]_6$ is not a zero-divisor.
 \end{solution}
 
+\hypertarget{Exercise III.1.6}{}
 \begin{problem}[1.6]
 	$\neg$ An element $a$ of a ring $R$ is \emph{nilpotent} if $a^n = 0$ for some $n$.
 	\begin{enumerate}
@@ -2768,6 +2769,7 @@ We can see that $\im \varphi$ is a subring of $S$ from the canonical decompositi
 If $\im \varphi$ is an ideal, then $s\in S,1\in\im\varphi \implies s\in \im\varphi$. So $\im \varphi=S$ and $\varphi$ is an epimorphism. Since $\ker\varphi$ is a ideal, if it is also a subring, we have $\ker \varphi=R$.
 \end{solution}
 
+\hypertarget{Exercise III.3.2}{}
 \begin{problem}[3.2]
 Let $\varphi: R\to S$ be a ring homomorphism, and let $J$ be an ideal of $S$. Prove
 that $I = \varphi^{-1}(J)$ is an ideal of $R$. [\textsection3.1]
@@ -2780,6 +2782,7 @@ In $\Ab$ we see $\varphi^{-1}(J)$ is a subgroup of $R$. For all $r\in R$, $a\in 
 Similarly we can obtain $ar\in\varphi^{-1}(J)$. Therefore, we conclude that $I = \varphi^{-1}(J)$ is an ideal of $R$.
 \end{solution}
 
+\hypertarget{Exercise III.3.3}{}
 \begin{problem}[3.3]
 $\neg$ Let $\varphi : R \to S$ be a ring homomorphism, and let $J$ be an ideal of $R$.
 \begin{itemize}
@@ -2862,9 +2865,89 @@ Let $R$ be a ring containing $\C$ as a subring. Prove that there are no ring hom
 	which forces $f(1)$ to be 0. Thus we see $f$ sends some nonzero element in $R$ to 0 in $\R$, which is a contradiction.
 \end{solution}
 
+\begin{problem}[3.12]
+Let $R$ be a commutative ring. Prove that the set of nilpotent elements of $R$ is an ideal of $R$. (Cf. \hyperlink{Exercise III.1.6}{Exercise III.1.6}. This ideal is called the nilradical of $R$.)
+
+Find a non-commutative ring in which the set of nilpotent elements is not an ideal. [3.13, 4.18, V.3.13, \textsection VII.2.3]
+\end{problem}
+\begin{solution}
+Suppose $N$ is the set of nilpotent elements of $R$. In \hyperlink{Exercise III.1.6}{Exercise III.1.6} we have shown that if $R$ is commutative, then $a+b\in N$ for all $a,b\in N$. Since for all $r\in R$, $a\in N$,
+\[
+a^n=0\implies r^na^n=a^nr^n=0\implies ra,ar\in N,
+\]
+we prove that $N$ is an ideal of $R$. A counterexample for non-commutative ring can be found in the ring $\mathfrak{gl}_2(\mathbb{R})$, as is shown in \hyperlink{Exercise III.1.6}{Exercise III.1.6}.
+\end{solution}
+
+\begin{problem}[3.13]
+$\neg$ Let $R$ be a commutative ring, and let $N$ be its nilradical (cf. Exercise 3.12). Prove that $R/N$ contains no nonzero nilpotent elements. (Such a ring is said to be reduced.) [4.6, VII.2.8]
+\end{problem}
+\begin{solution}
+Suppose there exists a nilpotent element $r+N\in R/N$ and $n>0$ such that
+\[
+r^n+N=N\iff r^n\in N.
+\]
+Then we have $r^{nm}=0$ for some $m>0$, which implies $r\in N$. Therefore, the only nilpotent element in $R/N$ is $N$. 
+\end{solution}
+
+\begin{problem}[3.14]
+$\neg$ Prove that the characteristic of an integral domain is either 0 or a prime
+integer. Do you know any ring of characteristic 1?
+\end{problem}
+\begin{solution}
+Suppose the characteristic of the integral domain $R$ is $pq$ where $p,q$ are positive prime integers. Then we have $p1_R\ne 0$ and $q1_R\ne0$, since the order of $1_R$ is $pq$. However, we can deduce
+\[
+(p1_R)(q1_R)=pq1_R=0_R,
+\]
+which contradicts the assumption that $R$ is an integral domain. 
+
+If the characteristic of the integral domain $R$ is 1, then the inclusion homomorphism $i:\Z\to R$ will send all integers to $0_R$, which means $0_R=1_R$ and $R$ is actually a zero ring instead of an integral domain. Thus the characteristic of an integral domain is either be 0 or a prime integer.
+\end{solution}
+
+\begin{problem}[3.17]
+Let $I, J$ be ideals of a ring $R$. State and prove a precise result relating the ideals $(I + J)/I$ of $R/I$ and $J/(I \cap J)$ of $R/(I \cap J)$. [\textsection3.3]
+\end{problem}
+\begin{solution}
+As abelian groups, the second isomorphism theorem ensures $(I + J)/I\cong J/(I \cap J)$.
+\end{solution}
 
 
 
+\subsection{\textsection4. Ideals and quotients: remarks and examples. Prime and maximal ideals}
+
+\begin{problem}[4.2]
+Prove that the homomorphic image of a Noetherian ring is Noetherian. That is, prove that if $\varphi: R \to S$ is a surjective ring homomorphism, and $R$ is Noetherian, then $S$ is Noetherian. [\textsection6.4]
+\end{problem}
+\begin{solution}
+	According to \hyperlink{Exercise III.3.2}{Exercise III.3.2}, given any ideal $J$ of $S$, we see $\varphi^{-1}(J)$ is an ideal of $R$. Since $R$ is a Noetherian ring, we have $\varphi^{-1}(J)=(a_1,a_2,\cdots,a_n)$. Since $\varphi$ is surjective, there must be
+	$$
+	J=\varphi(\varphi^{-1}(J))=(\varphi(a_1),\varphi(a_2),\cdots,\varphi(a_n)),
+	$$
+	which means $J$ is finitely generated. Thus we conclude $S$ is Noetherian.
+\end{solution}
+
+\begin{problem}[4.3]
+	Prove that the ideal $(2, x)$ of $\Z[x]$ is not principal.
+\end{problem}
+\begin{solution}
+	Suppose $(f)=(2,x)$. Since it is easy to see $f\ne 0$ and $f\ne 1$, there must be 
+	$$
+	2=gf\implies f=2.
+	$$ 
+	However, it is impossible to find some $h\in \Z[x]$ such that
+	\[
+	2+x=hf=2h,
+	\]
+	which leads to a contradiction. Thus we show that the ideal $(2, x)$ of $\Z[x]$ is not principal.
+\end{solution}
+
+\begin{problem}[4.5]
+Let $I, J$ be ideals in a ring $R$, such that $I+J = (1)$. Prove that $IJ = I \cap J$.[\textsection4.1]
+\end{problem}
+\begin{solution}
+The notation $(1)$ suggests $R$ is commutative. For any $k\in IJ$, we can assume that $k=ab$, ($a\in I$, $b\in J$). Note that $k\in aJ=J$ and $k\in Ib=I$. It deduces that $k\in I\cap J$. Thus we show $IJ\subseteq I\cap J$.
+
+\noindent suppose $l\in I\cap J$. If $1=a+b$ ($a\in I$, $b\in J$), Then we have $l=1*l=(a+b)l=al+lb\in IJ$, which implies that $I\cap J\subseteq IJ$. Therefore, we show $IJ = I \cap J$.
+\end{solution}
 
 
 \newpage
@@ -2881,6 +2964,8 @@ Given a presentation $(A|\mathscr{R})=F(A)/R$, where $A$ is the set of generator
 
 Moreover, if $G$ is generated by $f(A)$, then $\mathrm{im}\psi=G$, since $f(A)=\psi(\pi( i(A)))\subset\mathrm{im}\psi$ implies $G\subset\mathrm{im}\psi$.\hfill$\lrcorner$
 
+
+\newpage
 \bibliographystyle{plain}
 \bibliography{mybibtex}
 
