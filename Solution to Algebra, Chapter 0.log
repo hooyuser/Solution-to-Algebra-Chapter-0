@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.3.16)  21 NOV 2019 19:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.3.16)  22 NOV 2019 16:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -704,20 +704,20 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 (./Solution to Algebra, Chapter 0.aux)
 \openout1 = `"Solution to Algebra, Chapter 0.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -783,24 +783,24 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 53.
+LaTeX Font Info:    Try loading font information for U+msa on input line 54.
 
 (d:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 53.
+LaTeX Font Info:    Try loading font information for U+msb on input line 54.
 
 (d:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 53.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 54.
 
 (d:/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Package xypdf Info: Line width: 0.47998pt on input line 53.
+Package xypdf Info: Line width: 0.47998pt on input line 54.
 \AtBeginShipoutBox=\box44
-Package hyperref Info: Link coloring ON on input line 53.
+Package hyperref Info: Link coloring ON on input line 54.
 
 (d:/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -810,9 +810,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count152
 )
-LaTeX Info: Redefining \ref on input line 53.
-LaTeX Info: Redefining \pageref on input line 53.
-LaTeX Info: Redefining \nameref on input line 53.
+LaTeX Info: Redefining \ref on input line 54.
+LaTeX Info: Redefining \pageref on input line 54.
+LaTeX Info: Redefining \nameref on input line 54.
 
 (./Solution to Algebra, Chapter 0.out) (./Solution to Algebra, Chapter 0.out)
 \@outlinefile=\write5
@@ -887,6 +887,12 @@ Package xcolor Warning: Incompatible color definition on input line 19.
 
 Package xcolor Warning: Incompatible color definition on input line 20.
 
+
+Package xcolor Warning: Incompatible color definition on input line 21.
+
+
+Package xcolor Warning: Incompatible color definition on input line 22.
+
 )
 \tf@toc=\write6
 \openout6 = `"Solution to Algebra, Chapter 0.toc"'.
@@ -895,172 +901,183 @@ Package xcolor Warning: Incompatible color definition on input line 20.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 11.74988pt
-(hyperref)                replaced by space on input line 60.
+(hyperref)                replaced by space on input line 61.
 
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <14.4> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 62.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 63.
 [1
 
 {d:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 11.74988pt
-(hyperref)                replaced by space on input line 184.
+(hyperref)                replaced by space on input line 185.
 
 [4] [5] [6] [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 430.
+(hyperref)                removing `math shift' on input line 431.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 430.
+(hyperref)                removing `math shift' on input line 431.
 
 <xymatrix 2x3 313> [8] <xymatrix 3x3 325> <xymatrix 3x3 626> [9] <xymatrix 2x3
 223> [10] [11]
 
-Package xcolor Warning: Incompatible color definition on input line 592.
+Package xcolor Warning: Incompatible color definition on input line 593.
 
-<xymatrix 2x3 223>
-Overfull \hbox (7.7385pt too wide) detected at line 636
+[12] <xymatrix 2x3 223>
+Overfull \hbox (7.7385pt too wide) detected at line 637
 [][]
  []
 
-[12] <xymatrix 2x3 223> [13] <xymatrix 2x2 137> [14] [15] [16] [17] [18]
-<xymatrix 2x2 137> <xymatrix 2x2 137> <xymatrix 2x2 137> [19] [20] [21]
-<xymatrix 2x3 223> <xymatrix 4x3 231> [22] <xymatrix 5x5 307> <xymatrix 5x1
-152> <xymatrix 3x3 488> [23] <xymatrix 3x3 325> <xymatrix 3x3 317> [24]
-<xymatrix 2x3 223>
-Underfull \hbox (badness 10000) in paragraph at lines 1271--1273
+[13] <xymatrix 2x3 223> [14] <xymatrix 2x2 137> [15] [16] [17] [18] <xymatrix
+2x2 137> [19] <xymatrix 2x2 137> <xymatrix 2x2 137> [20] [21] <xymatrix 2x3
+223> [22] <xymatrix 4x3 231> <xymatrix 5x5 307> [23] <xymatrix 5x1 152>
+<xymatrix 3x3 488> <xymatrix 3x3 325> [24] <xymatrix 3x3 317> <xymatrix 2x3
+223> [25]
+Underfull \hbox (badness 10000) in paragraph at lines 1272--1274
 
  []
 
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 1294--1296
+
+Underfull \hbox (badness 10000) in paragraph at lines 1295--1297
 
  []
 
-<xymatrix 3x3 488> [26] [27] <xymatrix 2x4 374> [28]
-Overfull \hbox (16.31421pt too wide) detected at line 1490
+<xymatrix 3x3 488> [26] [27] [28] <xymatrix 2x4 374> [29]
+Overfull \hbox (16.31421pt too wide) detected at line 1491
 [][] \OT1/cmr/m/n/12 = [][] [] = [] = [] = [] = \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/
 it/12 a[][]
  []
 
 
-Overfull \hbox (6.98085pt too wide) detected at line 1517
+Overfull \hbox (6.98085pt too wide) detected at line 1518
 [][] \OT1/cmr/m/n/12 = [][] [] = [] = [] = [] = \OML/cmm/m/it/12 a[][]
  []
 
-[29]
+[30]
 
-Package xcolor Warning: Incompatible color definition on input line 1569.
+Package xcolor Warning: Incompatible color definition on input line 1570.
 
-[30] <xymatrix 2x2 137> [31] <xymatrix 2x2 137> [32] [33] [34]
+[31] <xymatrix 2x2 137> [32] <xymatrix 2x2 137> [33] [34] [35]
 
-Package xcolor Warning: Incompatible color definition on input line 1892.
-
-[35]
-
-Package xcolor Warning: Incompatible color definition on input line 1930.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1958.
+Package xcolor Warning: Incompatible color definition on input line 1893.
 
 [36]
 
-Package xcolor Warning: Incompatible color definition on input line 1965.
+Package xcolor Warning: Incompatible color definition on input line 1931.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1959.
 
 [37]
 
-Package xcolor Warning: Incompatible color definition on input line 2043.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2048.
-
-
-Package xcolor Warning: Incompatible color definition on input line 2060.
+Package xcolor Warning: Incompatible color definition on input line 1966.
 
 [38]
 
-Package xcolor Warning: Incompatible color definition on input line 2069.
+Package xcolor Warning: Incompatible color definition on input line 2044.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2085.
-
-<xymatrix 2x3 223>
-
-Package xcolor Warning: Incompatible color definition on input line 2103.
+Package xcolor Warning: Incompatible color definition on input line 2049.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2103.
+Package xcolor Warning: Incompatible color definition on input line 2061.
 
 [39]
 
-Package xcolor Warning: Incompatible color definition on input line 2106.
+Package xcolor Warning: Incompatible color definition on input line 2070.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2110.
+Package xcolor Warning: Incompatible color definition on input line 2086.
 
-<xymatrix 3x4 501> [40]
+<xymatrix 2x3 223>
 
-Package xcolor Warning: Incompatible color definition on input line 2153.
+Package xcolor Warning: Incompatible color definition on input line 2104.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2104.
+
+[40]
+
+Package xcolor Warning: Incompatible color definition on input line 2107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2111.
+
+<xymatrix 3x4 501> [41]
+
+Package xcolor Warning: Incompatible color definition on input line 2154.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 11.74988pt
-(hyperref)                replaced by space on input line 2179.
+(hyperref)                replaced by space on input line 2182.
 
-[41] [42]
-LaTeX Font Info:    Try loading font information for U+euf on input line 2256.
+[42] [43]
+LaTeX Font Info:    Try loading font information for U+euf on input line 2260.
  (d:/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 
-Package xcolor Warning: Incompatible color definition on input line 2256.
+Package xcolor Warning: Incompatible color definition on input line 2260.
 
-[43] [44] [45] [46]
-Overfull \hbox (28.94682pt too wide) detected at line 2459
+[44] [45] [46]pdfTeX warning (ext4): destination with the same identifier (name
+{Exercise\040III.1.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2394 \hypertarget{Exercise III.1.4}{}
+                                        [47]
+Overfull \hbox (28.94682pt too wide) detected at line 2464
 []
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2469.
+Package xcolor Warning: Incompatible color definition on input line 2474.
 
-[47] <xymatrix 2x3 227> [48]
+[48] <xymatrix 2x3 227> [49]
 
-Package xcolor Warning: Incompatible color definition on input line 2532.
+Package xcolor Warning: Incompatible color definition on input line 2537.
 
-[49] [50]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2606.
-
+[50] [51]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2606.
+(hyperref)                removing `math shift' on input line 2611.
 
-[51] <xymatrix 2x3 223> [52] <xymatrix 2x3 227> [53]
-(./Solution to Algebra, Chapter 0.bbl
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2611.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2621.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2621.
+
+[52] <xymatrix 2x3 223> [53] [54] [55] <xymatrix 4x1 196> [56] [57] <xymatrix
+2x3 227> (./Solution to Algebra, Chapter 0.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [54]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2712.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2712.
+) [58]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2832.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2832.
  (./Solution to Algebra, Chapter 0.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2712.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2712.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2832.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2832.
 
 Package rerunfilecheck Info: File `"Solution to Algebra, Chapter 0".out' has no
 t changed.
-(rerunfilecheck)             Checksum: 196F6C2F0936D2EB7E5492824A10F925;1463.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2712.
+(rerunfilecheck)             Checksum: 6CB1C98714CC093DD5349EE1E281B6F0;1590.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2832.
  ) 
 Here is how much of TeX's memory you used:
- 20015 strings out of 492649
- 351971 string characters out of 6133384
- 485753 words of memory out of 5000000
- 23381 multiletter control sequences out of 15000+600000
+ 20030 strings out of 492649
+ 352099 string characters out of 6133384
+ 487286 words of memory out of 5000000
+ 23384 multiletter control sequences out of 15000+600000
  21331 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,19n,54p,3243b,834s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1088,11 +1105,11 @@ dist/fonts/type1/public/rsfs/rsfs10.pfb><d:/texlive/2018/texmf-dist/fonts/type1
 /public/xypic/xyatip10.pfb><d:/texlive/2018/texmf-dist/fonts/type1/public/xypic
 /xybsql10.pfb><d:/texlive/2018/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb
 ><d:/texlive/2018/texmf-dist/fonts/type1/public/xypic/xydash10.pfb>
-Output written on "Solution to Algebra, Chapter 0.pdf" (54 pages, 409704 bytes)
+Output written on "Solution to Algebra, Chapter 0.pdf" (58 pages, 419801 bytes)
 .
 PDF statistics:
- 531 PDF objects out of 1000 (max. 8388607)
- 443 compressed objects within 5 object streams
- 112 named destinations out of 1000 (max. 500000)
- 173 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 568 PDF objects out of 1000 (max. 8388607)
+ 476 compressed objects within 5 object streams
+ 124 named destinations out of 1000 (max. 500000)
+ 189 words of extra memory for PDF output out of 10000 (max. 10000000)
 

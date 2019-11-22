@@ -36,6 +36,7 @@
 \newcommand{\SL}{\mathrm{SL}} 
 \newcommand{\Aut}{\mathrm{Aut}}
 \newcommand{\Inn}{\mathrm{Inn}}
+\newcommand{\im}{\mathrm{im}}
 \newcommand{\Grp}{\mathsf{Grp}} 
 \newcommand{\Set}{\mathsf{Set}}
 \newcommand{\Ab}{\mathsf{Ab}}  
@@ -2172,6 +2173,8 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 
 \end{solution}
 
+
+
 \subsection{\textsection9. Group actions}
 
 \subsection{\textsection10. Group objects in categories}
@@ -2252,6 +2255,7 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 	\end{align*}
 \end{solution}
 
+\hypertarget{Exercise III.1.4}{}
 \begin{problem}[1.4]
 	$\vartriangleright$ The set of $n\times n$ matrices with entries in a ring $R$ isdenoted $\mathcal{M}_n(R)$. Prove that componentwise addition and matrixmultiplication makes $\mathcal{M}_n(R)$ into a ring, for any ring $R$. The notation $\mathfrak{gl}_n(R)$ is also commonly used, especially $R=\mathbb{R}$ or $\mathbb{C}$ (although this indicates one is considering them as \emph{Lie algebras}) in parallel with the analogous notation for the corresponding groups of units, cf. \hyperlink{Exercise II.6.1}{Exercise II.6.1}. In
 	fact, the parallel continues with the definition of the following sets of matrices:
@@ -2387,6 +2391,7 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 	Then we can check $\mathbb{Z}/2\mathbb{Z}\times\mathbb{Z}/2\mathbb{Z}$ forms a field by definition. 
 \end{solution}
 
+\hypertarget{Exercise III.1.4}{}
 \begin{problem}[1.12]
 	Just as complex numbers may be viewed as combinations $a+bi$, where
 	$a,b\in \R$, and $i$ satisfies the relation $i^2=-1$ (and commutes with $\R$), we may construct a ring $\mathbb{H}$ by considering linear combinations $a + bi + cj + dk$ where $a, b, c, d \in \R$, and $i, j, k$ commute with $\R$ and satisfy the following relations:
@@ -2613,7 +2618,7 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 \end{solution}
 
 \begin{problem}[2.4]
-	Define functions $\mathbb{H} \rightarrow \mathfrak{g l}_{4}(\mathbb{R})$ and $\mathbb{H} \rightarrow \mathfrak{g l}_{4}(\mathbb{C})$ (cf. Exercises 1.4 and 1.12) by
+	Define functions $\mathbb{H} \rightarrow \mathfrak{g l}_{4}(\mathbb{R})$ and $\mathbb{H} \rightarrow \mathfrak{g l}_{4}(\mathbb{C})$ (cf. \hyperlink{Exercise III.1.4}{Exercise III.1.4} and \hyperlink{Exercise III.1.4}{1.12}) by
 	\begin{align*}
 	a+b i+c j+d k& \longmapsto\left(\begin{array}{cccc}{a} & {b} & {c} & {d} \\ {-b} & {a} & {-d} & {c} \\ {-c} & {d} & {a} & {-b} \\ {-d} & {-c} & {b} & {a}\end{array}\right)\\
 	a+b i+c j+d k &\longmapsto\left(\begin{array}{cc}{a+b i} & {c+d i} \\ {-c+d i} & {a-b i}\end{array}\right)
@@ -2628,7 +2633,10 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 	&=f((a_1 a_2-b_1 b_2-c_1 c_2-d_1 d_2)+(a_2
 	b_1+a_1 b_2-c_2 d_1+c_1 d_2)i\\
 	&\hspace{1em}+(a_2 c_1+a_1 c_2+b_2 d_1-b_1
-	d_2)j+(a_2 d_1+a_1 d_2-b_2 c_1+b_1 c_2)k)
+	d_2)j+(a_2 d_1+a_1 d_2-b_2 c_1+b_1 c_2)k)\\
+	&=\left(\begin{array}{cccc}{a_1} & {b_1} & {c_1} & {d_1} \\ {-b_1} & {a_1} & {-d_1} & {c_1} \\ {-c_1} & {d_1} & {a_1} & {-b_1} \\ {-d_1} & {-c_1} & {b_1} & {a_1}\end{array}\right)
+	\left(\begin{array}{cccc}{a_2} & {b_2} & {c_2} & {d_2} \\ {-b_2} & {a_2} & {-d_2} & {c_2} \\ {-c_2} & {d_2} & {a_2} & {-b_2} \\ {-d_2} & {-c_2} & {b_2} & {a_2}\end{array}\right)\\
+	&=f(a_1+b_1i+c_1j+d_1k)f(a_2+b_2i+c_2j+d_2k)
 	\end{align*}
 \end{solution}
 
@@ -2689,10 +2697,122 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 	
 \end{solution}
 
+\begin{problem}[2.7]
+	Let $R=\Z/2\Z$, and let $f(x)=x^2-x$; note $f(x)\ne 0$. What is the polynomial function $R\to R$ determined by $f(x)$?[\textsection2.2, \textsection V.4.2, \textsection V.5.1]
+\end{problem}
+\begin{solution}
+	It determines a function $f:\Z/2\Z\to\Z/2\Z$ sends all elements to identity, that is, $f([0]_2)=[0]_2$, $f([1]_2)=[0]_2$.
+\end{solution}
+
+\begin{problem}[2.8]
+	Prove that every subring of a field is an integral domain
+\end{problem}
+\begin{solution}
+	Suppose $\varphi:R\hookrightarrow K$ is a inclusion homomorphism. If $a\ne0$, we have
+	\[
+	ab=ac\implies \varphi(a)\varphi(b)=\varphi(a)\varphi(c)\implies \varphi(b)=\varphi(c)\implies b=c.
+	\]
+	Due to the community of field it also holds that $ba=ca$. Thus we show $R$ is an integral domain.
+\end{solution}
+
+\begin{problem}[2.9]
+$\neg$ The \emph{center} of a ring $R$ consists of the elements a such that $ar = ra$ for all $r\in R$. Prove that the center is a subring of $R$. Prove that the center of a division ring is a field. [2.11, IV.2.17, VII.5.14,VII.5.16]
+\end{problem}
+\begin{solution}
+Denote the center of $R$ by $Z(R)$. We can check that
+\begin{enumerate}
+	\item for all $x,y\in Z(R)$, for all $r\in R$, $$(x-y)r=xr-yr=rx-ry=r(x-y)\implies x-y\in Z(R);$$ 
+	\item for all $r\in R$,
+	\[
+	1r=r1\implies 1\in Z(R);
+	\]
+	\item for all $x,y\in Z(R)$, for all $r\in R$,
+	\[
+	(xy)r=xry=r(xy)\implies xy\in Z(R).
+	\]
+\end{enumerate}
+Thus we show that $Z(R)$ is a subring of $R$. If $R$ is a division ring, then $Z(R)$ is a also a division ring. Note that for all $x,y\in Z(R)$, $xy=yx$, we see that $Z(R)$ is a commutative division ring, namely field.
+\end{solution}
+
+\begin{problem}[2.10]
+$\neg$ The \emph{centralizer} of an element $a$ of a ring $R$ consists of the elements $r \in R$ such that $ar = ra$. Prove that the centralizer of $a$ is a subring of $R$, for every $a\in R$. Prove that the center of $R$ is the intersection of all its centralizers. Prove that every centralizer in a division ring is a division ring. [2.11, IV.2.17, VII.5.16]
+\end{problem}
+\begin{solution}
+Denote the centralizer of an element $a$ of $R$ by $Z_a(R)$. We can check that
+\begin{enumerate}
+	\item for all $x,y\in Z_a(R)$, $$(x-y)a=xa-ya=ax-ay=a(x-y)\implies x-y\in Z_a(R);$$ 
+	\item 
+	\[
+	1a=a1\implies 1\in Z_a(R);
+	\]
+	\item for all $x,y\in Z_a(R)$,
+	\[
+	(xy)a=xay=a(xy)\implies xy\in Z_a(R).
+	\]
+\end{enumerate}
+Thus we show that $Z_a(R)$ is a subring of $R$. By definition we have $Z(R)\subseteq Z_a(R)$ for all $a\in R$, which implies $Z(R)\subseteq \bigcap_{a\in R} Z_a(R)$. Assume $s\in\bigcap_{a\in R} Z_a(R)$, then we see $sa=as$ for all $a\in R$, which means $s\in Z(R)$ and accordingly $\bigcap_{a\in R} Z_a(R)\subseteq Z(R)$. Thus we deduce that $Z(R)=\bigcap_{a\in R} Z_a(R)$.
+If $R$ is a division ring, then $Z_a(R)$ is a also a division ring because $Z_a(R)$ is a subring. 
+\end{solution}
+
+
+\subsection{\textsection3. Ideals and quotient rings}
+
+\begin{problem}[3.1]
+Prove that the image of a ring homomorphism $\varphi: R \to S$ is a subring of $S$. What can you say about $\varphi$, if its image is an ideal of $S$? What can you say about $\varphi$, if its kernel is a subring of $R$?
+\end{problem}
+\begin{solution}
+We can see that $\im \varphi$ is a subring of $S$ from the canonical decomposition
+\[\xymatrix{
+	R\ar@/^2pc/@{->}[rrr]^{\varphi}\ar@{->>}[r]^{}&R/\ker \varphi \ar@{->}[r]^{\hspace{1em}\sim\hspace{4pt}}_{\hspace{1em}\tilde{\varphi}\hspace{4pt}}&\im \varphi\hspace{2pt}\ar@{^{(}->}[r]^{}&S
+}\] 
+If $\im \varphi$ is an ideal, then $s\in S,1\in\im\varphi \implies s\in \im\varphi$. So $\im \varphi=S$ and $\varphi$ is an epimorphism. Since $\ker\varphi$ is a ideal, if it is also a subring, we have $\ker \varphi=R$.
+\end{solution}
+
+\begin{problem}[3.2]
+Let $\varphi: R\to S$ be a ring homomorphism, and let $J$ be an ideal of $S$. Prove
+that $I = \varphi^{-1}(J)$ is an ideal of $R$. [\textsection3.1]
+\end{problem}
+\begin{solution}
+In $\Ab$ we see $\varphi^{-1}(J)$ is a subgroup of $R$. For all $r\in R$, $a\in \varphi^{-1}(J)$, we have
+\[
+\varphi(ra)=\varphi(r)\varphi(a)\in J\implies ra\in\varphi^{-1}(J).
+\]
+Similarly we can obtain $ar\in\varphi^{-1}(J)$. Therefore, we conclude that $I = \varphi^{-1}(J)$ is an ideal of $R$.
+\end{solution}
+
+\begin{problem}[3.3]
+$\neg$ Let $\varphi : R \to S$ be a ring homomorphism, and let $J$ be an ideal of $R$.
+\begin{itemize}
+	\item Show that $\varphi(J)$ need not be an ideal of $S$.
+	\item Assume that $\varphi$ is surjective; then prove that $\varphi(J)$ is an ideal of $S$.
+	\item Assume that $\varphi$ is surjective, and let $I = \ker\varphi$; thus we may identify $S$ with $R/I$.
+	Let $\overline{J} = \varphi(J)$, an ideal of $R/I$ by the previous point. Prove that
+	\[
+	\frac{R / I}{\overline{J}} \cong \frac{R}{I+J}
+	\]
+\end{itemize}
+(Of course this is just a rehash of Proposition 3.11.) [4.11]
+\end{problem}
+\begin{solution}
+\begin{itemize}
+	\item Let $\varphi:\Z\hookrightarrow \Q$ and $J=\Z$. It is clear that $\varphi(J)=\Z$ is not an ideal of $\Q$.
+	\item Assume that $\varphi$ is surjective. In $\Ab$ we see $\varphi(J)$ is a subgroup of $S$. For all $a'=\varphi(a)\in\varphi(J)$, $r'=\varphi(r)\in S$,
+	\[
+	ra\in J\implies r'a'=\varphi(r)\varphi(a)=\varphi(ra)\in\varphi(J).
+	\]
+	Similarly we can obtain $a'r'\in\varphi(J)$. Therefore, we conclude that $\varphi(J)$ is an ideal of $S$.
+	\item Assume that $\varphi$ is surjective, and let $I = \ker\varphi$; thus we may identify $S$ with $R/I$.
+	Let $J = \varphi(J)$, an ideal of $R/I$ by the previous point. Prove that
+	\[
+	\frac{R / I}{\bar{J}} \cong \frac{R}{I+J}
+	\]
+\end{itemize}
+\end{solution}
 
 
 
-\section*{Appendix}
+\newpage
+\section{Appendix}
 \hypertarget{Lemma II.1}{}
 \textbf{Lemma II.1} (von Dyck)
 Given a presentation $(A|\mathscr{R})=F(A)/R$, where $A$ is the set of generators, $\mathscr{R}\in F(A)$ is the set of relators and $R$ is the smallest normal subgroup of $F(A)$ containing $\mathscr{R}$. Define inclusion mapping $i:A\to F(A)$ and projection $\pi:F(A)\to F(A)/R$. If $f$ is a mapping from $A$ to a group $G$, and every relations in $\mathscr{R}$ holds in $G$ via $f$, that is, $\mathscr{R}\subset\ker\varphi$ where $\varphi$ is the unique homomorphism induced by the universal property of free group, then there exists a unique homomorphism $\psi:F(A)/R\to G$ such that $f=\psi\circ\pi\circ i$. If $G$ is generated by $f(A)$, then $\psi$ is surjective.
