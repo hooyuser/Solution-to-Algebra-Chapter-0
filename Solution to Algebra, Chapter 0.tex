@@ -2786,7 +2786,7 @@ $\neg$ Let $\varphi : R \to S$ be a ring homomorphism, and let $J$ be an ideal o
 	\item Show that $\varphi(J)$ need not be an ideal of $S$.
 	\item Assume that $\varphi$ is surjective; then prove that $\varphi(J)$ is an ideal of $S$.
 	\item Assume that $\varphi$ is surjective, and let $I = \ker\varphi$; thus we may identify $S$ with $R/I$.
-	Let $\overline{J} = \varphi(J)$, an ideal of $R/I$ by the previous point. Prove that
+	Let $\overline{J}= \varphi(J)$, an ideal of $R/I$ by the previous point. Prove that
 	\[
 	\frac{R / I}{\overline{J}} \cong \frac{R}{I+J}
 	\]
@@ -2801,13 +2801,69 @@ $\neg$ Let $\varphi : R \to S$ be a ring homomorphism, and let $J$ be an ideal o
 	ra\in J\implies r'a'=\varphi(r)\varphi(a)=\varphi(ra)\in\varphi(J).
 	\]
 	Similarly we can obtain $a'r'\in\varphi(J)$. Therefore, we conclude that $\varphi(J)$ is an ideal of $S$.
-	\item Assume that $\varphi$ is surjective, and let $I = \ker\varphi$; thus we may identify $S$ with $R/I$.
-	Let $J = \varphi(J)$, an ideal of $R/I$ by the previous point. Prove that
+	\item Assume that $\varphi$ is surjective. The universal property yields a unique homomorphism
+	\begin{align*}
+	\psi:R/I&\longrightarrow R/(I+J),\\
+	r+I &\longmapsto r+I+J.
+	\end{align*}
+	Since
+	\begin{align*}
+	\ker \psi&=\{r+I\in R/I\mid r\in I+J\}\\
+	&=\{a+b+I\in R/I\mid a\in I,b\in J\}\\
+	&=\{b+I\in R/I\mid b\in J\}\\
+	&=\{\varphi(b)\in S\mid b\in J\}\\
+	&= \varphi(J)=\overline{J}
+	\end{align*}
+	and $\psi$ is surjective,
 	\[
-	\frac{R / I}{\bar{J}} \cong \frac{R}{I+J}
+	\frac{R / I}{\overline{J}}=\frac{R / I}{\ker \psi} \cong \frac{R}{I+J}.
 	\]
 \end{itemize}
 \end{solution}
+
+\hypertarget{Exercise III.3.7}{}
+\begin{problem}[3.7]
+Let $R$ be a ring, and let $a\in R$. Prove that $Ra$ is a left-ideal of $R$, and $aR$ is a right-ideal of $R$. Prove that $a$ is a left-, resp. right-unit if and only if $R = aR$, resp. $R = Ra$.
+\end{problem}
+\begin{solution}
+For all $r\in R$, $r(Ra)\subseteq Ra$, $(aR)r\subseteq aR$. Therefore, $Ra$ is a left-ideal of $R$, and $aR$ is a right-ideal of $R$. Since $aR\subseteq R$, $R\subseteq aR$ actually amounts to $R = aR$. 
+\[
+a\text{ is a left-unit}\iff\exists b\in R, ab=1\implies \forall r\in R,r=abr\in aR\implies R\subseteq aR
+\]
+\[
+R\subseteq aR\implies\forall r\in R,\exists r'\in R,r=ar'\implies \exists r'\in R, ar'=1\iff a\text{ is a left-unit}
+\]
+Therefore, $a$ is a left-unit if and only if $R = aR$. Similarly we can prove $a$ is a right-unit if and only if $R = Ra$.
+\end{solution}
+
+\begin{problem}[3.8]
+Prove that a ring $R$ is a division ring if and only if its only left-ideals and right-ideals are $\{0\}$ and $R$.
+
+In particular, a commutative ring $R$ is a field if and only if the only ideals of $R$ are $\{0\}$ and $R$. [3.9, \textsection4.3]
+\end{problem}
+\begin{solution}
+Assume the only left-ideals and right-ideals that ring $R$ have are $\{0\}$ and $R$. If $a\ne0$, we have $Ra=aR=R$. As a result of \hyperlink{Exercise III.3.7}{Exercise III.3.7}, it implies that $a$ is two-side unit and that accordingly $R$ is a division ring.
+
+Now assume that $R$ is a division ring. Suppose $I$ is a nonzero left-ideal of $R$ and that $a\in I$ is not 0. Note that the condition of division ring guarantees there exists $b\in R$ such that $ba=1$. Since for all $r\in R$, $r=(rb)a\in I$, there must be $I=R$. Supposing that $I'$ is a nonzero right-ideal of $R$ and that $a'\in I'$ is not 0, in a similar way we can deduce $I'=R$. Therefore, we conclude that the only left-ideals of $R$ and right-ideals of $R$ are $\{0\}$ and $R$.
+\end{solution}
+
+\begin{problem}[3.11]
+Let $R$ be a ring containing $\C$ as a subring. Prove that there are no ring homomorphisms $R \to \R$.
+\end{problem}
+\begin{solution}
+	Suppose $f:R \to \R$ is a homomorphism. On the one hand, we have
+	\[
+	f(1)=f(1*1)=f(1)^2\ge0.
+	\]
+	On the other hand, we can calculate $f(1)$ by
+	\[
+	f(1)=f(-i*i)=-f(i)^2\le0,
+	\]
+	which forces $f(1)$ to be 0. Thus we see $f$ sends some nonzero element in $R$ to 0 in $\R$, which is a contradiction.
+\end{solution}
+
+
+
 
 
 
