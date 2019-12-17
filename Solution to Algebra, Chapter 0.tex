@@ -36,10 +36,11 @@
 \newcommand{\SL}{\mathrm{SL}} 
 \newcommand{\Aut}{\mathrm{Aut}}
 \newcommand{\Inn}{\mathrm{Inn}}
-\newcommand{\im}{\mathrm{im}}
+\newcommand{\im}{\mathrm{im}\hspace{1.5pt}}
 \newcommand{\Grp}{\mathsf{Grp}} 
 \newcommand{\Set}{\mathsf{Set}}
-\newcommand{\Ab}{\mathsf{Ab}}  
+\newcommand{\Ab}{\mathsf{Ab}}
+\newcommand{\Mod}{\mathsf{Mod}} 
 \newcommand{\R}{\mathbb{R}} 
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -58,7 +59,7 @@
 \tableofcontents
 \appendix
 
-\section{Chapter I.\quad Preliminaries: Set theory and categories}
+\section{Chapter I.\hspace{0.2em} Preliminaries: Set theory and categories}
 
 \subsection{\textsection1. Naive Set Theory}
 
@@ -182,7 +183,7 @@ and itself? [\textsection II.2.1]
 	which means $F$ is initial in the opposite category $\mathsf{C}_{op}$.	
 \end{solution}
 
-\section{Chapter II.\quad Groups, first encounter}
+\section{Chapter II.\hspace{0.2em} Groups, first encounter}
 
 \subsection{\textsection1. Definition of group}
 \begin{problem}[1.1]
@@ -2179,7 +2180,7 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 
 \subsection{\textsection10. Group objects in categories}
 
-\section{Chapter III\quad Chapter Rings and modules}
+\section{Chapter III\hspace{0.2em} Rings and modules}
 
 \subsection{\textsection1. Definition of ring}
 \begin{problem}[1.1]
@@ -2948,6 +2949,47 @@ The notation $(1)$ suggests $R$ is commutative. For any $k\in IJ$, we can assume
 
 \noindent suppose $l\in I\cap J$. If $1=a+b$ ($a\in I$, $b\in J$), Then we have $l=1*l=(a+b)l=al+lb\in IJ$, which implies that $I\cap J\subseteq IJ$. Therefore, we show $IJ = I \cap J$.
 \end{solution}
+
+\subsection{\textsection5. Modules over a ring}
+\begin{problem}[5.4]
+$\neg$ Let $R$ be a ring. A nonzero $R$-module $M$ is \emph{simple} (or \emph{irreducible}) if its only submodules are $\{0\}$ and $M$. Let $M$, $N$ be simple modules, and let $\varphi : M \to N$ be a homomorphism of $R$-modules. Prove that either $\varphi= 0$, or $\varphi$ is an isomorphism. (This rather innocent statement is known as Schur's lemma.) [5.10, 6.16, VI.1.16]
+\end{problem}
+\begin{solution}
+For convenience, we talk about the identity of modules up to isomorphism. Since the nonzero $R$-module $M$ is simple, $\ker\varphi $ is either $\{0\}$ or $M$. Thus $\im \varphi= M/ \ker\varphi$ is either $\{0\}$ or $M$. Note that $\im \varphi\subset N$ is either $\{0\}$ or $N$. If $\im \varphi=\{0\}$, then we have $\varphi=0$. If $\im \varphi=M$, then we have $\im \varphi=M=N$. Therefore we show that either $\varphi= 0$, or $\varphi$ is an isomorphism. 
+\end{solution}
+
+
+\subsection{\textsection6. Products, coproducts, etc. in $R$-$\Mod$}
+\begin{problem}[6.3]
+Let $R$ be a ring, $M$ an $R$-module, and $p : M \to M$ an $R$-module homomorphism such that $p^2 = p$. (Such a map is called a projection.) Prove that $M\cong\ker p \oplus\im p$.
+\end{problem}
+\begin{solution}
+Since $x=p((p-id_M)x)\in M$, $p$ must be an epimorphism and $M\cong\im p\cong M/\ker p$. For all $x\in\ker p \cap \im p$, we can assume $x=py$ and deduce that $0=px=p^2y=py=x$. Thus we have $\ker p \cap \im p=\{0\}$ and
+\[
+\frac{\ker p \oplus\im p}{\ker p}\cong\frac{\im p}{\ker p \cap \im p}\cong\im p,
+\]
+which implies
+\[
+\frac{\ker p \oplus\im p}{M}\cong\frac{\ker p \oplus\im p/\ker p}{M/\ker p}\cong\frac{\im p}{ \im p}\cong\{0\}.
+\]
+Therefore we show that $M\cong\ker p \oplus\im p$.
+\end{solution}
+
+
+
+\subsection{\textsection7. Complexes and homology}
+\begin{problem}[7.1]
+Assume that the complex
+\[
+\cdots \longrightarrow 0 \longrightarrow M \longrightarrow 0 \longrightarrow \cdots
+\]
+is exact. Prove that $M\cong0$. [\textsection7.3]
+\end{problem}
+\begin{solution}
+Assume that $f:0\to M$ and $g:M\to 0$. Since the the complex is exact, we have $$\{0\}=\im f=\ker g=M.$$
+\end{solution}
+
+\section{Chapter V.\hspace{0.2em} Irreducibility and	factorization in integral domains}
 
 
 \newpage

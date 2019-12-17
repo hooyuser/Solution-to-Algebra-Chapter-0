@@ -1,10 +1,10 @@
-\BOOKMARK [1][-]{section*.2}{Chapter I. Preliminaries: Set theory and categories}{}% 1
+\BOOKMARK [1][-]{section*.2}{Chapter I. \040Preliminaries: Set theory and categories}{}% 1
 \BOOKMARK [2][-]{section*.3}{\2471. Naive Set Theory}{section*.2}% 2
 \BOOKMARK [2][-]{section*.4}{\2472. Functions between sets}{section*.2}% 3
 \BOOKMARK [2][-]{section*.5}{\2473. Categories}{section*.2}% 4
 \BOOKMARK [2][-]{section*.6}{\2474. Morphisms}{section*.2}% 5
 \BOOKMARK [2][-]{section*.7}{\2475. Universal properties}{section*.2}% 6
-\BOOKMARK [1][-]{section*.8}{Chapter II. Groups, first encounter}{}% 7
+\BOOKMARK [1][-]{section*.8}{Chapter II. \040Groups, first encounter}{}% 7
 \BOOKMARK [2][-]{section*.9}{\2471. Definition of group}{section*.8}% 8
 \BOOKMARK [2][-]{section*.10}{\2472. Examples of groups}{section*.8}% 9
 \BOOKMARK [2][-]{section*.11}{\2473. The category Grp}{section*.8}% 10
@@ -15,9 +15,13 @@
 \BOOKMARK [2][-]{section*.16}{\2478. Canonical decomposition and Lagrange's theorem}{section*.8}% 15
 \BOOKMARK [2][-]{section*.17}{\2479. Group actions}{section*.8}% 16
 \BOOKMARK [2][-]{section*.18}{\24710. Group objects in categories}{section*.8}% 17
-\BOOKMARK [1][-]{section*.19}{Chapter III Chapter Rings and modules}{}% 18
+\BOOKMARK [1][-]{section*.19}{Chapter III \040Rings and modules}{}% 18
 \BOOKMARK [2][-]{section*.20}{\2471. Definition of ring}{section*.19}% 19
 \BOOKMARK [2][-]{section*.21}{\2472. The category Ring}{section*.19}% 20
 \BOOKMARK [2][-]{section*.22}{\2473. Ideals and quotient rings}{section*.19}% 21
 \BOOKMARK [2][-]{section*.23}{\2474. Ideals and quotients: remarks and examples. Prime and maximal ideals}{section*.19}% 22
-\BOOKMARK [1][-]{section*.24}{Appendix}{}% 23
+\BOOKMARK [2][-]{section*.24}{\2475. Modules over a ring}{section*.19}% 23
+\BOOKMARK [2][-]{section*.25}{\2476. Products, coproducts, etc. in R-Mod}{section*.19}% 24
+\BOOKMARK [2][-]{section*.26}{\2477. Complexes and homology}{section*.19}% 25
+\BOOKMARK [1][-]{section*.27}{Chapter V. \040Irreducibility and factorization in integral domains}{}% 26
+\BOOKMARK [1][-]{section*.28}{Appendix}{}% 27
