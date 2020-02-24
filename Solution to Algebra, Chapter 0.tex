@@ -1415,7 +1415,7 @@ Let $A, B$ are $n\times n$ upper triangular matrices. If $i>j$,
 which means the set of upper triangular matrices is closed with respect to the matrix multiplication. Thus it is a subgroup of $\GL_n(\C)$.
 \end{solution}
 
-
+\hypertarget{Exercise II.6.3}{}
 \begin{problem}[6.3]
 $\neg$ Prove that every matrix in $\mathrm{SU}_2(\C)$ may be written in the form
 \[
@@ -2619,8 +2619,9 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 	Suppose that $\varphi$ is a homomorphism from a zero-ring $O$ to a ring $R$. Since $\varphi(0_O)=0_R$, $\varphi(1_O)=1_R$, $0_O=1_O$, we have $0_R=1_R$, which implies that $R$ is a zero-ring.
 \end{solution}
 
+\hypertarget{Exercise III.2.4}{}
 \begin{problem}[2.4]
-	Define functions $\mathbb{H} \rightarrow \mathfrak{g l}_{4}(\mathbb{R})$ and $\mathbb{H} \rightarrow \mathfrak{g l}_{4}(\mathbb{C})$ (cf. \hyperlink{Exercise III.1.4}{Exercise III.1.4} and \hyperlink{Exercise III.1.4}{1.12}) by
+	Define functions $\mathbb{H} \rightarrow \mathfrak{g l}_{4}(\mathbb{R})$ and $\mathbb{H} \rightarrow \mathfrak{g l}_{2}(\mathbb{C})$ (cf. \hyperlink{Exercise III.1.4}{Exercise III.1.4} and \hyperlink{Exercise III.1.4}{1.12}) by
 	\begin{align*}
 	a+b i+c j+d k& \longmapsto\left(\begin{array}{cccc}{a} & {b} & {c} & {d} \\ {-b} & {a} & {-d} & {c} \\ {-c} & {d} & {a} & {-b} \\ {-d} & {-c} & {b} & {a}\end{array}\right)\\
 	a+b i+c j+d k &\longmapsto\left(\begin{array}{cc}{a+b i} & {c+d i} \\ {-c+d i} & {a-b i}\end{array}\right)
@@ -2641,6 +2642,24 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 	&=f(a_1+b_1i+c_1j+d_1k)f(a_2+b_2i+c_2j+d_2k)
 	\end{align*}
 \end{solution}
+
+\hypertarget{Exercise III.2.5}{}
+\begin{problem}[2.5]
+	The norm of a quaternion $w=a+b i+c j+d k$, with $a, b, c, d \in \mathbb{R}$, is the real number $N(w)=a^{2}+b^{2}+c^{2}+d^{2}$.
+	Prove that the function from the multiplicative group $\mathbb{H}^{*}$ of nonzero quaternions to the multiplicative group $\mathbb{R}^{+}$ of positive real numbers, defined by assigning to each nonzero quaternion its norm, is a homomorphism. Prove that the kernel of this homomorphism is isomorphic to $\mathrm{SU}_{2}(\C)$ (cf. \hyperlink{Exercise II.6.3}{Exercise II.6.3}). $[4.10, \mathrm{IV} .5 .17$ $\mathrm{V} .6 .19]$
+\end{problem}
+\begin{solution}
+	According to \hyperlink{Exercise III.2.4}{Exercise III.2.4}, $w\in\mathbb{H}^{*}$ can be viewed as a matrix $i(w)\in\mathfrak{g l}_{2}(\mathbb{C})$ where $i:\mathbb{H}\to\mathfrak{g l}_{2}(\mathbb{C})$ is a monomorphism in $\mathsf{Ring}$. Then the function $N:\mathbb{H}^{*}\to \mathbb{R}^{+}$ can be just viewed as the determinant mapping $\det:i(\mathbb{H}^{*})\subset\mathfrak{g l}_{2}(\mathbb{C})\to\mathbb{R}^{+}$. More precisely, it means $N=\det\circ \;i$. We can check that
+	\[
+	N(w_1w_2)=\det(i(w_1w_2))=\det(i(w_1)i(w_2))=\det(i(w_1))\det(i(w_2))=N(w_1)N(w_2)
+	\]
+	and
+	\[
+	w\in\ker N\iff N(w)=\det(i(w))=1\iff i(w)\in\mathrm{SU}_{2}(\C).
+	\]
+	Therefore, $N$ is a homomorphism and $\ker N$ isomorphic to $\mathrm{SU}_{2}(\C)$.
+\end{solution}
+
 
 \begin{problem}[2.6]
 	Verify the ‘extension property’ of polynomial rings, stated in Example 2.3.
@@ -2866,6 +2885,7 @@ Let $R$ be a ring containing $\C$ as a subring. Prove that there are no ring hom
 	which forces $f(1)$ to be 0. Thus we see $f$ sends some nonzero element in $R$ to 0 in $\R$, which is a contradiction.
 \end{solution}
 
+\hypertarget{Exercise III.3.12}{}
 \begin{problem}[3.12]
 Let $R$ be a commutative ring. Prove that the set of nilpotent elements of $R$ is an ideal of $R$. (Cf. \hyperlink{Exercise III.1.6}{Exercise III.1.6}. This ideal is called the nilradical of $R$.)
 
@@ -2879,8 +2899,9 @@ a^n=0\implies r^na^n=a^nr^n=0\implies ra,ar\in N,
 we prove that $N$ is an ideal of $R$. A counterexample for non-commutative ring can be found in the ring $\mathfrak{gl}_2(\mathbb{R})$, as is shown in \hyperlink{Exercise III.1.6}{Exercise III.1.6}.
 \end{solution}
 
+\hypertarget{Exercise III.3.13}{}
 \begin{problem}[3.13]
-$\neg$ Let $R$ be a commutative ring, and let $N$ be its nilradical (cf. Exercise 3.12). Prove that $R/N$ contains no nonzero nilpotent elements. (Such a ring is said to be reduced.) [4.6, VII.2.8]
+$\neg$ Let $R$ be a commutative ring, and let $N$ be its nilradical (cf. \hyperlink{Exercise III.3.12}{Exercise III.3.12}). Prove that $R/N$ contains no nonzero nilpotent elements. (Such a ring is said to be reduced.) [4.6, VII.2.8]
 \end{problem}
 \begin{solution}
 Suppose there exists a nilpotent element $r+N\in R/N$ and $n>0$ such that
@@ -2941,13 +2962,182 @@ Prove that the homomorphic image of a Noetherian ring is Noetherian. That is, pr
 	which leads to a contradiction. Thus we show that the ideal $(2, x)$ of $\Z[x]$ is not principal.
 \end{solution}
 
+\hypertarget{Exercise III.4.5}{}
 \begin{problem}[4.5]
 Let $I, J$ be ideals in a ring $R$, such that $I+J = (1)$. Prove that $IJ = I \cap J$.[\textsection4.1]
 \end{problem}
 \begin{solution}
 The notation $(1)$ suggests $R$ is commutative. For any $k\in IJ$, we can assume that $k=ab$, ($a\in I$, $b\in J$). Note that $k\in aJ=J$ and $k\in Ib=I$. It deduces that $k\in I\cap J$. Thus we show $IJ\subseteq I\cap J$.
 
-\noindent suppose $l\in I\cap J$. If $1=a+b$ ($a\in I$, $b\in J$), Then we have $l=1*l=(a+b)l=al+lb\in IJ$, which implies that $I\cap J\subseteq IJ$. Therefore, we show $IJ = I \cap J$.
+\noindent Suppose $l\in I\cap J$. If $1=a+b$ ($a\in I$, $b\in J$), Then we have $l=1*l=(a+b)l=al+lb\in IJ$, which implies that $I\cap J\subseteq IJ$. Therefore, we show $IJ = I \cap J$.
+\end{solution}
+
+\begin{problem}[4.6]
+	Let $I, J$ be ideals in a ring $R$. Assume that $R/(IJ)$ is reduced (that is, it has no nonzero nilpotent elements; cf. \hyperlink{Exercise III.3.13}{Exercise III.3.13}). Prove that $IJ = I \cap J$.
+\end{problem}
+\begin{solution}
+	The notation $(IJ)$ suggests $R$ is commutative. As is shown in \hyperlink{Exercise III.4.5}{Exercise III.4.5}, it holds that $IJ\subseteq I\cap J$. Thus we are left to show $I\cap J\subseteq IJ$. Suppose $l\in I\cap J$. The condition that $R/(IJ)$ is reduced tells that $\forall r\in R$, 
+	\[
+	r^n\in IJ\implies r\in IJ.
+	\]
+	Noticing $l\in I$ and $l\in J$, it is clear that $l^2\in IJ$ which implies $l\in IJ$. There we show $I\cap J\subseteq IJ$ and complete the proof. 
+\end{solution}
+
+\begin{problem}[4.7]
+	$\vartriangleright$ Let $R = k$ be a field. Prove that every nonzero (principal) ideal in $k[x]$ is generated by a unique \emph{monic} polynomial. [\textsection4.2, \textsection VI.7.2]
+\end{problem}
+\begin{solution}
+    Suppose $I$ is an nonzero ideal in $k[x]$ and the least degree of nonzero polynomials in $I$ is $d$. Since $k$ is a field, we can find a monic polynomial $f(x)=k_0x^d+k_1x^{d+1}+\cdots+x^{d+n}$ in $I$. Given any $g(x)\in I$, there exist unique polynomials $q(x), r(x)\in k[x]$ such that $g(x) = f(x)q(x) + r(x)$ and $\deg r(x) < \deg f(x)=d$. Since $r(x)=g(x)-f(x)q(x)\in I$ and the least degree of nonzero polynomials in $I$ is $d$, there must be $r(x)=0$. Thus we show that $I$ is generated by a monic polynomial $f(x)$. Suppose $I=(f(x))$ can be also generated by a monic polynomial $\bar{f}(x)$. Then we have $\bar{f}(x)=cf(x)$ for some $c\ne0$. Since the two monic polynomials $\bar{f}(x),f(x)$ have the same degree, they are forced to be equal. Therefore, we conclude that every nonzero ideal in $k[x]$ is generated by a unique monic polynomial.
+\end{solution}
+
+\begin{problem}[4.8]
+	$\vartriangleright$ Let $R$ be a ring, and $f(x)\in R[x]$ a monic polynomial. Prove that $f(x)$ is not a (left-, or right-) zero-divisor. [\textsection4.2, 4.9]
+\end{problem}
+\begin{solution}
+	Suppose $f(x)=x^{d}+a_{d-1} x^{d-1}+\cdots+a_{1} x+a_{0}$ is a monic polynomial in $R[x]$ and $f(x)g(x)=0$ for some $g(x)=b_sx^{s}+b_{s-1} x^{s-1}+\cdots+b_{1} x+b_{0}\in R[x]$. Since the term of the degree of $d+s$ of $f(x)g(x)$ is $b_sx^{d+s}$, there must be $b_s=0$. Then the term of the degree of $d+s-1$ of $f(x)g(x)$ is $b_{s-1}x^{d+s-z}$, which implies $b_{s-1}=0$. Repeating this process we can show that $b_s=b_{s-1}=\cdots=b_0=0$, that is, $g(x)=0$. Thus we see $f(x)$ is not a left-zero-divisor. In a similar way we can show that $f(x)$ is not a right-zero-divisor. 
+\end{solution}
+
+\begin{problem}[4.10]
+	$\neg$ Let $d$ be an integer that is not the square of an integer, and consider the subset of $\mathbb{C}$ defined by 
+	\[
+	\mathbb{Q}(\sqrt{d}):=\{a+b \sqrt{d} | a, b \in \mathbb{Q}\}
+	\]
+	\begin{itemize}
+		\item Prove that $\mathbb{Q}(\sqrt{d})$ is a subring of $\mathbb{C}$.
+		\item Define a function $N: \mathbb{Q}(\sqrt{d}) \rightarrow \mathbb{Z}$ by $N(a+b \sqrt{d}):=a^{2}-b^{2} d .$ Prove that
+		\[
+		N(z w)=N(z) N(w), \text { and that } N(z) \neq 0 \text { if } z \in \mathbb{Q}(\sqrt{d}), z \neq 0
+		\]
+		The function $N$ is a `norm'; it is very useful in the study of $\mathbb{Q}(\sqrt{d})$ and of its subrings. (Cf. also \hyperlink{Exercise III.2.5}{Exercise III.2.5}.)
+		\item Prove that $\mathbb{Q}(\sqrt{d})$ is a field, and in fact the smallest subfield of $\mathbb{C}$ containing both $\mathbb{Q} \text { and } \sqrt{d} . \text { (Use } N .)$
+		\item Prove that $\mathbb{Q}(\sqrt{d})\cong \mathbb{Q}[t] /\left(t^{2}-d\right)$ . (Cf. Example 4.8.)\\
+		$[\mathrm{V} .1 .17, \mathrm{V} .2 .18, \mathrm{V} .6 .13, \mathrm{VII} .1 .12]$
+	\end{itemize}	
+\end{problem}
+\begin{solution}
+	\begin{itemize}
+		\item We only show the check on multiplication
+		\[
+		(a_1+b_1 \sqrt{d})(a_2+b_2 \sqrt{d})=(a_1a_2+b_1b_2d)+(a_1b_2+a_2b_1)\sqrt{d}\in\Q(\sqrt{d}).
+		\]
+		\item It is immediate to check $N(z w)=N(z) N(w)$.	Let $z \in \mathbb{Q}(\sqrt{d})$ and $z=a+b\sqrt{d} \neq 0$. Suppose $N(z)=a^2-b^2d=0$. If $b=0$, we have $a=0$, which contradicts with $a+b\sqrt{d} \neq 0$. Otherwise we have $b\ne0$ and $d=(a/b)^2$. Thus we get a contradiction again.
+		\item We have known $\mathbb{Q}(\sqrt{d})$ is a commutative ring. For any $z=a+b\sqrt{d}\in\mathbb{Q}(\sqrt{d})$ such that $z\ne0$,
+		\[
+		N(z)=(a+b \sqrt{d})(a-b \sqrt{d})=a^{2}-b^{2}d\ne0.
+		\]
+		Therefore
+		\[
+		\left(a+b \sqrt{d}\right)\left(\frac{a}{N(z)}-\frac{b}{N(z)} \sqrt{d}\right)=1
+		\]
+		and $\mathbb{Q}(\sqrt{d})$ is a field.
+		\item The mapping
+		\begin{align*}
+		\overline{\varphi}:\mathbb{Q}[t] /\left(t^{2}-d\right)& \longrightarrow \Q(\sqrt{d}),\\
+		a+bt+(t^{2}-d)& \longmapsto a+b\sqrt{d}.
+		\end{align*}
+		is well-defined since if $(a_1+b_1t)-(a_2+b_2t)=g(t)(t^2-d)$, then
+		\begin{align*}
+		\overline{\varphi}(a_1+b_1t+(t^{2}-d))-\overline{\varphi}(a_2+b_2t+(t^{2}-d))&=\left(a_1+b_1\sqrt{d}\right)-\left(a_2+b_2\sqrt{d}\right)\\
+		&=g\left(\sqrt{d}\right)\left(\left(\sqrt{d}\right)^2-d\right)\\
+		&=0.
+		\end{align*}
+		It is clear that $\overline{\varphi}$ preserves addition. Then we can check $\overline{\varphi}$ preserve multiplication:
+		\begin{align*}
+		&\hspace{1em}\overline{\varphi}\left((a_1+b_1t+(t^{2}-d))(a_2+b_2t+(t^{2}-d))\right)\\
+		&=\overline{\varphi}\left((a_1a_2+(a_1b_2+a_2b_1)t+b_1b_2t^2+(t^{2}-d)\right)\\
+		&=\overline{\varphi}\left(((a_1a_2+b_1b_2d)+(a_1b_2+a_2b_1)t+b_1b_2(t^2-d)+(t^{2}-d)\right)\\
+		&=(a_1a_2+b_1b_2d)+(a_1b_2+a_2b_1)\sqrt{d}\\
+		&=(a_1+b_1\sqrt{d})(a_2+b_2\sqrt{d})\\
+		&=\overline{\varphi}\left(a_1+b_1t+(t^{2}-d)\right)\overline{\varphi}\left(a_2+b_2t+(t^{2}-d)\right).
+		\end{align*}
+		Thus we see $\overline{\varphi}$ is a ring homomorphism. Note
+		\[
+		a+bt+(t^{2}-d)\in\ker \overline{\varphi}\iff a+b\sqrt{d}=0\iff a=b=0.
+		\]
+		It implies that $\ker \overline{\varphi}=\{0+(t^2-d)\}$ and $\overline{\varphi}$ is injective. It is clear that $\overline{\varphi}$ is surjective. Therefore, $\overline{\varphi}$ is an isomorphism.
+	\end{itemize}
+\end{solution}
+
+\begin{problem}[4.11]
+	Let $R$ be a commutative ring, $a \in R,$ and $f_{1}(x), \ldots, f_{r}(x) \in R[x]$.
+	\begin{itemize}
+		\item Prove the equality of ideals
+		\[
+		\left(f_{1}(x), \ldots, f_{r}(x), x-a\right)=\left(f_{1}(a), \ldots, f_{r}(a), x-a\right)
+		\]
+		\item Prove the useful substitution trick
+		\[
+		\frac{R[x]}{\left(f_{1}(x), \ldots, f_{r}(x), x-a\right)} \cong \frac{R}{\left(f_{1}(a), \ldots, f_{r}(a)\right)}
+		\]
+		(Hint: \hyperlink{Exercise III.3.3}{Exercise III.3.3}.)
+	\end{itemize}	
+\end{problem}
+\begin{solution}
+	\begin{itemize}
+		\item According to the polynomial remainder theorem, we have 
+		\[
+		f_i(x)=(x-a)q(x)+f_i(a),
+		\]
+		which suffices to show that $\left(f_{1}(x), \ldots, f_{r}(x), x-a\right)=\left(f_{1}(a), \ldots, f_{r}(a), x-a\right)$.
+		\item Define
+		\begin{align*}
+		\varphi:R[x]& \longrightarrow R,\\
+		f(x)& \longmapsto f(a).
+		\end{align*}
+		We can check that $\varphi$ is a surjective ring homomorphism and $\ker\varphi=(x-a)$. According to \hyperlink{Exercise III.3.3}{Exercise III.3.3}, we have
+		\[
+		\frac{R[x]}{\left(f_{1}(x), \cdots, f_{r}(x), x-a\right)}\cong\frac{R[x]}{\left(f_{1}(a), \cdots, f_{r}(a), x-a\right)}\cong \frac{R[x] / (x-a)}{\overline{\left(f_{1}(a), \cdots, f_{r}(a)\right)}},
+		\]
+		where
+		\[
+		\overline{\left(f_{1}(a), \cdots, f_{r}(a)\right)}=\left(f_{1}(a)+(x-a), \cdots, f_{r}(a)+(x-a)\right).
+		\]
+		The ring isomorphism 
+		\begin{align*}
+		\psi:R[x]/(x-a)& \longrightarrow R,\\
+		f(x)+(x-a)& \longmapsto f(a)
+		\end{align*}
+		gives the following isomorphism 
+		\[
+		\frac{R[x] / (x-a)}{\overline{\left(f_{1}(a), \cdots, f_{r}(a)\right)}}\cong \frac{R}{\left(f_{1}(a), \ldots, f_{r}(a)\right)},
+		\]
+		which completes the proof.
+	\end{itemize}
+\end{solution}
+
+\begin{problem}[4.12]
+	$\vartriangleright$ Let $R$ be a commutative ring, and $a_{1}, \cdots, a_{n}$ elements of $R .$ Prove that
+	\[
+	\frac{R\left[x_{1}, \ldots, x_{n}\right]}{\left(x_{1}-a_{1}, \ldots, x_{n}-a_{n}\right)} \cong R
+	\]
+	$[\mathrm{VII} .2 .2]$	
+\end{problem}
+\begin{solution}
+	\[
+	R\cong \frac{R\left[x_{1}\right]}{\left(x_{1}-a_{1}\right)}\cong \frac{R\left[x_{1},x_{2}\right]}{\left(x_{1}-a_{1},x_2-a_2\right)}
+	\]
+	The mapping
+	\begin{align*}
+	\overline{\varphi}:\frac{R\left[x_{1}, \ldots, x_{n}\right]}{\left(x_{1}-a_{1}, \ldots, x_{n}-a_{n}\right)}& \longrightarrow \frac{R\left[x_{1}, \ldots, x_{n-1}\right]}{\left(x_{1}-a_{1}, \ldots, x_{n-1}-a_{n-1}\right)},\\
+	f(x_1,\cdots,x_n)+\left(x_{1}-a_{1}, \ldots, x_{n}-a_{n}\right)& \longmapsto f(x_1,\cdots,x_{n-1},a_n)+\left(x_{1}-a_{1}, \ldots, x_{n-1}-a_{n-1}\right)
+	\end{align*}
+	is well-defined since if $f_1\left(x_1,\cdots,x_n\right)-f_2\left(x_1,\cdots,x_n\right)=\sum\limits_{i=1}^n g_i(x_1,\cdots,x_n)(x_i-a_i)$, then
+	\begin{align*}
+	\overline{\varphi}\left(\overline{f_1(x_1,\cdots,x_n)}\right)-\overline{\varphi}\left(\overline{f_2(x_1,\cdots,x_n)}\right)&=f_1(x_1,\cdots,x_{n-1},a_n)-f_2(x_1,\cdots,x_{n-1},a_n)\\
+	&=\sum_{i=1}^{n-1} g_i(x_1,\cdots,x_{n-1},a_n)(x_i-a_i)+g_n(t)(a_n-a_n)\\
+	&=\sum_{i=1}^{n-1} g_i(x_1,\cdots,x_{n-1},a_n)(x_i-a_i).
+	\end{align*}
+	It is clear that $\overline{\varphi}$ preserves addition and multiplication. Thus we see $\overline{\varphi}$ is a ring homomorphism. Note
+	\begin{align*}
+	&\hspace{3em}f(x_1,\cdots,x_n)\in\ker \overline{\varphi}\\
+	&\iff f(x_1,\cdots,x_{n-1},a_n)=\sum_{i=1}^{n-1} g_i(x_1,\cdots,x_{n-1},a_n)(x_i-a_i)\\
+	&\iff f(x_1,\cdots,x_{n-1},x_n)=\sum_{i=1}^{n-1} g_i(x_1,\cdots,x_{n-1},a_n)(x_i-a_i)+g_n(x_1,\cdots,x_{n-1},a_n)(x_n-a_n)\\
+	&\iff f(x_1,\cdots,x_n)\in\left(x_{1}-a_{1}, \ldots, x_{n}-a_{n}\right),
+	\end{align*}
+	where the last but one line can be deduced by the polynomial remainder theorem if we fix $x_1,\cdots,x_{n-1}$ and regard $x_n$ as a variable. It implies that $\ker \overline{\varphi}=\{0+\left(x_{1}-a_{1}, \ldots, x_{n}-a_{n}\right)\}$ and $\overline{\varphi}$ is injective. It is clear that $\overline{\varphi}$ is surjective. Therefore, $\overline{\varphi}$ is an isomorphism and 
+	\[
+	R\cong \frac{R\left[x_{1}\right]}{\left(x_{1}-a_{1}\right)}\cong \frac{R\left[x_{1},x_{2}\right]}{\left(x_{1}-a_{1},x_2-a_2\right)}\cong\cdots \cong \frac{R\left[x_{1}, \ldots, x_{n}\right]}{\left(x_{1}-a_{1}, \ldots, x_{n}-a_{n}\right)}.
+	\]
 \end{solution}
 
 \subsection{\textsection5. Modules over a ring}
