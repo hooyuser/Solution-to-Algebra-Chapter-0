@@ -59,6 +59,18 @@
 \tableofcontents
 \appendix
 
+\newpage
+\section*{Notation for Problems}
+$\vartriangleright$: those problems that are directly referenced from the text.\\
+
+\noindent $\neg$: those problems that are referenced from other
+problems.\\
+
+\noindent [\textsection II.8.1]: related to the text in  II.8.1 (Chapter II Section 8 Subsection 1).\\
+
+\noindent [II.8.10]: related to the Definition/Example/Proposition/Lemma/Corollary 8.10 in Chapter II and (the 10th Definition/Example/Proposition/Lemma/Corollary in Chapter II Section 8).
+\newpage
+
 \section{Chapter I.\hspace{0.2em} Preliminaries: Set theory and categories}
 
 \subsection{\textsection1. Naive Set Theory}
@@ -85,6 +97,7 @@ and itself? [\textsection II.2.1]
 
 
 \subsection{\textsection3. Categories}
+\hypertarget{Exercise I.3.1}{}
 \begin{problem}[3.1]
 	Let $\mathsf{C}$ be a category. Consider a structure $\mathsf{C}^{op}$ with:
 	\begin{itemize}
@@ -169,7 +182,7 @@ and itself? [\textsection II.2.1]
 
 \subsection{\textsection5. Universal properties}
 \begin{problem}[5.1]
-	Prove that a final object in a category $\mathsf{C}$ is initial in the opposite category $\mathsf{C}_{op}$	(cf. Exercise 3.1).
+	Prove that a final object in a category $\mathsf{C}$ is initial in the opposite category $\mathsf{C}_{op}$	(cf. \hyperlink{Exercise I.3.1}{Exercise I.3.1}).
 \end{problem}
 \begin{solution}
 	An object $F$ of $\mathsf{C}$ is final in $\mathsf{C}$ if and only if
@@ -183,6 +196,7 @@ and itself? [\textsection II.2.1]
 	which means $F$ is initial in the opposite category $\mathsf{C}_{op}$.	
 \end{solution}
 
+\newpage
 \section{Chapter II.\hspace{0.2em} Groups, first encounter}
 
 \subsection{\textsection1. Definition of group}
@@ -362,7 +376,7 @@ is an element of order $d$ in $S_n$.
 		\item Prove that if $\gcd(r, 2n) = 1$, then $\gcd(\frac{r+n}{2}, n) = 1$. (Ditto.)		
 		\item Conclude that the function $[m]_n\rightarrow[2m + n]_{2n}$ is a bijection between $(\mathbb{Z}/n\mathbb{Z})^*$ and $(\mathbb{Z}/2n\mathbb{Z})^*$. 
 	\end{itemize}
-	The number $\phi(n)$ of elements of $(\mathbb{Z}/n\mathbb{Z})^*$ is Euler’s $\phi(n)$-function. The reader has just	proved that if $n$ is odd, then $\phi(2n) = \phi(n)$. Much more general formulas will be given later on (cf. Exercise V.6.8). [VII.5.11]
+	The number $\phi(n)$ of elements of $(\mathbb{Z}/n\mathbb{Z})^*$ is Euler’s $\phi(n)$-function. The reader has just	proved that if $n$ is odd, then $\phi(2n) = \phi(n)$. Much more general formulas will be given later on (cf. \hyperlink{Exercise V.6.8}{Exercise V.6.8}). [VII.5.11]
 \end{problem}
 \begin{solution}
 	\begin{itemize}
@@ -2180,6 +2194,7 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 
 \subsection{\textsection10. Group objects in categories}
 
+\newpage
 \section{Chapter III\hspace{0.2em} Rings and modules}
 
 \subsection{\textsection1. Definition of ring}
@@ -2719,14 +2734,14 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 \end{solution}
 
 \begin{problem}[2.7]
-	Let $R=\Z/2\Z$, and let $f(x)=x^2-x$; note $f(x)\ne 0$. What is the polynomial function $R\to R$ determined by $f(x)$?[\textsection2.2, \textsection V.4.2, \textsection V.5.1]
+	Let $R=\Z/2\Z$, and let $f(x)=x^2-x$; note $f(x)\ne 0$. What is the polynomial function $R\to R$ determined by $f(x)$? [\textsection2.2, \textsection V.4.2, \textsection V.5.1]
 \end{problem}
 \begin{solution}
 	It determines a function $f:\Z/2\Z\to\Z/2\Z$ sends all elements to identity, that is, $f([0]_2)=[0]_2$, $f([1]_2)=[0]_2$.
 \end{solution}
 
 \begin{problem}[2.8]
-	Prove that every subring of a field is an integral domain
+	Prove that every subring of a field is an integral domain.
 \end{problem}
 \begin{solution}
 	Suppose $\varphi:R\hookrightarrow K$ is a inclusion homomorphism. If $a\ne0$, we have
@@ -2736,6 +2751,7 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 	Due to the community of field it also holds that $ba=ca$. Thus we show $R$ is an integral domain.
 \end{solution}
 
+\hypertarget{Exercise III.2.9}{}
 \begin{problem}[2.9]
 $\neg$ The \emph{center} of a ring $R$ consists of the elements a such that $ar = ra$ for all $r\in R$. Prove that the center is a subring of $R$. Prove that the center of a division ring is a field. [2.11, IV.2.17, VII.5.14,VII.5.16]
 \end{problem}
@@ -2755,11 +2771,17 @@ Denote the center of $R$ by $Z(R)$. We can check that
 Thus we show that $Z(R)$ is a subring of $R$. If $R$ is a division ring, then $Z(R)$ is a also a division ring. Note that for all $x,y\in Z(R)$, $xy=yx$, we see that $Z(R)$ is a commutative division ring, namely field.
 \end{solution}
 
+
+\hypertarget{Exercise III.2.10}{}
 \begin{problem}[2.10]
 $\neg$ The \emph{centralizer} of an element $a$ of a ring $R$ consists of the elements $r \in R$ such that $ar = ra$. Prove that the centralizer of $a$ is a subring of $R$, for every $a\in R$. Prove that the center of $R$ is the intersection of all its centralizers. Prove that every centralizer in a division ring is a division ring. [2.11, IV.2.17, VII.5.16]
 \end{problem}
 \begin{solution}
-Denote the centralizer of an element $a$ of $R$ by $Z_a(R)$. We can check that
+Denote the centralizer of an element $a$ of $R$ by $Z_a(R)$. That is,
+\[
+Z_a(R)=\{r\in R\mid ar=ra\}.
+\] 
+We can check that
 \begin{enumerate}
 	\item for all $x,y\in Z_a(R)$, $$(x-y)a=xa-ya=ax-ay=a(x-y)\implies x-y\in Z_a(R);$$ 
 	\item 
@@ -2771,8 +2793,41 @@ Denote the centralizer of an element $a$ of $R$ by $Z_a(R)$. We can check that
 	(xy)a=xay=a(xy)\implies xy\in Z_a(R).
 	\]
 \end{enumerate}
-Thus we show that $Z_a(R)$ is a subring of $R$. By definition we have $Z(R)\subseteq Z_a(R)$ for all $a\in R$, which implies $Z(R)\subseteq \bigcap_{a\in R} Z_a(R)$. Assume $s\in\bigcap_{a\in R} Z_a(R)$, then we see $sa=as$ for all $a\in R$, which means $s\in Z(R)$ and accordingly $\bigcap_{a\in R} Z_a(R)\subseteq Z(R)$. Thus we deduce that $Z(R)=\bigcap_{a\in R} Z_a(R)$.
-If $R$ is a division ring, then $Z_a(R)$ is a also a division ring because $Z_a(R)$ is a subring. 
+Thus we show that $Z_a(R)$ is a subring of $R$. 
+
+By definition we have $Z(R)\subseteq Z_a(R)$ for all $a\in R$, which implies $Z(R)\subseteq \bigcap_{a\in R} Z_a(R)$. Assume $s\in\bigcap_{a\in R} Z_a(R)$, then we see $sa=as$ for all $a\in R$, which means $s\in Z(R)$ and accordingly $\bigcap_{a\in R} Z_a(R)\subseteq Z(R)$. Thus we deduce that $Z(R)=\bigcap_{a\in R} Z_a(R)$.
+
+If $R$ is a division ring and $r\in Z_a(R)$, we can assume that there exists $a\in R$ such as $ar=ra$, which means that
+\[
+r^{-1}(ar)r^{-1}=r^{-1}(ra)r^{-1}\implies r^{-1}a=ar^{-1}.
+\]
+According to the definition of $Z_a(R)$, we see $r^{-1}\in Z_a(R)$. Thus we show that $Z_a(R)$ is a division ring.
+\end{solution}
+
+\hypertarget{Exercise III.2.11}{}
+\begin{problem}[2.11]
+$\neg$ Let $R$ be a division ring consisting of $p^{2}$ elements, where $p$ is a prime. Prove that $R$ is commutative, as follows:
+\begin{itemize}
+	\item If $R$ is not commutative, then its center $C$ (\hyperlink{Exercise III.2.9}{Exercise III.2.9}) is a proper subring of $R .$ Prove that $|C|$ would then consist of $p$ elements.
+	\item Let $r \in R, r \notin C .$ Prove that the centralizer of $r$ (\hyperlink{Exercise III.2.10}{Exercise III.2.10}) contains both $r$ and $C$.
+	\item Deduce that the centralizer of $r$ is the whole of $R$.
+	\item Derive a contradiction, and conclude that $R$ had to be commutative (hence, a field).
+\end{itemize}
+This is a particular case of Wedderburn's theorem: every finite division ring is a field. [IV.2.17, VII.5.16]
+\end{problem}
+\begin{solution}
+	If $R$ is not commutative, then its center $Z(R)$ is a proper subring of $R$, which means $|Z(R)|<p^2$. By considering $Z(R)$ as a subgroup of the underlying abelian group $R$, we can deduce that $|Z(R)|$ divides $p^2$ according to the Lagrange theorem. Thus we see that $Z(R)$ consists of $p$ elements. Given any $r \in R-Z(R)$, in \hyperlink{Exercise III.2.10}{Exercise III.2.10} we have shown that $Z_r(R)$ is a subring of $R$ and $Z(R)\in Z_r(R)$. By the definition of $Z_r(R)$, it is clear that $r\in Z_r(R)$. Hence we have $Z(R)\cup \{r\}\subseteq Z_r(R)$ and $|Z_r(R)|>p$. Again by Lagrange theorem we have $|Z_r(R)|$ divides $p^2$, which forces $|Z_r(R)|=p^2$. Thus we show that $Z_r(R)=R$. Note that $Z_a(R)=R$ for all $a\in Z(R)$. We have $Z_a(R)=R$ for all $a\in R$. In \hyperlink{Exercise III.2.10}{Exercise III.2.10}, we have derived that $\bigcap_{a\in R} Z_a(R)\subseteq Z(R)$, which implies $R\subseteq Z(R)$. Thus we have $Z(R)=R$, which contradicts with the previous deduction that $Z(R)$ is a proper subring of $R$.  Therefore, we can conclude that $R$ is commutative.
+\end{solution}
+
+
+
+\begin{problem}[2.15]
+	For $m>1,$ the abelian groups $(\mathbb{Z},+)$ and $(m \mathbb{Z},+)$ are manifestly isomorphic: the function $\varphi: \mathbb{Z} \rightarrow m \mathbb{Z}, n \mapsto \operatorname{mn}$ is a group isomorphism. Use this isomorphism to transfer the structure of `ring without identity' $(m \mathbb{Z},+, \cdot)$ back onto $\mathbb{Z}:$ give an explicit formula for the `multiplication' $\bullet$ this defines on $\mathbb{Z}$ (that is, such that $\varphi(a \bullet b)=\varphi(a) \cdot \varphi(b))$. Explain why structures induced by different positive integers $m$ are non-isomorphic as `rings without 1'.
+	
+	(This shows that there are many different ways to give a structure of ring without identity to the \emph{group} $(\mathbb{Z},+)$. Compare this observation with Exercise 2.16.) [\textsection 2.1]
+\end{problem}
+\begin{solution}
+
 \end{solution}
 
 
@@ -3140,13 +3195,208 @@ The notation $(1)$ suggests $R$ is commutative. For any $k\in IJ$, we can assume
 	\]
 \end{solution}
 
+\begin{problem}[4.17]
+	$\neg$ (If you know a little topology...) Let $K$ be a compact topological space, and let $R$ be the ring of continuous real-valued functions on $K,$ with addition and multiplication defined pointwise.
+	\begin{enumerate}[(i)]
+		\item For $p \in K,$ let $M_{p}=\{f \in R | f(p)=0\} .$ Prove that $M_{p}$ is a maximal ideal in $R$
+		\item Prove that if $f_{1}, \ldots, f_{r} \in R$ have no common zeros, then $\left(f_{1}, \ldots, f_{r}\right)=(1)$ (Hint: consider $f_{1}^{2}+\cdots+f_{r}^{2}$ )
+		\item Prove that every maximal ideal $M$ in $R$ is of the form $M_{p}$ for some $p \in K .$ (Hint:
+		you will use the compactness of $K$ and (ii).) 
+	\end{enumerate}
+	Conclude that $p \mapsto M_{p}$ defines a bijection from $K$ to the set of maximal ideals
+	of $R .$ (The set of maximal ideals of a commutative ring $R$ is called the \emph{maximal spectrum} of $R ;$ it is contained in the (prime) spectrum Spec $R$ defined in $\$ 4.3 .$ Relating commutative rings and "geometric' entities such as topological spaces is the business of algebraic geometry. The compactness hypothesis is necessary: cf. Exercise V.3.10. [V.3.10]	
+\end{problem}
+\begin{solution}
+	\begin{enumerate}[(i)]
+		\item Suppose all functions in $R$ that have same value in a neighborhood of $p$ are identified. It is easy to check that $M_p$ is an ideal and $R/M_p$ is commutative. Given any $f\in R-M_p$, we have $f(p)\ne0$ and
+		\[
+		(f+M_p)\left(\frac{1}{f}+M_p\right)=1+M_p
+		\]
+		Therefore, $R/M_p$ is a field and  $M_{p}$ is a maximal ideal in $R$.
+		\item If $f_{1}, \ldots, f_{r} \in R$ have no common zeros, $\left(f_{1}, \ldots, f_{r}\right)=(1)$ follows from
+		\[
+		\sum_{i=1}^n\frac{f_i}{f_1^2+\cdots+f_n^2}f_i=1.
+		\]
+		\item Let $M$ be a maximal ideal in $R$. Then $R/M$ is a field. For any $f\in R-M$, there exists $g\in R-M$ such that
+		\[
+		(f+M)\left(g+M\right)=fg+M=1+M\implies fg-1\in M
+		\]
+	\end{enumerate}
+\end{solution}
+
+
+
 \subsection{\textsection5. Modules over a ring}
+\begin{problem}[5.1]
+$\vartriangleright$ Let $R$ be a ring. The \emph{opposite} ring $R^{\circ}$ is obtained from $R$ by reversing the multiplication: that is, the product $a \bullet b$ in $R^{\circ}$ is defined to be $b a \in R .$ Prove that the identity map $R \rightarrow R^{\circ}$ is an isomorphism if and only if $R$ is commutative. Prove that $\mathcal{M}_{n}(\mathbb{R})$ is isomorphic to its opposite (not via the identity map!). Explain how to turn right-$R$-modules into left-$R$-modules and conversely, if $R \cong R^{\circ}$. [\textsection5.1,VIII.5.19 ]
+\end{problem}
+\begin{solution}
+	Let $i$ denote the identity map $R \rightarrow R^{\circ}$. If $R$ is commutative, we have
+	\[
+	i(ab)=ab=b\bullet a=i(b)\bullet i(a)=i(a)\bullet i(b).
+	\]
+	Given that $i(a+b)=a+b$ and identity map is a bijection, we see that $i$ is an isomorphism.
+	
+	If $i$ is an isomorphism, we have
+	\[
+	ab=b\bullet a=i^{-1}(b\bullet a)=i^{-1}(b)i^{-1}(a)=ba,
+	\]
+	which implies that $R$ is commutative.
+	
+	Suppose $A,B\in\mathcal{M}_{n}(\mathbb{R})$. We can show that the transpose of matrix $\cdot^T:A\mapsto A^T$ 
+	is an isomorphism by checking
+	\[
+	(AB)^T=B^TA^T=A^T \bullet B^T.
+	\]
+	Let $M$ be a right-$R$-module with right multiplication $\odot$. If $R \cong R^{\circ}$ and $f:R \rightarrow R^{\circ}$ is an isomorphism, then
+	\[
+	f(ab)=f(a)\bullet f(b)=f(b)f(a)
+	\]
+	Define left multiplication $\odot_L$ as
+	\[
+	r\odot_L m:=m\odot f(r),\qquad\forall r\in R,m\in M.
+	\]
+	We can check that
+	\begin{align*}
+		&1\odot_L m=m \odot f(1)=1,\\
+		&(rs)\odot_L m=m\odot f(rs)=m\odot (f(s)f(r))=(m\odot f(s))\odot f(r)\\
+		&\hspace{4.5em}=(s\odot_L m)\odot f(r)=r\odot_L(s\odot_L m),\\
+		&r\odot_L(m_1+m_2)=(m_1+m_2)\odot f(r)=m_1\odot f(r)+m_2\odot f(r)=r\odot_L m_1+r\odot_L m_2.
+	\end{align*}
+	Therefore, we show that $M$ is a left-$R$-module with right multiplication $\odot_L$.
+	
+	If $M$ is a left-$R$-module with left multiplication $*$ and $f:R \rightarrow R^{\circ}$ is an isomorphism, then we can show that $M$ is a right-$R$-module with right multiplication $*_R$ defined as
+	\[
+	m*_R r := f^{-1}(r),\qquad\forall r\in R,m\in M.
+	\]
+\end{solution}
+
+\begin{problem}[5.3]
+$\vartriangleright$ Let $M$ be a module over a ring $R .$ Prove that $0 \cdot m=0$ and that $(-1) \cdot m=$ $-m,$ for all $m \in M$. [\textsection 5.2]
+\end{problem}
+\begin{solution}
+	\begin{align*}
+	&0\cdot m=(0+0)\cdot m=0\cdot m+0\cdot m\implies0\cdot m=0,\\
+	&0=(1-1)\cdot m=1\cdot m+(-1) \cdot m\implies(-1) \cdot m=-m.
+	\end{align*}
+\end{solution}
+
+
 \begin{problem}[5.4]
 $\neg$ Let $R$ be a ring. A nonzero $R$-module $M$ is \emph{simple} (or \emph{irreducible}) if its only submodules are $\{0\}$ and $M$. Let $M$, $N$ be simple modules, and let $\varphi : M \to N$ be a homomorphism of $R$-modules. Prove that either $\varphi= 0$, or $\varphi$ is an isomorphism. (This rather innocent statement is known as Schur's lemma.) [5.10, 6.16, VI.1.16]
 \end{problem}
 \begin{solution}
 For convenience, we talk about the identity of modules up to isomorphism. Since the nonzero $R$-module $M$ is simple, $\ker\varphi $ is either $\{0\}$ or $M$. Thus $\im \varphi= M/ \ker\varphi$ is either $\{0\}$ or $M$. Note that $\im \varphi\subset N$ is either $\{0\}$ or $N$. If $\im \varphi=\{0\}$, then we have $\varphi=0$. If $\im \varphi=M$, then we have $\im \varphi=M=N$. Therefore we show that either $\varphi= 0$, or $\varphi$ is an isomorphism. 
 \end{solution}
+
+\begin{problem}[5.5]
+Let $R$ be a ring, viewed as an $R$-module over itself, and let $M$ be an $R$-module. Prove that $\mathrm{Hom}_{R-\mathrm{Mod}}(R, M) \cong M$ as $R$-modules.
+\end{problem}
+\begin{solution}
+	Define
+	\begin{align*}
+	\varphi:\mathrm{Hom}_{R-\mathrm{Mod}}(R, M)& \longrightarrow M,\\
+	f& \longmapsto f(1)
+	\end{align*}
+	Since
+	\begin{align*}
+	\varphi(f+g)&=(f+g)(1)=f(1)+g(1)=\varphi(f)+\varphi(g),\\
+	\varphi(rf)&=(rf)(1)=rf(1)=r\varphi(f),
+	\end{align*}
+	we see $\varphi$ is a homomorphism.
+	If $\varphi(f_1)=\varphi(f_2)$, we have $f_1(1)=f_2(1)$. Multiply both sides by any $r\in R$ and we get
+	\[
+	rf_1(1)=rf_2(1)\implies f_1(r)=f_2(r),
+	\]
+	which means $f_1=f_2$. Thus we show $\varphi$ is injective. Given any $m\in M$, let
+	\begin{align*}
+	h_m:R& \longrightarrow M,\\
+	r& \longmapsto rm
+	\end{align*}
+	Since $\varphi(h_m)=h_m(1)=m$, we show that $\varphi$ is surjective. Therefore, we conclude that $\varphi$ is an isomorphism and $\mathrm{Hom}_{R-\mathrm{Mod}}(R, M) \cong M$ as $R$-modules.
+\end{solution}
+
+\begin{problem}[5.6]
+Let $G$ be an abelian group. Prove that if $G$ has a structure of $\mathbb{Q}$-vector space, then it has only one such structure. (Hint: first prove that every element of $G$ has necessarily infinite order. $)$
+\end{problem}
+\begin{solution}
+Assume that $G$ has two structures of $\mathbb{Q}$-vector space with scalar multiplication operations $\cdot$ and $*$ respectively. Note that $1\cdot g=1*g=g$ for all $g\in G$. With the conventional notation $\sum_{i=1}^{n}g=ng$, we have for all $g\in G$,
+\[
+\sum_{i=1}^{n}1\cdot g=\sum_{i=1}^{n}1* g=ng\implies \left(\sum_{i=1}^{n}1\right)\cdot g=\left(\sum_{i=1}^{n}1\right)* g=ng\implies n\cdot g=n*g=ng.
+\]
+Since
+\begin{align*}
+\sum_{i=1}^{m}\frac{1}{m}\cdot h&=\left(\sum_{i=1}^{m}\frac{1}{m}\right)\cdot h=h,\qquad\forall h\in G,\\
+\sum_{i=1}^{m}\frac{1}{m}* h&=\left(\sum_{i=1}^{m}\frac{1}{m}\right)* h=h,\qquad\forall h\in G,
+\end{align*}
+it holds that for all $h\in G$,
+\[
+\sum_{i=1}^{m}\frac{1}{m}\cdot h=\sum_{i=1}^{m}\frac{1}{m}* h\implies\sum_{i=1}^{m}\left(\frac{1}{m}\cdot h-\frac{1}{m}* h\right)=0\implies m\cdot\left(\frac{1}{m}\cdot h-\frac{1}{m}* h\right)=0.
+\]
+According to the property of vector space, we have $m=0$ or $\frac{1}{m}\cdot h-\frac{1}{m}* h=0$. However, $m$ is a positive integer, which forces $\frac{1}{m}\cdot h=\frac{1}{m}* h$. Thus we can deduce that for all $h\in G$, $n,m\in \mathbb{Z}_+$,
+\[
+n\cdot \left(\frac{1}{m}\cdot h\right)=n*\left(\frac{1}{m}* h\right)\implies \frac{n}{m}\cdot h=\frac{n}{m}*h.
+\]
+In other words, for all $h\in G$, $q\in \mathbb{Q}_+$, we have $q\cdot h=q* h$. Note that $(-q)\cdot h=(-q)* h$ and $0\cdot h=0* h$, finally we obtain that for all $h\in G$, $q\in \mathbb{Q}$, 
+\[
+q\cdot h=q* h.
+\]
+Therefore, the two scalar multiplication operations $\cdot$ and $*$ coincide, which completes the proof.
+\end{solution}
+
+
+\begin{problem}[5.7]
+Let $K$ be a field, and let $k \subseteq K$ be a subfield of $K .$ Show that $K$ is a vector space over $k$ (and in fact a $k$-algebra) in a natural way. In this situation, we say that $K$ is an extension of $k.$
+\end{problem}
+\begin{solution}
+	Define the scalar multiplication $\cdot$ as
+	\[
+	a\cdot x:=ax, \qquad\forall a\in k,x\in K.
+	\]
+	Then we can check that for all $a,b\in k$, $x,y\in K$,
+	\begin{align*}
+	&1\cdot x=x,\\
+	&(ab)\cdot x=(ab) x=a(bx)=a\cdot(b\cdot x),\\
+	&(a+b)\cdot x=(a+b)x=ax+bx=a\cdot x+b\cdot x,\\
+	&a\cdot(x+y)=a(x+y)=ax+ay=a\cdot x+a\cdot y,\\
+	&(a\cdot x)(b\cdot y)=(ax)(by)=(ab)(xy)=(ab)\cdot(xy).
+	\end{align*}
+	Therefore, $K$ is a $k$-vector space and a $k$-algebra as well.
+\end{solution}
+
+\begin{problem}[5.8]
+	What is the initial object of the category $R$-$\mathsf{Alg}$?
+\end{problem}
+\begin{solution}
+    The ring $R$ can be seen as a $R$-algebra if it is endowed with a scalar multiplication $\cdot$ in a natural way, that is 
+	\[
+	r\cdot x:=rx, \qquad\forall r\in R,x\in R.
+	\]
+	Given any $R$-algebra $A$, define the following map
+	\begin{align*}
+	f:R& \longrightarrow A,\\
+	r& \longmapsto r\cdot 1_A.
+	\end{align*}
+	We can check that
+	\begin{align*}
+	f(r_1+r_2)&=(r_1+r_2)\cdot 1_A=r_1\cdot 1_A+r_2\cdot 1_A=f(r_1)+f(r_2),\\
+	f(r_1r_2)&=(r_1r_2)\cdot 1_A=r_1\cdot(r_2\cdot 1_A)=r_1\cdot (1_A(r_2\cdot 1_A))=(r_1\cdot 1_A)(r_2\cdot 1_A)=f(r_1)f(r_2),\\
+	f(r_1\cdot r_2)&=f(r_1r_2)=r_1\cdot(r_2\cdot 1_A)=r_1\cdot f(r_2).
+	\end{align*}
+	Hence $f$ is a morphism in the category $R$-$\mathsf{Alg}$.
+	
+	Suppose $g:R\to A$ is a morphism in $R$-$\mathsf{Alg}$. Then for all $r_1,r_2\in R$,
+	\[
+	g(r_1r_2)=g(r_1\cdot r_2)\implies g(r_1)g(r_2)=r_1\cdot g(r_2)=r_1\cdot(1_Ag(r_2))=(r_1\cdot1_A)g(r_2).
+	\]
+	Take $r_2=1_R$ and then for all $r_1\in R$,
+	\[
+	g(r_1)g(1_R)=(r_1\cdot1_A)g(1_R)\implies g(r_1)=r_1\cdot1_A.
+	\]
+	Thus we have $g=f$. Therefore, we show that for any $R$-algebra $A$, there exists a unique morphism $f:R\to A$ in $R$-$\mathsf{Alg}$. In other words, $R$ is the initial object of the category $R$-$\mathsf{Alg}$.
+\end{solution}
+
+
 
 
 \subsection{\textsection6. Products, coproducts, etc. in $R$-$\Mod$}
@@ -3179,6 +3429,8 @@ is exact. Prove that $M\cong0$. [\textsection7.3]
 Assume that $f:0\to M$ and $g:M\to 0$. Since the the complex is exact, we have $$\{0\}=\im f=\ker g=M.$$
 \end{solution}
 
+
+\newpage
 \section{Chapter V.\hspace{0.2em} Irreducibility and	factorization in integral domains}
 
 
