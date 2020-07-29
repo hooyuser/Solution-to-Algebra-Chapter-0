@@ -1,0 +1,6 @@
+# Only keep the following files
+!*.pdf
+!*.tex
+!*.cls
+!*.bib
+!*.md
