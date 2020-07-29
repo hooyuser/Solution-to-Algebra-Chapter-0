@@ -12,7 +12,10 @@
 \usepackage[all]{xy}
 
 \usepackage[usenames,dvipsnames]{color}
-\usepackage[colorlinks,linkcolor=NavyBlue,anchorcolor=red,citecolor=green]{hyperref}
+\usepackage{xcolor}
+\definecolor{myRoyalBlue}{RGB}{50,60,150}
+\definecolor{myGreen}{RGB}{45,100,45}
+\usepackage[colorlinks,linkcolor=myRoyalBlue,urlcolor=myGreen,citecolor=BurntOrange]{hyperref}
 \usepackage{mathrsfs}
 \usepackage{cancel}
 \usepackage{cite}
@@ -68,12 +71,41 @@ problems.\\
 
 \noindent [\textsection II.8.1]: related to the text in  II.8.1 (Chapter II Section 8 Subsection 1).\\
 
-\noindent [II.8.10]: related to the Definition/Example/Proposition/Lemma/Corollary 8.10 in Chapter II and (the 10th Definition/Example/Proposition/Lemma/Corollary in Chapter II Section 8).
+\noindent [II.8.10]: related to the Definition/Example/Proposition/Lemma/Corollary/Claim 8.10 in Chapter II (the 10th Definition/Example/Proposition/Lemma/Corollary/Claim in Chapter II Section 8).
+
+\section*{Acknoledgement}
+It is kind of Shane Creighton-Young to share his solutions to Paolo Aluffi's ``Algebra: Chapter 0"\cite{aluffi2009algebra} on the Github website \href{https://github.com/srcreigh/aluffi}{\texttt{https://github.com/srcreigh/aluffi}}. He takes the credit for the first two chapters of this manuscript. 
+
+\section*{Contact}
+Github:
+\href{https://github.com/hooyuser/Solution-to-Algebra-Chapter-0}{\texttt{https://github.com/hooyuser/Solution-to-Algebra-Chapter-0}} 
+
+\noindent E-mail: \href{mailto:hooyuser@outlook.com}{\texttt{hooyuser@outlook.com}}
+
+
+\section*{License}
+This work is licensed under a \href{http://creativecommons.org/licenses/by-nc-sa/4.0/}{Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License}.
+\vfill
+\begin{figure}[h]
+	\centering\includegraphics[width=0.38\textwidth]{./BY-NC-SA}
+\end{figure}
+
 \newpage
 
 \section{Chapter I.\hspace{0.2em} Preliminaries: Set theory and categories}
 
 \subsection{\textsection1. Naive Set Theory}
+
+\begin{problem}[1.1]
+	Locate a discussion of Russel's paradox, and understand it.
+\end{problem}
+\begin{solution}
+	Recall that, in naive set theory, any collection of objects
+	that satisfy some property can be called a set. Russel's paradox can be
+	illustrated as follows.  Let $R$ be the set of all sets that do not contain
+	themselves. Then, if $R\notin R$, then by definition it must be the case that
+	$R\in R$; similarly, if $R\in R$ then it must be the case that $R\notin R$.
+\end{solution}
 
 \begin{problem}[1.6]
 Define a relation $\sim$ on the set $\mathbb{R}$ of real numbers, by setting $a\sim b\iff b-a \in\mathbb{Z}$. Prove that this is an equivalence relation, and find a \textquoteleft compelling' description for $\mathbb{R}/\sim$. Do the same for the relation $\approx$ on the plane $\mathbb{R}\times\mathbb{R}$ defined by declaring $(a_1, a_2)\approx(b_1, b_2)\iff b_1-a_1 \in\mathbb{Z}$ and $b_2-a_2 \in\mathbb{Z}$. [\textsection II.8.1, II.8.10]
@@ -346,7 +378,7 @@ is an element of order $d$ in $S_n$.
 
 
 \begin{problem}[2.12]	
-	Prove that there are no integers $a, b, c$ such that $a^2+b^2=3c^2$. (Hint: studying the equation $[a]^2_4+[b]^2_4=3[c]^2_4$ in $\mathbb{Z}/4\mathbb{Z}$, show that $a, b, c$ would all have to be even. Letting $a=2k, b=2l,c=2m$, you would have $k^2+l^2=3m^2$. What's wrong with that?)
+	Prove that there are no nonzero integers $a, b, c$ such that $a^2+b^2=3c^2$. (Hint: studying the equation $[a]^2_4+[b]^2_4=3[c]^2_4$ in $\mathbb{Z}/4\mathbb{Z}$, show that $a, b, c$ would all have to be even. Letting $a=2k, b=2l,c=2m$, you would have $k^2+l^2=3m^2$. What's wrong with that?)
 \end{problem}
 \begin{solution}
 	\[
@@ -373,7 +405,7 @@ is an element of order $d$ in $S_n$.
 	Let $n > 0$ be an odd integer.
 	\begin{itemize}
 		\item Prove that if $\gcd(m, n) = 1$, then $\gcd(2m+ n, 2n) = 1$. (Use Exercise 2.13.)
-		\item Prove that if $\gcd(r, 2n) = 1$, then $\gcd(\frac{r+n}{2}, n) = 1$. (Ditto.)		
+		\item Prove that if $\gcd(r, 2n) = 1$, then $\gcd(\frac{r-n}{2}, n) = 1$. (Ditto.)		
 		\item Conclude that the function $[m]_n\rightarrow[2m + n]_{2n}$ is a bijection between $(\mathbb{Z}/n\mathbb{Z})^*$ and $(\mathbb{Z}/2n\mathbb{Z})^*$. 
 	\end{itemize}
 	The number $\phi(n)$ of elements of $(\mathbb{Z}/n\mathbb{Z})^*$ is Euler’s $\phi(n)$-function. The reader has just	proved that if $n$ is odd, then $\phi(2n) = \phi(n)$. Much more general formulas will be given later on (cf. \hyperlink{Exercise V.6.8}{Exercise V.6.8}). [VII.5.11]
@@ -391,9 +423,9 @@ is an element of order $d$ in $S_n$.
 		which also implies $\gcd(2m+ n, n) = 1$.
 		\item If $\gcd(r, 2n) = 1$, then $r$ must be an odd integer and accordingly
 		\[
-		\gcd(2r+2n, 4n) = 1\implies a(2r+2n)+b(4n)=1\implies 4a \frac{r+n}{2}+4bn=1,
+		\gcd(2r-2n, 4n) = 1\implies a(2r-2n)+b(4n)=1\implies 4a \frac{r-n}{2}+4bn=1,
 		\]
-		which is $\gcd(\frac{r+n}{2}, n) = 1$.
+		which is $\gcd(\frac{r-n}{2}, n) = 1$.
 		\item It is easy to check that the function $f:(\mathbb{Z}/n\mathbb{Z})^*\rightarrow(\mathbb{Z}/2n\mathbb{Z})^*,\;[m]_n\mapsto[2m + n]_{2n}$ is well-defined. The fact
 		\[
 		\begin{aligned}
@@ -406,11 +438,11 @@ is an element of order $d$ in $S_n$.
 		\]
 		indicates that $f$ is injective. For any $[r]_{2n}\in(\mathbb{Z}/2n\mathbb{Z})^*$, we have
 		\[
-		\gcd(r, 2n) = 1\implies\gcd\left(\frac{r+n}{2},n\right) = 1\implies \left[\frac{r+n}{2}\right]_n\in(\mathbb{Z}/n\mathbb{Z})^*,
+		\gcd(r, 2n) = 1\implies\gcd\left(\frac{r-n}{2},n\right) = 1\implies \left[\frac{r-n}{2}\right]_n\in(\mathbb{Z}/n\mathbb{Z})^*,
 		\]
 		and
 		\[
-		f\left(\left[\frac{r+n}{2}\right]_n\right)=[r+2n]_{2n}=[r]_{2n},
+		f\left(\left[\frac{r-n}{2}\right]_n\right)=[r]_{2n},
 		\]
 		which indicates that $f$ is surjective. Thus we show $f$ is a bijection.
 	\end{itemize}
@@ -451,7 +483,9 @@ is an element of order $d$ in $S_n$.
 	\[
 	(\varphi\times\varphi) : G \times G \longrightarrow H \times H .
 	\]
-	(This morphism is defined explicitly for $\mathsf{C} = \mathsf{Set}$ in \textsection 3.1.)
+	compatible in the evident way with the natural projections.
+	
+	(This morphism is defined explicitly for $\mathsf{C} = \mathsf{Set}$ in \textsection 3.1.) [\textsection 3.1, 3.2]
 \end{problem}
 \begin{solution}
 	By the universal property of product in $\mathsf{C}$, there exist a unique morphism $(\varphi\times\varphi) : G \times G \longrightarrow H \times H$ such that the following diagram commutes.
@@ -788,7 +822,7 @@ $m|n$, $\pi_m^n$ may not be well-defined.
 
 
 \begin{problem}[4.2]
- Show that the homomorphism $\pi_2^4\times\pi_2^4:C_4\rightarrow C_2\times C_2$ is not an isomorphism. In fact, is there any nontrivial isomorphism $C_4\rightarrow C_2\times C_2$?
+ Show that the homomorphism $\pi_2^4\times\pi_2^4:C_4\rightarrow C_2\times C_2$ is not an isomorphism. In fact, is there any isomorphism $C_4\rightarrow C_2\times C_2$?
 \end{problem}
 
 \begin{solution}
@@ -1392,8 +1426,8 @@ matrices:
 	\item $ \SL_n(\C) = \{M \in \GL_n(\C) | \det(M) = 1\}$;
 	\item $\mathrm{O}_n(\R) = \{M \in \GL_n(\R) |MM^t = M^tM = I_n\}$;
 	\item $\mathrm{SO}_n(\R) = \{M \in \mathrm{O}_n(\R) | \det (M) = 1\}$;
-	\item  $\mathrm{U}_n(\C) = \{M \in \GL_n(\C) |MM^\dag = M^\dag M = I_n\}$;
-	\item  $\mathrm{SU}_n(\C) = \{M \in \mathrm{U}_n(\C) | \det(M) = 1\}$.
+	\item  $\mathrm{U}(n) = \{M \in \GL_n(\C) |MM^\dag = M^\dag M = I_n\}$;
+	\item  $\mathrm{SU}(n) = \{M \in \mathrm{U}(n) | \det(M) = 1\}$.
 \end{itemize}
 
 Here In stands for the $n \times n$ identity matrix, $M^t$ is the transpose of $M$, $M^\dag$ is the
@@ -1406,8 +1440,8 @@ The following diagram commutes, where all arrows are inclusions.
 \[\xymatrix{
 	\GL_n(\R)\ar[r] & \GL_n(\C)\\
 	\SL_n(\R)\ar[r]\ar[u] & \SL_n(\C)\ar[u]\\
-	\mathrm{O}_n(\R)\ar[r]\ar[u] & \mathrm{U}_n(\C)\ar[u]\\
-	\mathrm{SO}_n(\R)\ar[r]\ar[u] & \mathrm{SU}_n(\C) \ar[u]
+	\mathrm{O}_n(\R)\ar[r]\ar[u] & \mathrm{U}(n)\ar[u]\\
+	\mathrm{SO}_n(\R)\ar[r]\ar[u] & \mathrm{SU}(n) \ar[u]
 }\]
 \end{solution}
 
@@ -1431,14 +1465,14 @@ which means the set of upper triangular matrices is closed with respect to the m
 
 \hypertarget{Exercise II.6.3}{}
 \begin{problem}[6.3]
-$\neg$ Prove that every matrix in $\mathrm{SU}_2(\C)$ may be written in the form
+$\neg$ Prove that every matrix in $\mathrm{SU}(2)$ may be written in the form
 \[
 \begin{pmatrix}
 a + bi& c + di\\
 -c + di& a-bi\\
 \end{pmatrix}
 \]
-where $a, b, c, d \in \R$ and $a^2 + b^2 + c^2 + d^2 = 1$. (Thus, $\mathrm{SU}_2(\C)$ may be realized as a three-dimensional sphere embedded in $\R^4$; in particular, it is simply connected.)[8.9, III.2.5]
+where $a, b, c, d \in \R$ and $a^2 + b^2 + c^2 + d^2 = 1$. (Thus, $\mathrm{SU}(2)$ may be realized as a three-dimensional sphere embedded in $\R^4$; in particular, it is simply connected.)[8.9, III.2.5]
 \end{problem}
 \begin{solution}
 Let
@@ -1448,7 +1482,7 @@ Let
 	a_{11}& a_{12}\\
     a_{21}& a_{22}\\
 	\end{pmatrix}
-	\in\mathrm{SU}_2(\C)
+	\in\mathrm{SU}(2)
 	\]
 and we have
 \[
@@ -2261,7 +2295,7 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 \end{solution}
 
 \begin{problem}[1.3]
-	$\neg$ Let $R$ be a ring, and let $S$ be any set. Explain how to endow the set $R^S$ of set-functions $S\to R$ of two operations $+$, $\cdot$ so as to make $R^S$ into a ring, such that $R^S$ is just a copy of $R$ if $S$ is a sigleton. [2.3]
+	$\neg$ Let $R$ be a ring, and let $S$ be any set. Explain how to endow the set $R^S$ of set-functions $S\to R$ of two operations $+$, $\cdot$ so as to make $R^S$ into a ring, such that $R^S$ is just a copy of $R$ if $S$ is a singleton. [2.3]
 \end{problem}
 \begin{solution}
 	To make $(R^S,+,\cdot )$ a ring , for all $f,g\in R^S$ we define addition and multiplication as
@@ -2273,13 +2307,13 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 
 \hypertarget{Exercise III.1.4}{}
 \begin{problem}[1.4]
-	$\vartriangleright$ The set of $n\times n$ matrices with entries in a ring $R$ isdenoted $\mathcal{M}_n(R)$. Prove that componentwise addition and matrixmultiplication makes $\mathcal{M}_n(R)$ into a ring, for any ring $R$. The notation $\mathfrak{gl}_n(R)$ is also commonly used, especially $R=\mathbb{R}$ or $\mathbb{C}$ (although this indicates one is considering them as \emph{Lie algebras}) in parallel with the analogous notation for the corresponding groups of units, cf. \hyperlink{Exercise II.6.1}{Exercise II.6.1}. In
+	$\vartriangleright$ The set of $n\times n$ matrices with entries in a ring $R$ isdenoted $\mathcal{M}_n(R)$. Prove that componentwise addition and matrix multiplication makes $\mathcal{M}_n(R)$ into a ring, for any ring $R$. The notation $\mathfrak{gl}_n(R)$ is also commonly used, especially $R=\mathbb{R}$ or $\mathbb{C}$ (although this indicates one is considering them as \emph{Lie algebras}) in parallel with the analogous notation for the corresponding groups of units, cf. \hyperlink{Exercise II.6.1}{Exercise II.6.1}. In
 	fact, the parallel continues with the definition of the following sets of matrices:
 	\begin{itemize}
 		\item $\mathfrak{sl}_n(\mathbb{R}) = \{M \in \mathfrak{gl}_n(\mathbb{R}) | \mathrm{tr}(M) = 0\}$;
 		\item $\mathfrak{sl}_n(\mathbb{C}) = \{M \in \mathfrak{gl}_n(\mathbb{C}) | \mathrm{tr}(M) = 0\}$;
 		\item $\mathfrak{so}_n(\mathbb{R}) = \{M \in \mathfrak{sl}_n(\mathbb{R}) |M +M^t = 0\}$;
-		\item $\mathfrak{su}_n(\mathbb{C}) = \{M \in \mathfrak{sl}_n(\mathbb{C}) |M +M^\dag = 0\}$.
+		\item $\mathfrak{su}(n) = \{M \in \mathfrak{sl}_n(\mathbb{C}) |M +M^\dag = 0\}$.
 	\end{itemize}
 	Here $\mathrm{tr}(M)$ is the trace of $M$, that is, the sum of its diagonal entries. The other notation matches the notation used in Exercise II.6.1. Can we make rings of these sets, by endowing them of ordinary addition and multiplication of matrices? (These sets are all Lie algebras, cf. Exercise VI.1.4.) [\textsection1.2, 2.4, 5.9, VI.1.2, VI.1.4]
 \end{problem}
@@ -2808,7 +2842,7 @@ According to the definition of $Z_a(R)$, we see $r^{-1}\in Z_a(R)$. Thus we show
 \begin{problem}[2.11]
 $\neg$ Let $R$ be a division ring consisting of $p^{2}$ elements, where $p$ is a prime. Prove that $R$ is commutative, as follows:
 \begin{itemize}
-	\item If $R$ is not commutative, then its center $C$ (\hyperlink{Exercise III.2.9}{Exercise III.2.9}) is a proper subring of $R .$ Prove that $|C|$ would then consist of $p$ elements.
+	\item If $R$ is not commutative, then its center $C$ (\hyperlink{Exercise III.2.9}{Exercise III.2.9}) is a proper subring of $R .$ Prove that $C$ would then consist of $p$ elements.
 	\item Let $r \in R, r \notin C .$ Prove that the centralizer of $r$ (\hyperlink{Exercise III.2.10}{Exercise III.2.10}) contains both $r$ and $C$.
 	\item Deduce that the centralizer of $r$ is the whole of $R$.
 	\item Derive a contradiction, and conclude that $R$ had to be commutative (hence, a field).
@@ -2816,7 +2850,7 @@ $\neg$ Let $R$ be a division ring consisting of $p^{2}$ elements, where $p$ is a
 This is a particular case of Wedderburn's theorem: every finite division ring is a field. [IV.2.17, VII.5.16]
 \end{problem}
 \begin{solution}
-	If $R$ is not commutative, then its center $Z(R)$ is a proper subring of $R$, which means $|Z(R)|<p^2$. By considering $Z(R)$ as a subgroup of the underlying abelian group $R$, we can deduce that $|Z(R)|$ divides $p^2$ according to the Lagrange theorem. Thus we see that $Z(R)$ consists of $p$ elements. Given any $r \in R-Z(R)$, in \hyperlink{Exercise III.2.10}{Exercise III.2.10} we have shown that $Z_r(R)$ is a subring of $R$ and $Z(R)\in Z_r(R)$. By the definition of $Z_r(R)$, it is clear that $r\in Z_r(R)$. Hence we have $Z(R)\cup \{r\}\subseteq Z_r(R)$ and $|Z_r(R)|>p$. Again by Lagrange theorem we have $|Z_r(R)|$ divides $p^2$, which forces $|Z_r(R)|=p^2$. Thus we show that $Z_r(R)=R$. Note that $Z_a(R)=R$ for all $a\in Z(R)$. We have $Z_a(R)=R$ for all $a\in R$. In \hyperlink{Exercise III.2.10}{Exercise III.2.10}, we have derived that $\bigcap_{a\in R} Z_a(R)\subseteq Z(R)$, which implies $R\subseteq Z(R)$. Thus we have $Z(R)=R$, which contradicts with the previous deduction that $Z(R)$ is a proper subring of $R$.  Therefore, we can conclude that $R$ is commutative.
+	If $R$ is not commutative, then its center $Z(R)$ is a proper subring of $R$, which means $|Z(R)|<p^2$. By considering $Z(R)$ as a subgroup of the underlying abelian group $R$, we can deduce that $|Z(R)|$ divides $p^2$ according to the Lagrange theorem. Thus we see that $Z(R)$ consist of $p$ elements. Given any $r \in R-Z(R)$, in \hyperlink{Exercise III.2.10}{Exercise III.2.10} we have shown that $Z_r(R)$ is a subring of $R$ and $Z(R)\in Z_r(R)$. By the definition of $Z_r(R)$, it is clear that $r\in Z_r(R)$. Hence we have $Z(R)\cup \{r\}\subseteq Z_r(R)$ and $|Z_r(R)|>p$. Again by Lagrange theorem we have $|Z_r(R)|$ divides $p^2$, which forces $|Z_r(R)|=p^2$. Thus we show that $Z_r(R)=R$. Note that $Z_a(R)=R$ for all $a\in Z(R)$. We have $Z_a(R)=R$ for all $a\in R$. In \hyperlink{Exercise III.2.10}{Exercise III.2.10}, we have derived that $\bigcap_{a\in R} Z_a(R)\subseteq Z(R)$, which implies $R\subseteq Z(R)$. Thus we have $Z(R)=R$, which contradicts with the previous deduction that $Z(R)$ is a proper subring of $R$.  Therefore, we can conclude that $R$ is commutative.
 \end{solution}
 
 
@@ -3019,16 +3053,16 @@ Prove that the homomorphic image of a Noetherian ring is Noetherian. That is, pr
 
 \hypertarget{Exercise III.4.5}{}
 \begin{problem}[4.5]
-Let $I, J$ be ideals in a ring $R$, such that $I+J = (1)$. Prove that $IJ = I \cap J$.[\textsection4.1]
+Let $I, J$ be ideals in a commutative ring $R$, such that $I+J = (1)$. Prove that $IJ = I \cap J$.[\textsection4.1]
 \end{problem}
 \begin{solution}
-The notation $(1)$ suggests $R$ is commutative. For any $k\in IJ$, we can assume that $k=ab$, ($a\in I$, $b\in J$). Note that $k\in aJ=J$ and $k\in Ib=I$. It deduces that $k\in I\cap J$. Thus we show $IJ\subseteq I\cap J$.
+For any $k\in IJ$, we can assume that $k=ab$, ($a\in I$, $b\in J$). Note that $k\in aJ=J$ and $k\in Ib=I$. It deduces that $k\in I\cap J$. Thus we show $IJ\subseteq I\cap J$.
 
 \noindent Suppose $l\in I\cap J$. If $1=a+b$ ($a\in I$, $b\in J$), Then we have $l=1*l=(a+b)l=al+lb\in IJ$, which implies that $I\cap J\subseteq IJ$. Therefore, we show $IJ = I \cap J$.
 \end{solution}
 
 \begin{problem}[4.6]
-	Let $I, J$ be ideals in a ring $R$. Assume that $R/(IJ)$ is reduced (that is, it has no nonzero nilpotent elements; cf. \hyperlink{Exercise III.3.13}{Exercise III.3.13}). Prove that $IJ = I \cap J$.
+	Let $I, J$ be ideals in a commutative ring $R$. Assume that $R/(IJ)$ is reduced (that is, it has no nonzero nilpotent elements; cf. \hyperlink{Exercise III.3.13}{Exercise III.3.13}). Prove that $IJ = I \cap J$.
 \end{problem}
 \begin{solution}
 	The notation $(IJ)$ suggests $R$ is commutative. As is shown in \hyperlink{Exercise III.4.5}{Exercise III.4.5}, it holds that $IJ\subseteq I\cap J$. Thus we are left to show $I\cap J\subseteq IJ$. Suppose $l\in I\cap J$. The condition that $R/(IJ)$ is reduced tells that $\forall r\in R$, 
@@ -3059,7 +3093,7 @@ The notation $(1)$ suggests $R$ is commutative. For any $k\in IJ$, we can assume
 	\]
 	\begin{itemize}
 		\item Prove that $\mathbb{Q}(\sqrt{d})$ is a subring of $\mathbb{C}$.
-		\item Define a function $N: \mathbb{Q}(\sqrt{d}) \rightarrow \mathbb{Z}$ by $N(a+b \sqrt{d}):=a^{2}-b^{2} d .$ Prove that
+		\item Define a function $N: \mathbb{Q}(\sqrt{d}) \rightarrow \mathbb{Q}$ by $N(a+b \sqrt{d}):=a^{2}-b^{2} d .$ Prove that
 		\[
 		N(z w)=N(z) N(w), \text { and that } N(z) \neq 0 \text { if } z \in \mathbb{Q}(\sqrt{d}), z \neq 0
 		\]
@@ -3203,8 +3237,9 @@ The notation $(1)$ suggests $R$ is commutative. For any $k\in IJ$, we can assume
 		\item Prove that every maximal ideal $M$ in $R$ is of the form $M_{p}$ for some $p \in K .$ (Hint:
 		you will use the compactness of $K$ and (ii).) 
 	\end{enumerate}
-	Conclude that $p \mapsto M_{p}$ defines a bijection from $K$ to the set of maximal ideals
-	of $R .$ (The set of maximal ideals of a commutative ring $R$ is called the \emph{maximal spectrum} of $R ;$ it is contained in the (prime) spectrum Spec $R$ defined in $\$ 4.3 .$ Relating commutative rings and "geometric' entities such as topological spaces is the business of algebraic geometry. The compactness hypothesis is necessary: cf. Exercise V.3.10. [V.3.10]	
+	If further $K$ is Hausdorff (and, as Bourbaki would have it, compact spaces are Hausdorff), then Urysohn's lemma shows that for any two points $p \neq q$ in $K$ there exists a function $f \in R$ such that $f(p)=0$ and $f(q)=1 .$ If this is the case, conclude that $p \mapsto M_{p}$ defines a bijection from $K$ to the set of maximal ideals of $R .$ (The set of maximal ideals of a commutative ring $R$ is called the \emph{maximal spectrum} of $R$; it is contained in the (prime) spectrum Spec $R$ defined in $\$ 4.3 .$ Relating commutative rings and 'geometric' entities such as topological spaces is the business of \emph{algebraic geometry}.)
+	
+	The compactness hypothesis is necessary: cf. Exercise V.3.10. [V.3.10]	
 \end{problem}
 \begin{solution}
 	\begin{enumerate}[(i)]
@@ -3290,7 +3325,7 @@ For convenience, we talk about the identity of modules up to isomorphism. Since 
 \end{solution}
 
 \begin{problem}[5.5]
-Let $R$ be a ring, viewed as an $R$-module over itself, and let $M$ be an $R$-module. Prove that $\mathrm{Hom}_{R-\mathrm{Mod}}(R, M) \cong M$ as $R$-modules.
+Let $R$ be a commutative ring, viewed as an $R$-module over itself, and let $M$ be an $R$-module. Prove that $\mathrm{Hom}_{R-\mathrm{Mod}}(R, M) \cong M$ as $R$-modules.
 \end{problem}
 \begin{solution}
 	Define
@@ -3317,7 +3352,7 @@ Let $R$ be a ring, viewed as an $R$-module over itself, and let $M$ be an $R$-mo
 \end{solution}
 
 \begin{problem}[5.6]
-Let $G$ be an abelian group. Prove that if $G$ has a structure of $\mathbb{Q}$-vector space, then it has only one such structure. (Hint: first prove that every element of $G$ has necessarily infinite order. $)$
+Let $G$ be an abelian group. Prove that if $G$ has a structure of $\mathbb{Q}$-vector space, then it has only one such structure. (Hint: First prove that every nonidentity element of $G$ has necessarily infinite order. Alternative hint: The unique ring homomorphism $\mathbb{Z} \rightarrow \mathbb{Q}$ is an epimorphism.)
 \end{problem}
 \begin{solution}
 Assume that $G$ has two structures of $\mathbb{Q}$-vector space with scalar multiplication operations $\cdot$ and $*$ respectively. Note that $1\cdot g=1*g=g$ for all $g\in G$. With the conventional notation $\sum_{i=1}^{n}g=ng$, we have for all $g\in G$,
@@ -3397,7 +3432,70 @@ Let $K$ be a field, and let $k \subseteq K$ be a subfield of $K .$ Show that $K$
 \end{solution}
 
 
+\begin{problem}[5.9]
+	$\neg$ Let $R$ be a commutative ring, and let $M$ be an $R$-module. Prove that the operation of composition on the $R$-module $\mathrm{End}_{R-\mathsf{Mod}}(M)$ makes the latter an $R$-algebra in a natural way.
+	
+	Prove that $\mathcal{M}_{n}(R)$ (cf. \hyperlink{Exercise III.1.4}{Exercise III.1.4} ) is an $R$-algebra, in a natural way. $[\mathrm{VI} .1 .12,$ $\mathrm{VI} .2 .3]$
+\end{problem}
+\begin{solution}
+	In textbook we have show that $\mathrm{End}_{R-\mathsf{Mod}}(M)$ is an $R$-module with natural addition and scalar multiplication.
+	We can check that for all $f,g,h\in\mathrm{End}_{R-\mathsf{Mod}}(M)$, $r,s\in R$, $x\in M$,
+	\begin{align*}
+	(id_M\circ f)(x)&=id_M(f(x))=f(x),\\
+	((f+g)\circ h)(x)&=(f+g)(h(x))=f(h(x))+g(h(x))=(f\circ h)(x)+(g\circ h)(x)\\
+	&=(f\circ h+g\circ h)(x),\\
+	((r\cdot f)\circ(sg))(x)&=(r\cdot f)((s\cdot g)(x))=r\cdot f(s\cdot g(x))=r\cdot (s\cdot f(g(x)))\\
+	&=(rs) \cdot(f(g(x))=(rs) \cdot((f\circ g)(x))=((rs) \cdot(f\circ g))(x).
+	\end{align*}
+	Thus we prove that the operation of composition $\circ$ on the $R$-module $\mathrm{End}_{R-\mathsf{Mod}}(M)$ makes $\mathrm{End}_{R-\mathsf{Mod}}(M)$ an $R$-algebra.
+	
+	In \hyperlink{Exercise III.1.4}{Exercise III.1.4} we have shown that $\mathcal{M}_{n}(R)$ is a ring. Let the scalar multiplication $\cdot$ be componentwise multiplication, namely
+	\[
+	r\cdot(a_{ij})_{n\times n}:=(ra_{ij})_{n\times n},\qquad\forall r\in R,(a_{ij})_{n\times n}\in \mathcal{M}_{n}(R).
+	\]
+	We can check that
+	\begin{align*}
+	1_R\cdot(a_{ij})_{n\times n}&=(1_Ra_{ij})_{n\times n}=(a_{ij})_{n\times n},\\
+	(r+s)\cdot(a_{ij})_{n\times n}&=((r+s)a_{ij})_{n\times n}=(ra_{ij})_{n\times n}+(sa_{ij})_{n\times n}\\
+	&=r\cdot(a_{ij})_{n\times n}+s\cdot(a_{ij})_{n\times n},\\
+	r\cdot\left(\left(a_{ij}\right)_{n\times n}+\left(b_{ij}\right)_{n\times n}\right)&=r\cdot\left(a_{ij}+b_{ij}\right)_{n\times n}=\left(r\left(a_{ij}+rb_{ij}\right)\right)_{n\times n}\\
+	&=\left(ra_{ij}\right)_{n\times n}+\left(rb_{ij}\right)_{n\times n}=r\cdot\left(a_{ij}\right)_{n\times n}+r\cdot\left(b_{ij}\right)_{n\times n},\\
+	(rs)\cdot\left(a_{ij}\right)_{n\times n}&=	\left((rs)a_{ij}\right)_{n\times n}=r\cdot\left(sa_{ij}\right)_{n\times n}=r\cdot \left(s\cdot\left(a_{ij}\right)_{n\times n}\right),\\
+	\left(r\cdot \left(a_{ij}\right)_{n\times n}\right)\left(s\cdot \left(b_{ij}\right)_{n\times n}\right)&=(ra_{ij})_{n\times n}(sb_{ij})_{n\times n}=\left(\sum_{k=1}^n\left(ra_{ik}\right)\left(sb_{kj}\right)\right)_{n\times n}\\
+	&=\left((rs)\sum_{k=1}^n a_{ik}b_{kj}\right)_{n\times n}=(rs)\cdot\left(\sum_{k=1}^n a_{ik}b_{kj}\right)_{n\times n}\\
+	&=(rs)\cdot\left(\left(a_{ij}\right)_{n\times n}\left(b_{ij}\right)_{n\times n}\right).
+	\end{align*}
+	Therefore, $\mathcal{M}_{n}(R)$ is an $R$-algebra.
+\end{solution}
 
+
+\begin{problem}[5.11]
+	$\vartriangleright$ Let $R$ be a commutative ring, and let $M$ be an $R$-module. Prove that there is a bijection between the set of $R[x]$-module structures on $M$ (extending the given $R$-module structure) and $\mathrm{End}_{R-\mathsf{Mod}}(M)$. $[\$ \mathrm{VI} .7 .1]$
+\end{problem}
+\begin{solution}	
+	According to \hyperlink{Exercise III.5.9}{Exercise III.5.9}, $\mathrm{End}_{R-\mathsf{Mod}}(M)$ has an $R$-algebra structure, which can induce an $R[x]$-module structure on $\mathrm{End}_{R-\mathsf{Mod}}(M)$. That is, for all $f(x)=r_0+r_1x+\cdots+ r_nx^n\in R[x],\varphi\in \mathrm{End}_{R-\mathsf{Mod}}(M)$,
+	\[
+	f(x)\cdot \varphi:=f(\varphi)=r_0+r_1\varphi+\cdots+ r_n\varphi^n.
+	\] 
+	Given any $\varphi\in\mathrm{End}_{R-\mathsf{Mod}}(M)$, define the following $R[x]$-module structures on $M$ with scalar multiplication $\cdot_\varphi$,
+	\[
+	f(x)\cdot_\varphi m:=(f(\varphi))(m), \qquad\forall f(x)\in R[x],m\in M.
+	\]
+	What we need is to show that the map $\varphi\mapsto\cdot_\varphi$ is a bijection.
+	
+
+	If $\cdot_\varphi=\cdot_\eta$, we have $(f(\varphi))(m)=(f(\eta))(m)$. Take $f(x)=x$ and then we have $\varphi(m)=\eta(m)$ for all $m\in M$, which implies $\varphi=\eta$. Hence the map $\varphi\mapsto\cdot_\varphi$ is injective.
+	
+	Suppose $\bullet$ is a scalar multiplication which makes $M$ an $R[x]$-module.
+	\begin{itemize}
+		\item $f(x)\bullet (m+n)=f(x)\bullet m+f(x)\bullet n$
+		\item $(f(x)+g(x))\bullet m=f(x)\bullet m+g(x)\bullet m$
+		\item $(f(x) g(x))\bullet m=f(x)\bullet(g(x)\bullet m)$
+		\item $1\bullet m=m$
+	\end{itemize}
+	
+	
+\end{solution}
 
 \subsection{\textsection6. Products, coproducts, etc. in $R$-$\Mod$}
 \begin{problem}[6.3]
@@ -3450,6 +3548,9 @@ Moreover, if $G$ is generated by $f(A)$, then $\mathrm{im}\psi=G$, since $f(A)=\
 
 
 \newpage
+
+
+
 \bibliographystyle{plain}
 \bibliography{mybibtex}
 
