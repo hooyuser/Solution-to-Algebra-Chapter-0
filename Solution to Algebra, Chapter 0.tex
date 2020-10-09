@@ -62,7 +62,7 @@
 \DeclareMathOperator{\lcm}{lcm}
 
 % info for header block in upper right hand corner
-\name{Huyi Chen}
+\name{Hooy}
 \updatedate{\today}
 
 \begin{document}
@@ -84,7 +84,7 @@ problems.\\
 \noindent [II.8.10]: related to the Definition/Example/Proposition/Lemma/Corollary/Claim 8.10 in Chapter II (the 10th Definition/Example/Proposition/Lemma/Corollary/Claim in Chapter II Section 8).
 
 \section*{Acknoledgement}
-It is kind of Shane Creighton-Young to share his solutions to Paolo Aluffi's ``Algebra: Chapter 0"\cite{aluffi2009algebra} on the Github website \href{https://github.com/srcreigh/aluffi}{\texttt{https://github.com/srcreigh/aluffi}}. He takes the credit for the first two chapters of this manuscript. 
+It is kind of Shane Creighton-Young to share his solutions to Paolo Aluffi's ``Algebra: Chapter 0"\cite{aluffi2009algebra} on the Github website \href{https://github.com/srcreigh/aluffi}{\texttt{https://github.com/srcreigh/aluffi}}. He takes the credit for some parts of the first two chapters of this manuscript. 
 
 \section*{Contact}
 Github:
@@ -1315,8 +1315,7 @@ and itself? [\textsection II.2.1]
 
 % Problem 5.12
 \begin{problem}[5.12]
-	Define the notions of fibered products and fibered coproducts, as terminal
-	objects of the categories $\mathsf{C}^{\alpha,\beta}, \mathsf{C}_{\alpha,\beta}$ considered in
+	Define the notions of fibered products and fibered coproducts, as terminal objects of the categories $\mathsf{C}_{\alpha,\beta},\mathsf{C}^{\alpha,\beta}$ considered in
 	Example 3.10 (cf. also Exercise 3.11), by stating carefully the corresponding
 	universal properties.
 	
@@ -1324,6 +1323,40 @@ and itself? [\textsection II.2.1]
 	objects `concretely', in terms of naive set theory. [II.2.9, III.6.10, III.6.11]
 \end{problem}
 \begin{solution}
+	In the category $\mathsf{C}_{\alpha,\beta}$, let $D=\alpha(A)\cap\beta(B)$, $A\times_C B=\alpha^{-1}(D)\times\beta^{-1}(D)$ and let $\pi_A:A\times_C B\to A$, $\pi_B:A\times_C B\to B$ be projections. Since for all $x\in A\times_C B$, we can suppose $x=(a,b)$ such that $\alpha(a)\\beta(b)$Given any $f_A:Z\to A$ and $f_B:Z\to B$ such that $\alpha\circ f_A=\beta\circ f_B$, define
+	\[
+	\begin{aligned}
+	\sigma:Z&\longrightarrow A\times_C B, \\  
+	z&\longmapsto (f_A(z),f_B(z)).
+	\end{aligned}
+	\]
+	Since $\alpha(f_A(z))=\beta(f_B(z))\in D$, we see 
+	\[
+	f_A(z)\in \alpha^{-1}(D),\ f_B(z)\in\beta^{-1}(D)\implies (f_A(z),f_B(z))\in A\times_C B,
+	\]
+	which guarantees that $\sigma$ is well-defined. Then we can check that for all $z\in Z$,
+	\[
+	\pi_A\circ\sigma(z)=f_A(z),\ \pi_B\circ\sigma(z)=f_B(z),
+	\]
+	that is, the following diagram commutes.
+	\[\begin{tikzcd}
+	&& A\arrow[dr,"\alpha"]&\\
+	Z\arrow[r,"\sigma"]\arrow[urr,bend left,"f_A"]\arrow[drr,bend right,swap,"f_B"]
+	&A\times_C B\arrow[ur,"\pi_A"]\arrow[dr,swap,"\pi_B"]&&C \\
+	&& B\arrow[ur,swap,"\beta"]&
+	\end{tikzcd}\]
+	Suppose that there exists some mapping $\eta:Z\to A\times_C B$ such that for all $z\in Z$,
+	\[
+	\pi_A\circ\eta(z)=f_A(z),\ \pi_B\circ\eta(z)=f_B(z),
+	\]
+	which means $\eta(z)=(f_A(z),f_B(z))$ or $\eta=\sigma$. Thus we show that there exists a unique mapping $\sigma:Z\to A\times_C B$ such that $\pi_A\circ\sigma=f_A,\ \pi_B\circ\sigma=f_B$, which implies $A\times_C B$ along with $\pi_A,\pi_B$ is a final object in $\mathsf{C}_{\alpha,\beta}$.
+	
+	In the category $\mathsf{C}^{\alpha,\beta}$, let $A\sqcup_C B =\alpha(A)\sqcup \beta(B)$ and let $i_A:A\to A\sqcup_C B$, $i_B:B\to A\sqcup_C B $ be inclusions.
+	\[\begin{tikzcd}
+	& A\arrow[dr,"g_A"]\arrow[drr,bend left,"i_A"]&&\\
+	C\arrow[ur,"\alpha"]\arrow[dr,swap,"\beta"]&&Z\arrow[r,"\varphi"]&A\sqcup_C B \\
+	& B\arrow[ur,swap,"g_B"]\arrow[urr,bend right,swap,"i_B"]&&
+	\end{tikzcd}\]
 \end{solution}
 
 \newpage
