@@ -2245,8 +2245,6 @@ Since  $|C_{m}\times C_n|= |C_{mn}|=mn$, we can conclude $\varphi$ is an isomorp
 	\[
 	j(a)=j(b)\implies\varphi(j(a))=\varphi(j(b))\implies f(a)=f(b)\implies a=b.
 	\]
-	
-	
 \end{solution}
 
 \begin{problem}[5.4]
@@ -4447,7 +4445,7 @@ $\vartriangleright$ Let $M$ be a module over a ring $R .$ Prove that $0 \cdot m=
 	\end{align*}
 \end{solution}
 
-
+\hypertarget{Exercise III.5.4}{}
 \begin{problem}[5.4]
 $\neg$ Let $R$ be a ring. A nonzero $R$-module $M$ is \emph{simple} (or \emph{irreducible}) if its only submodules are $\{0\}$ and $M$. Let $M$, $N$ be simple modules, and let $\varphi : M \to N$ be a homomorphism of $R$-modules. Prove that either $\varphi= 0$, or $\varphi$ is an isomorphism. (This rather innocent statement is known as Schur's lemma.) [5.10, 6.16, VI.1.16]
 \end{problem}
@@ -4645,6 +4643,110 @@ Therefore we show that $M\cong\ker p \oplus\im p$.
 \end{solution}
 
 
+\hypertarget{Exercise III.6.16}{}
+\begin{problem}[6.16]
+	$\vartriangleright$ Let $R$ be a ring. A (left-) $R$-module $M$ is \emph{cyclic} if $M=\langle m\rangle$ for some $m \in M .$ Prove that simple modules (cf. \hyperlink{Exercise III.5.4}{Exercise III.5.4}) are cyclic. Prove that an $R$-module $M$ is cyclic if and only if $M \cong R / I$ for some (left-)ideal $I$. Prove that every quotient of a cyclic module is cyclic. $[6.17$, \textsection $\mathrm{VI}.4.1]$
+\end{problem}
+\begin{solution}
+	Let $M$ be a simple module and $m\in M$. We see $\langle m\rangle$ is a submodule of $M$. Since the submodule of simple modules can only be $\{0\}$ or itself, there must be $\langle m\rangle=M$, which implies $M$ is cyclic.
+	
+	If $M \cong R / I$ for some (left-)ideal $I$, we can suppose $f:R / I\to M$ is an isomorphism. Since for any $m\in M$, there exists $r+I\in R/I$ such that
+	\[
+	m=f(r+I)=rf(1_R+I),
+	\]
+	we have $M=\langle f(1_R+I)\rangle$. Thus we show $M$ is cyclic.
+	
+	If $M$ is cyclic, we can suppose $M=\langle m\rangle$ where $m\in M$. Define
+	\begin{align*}
+		\varphi:R^1 &\longrightarrow M ,\\
+		r&\longmapsto rm.
+	\end{align*}
+	Since any element in $M$ is in the form of $rm$ where $r\in R$ and $m\in M$, $\varphi$ must be surjective. Note that $\varphi$ preseves addition and scalar mutiplication, which implies $\varphi$ is a ring homomorphism. Thus we have $R/\ker\varphi\cong M$, where $\ker\varphi$ is an ideal of $R$.
+	
+	Suppose $M=\langle m_0\rangle$ is a cyclic module and $M/N$ is a quotient of $M$. Given any element $m+N \in M/N$, we have
+	\[
+	m+N=rm_0+N=r(m_0+N),\quad r\in R,
+	\]
+	which implies $M/N=\langle m_0+N\rangle$. Therefore, we show that every quotient of a cyclic module is cyclic.
+
+\end{solution}
+
+\hypertarget{Exercise III.6.17}{}
+\begin{problem}[6.17]
+	$\neg$ Let $M$ be a cyclic $R$-module, so that $M \cong R / I$ for a (left-)ideal $I$ (\hyperlink{Exercise III.6.16}{Exercise III.6.16}), and let $N$ be another $R$-module.
+	\begin{itemize}
+		\item Prove that $\operatorname{Hom}_{R-\operatorname{Mod}}(M, N) \cong\{n \in N \mid(\forall a \in I), a n=0\}$
+		\item For $a, b \in \mathbb{Z},$ prove that $\operatorname{Hom}_{R-\operatorname{Mod}}(\mathbb{Z} / a \mathbb{Z}, \mathbb{Z} / b \mathbb{Z}) \cong \mathbb{Z} / \operatorname{gcd}(a, b) \mathbb{Z}$.
+	\end{itemize}
+	[7.7]
+\end{problem}
+\begin{solution}
+	\begin{itemize}
+		\item First of all it is easy to check 
+		\[
+		\{n \in N \mid(\forall a \in I), a n=0\}
+		\]
+		is a module. Let $M=\langle m_0\rangle$ and let $\psi: R / I\to M,r+I\mapsto rm_0$ be an isomorphism. Define
+\begin{align*}
+	\varphi:\operatorname{Hom}_{R-\operatorname{Mod}}(M, N) &\longrightarrow \{n \in N \mid(\forall a \in I), a n=0\} ,\\
+	f&\longmapsto f(m_0)=f(\psi(1_R+I)),
+\end{align*}
+where $f(\psi(1_R+I))\in\{n \in N \mid(\forall a \in I), a n=0\}$ holds because 
+\[
+\forall a \in I,\quad af(\psi(1_R+I))=f(a\psi(1_R+I))=f(\psi(a(1_R+I)))=f(\psi(0_R+I))=0_N.
+\]
+It is straightforward to check $\varphi$ is a homomorphism. Note
+\[
+f(rm_0)=rf(m_0)=rf(\psi(1_R+I)),\quad \forall r\in R.
+\]
+We have 
+\[
+\varphi(f)=\varphi(g)\implies f(\psi(1_R+I))=g(\psi(1_R+I))\implies f=g,
+\]
+which implies $\varphi$ is a monomorphism. 
+
+For any $n_0\in\{n \in N \mid(\forall a \in I), a n=0\}$, let
+\begin{align*}
+	f_0:M &\longrightarrow N ,\\
+	rm_0&\longmapsto rn_0.
+\end{align*}
+It is clear to see $f_0\in \operatorname{Hom}_{R-\operatorname{Mod}}(M, N)$ and
+\[
+\varphi(f_0)=f_0(m_0)=n_0.
+\]
+Thus $\varphi$ is an epimorphism.
+Therefore, we show that $\varphi$ is an isomorphism and 
+\[
+\operatorname{Hom}_{R-\operatorname{Mod}}(M, N) \cong\{n \in N \mid(\forall a \in I), a n=0\}.
+\]
+\item What is left to show is 
+\[
+\{[n]_b \in \mathbb{Z} / b \mathbb{Z} :(\forall k \in  a \mathbb{Z}), k [n]_b=0\}\cong\mathbb{Z} / \operatorname{gcd}(a, b) \mathbb{Z}.
+\]
+Note
+\[
+\forall k \in  a \mathbb{Z}, k [n]_b=0\iff \forall r\in\mathbb{Z},b\mid ran \iff b\mid an \iff  b/\gcd(a, b)\mid n.
+\]
+We have
+\[
+\{[n]_b \in \mathbb{Z} / b \mathbb{Z} :(\forall k \in  a \mathbb{Z}), k [n]_b=0\}=\{[n]_b \in \mathbb{Z} / b \mathbb{Z} : b/\gcd(a, b)\mid n\}.
+\]
+Define
+\begin{align*}
+	h:\{[n]_b \in \mathbb{Z} / b \mathbb{Z} : b/\gcd(a, b)\mid n\} &\longrightarrow\mathbb{Z}/\operatorname{gcd}(a, b) \mathbb{Z} ,\\
+	[kb/\gcd(a, b)]_b&\longmapsto [k]_{\operatorname{gcd}(a, b)}.
+\end{align*}
+Since $h$ is the restriction of the projection $\pi:\mathbb{Z} / b \mathbb{Z}\to \mathbb{Z}/\operatorname{gcd}(a, b) \mathbb{Z}$, $h$ is a homomorphism. Noticing $h$ is surjective and 
+\[
+\left|\{[n]_b \in \mathbb{Z} / b \mathbb{Z} : b/\gcd(a, b)\mid n\}\right|=\left|\mathbb{Z}/\operatorname{gcd}(a, b) \mathbb{Z}\right|=\operatorname{gcd}(a, b),
+\]
+we can conclude
+\[
+\operatorname{Hom}_{R-\operatorname{Mod}}(\mathbb{Z} / a \mathbb{Z}, \mathbb{Z} / b \mathbb{Z}) \cong\{[n]_b \in \mathbb{Z} / b \mathbb{Z} : b/\gcd(a, b)\mid n\} \cong \mathbb{Z} / \operatorname{gcd}(a, b) \mathbb{Z}.
+\]
+\end{itemize}
+\end{solution}
+
 
 \subsection{\textsection7. Complexes and homology}
 \begin{problem}[7.1]
@@ -4659,6 +4761,177 @@ Assume that $f:0\to M$ and $g:M\to 0$. Since the the complex is exact, we have $
 \end{solution}
 
 
+
+\begin{problem}[7.2]
+Assume that the complex
+\[
+\cdots \longrightarrow 0 \longrightarrow M \longrightarrow M^{\prime} \longrightarrow 0 \longrightarrow \cdots
+\]
+is exact. Prove that $M \cong M^{\prime}$.
+\end{problem}
+\begin{solution}
+	Suppose that  that $f:M\to M'$. According to the exactness of the complex, we have $f$ is injective and surjective. Thus we show that $M \cong M^{\prime}$.
+\end{solution}
+
+
+\begin{problem}[7.3]
+Assume that the complex
+\[
+\cdots \longrightarrow 0 \longrightarrow L \longrightarrow M \stackrel{\varphi}{\longrightarrow} M^{\prime} \longrightarrow N \longrightarrow 0 \longrightarrow \cdots
+\]
+is exact. Show that, up to natural identifications, $L=\operatorname{ker} \varphi$ and $N=\operatorname{coker} \varphi$.
+
+\end{problem}
+\begin{solution}
+Suppose that $f:L\to M$ and $g:M'\to N$. According to the exactness of the complex, we have $f$ is injective, $g$ is surjective. Thus we have
+$$
+\ker\varphi=\im f\cong L
+$$
+and
+$$
+\operatorname{coker} \varphi= M'/\im \varphi=M'/\ker g\cong N.
+$$
+\end{solution}
+
+\begin{problem}[7.4]
+Construct short exact sequences of $\mathbb{Z}$-modules
+\[
+0 \longrightarrow \mathbb{Z}^{\oplus \mathbb{N}} \longrightarrow \mathbb{Z}^{\oplus \mathbb{N}} \longrightarrow \mathbb{Z} \longrightarrow 0
+\]
+and
+\[
+0 \longrightarrow \mathbb{Z}^{\oplus \mathbb{N}} \longrightarrow \mathbb{Z}^{\oplus \mathbb{N}} \longrightarrow \mathbb{Z}^{\oplus \mathbb{N}} \longrightarrow 0
+\]
+(Hint: David Hilbert's Grand Hotel.)
+\end{problem}
+
+\begin{solution}
+Assume
+\[
+0 \longrightarrow \mathbb{Z}^{\oplus \mathbb{N}} \operatornamewithlimits{\longrightarrow}^{f_1} \mathbb{Z}^{\oplus \mathbb{N}} \operatornamewithlimits{\longrightarrow}^{g_1} \mathbb{Z} \longrightarrow 0
+\]	
+Define a monomorphism
+$$
+f_1((x_1,x_2,x_3,\cdots))=(0,x_1,x_2,\cdots)
+$$
+and an epimorphism
+\[
+g_1((x_1,x_2,x_3,\cdots))=x_1.
+\]
+It is clear to see $g_1\circ f_1=0$, which implies the exactness of the complex.
+
+\noindent Given the complex
+\[
+0 \longrightarrow \mathbb{Z}^{\oplus \mathbb{N}} \operatornamewithlimits{\longrightarrow}^{f_2} \mathbb{Z}^{\oplus \mathbb{N}} \operatornamewithlimits{\longrightarrow}^{g_2} \mathbb{Z}^{\oplus \mathbb{N}}\longrightarrow 0,
+\]
+where
+$$
+f_2((x_1,x_2,x_3,x_4,\cdots))=(x_1,0,x_2,0,\cdots)
+$$
+and 
+\[
+g_2((x_1,x_2,x_3,x_4,\cdots))=(x_2,x_4,x_6,x_8,\cdots),
+\]
+we can check that $f_2$ is a monomorphism, $g_2$ is an epimorphism and $g_2\circ f_2=0$. Therefore, we have constructed a short exact sequence.
+\end{solution}
+
+\begin{problem}[7.5]
+$\vartriangleright$ Assume that the complex
+\[
+\cdots \longrightarrow L \longrightarrow M\longrightarrow N \rightarrow\cdots
+\]
+is exact, and that $L$ and $N$ are Noetherian. Prove that $M$ is Noetherian. [\textsection7.1]
+\end{problem}
+\begin{solution}
+Suppose that $f:L\to M$ and $g:M\to N$. According to the exactness of the complex, we have $\ker g=\im f$. Since $N$ is Noetherian and $\im g$ is a submodule of $N$, $\im g$ is Noetherian. Note that $\im g\cong M/\ker g=M/\im f$, we see $M/\im f$ is Noetherian. Since $L$ is Noetherian and $\im f\cong L/\ker f$, we have $\im f$ is Noetherian. Since $M/\im f$ and $\im f$ are both Noetherian, we can conclude $M$ is Noetherian.
+\end{solution}
+
+
+\begin{problem}[7.7]
+$\vartriangleright$ Let
+\[
+0 \longrightarrow M \longrightarrow N \longrightarrow P \longrightarrow0
+\]
+be a short exact sequence of $R$-modules, and let $L$ be an $R$-module.
+\begin{enumerate}[(i)]
+\item Prove that there is an exact sequence
+	\[
+	0 \longrightarrow \mathrm{Hom}_{R\text{-}\mathrm{Mod}}(P, L) \longrightarrow \mathrm{Hom}_{R\text{-}\mathrm{Mod}}(N, L) \longrightarrow \mathrm{Hom}_{R\text{-}\mathrm{Mod}}(M, L)
+	\]
+\item Redo \hyperlink{Exercise III.6.17}{Exercise III.6.17}. (Use the exact sequence $0 \rightarrow I \rightarrow R \rightarrow R / I \rightarrow 0 .)$
+\item Construct an example showing that the rightmost homomorphism in (i) need not be onto.
+\item Show that if if the original sequence splits, then the rightmost homomorphism in (i) is onto.
+\end{enumerate}
+$[7.9, \mathrm{VIII} .3 .14, \$ \mathrm{VIII.} 5.1]$
+
+\end{problem}
+\begin{solution}
+	\begin{enumerate}[(i)]
+		\item
+Suppose that 
+\[
+0 \longrightarrow M \operatornamewithlimits{\longrightarrow}^{f} N \operatornamewithlimits{\longrightarrow}^{g} P \longrightarrow0.
+\]
+Define
+\begin{align*}
+	g^*:\mathrm{Hom}_{R\text{-}\mathrm{Mod}}(P, L) &\longrightarrow \mathrm{Hom}_{R\text{-}\mathrm{Mod}}(N, L) \\
+	\varphi&\longmapsto \varphi\circ g
+\end{align*}
+and 
+\begin{align*}
+f^*:\mathrm{Hom}_{R\text{-}\mathrm{Mod}}(N, L) &\longrightarrow \mathrm{Hom}_{R\text{-}\mathrm{Mod}}(M, L) \\
+\psi&\longmapsto \psi\circ f
+\end{align*}
+Since $g$ is surjective,
+$$
+g^*(\varphi_1)=g^*(\varphi_2)\implies \varphi_1\circ g=\varphi_2\circ g\implies\varphi_1=\varphi_2,
+$$
+which means $g^*$ is injective.
+Since $\im f=\ker g$, for all $\psi\in\mathrm{Hom}_{R\text{-}\mathrm{Mod}}(N, L)$, we have
+\begin{align*}
+&\psi\in\ker f^*\iff \psi\circ f=0\iff\ker g=\im f\subset \ker\psi\\
+\iff&\exists\varphi\in\mathrm{Hom}_{R\text{-}\mathrm{Mod}}(P, L),\psi=\varphi \circ g\iff\psi\in\im g^*.
+\end{align*}
+The deduction 
+$$
+\ker g\subset \ker\psi\implies\exists\varphi\in\mathrm{Hom}_{R\text{-}\mathrm{Mod}}(P, L),\psi=\varphi \circ g
+$$
+holds because $N/\ker g\cong \im g=P$ and the following diagram commute
+
+\[\xymatrix@C=40pt@R=40pt{
+	N\ar@{->>}[r]^{g}\ar[dr]^{\psi}\ar@{->>}[d]_{\pi}   &  P\ar@{-->}[d]^{\exists \varphi:=\bar{\psi}\circ j}\\
+	N/\ker g\ar[r]_{\bar{\psi}}&L
+}\]
+where $j$ is an isomorphism from $P$ to $N/\ker g$. Thus we show $\ker f^*=\im g^*$ and 
+\[
+0 \longrightarrow \mathrm{Hom}_{R\text{-}\mathrm{Mod}}(P, L) \operatornamewithlimits{\longrightarrow}^{g^*} \mathrm{Hom}_{R\text{-}\mathrm{Mod}}(N, L) \operatornamewithlimits{\longrightarrow}^{f^*} \mathrm{Hom}_{R\text{-}\mathrm{Mod}}(M, L)
+\]
+is an exact sequence.
+\item
+\[
+0 \longrightarrow \mathrm{Hom}_{R\text{-}\mathrm{Mod}}(I, N) \longrightarrow \mathrm{Hom}_{R\text{-}\mathrm{Mod}}(R, N) \longrightarrow \mathrm{Hom}_{R\text{-}\mathrm{Mod}}(R/I, N)
+\]
+\end{enumerate}
+\end{solution}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 \newpage
 \section{Chapter V.\hspace{0.2em} Irreducibility and	factorization in integral domains}
 
