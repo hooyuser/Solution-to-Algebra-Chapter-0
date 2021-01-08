@@ -1323,18 +1323,14 @@ and itself? [\textsection II.2.1]
 	objects `concretely', in terms of naive set theory. [II.2.9, III.6.10, III.6.11]
 \end{problem}
 \begin{solution}
-	In the category $\mathsf{C}_{\alpha,\beta}$, let $D=\alpha(A)\cap\beta(B)$, $A\times_C B=\alpha^{-1}(D)\times\beta^{-1}(D)$ and let $\pi_A:A\times_C B\to A$, $\pi_B:A\times_C B\to B$ be projections. Since for all $x\in A\times_C B$, we can suppose $x=(a,b)$ such that $\alpha(a)\\beta(b)$Given any $f_A:Z\to A$ and $f_B:Z\to B$ such that $\alpha\circ f_A=\beta\circ f_B$, define
+	In the category $\mathsf{C}_{\alpha,\beta}$, let $A\times_C B=\{(a,b)\in A\times B\mid\alpha(a)=\beta(b)\}$ and let $\pi_A:A\times_C B\to A$, $\pi_B:A\times_C B\to B$ be projections. Given any $f_A:Z\to A$ and $f_B:Z\to B$ such that $\alpha\circ f_A=\beta\circ f_B$, define
 	\[
 	\begin{aligned}
 	\sigma:Z&\longrightarrow A\times_C B, \\  
 	z&\longmapsto (f_A(z),f_B(z)).
 	\end{aligned}
 	\]
-	Since $\alpha(f_A(z))=\beta(f_B(z))\in D$, we see 
-	\[
-	f_A(z)\in \alpha^{-1}(D),\ f_B(z)\in\beta^{-1}(D)\implies (f_A(z),f_B(z))\in A\times_C B,
-	\]
-	which guarantees that $\sigma$ is well-defined. Then we can check that for all $z\in Z$,
+	$\alpha(f_A(z))=\beta(f_B(z))$ guarantees that $\sigma$ is well-defined. Then we can check that for all $z\in Z$,
 	\[
 	\pi_A\circ\sigma(z)=f_A(z),\ \pi_B\circ\sigma(z)=f_B(z),
 	\]
@@ -1349,14 +1345,54 @@ and itself? [\textsection II.2.1]
 	\[
 	\pi_A\circ\eta(z)=f_A(z),\ \pi_B\circ\eta(z)=f_B(z),
 	\]
-	which means $\eta(z)=(f_A(z),f_B(z))$ or $\eta=\sigma$. Thus we show that there exists a unique mapping $\sigma:Z\to A\times_C B$ such that $\pi_A\circ\sigma=f_A,\ \pi_B\circ\sigma=f_B$, which implies $A\times_C B$ along with $\pi_A,\pi_B$ is a final object in $\mathsf{C}_{\alpha,\beta}$.
+	which means $\eta(z)=(f_A(z),f_B(z))$ or $\eta=\sigma$. Thus we show that there exists a unique mapping $\sigma:Z\to A\times_C B$ such that $\pi_A\circ\sigma=f_A,\ \pi_B\circ\sigma=f_B$, which implies $A\times_C B$ along with $\pi_A,\pi_B$ is a final object in $\mathsf{C}_{\alpha,\beta}$. Therefore, $A\times_C B$ together with $\pi_1$, $\pi_2$ is a fibered product.
 	
-	In the category $\mathsf{C}^{\alpha,\beta}$, let $A\sqcup_C B =\alpha(A)\sqcup \beta(B)$ and let $i_A:A\to A\sqcup_C B$, $i_B:B\to A\sqcup_C B $ be inclusions.
+	In the category $\mathsf{C}^{\alpha,\beta}$, we can define a reflexive and symmetric relation $\sim_*$ on the set $A\sqcup B$ as
+	\begin{align*}
+	(x_1,A)\sim_* (x_2,B)&\iff \alpha^{-1}(x_1)\cap\beta^{-1}(x_2)\ne\varnothing,\\
+	(x_1,B)\sim_* (x_2,A)&\iff \alpha^{-1}(x_1)\cap\beta^{-1}(x_2)\ne\varnothing,\\
+	(x_1,A)\sim_*(x_2,A)&\iff x_1=x_2,\\
+	(x_1,B)\sim_*(x_2,B)&\iff x_1=x_2.
+	\end{align*}
+
+	Let $\sim$ be the transitive closure of $\sim_*$. Thus we see $\sim$ is an equivalence relation. Let $A\sqcup_C B =A\sqcup B/\sim$ and let $i_A:A\to A\sqcup_C B$, $i_B:B\to A\sqcup_C B $ be the composition of inclusions and projections defined in the following diagram, that is $i_A=p\circ j_A$, $i_B=p\circ j_B$. 
 	\[\begin{tikzcd}
-	& A\arrow[dr,"g_A"]\arrow[drr,bend left,"i_A"]&&\\
-	C\arrow[ur,"\alpha"]\arrow[dr,swap,"\beta"]&&Z\arrow[r,"\varphi"]&A\sqcup_C B \\
-	& B\arrow[ur,swap,"g_B"]\arrow[urr,bend right,swap,"i_B"]&&
+		& A\arrow[dr,"i_A"]\arrow[d,"j_A"]\arrow[drr,bend left,"g_A"]&&\\
+		C\arrow[ur,"\alpha"]\arrow[dr,swap,"\beta"]&A\sqcup B\arrow[r,"p"]&A\sqcup_C B\arrow[r,"\varphi"]&Z \\
+		& B\arrow[u,swap,"j_B"]\arrow[ur,swap,"i_B"]\arrow[urr,bend right,swap,"g_B"]&&
 	\end{tikzcd}\]
+	We can check that for all $c\in C$, we have
+	\begin{align*}
+	\alpha^{-1}(\alpha(c))\cap \beta^{-1}(\beta(c))\ne\varnothing &\implies (\alpha(c),A)\sim(\beta(c),B)\\
+	&\implies j_A\circ\alpha(c)\sim j_B\circ\beta(c)\\
+	&\implies p\circ j_A\circ\alpha(c)=p\circ j_B\circ\beta(c)\\
+	&\implies i_A\circ\alpha(c)= i_B\circ\beta(c),
+	\end{align*}
+	which means $i_A\circ\alpha= i_B\circ\beta$.
+	
+	Given any $g_A:A\to Z$ and $g_B:B\to Z$ such that $ g_A\circ\alpha= g_B\circ\beta$, define
+	\begin{align*}
+		\varphi:A\sqcup_C B&\longrightarrow Z, \\  
+		[(x,A)]&\longmapsto g_A(x)\\
+		[(x,B)]&\longmapsto g_B(x).
+	\end{align*}
+	$\varphi$ is well-defined because if $(x_1,A)\sim (x_2,B)$ then there exists $c\in C$ such that $\alpha(c)=x_1$, $\beta(c)=x_2$, which implies
+	\[
+	g_A\circ\alpha(c)= g_B\circ\beta(c)\implies g_A(x_1)=g_B(x_2)\implies\varphi\left([(x_1,A)]\right)=\varphi\left([(x_2,B)]\right).
+	\]
+	We can check that
+	\begin{align*}
+	\varphi\circ i_A(a)&=\varphi\left([(a,A)]\right)=g_A(a),&\hspace{-8em}\forall a\in A,\\
+	\varphi\circ i_B(b)&=\varphi\left([(b,B)]\right)=g_B(b),&\hspace{-8em}\forall b\in B,
+	\end{align*}
+	that is, the following diagram commutes.
+	\[\begin{tikzcd}
+	& A\arrow[dr,"i_A"]\arrow[drr,bend left,"g_A"]&&\\
+	C\arrow[ur,"\alpha"]\arrow[dr,swap,"\beta"]&&A\sqcup_C B\arrow[r,"\varphi"]&Z \\
+	& B\arrow[ur,swap,"i_B"]\arrow[urr,bend right,swap,"g_B"]&&
+	\end{tikzcd}\]
+	It is clear that $\varphi$ is the unique mapping such that the diagram commutes. Thus we show that the fibered coproduct is $A\sqcup_C B$ together with two mappings $i_A:A\to A\sqcup_C B$, $i_B:B\to A\sqcup_C B$.
+	
 \end{solution}
 
 \newpage
