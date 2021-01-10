@@ -3408,6 +3408,8 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 	Since $0 = 1$ we see that $x=0$, which implies $R$ is a ring with only one element $0$.
 \end{solution}
 
+
+\hypertarget{Exercise III.1.2}{}
 \begin{problem}[1.2]
 	$\neg$ Let $S$ be a set, and define operations on the power set $\mathscr{P}(S)$ of $S$ by setting $\forall A,B \in \mathscr{P}(S)$
 	\[
@@ -4021,7 +4023,7 @@ This is a particular case of Wedderburn's theorem: every finite division ring is
 
 
 \begin{problem}[2.15]
-	For $m>1,$ the abelian groups $(\mathbb{Z},+)$ and $(m \mathbb{Z},+)$ are manifestly isomorphic: the function $\varphi: \mathbb{Z} \rightarrow m \mathbb{Z}, n \mapsto \operatorname{mn}$ is a group isomorphism. Use this isomorphism to transfer the structure of `ring without identity' $(m \mathbb{Z},+, \cdot)$ back onto $\mathbb{Z}:$ give an explicit formula for the `multiplication' $\bullet$ this defines on $\mathbb{Z}$ (that is, such that $\varphi(a \bullet b)=\varphi(a) \cdot \varphi(b))$. Explain why structures induced by different positive integers $m$ are non-isomorphic as `rings without 1'.
+	For $m>1,$ the abelian groups $(\mathbb{Z},+)$ and $(m \mathbb{Z},+)$ are manifestly isomorphic: the function $\varphi: \mathbb{Z} \rightarrow m \mathbb{Z}, n \mapsto mn$ is a group isomorphism. Use this isomorphism to transfer the structure of `ring without identity' $(m \mathbb{Z},+, \cdot)$ back onto $\mathbb{Z}:$ give an explicit formula for the `multiplication' $\bullet$ this defines on $\mathbb{Z}$ (that is, such that $\varphi(a \bullet b)=\varphi(a) \cdot \varphi(b))$. Explain why structures induced by different positive integers $m$ are non-isomorphic as `rings without 1'.
 	
 	(This shows that there are many different ways to give a structure of ring without identity to the \emph{group} $(\mathbb{Z},+)$. Compare this observation with Exercise 2.16.) [\textsection 2.1]
 \end{problem}
@@ -4179,6 +4181,32 @@ which contradicts the assumption that $R$ is an integral domain.
 If the characteristic of the integral domain $R$ is 1, then the inclusion homomorphism $i:\Z\to R$ will send all integers to $0_R$, which means $0_R=1_R$ and $R$ is actually a zero ring instead of an integral domain. Thus the characteristic of an integral domain is either be 0 or a prime integer.
 \end{solution}
 
+
+\hypertarget{Exercise III.3.15}{}
+\begin{problem}[3.15]
+	$\neg$ A ring $R$ is boolean if $a^{2}=a$ for all $a \in R$. Prove that $\mathscr{P}(S)$ is boolean, for every set $S$ (cf. \hyperlink{Exercise III.1.2}{Exercise III.1.2}). Prove that every boolean ring is commutative, and has characteristic 2. Prove that if an integral domain $R$ is boolean, then $R \cong \mathbb{Z} / 2 \mathbb{Z}$. $[4.23, \mathrm{~V}.6.3]$
+\end{problem}
+\begin{solution}
+Since $A\cap A=A$ for all $A\in \mathscr{P}(S)$, $\mathscr{P}(S)$ is boolean.
+
+Assume that $R$ is a boolean ring. For any $x\in R$,
+\[
+x+x=(x+x)^2=x^2+x^2+x^2+x^2=x+x+x+x\implies x+x=0_R\implies x=-x.
+\]
+For any $a,b\in R$,
+\[
+a+b=(a+b)^2=a^2+ab+ba+b^2=a+ab+ba+b\implies ab=-ba=ba.
+\]
+Thus we show every boolean ring is commutative. Since $1_R+1_R=0_R$, boolean ring has characteristic 2.
+
+If an integral domain $R$ is boolean, we can define 
+\begin{align*}
+	\psi:\mathbb{Z} / 2 \mathbb{Z}&\longrightarrow R ,\\
+	[n]_2 &\longmapsto n\cdot1_R.
+\end{align*}
+$\psi$ is well-defined since for all $n,k\in\mathbb{Z}$, $n\cdot1_R=(n+2k)\cdot1_R$. Since $\psi([0]_2)\ne\psi([1]_2)$, $\psi$ is injective. For any $a\in R$, we have $a(a-1_R)=0_R$. Since $R$ is an integral domain, there must be $a=0_R$ or $a-1_R=0$, which implies $\psi$ is surjective. Therefore, we show $\psi$ is an isomorphism and $R \cong \mathbb{Z} / 2 \mathbb{Z}$.
+\end{solution}
+
 \begin{problem}[3.17]
 Let $I, J$ be ideals of a ring $R$. State and prove a precise result relating the ideals $(I + J)/I$ of $R/I$ and $J/(I \cap J)$ of $R/(I \cap J)$. [\textsection3.3]
 \end{problem}
@@ -4308,7 +4336,7 @@ For any $k\in IJ$, we can assume that $k=ab$, ($a\in I$, $b\in J$). Note that $k
 		\[
 		a+bt+(t^{2}-d)\in\ker \overline{\varphi}\iff a+b\sqrt{d}=0\iff a=b=0.
 		\]
-		It implies that $\ker \overline{\varphi}=\{0+(t^2-d)\}$ and $\overline{\varphi}$ is injective. It is clear that $\overline{\varphi}$ is surjective. Therefore, $\overline{\varphi}$ is an isomorphism.
+		It implies that $\ker \overline{\varphi}=\{0+(t^2-d)\}$ and $\overline{\varphi}$ is injective. It is clear that $\overline{\varphi}$ is surjective. Therefore, $\overline{\varphi}$ is an isomorphism and $\mathbb{Q}(\sqrt{d})\cong \mathbb{Q}[t] /\left(t^{2}-d\right)$.
 	\end{itemize}
 \end{solution}
 
@@ -4394,6 +4422,20 @@ For any $k\in IJ$, we can assume that $k=ab$, ($a\in I$, $b\in J$). Note that $k
 	\]
 \end{solution}
 
+
+\begin{problem}[4.13]
+$\triangleright$ Let $R$ be an integral domain. For all $k=1, \ldots, n$ prove that $\left(x_{1}, \ldots, x_{k}\right)$ is prime in $R\left[x_{1}, \ldots, x_{n}\right] .[\S 4.3]$
+\end{problem}
+\begin{solution}
+	Note
+	\[
+	\frac{R\left[x_{1}, \cdots, x_{n}\right]}{\left(x_{1}, \cdots, x_{k}\right)}\cong \frac{R\left[x_{k+1},\cdots,x_n\right]\left[x_{1}, \cdots, x_{k}\right]}{\left(x_{1}, \cdots, x_{k}\right)}\cong R\left[x_{k+1},\cdots,x_n\right].
+	\]
+	Since $R$ is an integral domain, we can deduece $R\left[x_{k+1},\cdots,x_n\right]$ is an integral domain. Therefore, $\left(x_{1}, \cdots, x_{k}\right)$ is prime in $R\left[x_{1}, \cdots, x_{n}\right]$.
+\end{solution}
+
+
+
 \begin{problem}[4.17]
 	$\neg$ (If you know a little topology...) Let $K$ be a compact topological space, and let $R$ be the ring of continuous real-valued functions on $K,$ with addition and multiplication defined pointwise.
 	\begin{enumerate}[(i)]
@@ -4435,6 +4477,27 @@ Thus we see the mapping
  is injective. In (iii) we have shown that $\varphi$ is surjective. Therefore, $\varphi$ is a bijection.
 \end{solution}
 
+
+\begin{problem}[4.23]
+A ring $R$ has Krull dimension 0 if every prime ideal in $R$ is maximal. Prove that fields and boolean rings (\hyperlink{Exercise III.3.15}{Exercise III.3.15}) have Krull dimension $0 .$
+\end{problem}
+\begin{solution}
+Assume that $R$ is a field. If $I$ be a prime ideal in $R$, then $R/I$ is an integral domain. Given any $r+I\in R/I$, we have
+\[
+(r+I)(r^{-1}+I)=(r^{-1}+I)(r+I)=1_R+I,
+\]
+which means $R/I$ is a field. Thus $I$ is maximal and $R$ has Krull dimension $0$.
+
+Assume that $R$ is a boolean ring. If $I$ be a prime ideal in $R$, then $R/I$ is an integral domain. Given any $r+I\in R/I$, we have
+\[
+(r+I)(r+I)=r^2+I=r+I\implies (r+I)\left((r+I)-(1_R+I)\right)=0_R+I,
+\]
+which implies
+\[
+r+I=0_R+I\text{  or  }r+I=1_R+I.
+\]
+Thus we see $R/I\cong \mathbb{Z}/2\mathbb{Z}$ and $R/I$ is a field.
+\end{solution}
 
 
 \subsection{\textsection5. Modules over a ring}
