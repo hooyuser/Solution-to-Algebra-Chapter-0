@@ -10,6 +10,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage[all]{xy}
+\graphicspath{{images/}}
 
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{xcolor}
@@ -58,6 +59,9 @@
 \newcommand{\quotuniv}[1]{\overline{#1}}
 \newcommand{\quot}[2]{#1/\!\!#2\,\,}
 \newcommand{\quotntws}[2]{#1/\!\!#2}
+
+\newcommand{\inv}[1]{#1^{-1}}
+\newcommand{\cycl}[1]{\mathbb{Z}/#1\mathbb{Z}}
 
 \DeclareMathOperator{\lcm}{lcm}
 
@@ -1419,6 +1423,29 @@ and itself? [\textsection II.2.1]
 	Thus any homomorphism $g\in \mathrm{Hom}_\mathsf{C}(*,*)$ is an isomorphism and accordingly $\mathsf{C}$ is a groupoid. Now we see $G=\mathrm{End}_\mathsf{C}(*)$ is the group of isomorphisms of a groupoid. Moreover, supposing that $*$ is an object in some category $\mathsf{D}$, $G$ would be the group of automorphisms of $*$, which is denoted as $\mathrm{Aut}_\mathsf{D}(*)$.
 \end{solution}
 
+\begin{problem}[1.2]
+	Consider the 'sets of numbers' listed in §1.1, and decide which are made into groups by conventional operations such as + and $\cdot$. Even if the answer is negative(for example, ($\mathbb{R}$, $\cdot$) is not a group), see if variations on the definition of these sets lead to groups (for example, ($\mathbb{R}^*$, $\cdot$) is a group; cf. §1.4).
+\end{problem}
+\begin{solution}
+	We will consider next sequence of nested sets of numbers:
+	\[
+		\Z \subset \Q \subset \R \subset \C.
+	\]
+	Let's check, that any set above is group under addition: let $X$ be some set from above, then $\exists 0 \in X$ such that $\forall a \in X: \;\; a+0 = a = 0+a$; for any element $a$ from $X$ there exists such $b \in X: \;\; b=-a$ that $a+b=0=b+a$ and associativity also holds.
+	
+	Now let's consider multiplication instead of addition. Now we need to modify our sets in order to get a group: since $0$ lies in every group above, it doesn't have an inverse(we can't divide by $0$), thus we need to consider $X^* \coloneqq X \setminus \{0\}$ in order to get a group. This works out well for all 'sets of numbers' -- pair $(X^*, \cdot)$ is a group, but for $\Z$ it does not: only $\{-1,1\}$ has inverses under multiplication, therefore $(\{-1,1\}, \cdot)$ form a group.
+\end{solution}
+
+\begin{problem}[1.3]
+	Prove that $\inv{gh} = \inv{h}\inv{g}$ for all elements $g,h$ of a group $G$.
+\end{problem}
+\begin{solution}
+	We have:
+	\[ (\inv{g}\inv{h})(hg) = (\inv{g}(\inv{h}h))g = (\inv{h}e)g = \inv{g}g = e \]
+	\[ (hg)(\inv{g}\inv{h}) = (h(g\inv{g}))\inv{h} = (he)\inv{h} = h\inv{h} = e \]
+	%
+	Hence $\inv{g}\inv{h}$ is a two-sided inverse of $gh$.
+\end{solution}
 \begin{problem}[1.4]
 	Suppose that $g^2 = e$ for all elements $g$ of a group $G$; prove that $G$ is commutative.
 \end{problem}
@@ -1427,6 +1454,25 @@ and itself? [\textsection II.2.1]
 	\[
 	abab=e\implies a(abab)b=ab\implies (aa)ba(bb)=ab\implies ba=ab.
 	\]
+\end{solution}
+
+\begin{problem}[1.5]
+	The `multiplication table' of a group is an array compiling the results of all
+	multiplications $g \cdot h$:
+		
+		\begin{center}
+			\includegraphics[width=0.5\linewidth,keepaspectratio=true]{multiplication_table.png}
+		\end{center}
+	
+	(Here $e$ is the identity element. Of course the table depends on the order in
+	which the elements are listed in the top row and leftmost column.) Prove that
+	every row and every column of the multiplication table of a group contains all
+	elements of the group exactly once (like Sudoku diagrams!).
+\end{problem}
+\begin{solution}
+	Without loss of generality suppose that two elements in a column are equal,
+	i.e. for some fixed element $f$ we have $f\cdot g = f\cdot h$. Then by
+	(left-)cancellation we get that $g=h$. Hence the columns must be the same.
 \end{solution}
 
 \subsection{\textsection2. Examples of groups}
