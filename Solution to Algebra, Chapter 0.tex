@@ -3388,6 +3388,40 @@ there must be $\hat{\delta}=\delta$. After these tasks are done, we can conclude
 \end{solution}
 
 
+\begin{problem}[8.17]
+$\triangleright$ Assume $G$ is a finite abelian group, and let $p$ be a prime divisor of $|G| .$ Prove that there exists an element in $G$ of order $p$. (Hint: let $g$ be any element of $G,$ and consider the subgroup $\langle g\rangle$; use the fact that this subgroup is cyclic to show that there is an element $h \in\langle g\rangle$ in $G$ of prime order $q .$ If $q=p$ you are done; else, use the quotient $G /\langle h\rangle$ and induction.) $[\S 8.5,8.18,8.20, \S \mathrm{IV} .2 .1]$
+\end{problem}
+\begin{solution}
+Suppose the proposition to be poven holds for $k=|G|\le N-1$. Now assume that $k=|G|=N$. Let $g$ be any element of $G$ such that $g\ne e_G$ and consider the cyclic group $\langle g\rangle$. We are to show that there is an element $h \in\langle g\rangle$ of prime order $q$. If $|\langle g\rangle|$ is prime, simply take $h=g$. If $|\langle g\rangle|$ is not prime, we can assume that $|\langle g\rangle|=rs$, where $r,s\in\mathbb{Z}$ and $r$ is prime. Note
+\[
+\left|g^{s}\right|=\frac{|g|}{\operatorname{gcd}(s,|g|)}=\frac{rs}{\operatorname{gcd}(s,rs)}=\frac{rs}{s}=r.
+\]
+We can take $h=g^{s}$. Therefore, there is an element $h \in\langle g\rangle$ such that $q=|h|$ is prime. If $q=p$, the proof is completed. Otherwise, let $G_1=G /\langle h\rangle$. It still follows that $G_1$ is a finite abelian group and $p$ is a prime divisor of $|G_1|$. Since $k=|G_1|=N/q\le N-1$, by induction it follows that there exists an element $x\langle h\rangle\in G_1$ of order $p$. Thus we have
+\[
+x^p\langle h\rangle=\langle h\rangle\implies x^p=h^m\implies x^{pq}=h^{mq} \implies (x^{q})^p=e_G\implies |x^{q}|\mid p\implies|x^{q}|=1\text{ or }p.
+\]
+If $x^{q}=e_G$, then 
+$$
+x^{q}\langle h\rangle=\langle h\rangle\implies|x\langle h\rangle|\mid q\implies p\mid q,
+$$
+which leads to a contradiction. Thus there must be $|x^{q}|=p$, which means the proposition holds when $k=|G|=N$. By induction we prove that there exists an element in $G$ of order $p$.
+
+\end{solution}
+
+\begin{problem}[8.18]
+Let $G$ be an abelian group of order $2 n$, where $n$ is odd. Prove that $G$ has exactly one element of order $2 .$ (It has at least one, for example by Exercise 8.17. Use Lagrange's theorem to establish that it cannot have more than one.) Does the same conclusion hold if $G$ is not necessarily commutative?
+\end{problem}
+\begin{solution}
+By Exercise 8.17, $G$ has exactly one element of order $2$. Suppose $a,b$ are two distinct elements of order $2$. Consider the generated subgroup 
+$$
+\langle a,b\rangle=\{e,a,b,ab\}.
+$$
+According to Lagrange's theorem, since $|\langle a,b\rangle|=4$, there must be $4|2n$ or $2|n$, where $n$ is odd. That is a contradiction. Thus we see $G$ cannot have two distinct elements of order $2$, which implies that $G$ has exactly one element of order $2$.
+
+\end{solution}
+
+
+
 
 \subsection{\textsection9. Group actions}
 
@@ -4387,6 +4421,7 @@ For any $k\in IJ$, we can assume that $k=ab$, ($a\in I$, $b\in J$). Note that $k
 	\end{itemize}
 \end{solution}
 
+\hypertarget{Exercise III.4.12}{}
 \begin{problem}[4.12]
 	$\vartriangleright$ Let $R$ be a commutative ring, and $a_{1}, \cdots, a_{n}$ elements of $R .$ Prove that
 	\[
@@ -5051,17 +5086,105 @@ is an exact sequence.
 	Since $|S| \not \equiv 0 \bmod p$, there must be $|Z|\ne0$, which implies the action must have fixed points.
 \end{solution}
 
-	
+\begin{problem}[1.2]
+Find the center of $D_{2 n}$. (The answer depends on the parity of $n$. You have actually done this already: \hyperlink{Exercise II.2.7}{Exercise II.2.7}. This time, use a presentation.)
+\end{problem}
+\begin{solution}
+\[
+D_{2n}=\left\langle r, s \mid r^{n}=s^{2}=(sr)^{2}=e\right\rangle
+\]
+It is clear that $r^is^j\in Z(D_{2n})$ if and only if $r^is^j$ commutes with $r$ and $s$. That is,
+\[
+(r^is^j)r=r(r^is^j)\iff s^jr=rs^j\iff j=0
+\]
+and
+\[
+(r^is^j)s=s(r^is^j)\iff r^is=sr^i\iff i=0\text{  or  }n.
+\]
+Therefore, 
+\[
+Z(D_{2n})=\{e,r^n\}.
+\]
+\end{solution}
+
+\begin{problem}[1.4]
+$\triangleright$ Let $G$ be a group, and let $N$ be a subgroup of $Z(G)$. Prove that $N$ is normal in $G .[\S 2.2]$
+\end{problem}
+\begin{solution}
+Since for all $g\in G$, $a\in N$,
+\[
+gag^{-1}=agg^{-1}=a\in N,
+\]
+we see $N$ is normal in $G$.
+
+\end{solution}
+
+
+\begin{problem}[1.5]
+$\triangleright$ Let $G$ be a group. Prove that $G / Z(G)$ is isomorphic to the group $\operatorname{Inn}(G)$ of inner automorphisms of $G .$ (Cf. \hyperlink{Exercise II.4.8}{Exercise II.4.8}.) Then prove Lemma 1.5 again by using the result of \hyperlink{Exercise II.6.7}{Exercise II.6.7}. $[\S 1.2]$
+\end{problem}
+\begin{solution}
+Define
+\begin{align*}
+	f:G/Z(G)&\longrightarrow \operatorname{Inn}(G)\\
+	gZ(G)&\longmapsto (\gamma_g:a\longmapsto gag^{-1}).
+\end{align*}
+We can check that $f$ is a homomorphism
+\[
+f(g_1g_2Z(G))=\gamma_{g_1g_2}=\gamma_{g_1}\gamma_{g_2}=f(g_1Z(G))f(g_2Z(G)).
+\]
+Since
+\[
+gZ(G)\in\ker f\iff \gamma_g=\mathrm{id}_G\iff\forall a\in G, gag^{-1}=a\iff g\in Z(G),
+\]
+we have
+\[
+\ker f=Z(G),
+\]
+which means $f$ is injective. It is clear that $f$ is surjective. Thus we show $f$ is an isomorphism and $G / Z(G)\cong\operatorname{Inn}(G)$.
+
+
+\end{solution}
+
+\begin{problem}[1.6]
+$\triangleright$ Let $p, q$ be prime integers, and let $G$ be a group of order $p q .$ Prove that either $G$ is commutative, or the center of $G$ is trivial. Conclude (using Corollary 1.9$)$ that every group of order $p^{2}$, for a prime $p$, is commutative. $[\S 1.3]$
+\end{problem}
+\begin{solution}
+Since $Z(G)\operatorname{\triangleleft} G$, it follows that  $|Z(G)|\in\{1,p,q,pq\}$. Suppose $|Z(G)|=p\text{  or  }q$, we have $|G/Z(G)|=p\text{  or  }q$. Since groups of prime orders are cyclic, $G/Z(G)$ is cyclic. According to Lemma 1.5, it implies $G / Z(G)=\{e_G\}$, which yields a contradiction. Hence $|Z(G)|=1\text{  or  }pq$, that is, 
+\[
+Z(G)=\{e_G\}\text{  or  }G.
+\] 
+Therefore, we prove that either $G$ is commutative, or the center of $G$ is trivial.
+
+Let $G$ be a group of order $p^{2}$. According to Corollary 1.9, the center of the nontrivial $p$-group $G$ is nontrivial. Therefore, $G$ must be commutative.
+
+\end{solution}
+
+
+
+
 \newpage
 \section{Chapter V.\hspace{0.2em} Irreducibility and	factorization in integral domains}
 \subsection{\textsection1. Chain conditions and existence of factorizations}
 Remember that in this section all rings are taken to be \emph{commutative}.
 
+\hypertarget{Exercise V.1.1}{}
 \begin{problem}[1.1]
 	$\triangleright$ Let $R$ be a Noetherian ring, and let $I$ be an ideal of $R$. Prove that $R / I$ is a Noetherian ring. [\textsection1.1]
 \end{problem}
 \begin{solution}
 	Let $\pi:R\to R / I$ be the projection. According to \hyperlink{Exercise III.4.2}{Exercise III.4.2}, the homomorphic image of the Noetherian ring $R$ is Noetherian. That is, $\pi(R)=R / I$ is Noetherian.
+\end{solution}
+
+\begin{problem}[1.2]
+Prove that if $R[x]$ is Noetherian, so is $R$. (This is a `converse' to Hilbert's basis theorem.)
+\end{problem}
+\begin{solution}
+According to \hyperlink{Exercise V.1.1}{Exercise V.1.1}, $R[x]$ is Noetherian implies $R\left[x\right]/\left(x\right)$ is Noetherian. Since in \hyperlink{Exercise III.4.12}{Exercise III.4.12} we have shown that
+\[
+R\cong R\left[x\right]/\left(x\right),
+\]
+we see $R$ is Noetherian.
 \end{solution}
 
 
@@ -5153,7 +5276,52 @@ $[\S 4.2, \S 5.3]$
 \end{itemize}
 \end{solution}
 
+\newpage
+\section{Chapter VII.\hspace{0.2em} Fields}
+\subsection{\textsection1. Field extensions, I}
+\begin{problem}[1.1]
+$\triangleright$ Prove that if $k \subseteq K$ is a field extension, then $\mathrm{char}\,k=\mathrm{char}\,K$. Prove that the category $\mathsf{Fld}$ has no initial object. $[\S 1.1]$
+\end{problem}
+\begin{solution}
+	Since $\mathbb{Z}$ is initial in $\mathsf{Ring}$, we have unique ring homomorphisms $i_k: \mathbb{Z} \rightarrow k$ and $i_K: \mathbb{Z} \rightarrow K$. Note that the inclusion $j:k\rightarrow K$ is a ring homomorphism, we have $i_K=j\circ i_k$. Since
+	\[
+	\ker i_K=\ker(j\circ i_k)=i_{k}^{-1}(\ker j)=i_{k}^{-1}(\{0\})=\ker i_k,
+	\]
+	we have $\mathrm{char}\,k=\mathrm{char}\,K$. If there exists one initial object $A$ in $\mathsf{Fld}$, all the objects in $\mathsf{Fld}$ will have the same characteristic as $A$. This contradicts with the fact that $\mathrm{char}\,{\mathbb{Z}}_2 \ne \mathrm{char}\,\mathbb{Z}_3$.
+\end{solution}
 
+\begin{problem}[1.3]
+$\triangleright$ Let $k \subseteq F$ be a field extension, and let $\alpha \in F .$ Prove that the field $k(\alpha)$ consists of all the elements of $F$ which may be written as rational functions in $\alpha$, with coefficients in $k$. Why does this not give (in general) an onto homomorphism $k(t) \rightarrow k(\alpha) ?[\S 1.2, \S 1.3]$
+\end{problem}
+\begin{solution}
+Since $k(\alpha)$ is smallest subfield of $F$ containing both $k$ and $\alpha$, for any $g(t)\in k(t)$ we have $g(\alpha)\in k(\alpha)$. Thus we can define the evaluation mapping
+\begin{align*}
+	\mathrm{ev}_{\alpha}:k(t) &\longrightarrow k(\alpha)\\
+	g(t)&\longmapsto g(\alpha).
+\end{align*}
+It is clear to see $\mathrm{ev}_{\alpha}(k(t))\subseteq k(\alpha)$ and $k(\alpha)\subseteq \mathrm{ev}_{\alpha}(k(t))$, which means $k(\alpha)= \mathrm{ev}_{\alpha}(k(t))$.
+If $\mathrm{ev}_{\alpha}:k(t) \rightarrow k(\alpha)$ is an onto field homomorphism, then $\mathrm{ev}_{\alpha}$ must be a field isomorphism. If we consider the simple extension $\mathbb{Q}\subseteq\mathbb{Q}(\sqrt{2})$, we will find that  
+\[
+\mathrm{ev}_{\sqrt{2}}(0)=\mathrm{ev}_{\sqrt{2}}(t^2-1)=0,
+\]
+which contradicts the fact that $\mathrm{ev}_{\sqrt{2}}$ is an isomorphism.
+\end{solution}
+
+
+\begin{problem}[1.4]
+1.4. Let $k \subseteq k(\alpha)$ be a simple extension, with $\alpha$ transcendental over $k$. Let $E$ be a subfield of $k(\alpha)$ properly containing $k$. Prove that $k(\alpha)$ is a finite extension of $E$.
+\end{problem}
+\begin{solution}
+The field extension $E\subseteq k(\alpha)$ is finitely generated because  $E(\alpha)= k(\alpha)$. Without loss of generality, we can suppose 
+\[
+\frac{f(\alpha)}{g(\alpha)}\in E,
+\]
+where $f,g\in k[t]$ such that $g\ne0$ and $\deg f>0$. Then let
+\[
+h(t)=f(t)-\frac{f(\alpha)}{g(\alpha)}g(t)\in E[t].
+\]
+It is immediate that $h(\alpha)=0$, which means $\alpha$ is algebraic over $E$. Thus we show that $E\subseteq E(\alpha)$ is a finite extension, or equivalently $k(\alpha)$ is a finite extension of $E$.
+\end{solution}
 
 \newpage
 \section{Appendix}
