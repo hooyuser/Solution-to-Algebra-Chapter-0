@@ -5309,7 +5309,7 @@ which contradicts the fact that $\mathrm{ev}_{\sqrt{2}}$ is an isomorphism.
 
 
 \begin{problem}[1.4]
-1.4. Let $k \subseteq k(\alpha)$ be a simple extension, with $\alpha$ transcendental over $k$. Let $E$ be a subfield of $k(\alpha)$ properly containing $k$. Prove that $k(\alpha)$ is a finite extension of $E$.
+Let $k \subseteq k(\alpha)$ be a simple extension, with $\alpha$ transcendental over $k$. Let $E$ be a subfield of $k(\alpha)$ properly containing $k$. Prove that $k(\alpha)$ is a finite extension of $E$.
 \end{problem}
 \begin{solution}
 The field extension $E\subseteq k(\alpha)$ is finitely generated because  $E(\alpha)= k(\alpha)$. Without loss of generality, we can suppose 
@@ -5322,6 +5322,27 @@ h(t)=f(t)-\frac{f(\alpha)}{g(\alpha)}g(t)\in E[t].
 \]
 It is immediate that $h(\alpha)=0$, which means $\alpha$ is algebraic over $E$. Thus we show that $E\subseteq E(\alpha)$ is a finite extension, or equivalently $k(\alpha)$ is a finite extension of $E$.
 \end{solution}
+
+\begin{problem}[1.6]
+$\triangleright$ Let $k \subseteq F$ be a field extension, and let $f(x) \in k[x]$ be a polynomial. Prove that $\operatorname{Aut}_{k}(F)$ acts on the set of roots of $f(x)$ contained in $F$. Provide examples showing that this action need not be transitive or faithful. [\S1.2, \S1.3]
+\end{problem}
+\begin{solution}
+Let $S_f$ be the set of roots of $f(x)$ contained in $F$. Note that for any $\sigma\in\operatorname{Aut}_{k}(F)$ and any $\alpha\in S_f$, $\sigma$ can be extend to $F[x]$ and $\sigma(f)=f$. Since
+\[
+f(\sigma(\alpha))=\sigma(f)(\sigma(\alpha))=\sigma(f(\alpha))=\sigma(0)=0\implies\sigma(\alpha)\in S_f,
+\]
+we can define the mapping
+\begin{align*}
+	\cdot:\operatorname{Aut}_{k}(F)\times S_f &\longrightarrow S_f\\
+	(\sigma, \alpha) &\longmapsto  \sigma\cdot\alpha:=\sigma(\alpha).
+\end{align*}
+Since for any $\sigma_1,\sigma_2\in\operatorname{Aut}_{k}(F)$ and any root $\alpha$ of $f(x)$,
+\[
+\sigma_1\cdot(\sigma_2\cdot\alpha)=\sigma_1\cdot\sigma_2(\alpha)=\sigma_1(\sigma_2(\alpha))=(\sigma_1\circ\sigma_2)(\alpha)=(\sigma_1\circ\sigma_2)\cdot\alpha,
+\]
+we see that $\operatorname{Aut}_{k}(F)$ acts on the set of roots of $f(x)$ contained in $F$.
+\end{solution}
+
 
 \newpage
 \section{Appendix}
