@@ -117,7 +117,7 @@ This work is licensed under a \href{http://creativecommons.org/licenses/by-nc-sa
 	$R\in R$; similarly, if $R\in R$ then it must be the case that $R\notin R$.
 \end{solution}
 
-
+\hypertarget{Exercise I.1.2}{}
 \begin{problem}[1.2]
 	$\vartriangleright$ Prove that if $\sim$ is an equivalence relation on a set $S$, then
 	the corresponding family $\mathscr{P}_{\sim}$ defined in \S1.5 is indeed a
@@ -146,31 +146,49 @@ This work is licensed under a \href{http://creativecommons.org/licenses/by-nc-sa
 
 % Problem 1.3
 \begin{problem}[1.3]
-	$\vartriangleright$ Given a partition $\mathscr{P}$ on a set $S$, show how to define an equivalence
-	relation $\sim$ such that $\mathscr{P} = \mathscr{P}_{\sim}$. [\S1.5]
+	$\vartriangleright$ Given a partition $\mathscr{P}$ on a set $S$, show how to define an equivalence relation $\sim$ such that $\mathscr{P} = \mathscr{P}_{\sim}$. [\S1.5]
 \end{problem}
 
 \begin{solution}
 	Define, for $a,b\in S$, $a\sim b$ if and only if there exists
-	an $X\in\mathscr{P}$ such that $a\in X$ and $b\in X$. We will show that
-	$\mathscr{P} = \mathscr{P}_{\sim}$. 
-	
+	an $X\in\mathscr{P}$ such that $a\in X$ and $b\in X$. We can check that $\sim$ is an equivalence relation as follows.
 	\begin{enumerate}
-		\item ($\mathscr{P}\subseteq\mathscr{P}_{\sim}$). Let $X\in \mathscr{P}$; we want to
-		show that $X\in\mathscr{P}_{\sim}$. We know that $X$ is
-		nonempty, so choose $a\in X$ and consider $[a]_{\sim}\in\mathscr{P}_{\sim}$. We
-		need to show that $X=[a]_{\sim}$. Suppose $a'\in X$ (it may be that $a'=a$.)
-		Since $a,a'\in X$, $a\sim a'$, so $a'\in[a]_{\sim}$. Now, suppose $a'\in
-		[a]_{\sim}$. We have $a'\sim a$, so $a'\in X$. Hence $X=[a]_{\sim}\in
-		\mathscr{P}_{\sim}$, so $\mathscr{P}\subseteq\mathscr{P}_{\sim}$.
+		\item (Reflexivity) $\exists X\in\mathscr{P},\,a\in X \land a\in X\iff a\sim a$.
+		\item (Symmetry) \[a\sim b\iff\exists X\in\mathscr{P},\,a\in X \land b\in X\iff\exists X\in\mathscr{P},\,b\in X \land a\in X\iff b\sim a.\]
+		\item (Transitivity) 
+		\begin{align*}
+			a\sim b\land b\sim c&\iff\left(\exists X\in\mathscr{P},\,a\in X \land b\in X\right)\land\left(\exists Y\in\mathscr{P},\,b\in Y \land c\in Y\right)\\
+			&\implies \exists X, Y\in\mathscr{P}, \left(a\in X \right)\land\left(c\in Y\right)\land\left(b\in X\cap Y\right)\\
+			&\implies \exists X, Y\in\mathscr{P}, \left(a\in X \right)\land\left(c\in Y\right)\land\left( X\cap Y\ne \varnothing\right)\\
+			&\implies \exists X, Y\in\mathscr{P}, \left(a\in X \right)\land\left(c\in Y\right)\land\left( X= Y\right)\\
+			&\implies\exists X\in\mathscr{P},\left(a\in X\right)\land (c\in X)\\
+			&\iff 	a\sim c.
+		\end{align*}
+	\end{enumerate}
+	We will show that
+	$\mathscr{P} = \mathscr{P}_{\sim}$. 
 		
-		\item ($\mathscr{P}_{\sim}\subseteq\mathscr{P}$). Let $[a]_{\sim}\in\mathscr{P}_{\sim}$.
-		From exercise I.1.2 we know that $[a]_{\sim}$ is non-empty. Suppose
-		$a'\in[a]_{\sim}$. By definition, since $a'\sim a$, there exists a set $X$ such
-		that $a,a'\in X$. Hence $[a]_{\sim}\subseteq X$. Also, if $a,a'\in X$ (not
-		necessarily distinct) then $a\sim a'$. Therefore,
-		$\mathscr{P}_{\sim}\subseteq\mathscr{P}$, and with 1. we get that the sets
-		$\mathscr{P}$ and $\mathscr{P}_{\sim}$ are equal.
+	\begin{enumerate}
+		\item ($\mathscr{P}\subseteq\mathscr{P}_{\sim}$). Note that
+		\begin{align*}
+			X\in\mathscr{P}&\implies\forall a,b\in X,\exists Y\in\mathscr{P},\,a\in Y \land b\in Y\\
+			&\iff\forall a,b\in X,a\sim b\\			
+			&\iff X\in\mathscr{P}_{\sim}.
+		\end{align*}
+		\item ($\mathscr{P}_{\sim}\subseteq\mathscr{P}$). Given any $\left[a\right]_{\sim}\in\mathscr{P}_{\sim}$, there exists $X\in\mathscr{P}$ such that $a\in X$. Since 
+		\[
+		a'\in X\implies\exists Y\in\mathscr{P},\,a\in Y \land a'\in Y\iff a\sim a'\iff a'\in \left[a\right]_{\sim},
+		\]
+		we get $X\subseteq \left[a\right]_{\sim}$. Also we have 
+		\begin{align*}
+		a'\in \left[a\right]_{\sim}&\iff \exists Y\in\mathscr{P},\,(a\in Y) \land (a'\in Y)\\
+		&\implies \exists Y\in\mathscr{P},\,(a\in X\cap Y) \land(a'\in Y)\\
+		&\implies \exists Y\in\mathscr{P},\, (X\cap Y\ne\varnothing)\land (a'\in Y)\\
+		&\implies \exists Y\in\mathscr{P},\, (Y=X)\land (a'\in Y)\\
+		&\implies 	a'\in X,
+		\end{align*}
+		which means $\left[a\right]_{\sim}\subseteq X$ and accordingly $\left[a\right]_{\sim}=X\in\mathscr{P}$. Therefore,
+		$\mathscr{P}_{\sim}\subseteq\mathscr{P}$, and with 1. we can finally conclude that $\mathscr{P}$ and $\mathscr{P}_{\sim}$ is equal.
 	\end{enumerate}
 \end{solution}
 
