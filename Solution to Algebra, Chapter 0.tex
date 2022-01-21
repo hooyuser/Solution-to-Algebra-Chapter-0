@@ -664,7 +664,7 @@ and itself? [\textsection II.2.1]
 	\set{(A,B)}$ if $A\subseteq B$ and $\varnothing$ otherwise, for all sets
 	$A,B\in\mathscr{P}$. The category $\hat{S}$ is an instance of the categories
 	explained in Example 3.3 because $\subseteq$ is a reflexive and transitive
-	operation on the power set of any set $S$. Indeed, for $X,Y,Z\subseteq S$, we have
+	relation on the power set of any set $S$. Indeed, for $X,Y,Z\subseteq S$, we have
 	that $X\subseteq X$ and, if $X\subseteq Y$ and $Y\subseteq Z$, then if $x\in X$,
 	then $x\in Y$ and $x\in Z$ so $X\subseteq Z$.
 \end{solution}
@@ -949,7 +949,7 @@ and itself? [\textsection II.2.1]
 		\mathrm{Hom}_\mathsf{C}(a, b)=
 		\left\{
 		\begin{aligned}
-		&(a, b)\in S\times S &\text{ if } a\sim b\\	
+		& \big\{ (a, b) \big\} \subset S\times S &\text{ if } a\sim b\\	
 		& \varnothing &\text{ otherwise}\\
 		\end{aligned}
 		\right.
@@ -1297,7 +1297,7 @@ and itself? [\textsection II.2.1]
 	\end{tikzcd}\]
 	
 	\[\begin{tikzcd}[column sep=tiny]
-	\quotntws{(A\times B)}{\sim} \arrow[rr,"\quotuniv{\pi^B_{\sim_B}\circ\pi_B}"] && \quotntws{A}{\sim_A} \\
+	\quotntws{(A\times B)}{\sim} \arrow[rr,"\quotuniv{\pi^B_{\sim_B}\circ\pi_B}"] && \quotntws{B}{\sim_B} \\
 	&A\times B \arrow[ul,"\pi^{A\times B}_\sim"] \arrow[ur,swap, "\pi^B_{\sim_B}\circ\pi_B"]&
 	\end{tikzcd}\]
 	
