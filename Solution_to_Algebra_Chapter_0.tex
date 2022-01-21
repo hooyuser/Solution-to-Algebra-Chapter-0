@@ -11,6 +11,13 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage[all]{xy}
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\leftmark}
+\rfoot{-\hspace{4pt}\thepage\hspace{4pt}- }
+
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{xcolor}
 \definecolor{myRoyalBlue}{RGB}{50,60,150}
@@ -65,17 +72,23 @@
 \DeclareMathOperator{\lcm}{lcm}
 
 % info for header block in upper right hand corner
-\name{Hooy}
-\updatedate{\today}
 
 \begin{document}
-		
-\problemlist{\textbf{Algebra, Chapter 0}\\By Paolo Aluffi}
+\thispagestyle{empty}
+\vspace{-5em}	
+\rightline{Hooy}
+\rightline{\today}
+%\name{Hooy}
+%\updatedate{\vspace*{1pt}\today}
+\vspace*{1.5em}	
+\problemlist{\textbf{\LARGE Algebra, Chapter 0}\\\vspace*{0.6em}By Paolo Aluffi}
 
 \tableofcontents
+\thispagestyle{empty}
 \appendix
 
 \newpage
+\thispagestyle{empty}
 \section*{Notation for Problems}
 $\vartriangleright$: those problems that are directly referenced from the text.\\
 
@@ -148,6 +161,7 @@ This work is licensed under a \href{http://creativecommons.org/licenses/by-nc-sa
 \end{solution}
 
 % Problem 1.3
+\hypertarget{Exercise I.1.3}{}
 \begin{problem}[1.3]
 	$\vartriangleright$ Given a partition $\mathscr{P}$ on a set $S$, show how to define an equivalence relation $\sim$ such that $\mathscr{P} = \mathscr{P}_{\sim}$. [\S1.5]
 \end{problem}
@@ -202,8 +216,7 @@ This work is licensed under a \href{http://creativecommons.org/licenses/by-nc-sa
 \end{problem}
 
 \begin{solution}
-	From the definition of an equivalence relation and the solution to problem
-	\textbf{I.1.3}, we can see that an equivalence relation on $S$ is equivalent to
+	From the definition of an equivalence relation and the solution to \hyperlink{Exercise I.1.3}{Exercise I.1.3}, we can see that an equivalence relation on $S$ is equivalent to
 	a partition of $S$. Thus the number of equivalence relations on $S$ is equal to
 	the number of partitions of $S$. Since $\{1,2,3\}$ is small we can determine
 	this by hand:
