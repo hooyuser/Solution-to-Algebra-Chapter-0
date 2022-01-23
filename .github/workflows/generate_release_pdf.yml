@@ -21,7 +21,7 @@ jobs:
       - name: Generate release tag
         id: tag
         run: |
-          echo "::set-output name=release_tag::daily_build_$(date +"%Y-%m-%d")"
+          echo "::set-output name=release_tag::daily_build_$(date +"%Y-%m-%d_%H:%M")"
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
