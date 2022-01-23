@@ -6,10 +6,6 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: Solution_to_Algebra_Chapter_0.tex
       - name: Delete old Release
         uses: actions/github-script@v5
         with:
@@ -17,7 +13,16 @@ jobs:
           script: |
             const { owner, repo } = context.repo
             const { data: { id } } = await github.rest.repos.getLatestRelease({ owner, repo })
+            if (id === void 0) {
+              return
+            }
             await github.rest.repos.deleteRelease({ owner, repo, release_id: id })
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: Solution_to_Algebra_Chapter_0.tex
+
+            
       - name: Generate release tag
         id: tag
         run: |
