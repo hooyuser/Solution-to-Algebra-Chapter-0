@@ -14,10 +14,9 @@ jobs:
             const { owner, repo } = context.repo
             const { data: { id } } = await github.rest.repos.getLatestRelease({ owner, repo })
             console.log(id)
-            if (id === void 0) {
-              return
-            }
-            await github.rest.repos.deleteRelease({ owner, repo, release_id: id })
+            try {
+              await github.rest.repos.deleteRelease({ owner, repo, release_id: id })
+            } catch {}
       #- name: Compile LaTeX document
       #  uses: xu-cheng/latex-action@v2
       #  with:
