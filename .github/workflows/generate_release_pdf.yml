@@ -12,9 +12,8 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const { owner, repo } = context.repo
-            const { data: { id } } = await github.rest.repos.getLatestRelease({ owner, repo })
-            console.log(id)
             try {
+              const { data: { id } } = await github.rest.repos.getLatestRelease({ owner, repo })
               await github.rest.repos.deleteRelease({ owner, repo, release_id: id })
             } catch {}
       #- name: Compile LaTeX document
