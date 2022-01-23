@@ -17,7 +17,7 @@ jobs:
           script: |
             const { owner, repo } = context.repo
             const { data: { id } } = await github.repos.getLatestRelease({ owner, repo })
-            await github.repos.deleteRelease({ owner, repo, release_id: id })
+            await github.rest.repos.deleteRelease({ owner, repo, release_id: id })
       - name: Generate release tag
         id: tag
         run: |
