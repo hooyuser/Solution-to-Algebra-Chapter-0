@@ -10,6 +10,14 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: Solution_to_Algebra_Chapter_0.tex
+      - name: Delete old Release
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const { owner, repo } = context.repo
+            const { data: { id } } = await github.repos.getLatestRelease({ owner, repo })
+            await github.repos.deleteRelease({ owner, repo, release_id: id })
       - name: Generate release tag
         id: tag
         run: |
