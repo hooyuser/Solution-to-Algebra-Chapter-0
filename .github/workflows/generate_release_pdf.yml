@@ -13,14 +13,15 @@ jobs:
           script: |
             const { owner, repo } = context.repo
             const { data: { id } } = await github.rest.repos.getLatestRelease({ owner, repo })
+            console.log(id)
             if (id === void 0) {
               return
             }
             await github.rest.repos.deleteRelease({ owner, repo, release_id: id })
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: Solution_to_Algebra_Chapter_0.tex
+      #- name: Compile LaTeX document
+      #  uses: xu-cheng/latex-action@v2
+      #  with:
+      #    root_file: Solution_to_Algebra_Chapter_0.tex
 
             
       - name: Generate release tag
