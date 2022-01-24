@@ -11,6 +11,13 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage[all]{xy}
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{\small\leftmark}
+\rfoot{-\hspace{4pt}\thepage\hspace{4pt}- }
+
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{xcolor}
 \definecolor{myRoyalBlue}{RGB}{50,60,150}
@@ -65,17 +72,23 @@
 \DeclareMathOperator{\lcm}{lcm}
 
 % info for header block in upper right hand corner
-\name{Hooy}
-\updatedate{\today}
 
 \begin{document}
-		
-\problemlist{\textbf{Algebra, Chapter 0}\\By Paolo Aluffi}
+\thispagestyle{empty}
+\vspace{-5em}	
+\rightline{Hooy}
+\rightline{\today}
+%\name{Hooy}
+%\updatedate{\vspace*{1pt}\today}
+\vspace*{1.5em}	
+\problemlist{\textbf{\LARGE Algebra, Chapter 0}\\\vspace*{0.6em}By Paolo Aluffi}
 
 \tableofcontents
+\thispagestyle{empty}
 \appendix
 
 \newpage
+\thispagestyle{empty}
 \section*{Notation for Problems}
 $\vartriangleright$: those problems that are directly referenced from the text.\\
 
@@ -148,6 +161,7 @@ This work is licensed under a \href{http://creativecommons.org/licenses/by-nc-sa
 \end{solution}
 
 % Problem 1.3
+\hypertarget{Exercise I.1.3}{}
 \begin{problem}[1.3]
 	$\vartriangleright$ Given a partition $\mathscr{P}$ on a set $S$, show how to define an equivalence relation $\sim$ such that $\mathscr{P} = \mathscr{P}_{\sim}$. [\S1.5]
 \end{problem}
@@ -202,8 +216,7 @@ This work is licensed under a \href{http://creativecommons.org/licenses/by-nc-sa
 \end{problem}
 
 \begin{solution}
-	From the definition of an equivalence relation and the solution to problem
-	\textbf{I.1.3}, we can see that an equivalence relation on $S$ is equivalent to
+	From the definition of an equivalence relation and the solution to \hyperlink{Exercise I.1.3}{Exercise I.1.3}, we can see that an equivalence relation on $S$ is equivalent to
 	a partition of $S$. Thus the number of equivalence relations on $S$ is equal to
 	the number of partitions of $S$. Since $\{1,2,3\}$ is small we can determine
 	this by hand:
@@ -1623,12 +1636,12 @@ is an element of order $d$ in $S_n$.
 \end{solution}
     
 
-
+\hypertarget{Exercise II.2.13}{}
 \begin{problem}[2.13]	
 	Prove that if $\gcd(m, n) = 1$, then there exist integers $a$ and $b$ such that $am + bn = 1$. (Use Corollary 2.5.) Conversely, prove that if $am+ bn = 1$ for some integers $a$ and $b$, then $\gcd(m, n) = 1$. [2.15, \textsection V.2.1, V.2.4]
 \end{problem}
 \begin{solution}
-	Applying corollary 2.5, we have $\gcd(m, n) = 1$ if and only if $[m]_n$ generates $\mathbb{Z}/n\mathbb{Z}$. Hence
+	Applying Corollary 2.5, we have $\gcd(m, n) = 1$ if and only if $[m]_n$ generates $\mathbb{Z}/n\mathbb{Z}$. Hence
 	\[
 	\gcd(m, n) = 1\iff a[m]_n=[1]_n\iff [am]_n=[1]_n\iff am+ bn = 1.
 	\]
@@ -1647,7 +1660,7 @@ is an element of order $d$ in $S_n$.
 \end{problem}
 \begin{solution}
 	\begin{itemize}
-		\item Since $2m+n$ is an odd integer, $\gcd(2m+ n, 2n) = 1$ is actually equivalent to $\gcd(2m+ n, n) = 1$. According to Exercise 2.13,
+		\item Since $2m+n$ is an odd integer, $\gcd(2m+ n, 2n) = 1$ is actually equivalent to $\gcd(2m+ n, n) = 1$. According to \hyperlink{Exercise II.2.13}{Exercise II.2.13},
 		\[
 		\gcd(m, n) = 1\implies am+bn=1\implies \frac{a}{2}(2m+n)+\left(b-\frac{a}{2}\right)n=1.
 		\]
@@ -1658,7 +1671,7 @@ is an element of order $d$ in $S_n$.
 		which also implies $\gcd(2m+ n, n) = 1$.
 		\item If $\gcd(r, 2n) = 1$, then $r$ must be an odd integer and accordingly
 		\[
-		\gcd(2r-2n, 4n) = 1\implies a(2r-2n)+b(4n)=1\implies 4a \frac{r-n}{2}+4bn=1,
+		\gcd(r, n) = 1\implies ar+bn=1\implies 2a \left(\frac{r-n}{2}\right)+(a+b)n=1,
 		\]
 		which is $\gcd(\frac{r-n}{2}, n) = 1$.
 		\item It is easy to check that the function $f:(\mathbb{Z}/n\mathbb{Z})^*\rightarrow(\mathbb{Z}/2n\mathbb{Z})^*,\;[m]_n\mapsto[2m + n]_{2n}$ is well-defined. The fact
