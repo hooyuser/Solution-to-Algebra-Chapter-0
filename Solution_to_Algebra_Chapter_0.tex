@@ -4393,6 +4393,7 @@ For any $k\in IJ$, we can assume that $k=ab$, ($a\in I$, $b\in J$). Note that $k
 	Suppose $f(x)=x^{d}+a_{d-1} x^{d-1}+\cdots+a_{1} x+a_{0}$ is a monic polynomial in $R[x]$ and $f(x)g(x)=0$ for some $g(x)=b_sx^{s}+b_{s-1} x^{s-1}+\cdots+b_{1} x+b_{0}\in R[x]$. Since the term of the degree of $d+s$ of $f(x)g(x)$ is $b_sx^{d+s}$, there must be $b_s=0$. Then the term of the degree of $d+s-1$ of $f(x)g(x)$ is $b_{s-1}x^{d+s-z}$, which implies $b_{s-1}=0$. Repeating this process we can show that $b_s=b_{s-1}=\cdots=b_0=0$, that is, $g(x)=0$. Thus we see $f(x)$ is not a left-zero-divisor. In a similar way we can show that $f(x)$ is not a right-zero-divisor. 
 \end{solution}
 
+\hypertarget{Exercise III.4.10}{}
 \begin{problem}[4.10]
 	$\neg$ Let $d$ be an integer that is not the square of an integer, and consider the subset of $\mathbb{C}$ defined by 
 	\[
@@ -5516,21 +5517,101 @@ we see that $\operatorname{Aut}_{k}(F)$ acts on the set of roots of $f(x)$ conta
 		T_\alpha:F&\longrightarrow F,\\
 		 m&\longmapsto\alpha m
 	\end{align*} 
-	is a $k$-linear transformation of $F$, which is isomorphic to a matrix $A_{T_\alpha}\in \mathcal{M}_{n}(k)$ in $\mathsf{Vect}_k$. What is left to do is to show that $A_{T_{\alpha+\beta}}=A_{T_{\alpha}}+A_{T_{\beta}}$, $A_{T_{\alpha\beta}}=A_{T_{\alpha}}A_{T_{\beta}}$ and $A_{T_{1_F}}=E_{n\times n}$, which amounts to $T_{\alpha\beta}=T_{\alpha}+T_{\beta}$, $T_{\alpha\beta}=T_{\alpha}T_{\beta}$ and $T_{1_F}=\mathrm{id}_F$. The verification is straightforward.
+	is a $k$-linear transformation of $F$, which is isomorphic to a matrix $A_{T_\alpha}\in \mathcal{M}_{n}(k)$ in $\mathsf{Vect}_k$. What is left to do is to show that $A_{T_{\alpha+\beta}}=A_{T_{\alpha}}+A_{T_{\beta}}$, $A_{T_{\alpha\beta}}=A_{T_{\alpha}}A_{T_{\beta}}$ and $A_{T_{1_F}}=I_{n\times n}$, which amounts to $T_{\alpha\beta}=T_{\alpha}+T_{\beta}$, $T_{\alpha\beta}=T_{\alpha}T_{\beta}$ and $T_{1_F}=\mathrm{id}_F$. The verification is straightforward.
 \end{solution}
 
+\hypertarget{Exercise VII.1.11}{}
 \begin{problem}[1.11]
 	$\neg$ Let $k \subseteq F$ be a finite field extension, and let $p(x)$ be the characteristic polynomial of the $k$-linear transformation of $F$ given by multiplication by $\alpha$. Prove that $p(\alpha)=0$.
+
+	\hspace{2em}This gives an effective way to find a polynomial satisfied by an element of an extension. Use it to find a polynomial satisfied by $\sqrt{2}+\sqrt{3}$ over $\mathbb{Q}$, and compare this method with the one used in Example 1.19. [1.12]
 \end{problem}
 \begin{solution}
 	In \hyperlink{Exercise VII.1.7}{Exercise VII.1.7} we show that the minimal polynomial of $\alpha$ coincides with the minimal polynomial of $T_\alpha$. Denote the minimal polynomial as $f(x)$. Then we have $f(\alpha)=0$ and $f(x)\mid p(x)$, which implies $p(\alpha)=0$. 
+
+	Consider the field extension $\mathbb{Q}\subseteq\mathbb{Q}(\sqrt{2},\sqrt{3})$ and the algebraic element $\alpha=\sqrt{2}+\sqrt{3}$. Since $1, \sqrt{2}, \sqrt{3}, \sqrt{6}$ is a basis of $\mathbb{Q}(\sqrt{2},\sqrt{3})$, we can represent the linear transformation by a matrix $A$ as follows
+	\begin{align*}
+		&\hspace{15pt}\left(T_\alpha 1,T_\alpha\sqrt{2},T_\alpha\sqrt{3},T_\alpha\sqrt{6}\right)\\
+		&=\left(\sqrt{2}+\sqrt{3},2+\sqrt{6},3+\sqrt{6},3\sqrt{2}+2\sqrt{3}\right)\\
+		&=\left(1,\sqrt{2},\sqrt{3},\sqrt{6}\right)
+		\begin{pmatrix}
+			0&2&3&0\\
+			1&0&0&3\\
+			1&0&0&2\\
+			0&1&1&0
+		\end{pmatrix}\\
+		&=\left(1,\sqrt{2},\sqrt{3},\sqrt{6}\right)A.
+	\end{align*}
+	The characteristic polynomial of $A$ is
+	\[
+		p(x)=\det(xI-A)=x^4-10x^2+1.
+	\]
 \end{solution}
+
+\hypertarget{Exercise VII.1.12}{}
+\begin{problem}[1.12]
+	$\neg$ Let $k \subseteq F$ be a finite field extension, and let $\alpha \in F$. The norm of $\alpha$, $N_{k \subseteq F}(\alpha)$, is the determinant of the linear transformation of $F$ given by multiplication by $\alpha$ (cf. \hyperlink{Exercise VII.1.11}{Exercise VII.1.11}, Definition VI.6.4).
+	Prove that the norm is multiplicative: for $\alpha, \beta \in F$,
+	$$
+	N_{k \subseteq F}(\alpha \beta)=N_{k \subseteq F}(\alpha) N_{k \subseteq F}(\beta) .
+	$$
+	Compute the norm of a complex number viewed as an element of the extension $\mathbb{R} \subseteq \mathbb{C}$ (and marvel at the excellent choice of terminology). Do the same for elements of an extension $\mathbb{Q}(\sqrt{d})$ of $\mathbb{Q}$, where $d$ is an integer that is not a square, and compare the result with  \hyperlink{Exercise III.4.10}{Exercise III.4.10}. [1.13, 1.14, 1.15, 4.19, 6.18, VIII.1.5]
+\end{problem}
+\begin{solution}
+	consider the field extension $\mathbb{R} \subseteq \mathbb{C}$ and a complex number $w=a+bi\in \mathbb{C}$. Given a basis $1$, $i$ of $\mathbb{C}$, denote the matrix representation of the linear transformation $F:z\mapsto wz$ as $A$. Then we have
+	\begin{align*}
+		&\hspace{15pt}\left(F(1),F(i)\right)\\
+		&=\left(a+bi,-b+ai\right)\\
+		&=\left(1,i\right)
+		\begin{pmatrix}
+			a&-b\\
+			b&a\\
+		\end{pmatrix}\\
+		&=\left(1,i\right)A.
+	\end{align*} 
+	The norm $N_{\mathbb{R} \subseteq \mathbb{C}}(w)=\det(A)=a^2+b^2$.
+	
+	consider the field extension $\mathbb{Q} \subseteq \mathbb{Q}\left(\sqrt{d}\right)$ and a number $c=a+b\sqrt{d}\in \mathbb{Q}\left(\sqrt{d}\right)$. Given a basis $1$, $\sqrt{d}$ of $ \mathbb{Q}\left(\sqrt{d}\right)$, denote the matrix representation of the linear transformation $F:x\mapsto cx$ as $B$. Then we have
+	\begin{align*}
+		&\hspace{15pt}\left(F(1),F\left(\sqrt{d}\right)\right)\\
+		&=\left(a+b\sqrt{d},bd+a\sqrt{d}\right)\\
+		&=\left(1,\sqrt{d}\right)
+		\begin{pmatrix}
+			a&bd\\
+			b&a\\
+		\end{pmatrix}\\
+		&=\left(1,\sqrt{d}\right)B.
+	\end{align*} 
+	The norm $N_{\mathbb{Q} \subseteq \mathbb{Q}(\sqrt{d})}(c)=\det(B)=a^2-db^2$.
+
+\end{solution}
+
+\hypertarget{Exercise VII.1.13}{}
+\begin{problem}[1.13]
+$\neg$ Define the trace $\operatorname{tr}_{k \subseteq F}(\alpha)$ of an element $\alpha$ of a finite extension $F$ of a field $k$ by following the lead of Exercise 1.12. Prove that the trace is additive:
+$$
+\operatorname{tr}_{k \subseteq F}(\alpha+\beta)=\operatorname{tr}_{k \subseteq F}(\alpha)+\operatorname{tr}_{k \subseteq F}(\beta)
+$$
+for $\alpha, \beta \in F$. Compute the trace of an element of an extension $\mathbb{Q} \subseteq \mathbb{Q}(\sqrt{d})$, for $d$ an integer that is not a square. [1.14, 1.15, 4.19, VIII.1.5]
+\end{problem}
+\begin{solution}
+	Given $c=a+b\sqrt{d}\in \mathbb{Q}\left(\sqrt{d}\right)$, the trace $\mathrm{tr}_{\mathbb{Q} \subseteq \mathbb{Q}(\sqrt{d})}(c)=\det(B)=2a$.
+\end{solution}
+
+\begin{problem}[1.14]
+$\neg$ Let $k \subseteq k(\alpha)$ be a simple algebraic extension, and let $x^{d}+a_{d-1} x^{d-1}+\cdots+a_{0}$ be the minimal polynomial of $\alpha$ over $k$. Prove that
+$$
+\operatorname{tr}_{k \subseteq k(\alpha)}(\alpha)=-a_{d-1} \quad \text { and } \quad N_{k \subseteq k(\alpha)}(\alpha)=(-1)^{d} a_{0} .
+$$
+(Cf. \hyperlink{Exercise VII.1.12}{Exercise VII.1.12} and \hyperlink{Exercise VII.1.13}{Exercise VII.1.13}). [4.19]
+\end{problem}
+
 
 \newpage
 \section{Chapter VIII.\hspace{0.2em} Linear Algebra, reprise}
 \subsection{\textsection1. Preliminaries, reprise}
 \begin{problem}[1.1]
-Let $\mathscr{F}: C \rightarrow D$  be a covariant functor, and assume that both $C$ and $D$ have products. Prove that for all objects $A, B$ of $C$, there is a unique morphism $\mathscr{F}(A \times B) \rightarrow \mathscr{F}(A) \times \mathscr{F}(B)$ such that the relevant diagram involving natural projections commutes.
+Let $\mathscr{F}: \mathsf{C} \rightarrow \mathsf{D}$ be a covariant functor, and assume that both $\mathsf{C}$ and $\mathsf{D}$ have products. Prove that for all objects $A, B$ of $C$, there is a unique morphism $\mathscr{F}(A \times B) \rightarrow \mathscr{F}(A) \times \mathscr{F}(B)$ such that the relevant diagram involving natural projections commutes.
 
 \hspace*{2em}If $D$ has coproducts (denoted II) and $\mathscr{G}: C \rightarrow D$ is contravariant, prove that there is a unique morphism $\mathscr{G}(A)\amalg\mathscr{G}(B) \rightarrow \mathscr{G}(A \times B)$ (again, such that an appropriate diagram commutes).
 \end{problem}
@@ -5550,13 +5631,23 @@ Let $\mathscr{F}: C \rightarrow D$  be a covariant functor, and assume that both
 \end{solution}
 
 \begin{problem}[1.2]
-$\triangleright$ Let $\mathscr{F}: C \rightarrow D$ be a fully faithful functor. If $A, B$ are objects in $C$, prove that $A \cong B$ in $C$ if and only if $\mathscr{F}(A) \cong \mathscr{F}(B)$ in $D$. [\$1.3]
-1.3. Recall (§II.1) that a group $G$ may be thought of as a groupoid $G$ with a single object. Prove that defining the action of $G$ on an object of a category $C$ is equivalent to defining a functor $G \rightarrow C$.
-1.4. $\neg$ Let $R$ be a commutative ring, and let $S \subseteq R$ be a multiplicative subset in the sense of Exercise $\nabla$ 4.7. Prove that 'localization is a functor': associating with every $R$-module $M$ the localization $S^{-1} M$ (Exercise $V \sqrt{4.8}$ ) and with every $R$-module homomorphism $\varphi: M \rightarrow N$ the naturally induced homomorphism $S^{-1} M \rightarrow S^{-1} N$ defines a covariant functor from the category of $R$-modules to the category of $S^{-1} R$ modules. 1.25
+$\triangleright$ Let $\mathscr{F}: C \rightarrow D$ be a fully faithful functor. If $A, B$ are objects in $C$, prove that $A \cong B$ in $C$ if and only if $\mathscr{F}(A) \cong \mathscr{F}(B)$ in $D$. [\S1.3]
 \end{problem}
 \begin{solution}
 \end{solution}
 
+
+\begin{problem}[1.3]
+Recall (\S II.1) that a group $G$ may be thought of as a groupoid $\mathsf{G}$ with a single object. Prove that defining the action of $G$ on an object of a category $\mathsf{C}$ is equivalent to defining a functor $\mathsf{G} \rightarrow \mathsf{C}$.
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}[1.4]
+$\neg$ Let $R$ be a commutative ring, and let $S \subseteq R$ be a multiplicative subset in the sense of Exercise V.4.7. Prove that 'localization is a functor': associating with every $R$-module $M$ the localization $S^{-1} M$ (Exercise V.4.8) and with every $R$-module homomorphism $\varphi: M \rightarrow N$ the naturally induced homomorphism $S^{-1} M \rightarrow S^{-1} N$ defines a covariant functor from the category of $R$-modules to the category of $S^{-1} R$ modules. [1.25]
+\end{problem}
+\begin{solution}
+\end{solution}
 \newpage
 \section{Appendix}
 \hypertarget{Lemma II.1}{}
