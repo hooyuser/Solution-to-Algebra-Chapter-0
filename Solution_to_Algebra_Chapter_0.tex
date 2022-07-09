@@ -1206,15 +1206,11 @@ and itself? [\textsection II.2.1]
 	property for the product of $A$ and $B$; then use Proposition 5.4.)
 \end{problem}
 \begin{solution}
-	Let $\mathsf{C}$ be a category with products $A\times B$ and $B\times A$. First,
-	consider how $f:A\times B\to B\times A, f(a,b) = (b,a)$ is an isomorphism
-	between $A\times B$ and $B\times A$ (with inverse $f^{-1}(b,a) = (a,b)$.) Since
-	$B\times A$ is a product in $\mathsf{C}$, for each object $Z\in\Obj(\mathsf{C})$ with morphisms
-	$f_B:B\to Z$ and $f_A:A\to Z$, there is a unique morphism $\tau:Z\to B\times A$
-	such that everything commutes. However, using $f$ we can construct a unique
-	morphism $\sigma:Z\to A\times B$ in terms of $\tau$ by taking $\sigma =
-	f^{-1}\circ\tau$. Hence $B\times A$ is a product for $A\times B$ as well, i.e.
-	$B\times A$ is a final object in some auxiliary category.
+	Observe that a product is a final object of the category in Example 3.9.
+	
+	Let $\mathsf{C}$ be a category with products $A\times B$ and $B\times A$. Then,
+	$A\times B$ and $B\times A$ are final objects of $\mathsf{C}_{A,B}$ and $\mathsf{C}_{B,A}$ respectively.
+	By definition, $\mathsf{C}_{A,B}$ and $\mathsf{C}_{B,A}$ are actually the same.
 	
 	Hence, by Proposition 5.4, $A\times B$ and $B\times A$ are isomorphic.
 \end{solution}
