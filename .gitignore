@@ -4,6 +4,7 @@
 Solution to Algebra, Chapter 0.pdf
 !*.tex
 !*.cls
+!*.sty
 !*.bib
 !*.md
 !.gitignore
