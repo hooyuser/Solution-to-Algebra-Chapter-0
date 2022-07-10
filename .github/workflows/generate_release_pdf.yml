@@ -4,7 +4,7 @@ on:
     branches:
       - master
 jobs:
-  build_latex:
+  build_latex_and_release:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
