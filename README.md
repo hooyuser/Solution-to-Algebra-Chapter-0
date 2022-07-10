@@ -1,5 +1,5 @@
 # Solution to Algebra Chapter 0
-**Download Here**: [Solution to Algebra, Chapter 0.pdf](https://github.com/hooyuser/Solution-to-Algebra-Chapter-0/releases/download/latest/Solution_to_Algebra_Chapter_0.pdf)
+**Download Here**: [Solution to Algebra, Chapter 0.pdf](https://github.com/hooyuser/Solution-to-Algebra-Chapter-0/releases/latest/download/Solution_to_Algebra_Chapter_0.pdf)
 
 This is a solution manual for *ALGEBRA, Chapter 0*, an algebra textbook written by Paolo Aluffi. 
 The way of introducing abstract algebra in a language of categories appeals to me very much.
