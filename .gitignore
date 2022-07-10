@@ -1,11 +1,8 @@
-*
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.thm
 
-# Only keep the following files
-Solution to Algebra, Chapter 0.pdf
-!*.tex
-!*.cls
-!*.sty
-!*.bib
-!*.md
-!.gitignore
-!.github
+Solution_to_Algebra_Chapter_0.pdf
