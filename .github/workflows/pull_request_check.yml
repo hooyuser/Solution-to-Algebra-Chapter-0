@@ -1,5 +1,5 @@
 name: Pull Request Check
-on: [pull_request]
+on: [pull_request, workflow_dispatch]
 jobs:
   build_latex:
     runs-on: ubuntu-latest

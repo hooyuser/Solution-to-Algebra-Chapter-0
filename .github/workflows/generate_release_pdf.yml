@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - '.github/**'
+      - '.gitignore'
 jobs:
   build_latex_and_release:
     runs-on: ubuntu-latest
