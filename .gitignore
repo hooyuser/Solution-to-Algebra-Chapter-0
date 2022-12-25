@@ -4,5 +4,6 @@
 *.synctex.gz
 *.toc
 *.thm
+.history/*
 
 Solution_to_Algebra_Chapter_0.pdf

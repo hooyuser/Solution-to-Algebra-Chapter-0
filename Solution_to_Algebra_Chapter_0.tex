@@ -5,7 +5,7 @@
 % set 1-inch margins in the document
 \usepackage[margin=1in]{geometry}
 
-% include this if you want to import graphics files with /includegraphics
+% include this if you want to import graphics files with /includegraphics                         
 \usepackage{enumerate}
 \usepackage{graphicx}
 \usepackage{amsmath,amssymb,amsthm}
@@ -5267,92 +5267,103 @@ we see $R$ is Noetherian.
 
 
 \newpage
-\section{Chapter VI.\hspace{0.2em} Linear algebra}
-\subsection{\textsection4. Presentations and resolutions}
-\begin{problem}[4.1]
-$\triangleright$ Prove that if $R$ is an integral domain and $M$ is an $R$-module, then $\operatorname{Tor}(M)$ is a submodule of $M$. Give an example showing that the hypothesis that $R$ is an integral domain is necessary. $[\S 4.1]$
-\end{problem}
-\begin{solution}
-Given any $m_1,m_2\in\operatorname{Tor}(M)$, we can suppose there exist $r_1,r_2\in R$ such that $r_1m_1=0(r_1\ne0)$ and $r_2m_2=0(r_2\ne0)$. Since $R$ is an integral domain, we have $r_1r_2\ne0$. Thus, there exist nonzero element $r_1r_2\in R$ such that 
-$$
-r_1r_2(m_1+m_2)=r_2(r_1m_1)+r_1(r_2m_2)=0,
-$$
-which implies $m_1+m_2\in\operatorname{Tor}(M)$.
+\include{chapter6.tex}
+% \section{Chapter VI.\hspace{0.2em} Linear algebra}
+% \subsection{\textsection1. Free modules revisited}
 
-Given any $r\in R$, $m\in\operatorname{Tor}(M)$, we can suppose
-\[
-r_0m=0
-\]
-where $r_0\in R$ and $r_0\ne0$. Thus we have
-\[
-r_0(rm)=r(r_0m)=0,
-\]
-which implies $rm\in\operatorname{Tor}(M)$. Therefore, we show that $\operatorname{Tor}(M)$ is a submodule of $M$.
-
-$\mathbb{Z}/6\mathbb{Z}$ is not an integral domain and $\mathbb{Z}/6\mathbb{Z}$ is a $\mathbb{Z}/6\mathbb{Z}$-module. Since
-\[
-\operatorname{Tor}(\mathbb{Z}/6\mathbb{Z})=\{[0]_6,[2]_6,[3]_6\},
-\]
-we have $[2]_6+[3]_6=[5]_6\notin \operatorname{Tor}(\mathbb{Z}/6\mathbb{Z})$, which implies $\operatorname{Tor}(\mathbb{Z}/6\mathbb{Z})$ is not a submodule of $\mathbb{Z}/6\mathbb{Z}
-++$.
-\end{solution}
+% \begin{problem}[1.1]
+% 	$\neg$ Prove that $\mathbb{R}$ and $\mathbb{C}$ are isomorphic as $\mathbb{Q}$-vector spaces. (In particular, $(\mathbb{R},+$ ) and $(\mathbb{C},+)$ are isomorphic as groups.) [II.4.4]
+% \end{problem}
 
 
 
 
-\begin{problem}[4.4]
-$\triangleright$ Let $R$ be a commutative ring, and $M$ an $R$-module.
-\begin{itemize}
-	\item Prove that $\operatorname{Ann}(M)$ is an ideal of $R$.
-	\item If $R$ is an integral domain and $M$ is finitely generated, prove that $M$ is torsion if and only if $\operatorname{Ann}(M) \neq 0$.
-	\item Give an example of a torsion module $M$ over an integral domain, such that $\operatorname{Ann}(M)=0 .$ (Of course this example cannot be finitely generated!)
-\end{itemize}
-$[\S 4.2, \S 5.3]$
-\end{problem}
-\begin{solution}
-\begin{itemize}
-	\item $\operatorname{Ann}(M)$ is defined as
-	\[
-	\operatorname{Ann}(M)=\{r \in R \mid \forall m \in M, r m=0\}.
-	\]
-	Given any $r_1,r_2\in\operatorname{Ann}(M)$, we have 
-	\[
-	\forall m\in M, (r_1+r_2)m=r_1m+r_2m=0,
-	\]
-	which implies $r_1+r_2\in\operatorname{Ann}(M)$.
+% \subsection{\textsection4. Presentations and resolutions}
+% \begin{problem}[4.1]
+% $\triangleright$ Prove that if $R$ is an integral domain and $M$ is an $R$-module, then $\operatorname{Tor}(M)$ is a submodule of $M$. Give an example showing that the hypothesis that $R$ is an integral domain is necessary. $[\S 4.1]$
+% \end{problem}
+% \begin{solution}
+% Given any $m_1,m_2\in\operatorname{Tor}(M)$, we can suppose there exist $r_1,r_2\in R$ such that $r_1m_1=0(r_1\ne0)$ and $r_2m_2=0(r_2\ne0)$. Since $R$ is an integral domain, we have $r_1r_2\ne0$. Thus, there exist nonzero element $r_1r_2\in R$ such that 
+% $$
+% r_1r_2(m_1+m_2)=r_2(r_1m_1)+r_1(r_2m_2)=0,
+% $$
+% which implies $m_1+m_2\in\operatorname{Tor}(M)$.
+
+% Given any $r\in R$, $m\in\operatorname{Tor}(M)$, we can suppose
+% \[
+% r_0m=0
+% \]
+% where $r_0\in R$ and $r_0\ne0$. Thus we have
+% \[
+% r_0(rm)=r(r_0m)=0,
+% \]
+% which implies $rm\in\operatorname{Tor}(M)$. Therefore, we show that $\operatorname{Tor}(M)$ is a submodule of $M$.
+
+% $\mathbb{Z}/6\mathbb{Z}$ is not an integral domain and $\mathbb{Z}/6\mathbb{Z}$ is a $\mathbb{Z}/6\mathbb{Z}$-module. Since
+% \[
+% \operatorname{Tor}(\mathbb{Z}/6\mathbb{Z})=\{[0]_6,[2]_6,[3]_6\},
+% \]
+% we have $[2]_6+[3]_6=[5]_6\notin \operatorname{Tor}(\mathbb{Z}/6\mathbb{Z})$, which implies $\operatorname{Tor}(\mathbb{Z}/6\mathbb{Z})$ is not a submodule of $\mathbb{Z}/6\mathbb{Z}
+% ++$.
+% \end{solution}
+
+
+
+
+
+% \begin{problem}[4.4]
+% $\triangleright$ Let $R$ be a commutative ring, and $M$ an $R$-module.
+% \begin{itemize}
+% 	\item Prove that $\operatorname{Ann}(M)$ is an ideal of $R$.
+% 	\item If $R$ is an integral domain and $M$ is finitely generated, prove that $M$ is torsion if and only if $\operatorname{Ann}(M) \neq 0$.
+% 	\item Give an example of a torsion module $M$ over an integral domain, such that $\operatorname{Ann}(M)=0 .$ (Of course this example cannot be finitely generated!)
+% \end{itemize}
+% $[\S 4.2, \S 5.3]$
+% \end{problem}
+% \begin{solution}
+% \begin{itemize}
+% 	\item $\operatorname{Ann}(M)$ is defined as
+% 	\[
+% 	\operatorname{Ann}(M)=\{r \in R \mid \forall m \in M, r m=0\}.
+% 	\]
+% 	Given any $r_1,r_2\in\operatorname{Ann}(M)$, we have 
+% 	\[
+% 	\forall m\in M, (r_1+r_2)m=r_1m+r_2m=0,
+% 	\]
+% 	which implies $r_1+r_2\in\operatorname{Ann}(M)$.
 	
-	Given any $r\in R$, $s\in\operatorname{Ann}(M)$, we have
-	\[
-	\forall m\in M, (rs)m=r(sm)=0,
-	\]
-	which implies $rs\in\operatorname{Ann}(M)$.
-	\item If $\operatorname{Ann}(M) \neq 0$, there exists nonzero $r\in R$ such that and $rm=0$ for any $m\in M$, which implies $M$ is a torsion module.
+% 	Given any $r\in R$, $s\in\operatorname{Ann}(M)$, we have
+% 	\[
+% 	\forall m\in M, (rs)m=r(sm)=0,
+% 	\]
+% 	which implies $rs\in\operatorname{Ann}(M)$.
+% 	\item If $\operatorname{Ann}(M) \neq 0$, there exists nonzero $r\in R$ such that and $rm=0$ for any $m\in M$, which implies $M$ is a torsion module.
 	
-	Assume that $M$ is torsion and is generated by $\{m_1,m_2,\cdots,m_n\}$. There exist nonzero elements $r_1,r_2,\cdots,r_n\in R$ such that
-	\[
-	r_1m_1=r_2m_2=\cdots=r_nm_n=0.
-	\]
-	Let $r_0=r_1r_2\cdots r_n$. Since $R$ is an integral domain, $r_0\ne0$. Given any $m\in M$, we have
-	\[
-	m=k_1m_1+k_2m_2+\cdots+k_nm_n
-	\]
-	and
-	\[
-	r_0m=k_1r_2\cdots r_n(r_1m_1)+\cdots+k_nr_1\cdots r_{n-1} (r_nm_n)=0.
-	\]
-	Thus we show $r_0\in\operatorname{Ann}(M)$ and $\operatorname{Ann}(M)\ne0$.
-	\item $\mathbb{Q}/\mathbb{Z}$ is a module over the integral domain $\mathbb{Z}$. Since
-	\[
-	\forall \left[\frac{p}{q}\right]\in \mathbb{Q}/\mathbb{Z},\ \exists q\in\mathbb{Z},\ q\left[\frac{p}{q}\right]=[0],
-	\]
-	we see $\mathbb{Q}/\mathbb{Z}$ is a torsion module. If $r\in\operatorname{Ann}(M)$, then for all $q\in\mathbb{Z}$,
-	\[
-	r\left[\frac{1}{q}\right]=0\iff q|r\implies r=0\text{ or } r\ge q.
-	\]
-	Therefore, there must be $r=0$, which means $\operatorname{Ann}(M)=0$.
+% 	Assume that $M$ is torsion and is generated by $\{m_1,m_2,\cdots,m_n\}$. There exist nonzero elements $r_1,r_2,\cdots,r_n\in R$ such that
+% 	\[
+% 	r_1m_1=r_2m_2=\cdots=r_nm_n=0.
+% 	\]
+% 	Let $r_0=r_1r_2\cdots r_n$. Since $R$ is an integral domain, $r_0\ne0$. Given any $m\in M$, we have
+% 	\[
+% 	m=k_1m_1+k_2m_2+\cdots+k_nm_n
+% 	\]
+% 	and
+% 	\[
+% 	r_0m=k_1r_2\cdots r_n(r_1m_1)+\cdots+k_nr_1\cdots r_{n-1} (r_nm_n)=0.
+% 	\]
+% 	Thus we show $r_0\in\operatorname{Ann}(M)$ and $\operatorname{Ann}(M)\ne0$.
+% 	\item $\mathbb{Q}/\mathbb{Z}$ is a module over the integral domain $\mathbb{Z}$. Since
+% 	\[
+% 	\forall \left[\frac{p}{q}\right]\in \mathbb{Q}/\mathbb{Z},\ \exists q\in\mathbb{Z},\ q\left[\frac{p}{q}\right]=[0],
+% 	\]
+% 	we see $\mathbb{Q}/\mathbb{Z}$ is a torsion module. If $r\in\operatorname{Ann}(M)$, then for all $q\in\mathbb{Z}$,
+% 	\[
+% 	r\left[\frac{1}{q}\right]=0\iff q|r\implies r=0\text{ or } r\ge q.
+% 	\]
+% 	Therefore, there must be $r=0$, which means $\operatorname{Ann}(M)=0$.
 	
-\end{itemize}
-\end{solution}
+% \end{itemize}
+% \end{solution}
 
 \newpage
 \section{Chapter VII.\hspace{0.2em} Fields}
@@ -5662,10 +5673,6 @@ Moreover, if $G$ is generated by $f(A)$, then $\mathrm{im}\psi=G$, since $f(A)=\
 
 \newpage
 
-
-
 \bibliographystyle{plain}
 \bibliography{mybibtex}
-
-
 \end{document}
