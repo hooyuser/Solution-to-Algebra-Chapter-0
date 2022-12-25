@@ -1,0 +1,20 @@
+name: Dev Branch Check
+on: 
+  push:
+    branches:
+      - dev
+    paths-ignore:
+      - '.github/**'
+      - '.gitignore'
+env:
+  TEX_FILE_NAME: Solution_to_Algebra_Chapter_0
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: ${{ env.TEX_FILE_NAME }}.tex
