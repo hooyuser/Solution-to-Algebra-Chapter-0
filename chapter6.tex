@@ -1,12 +1,31 @@
 \section{Chapter VI.\hspace{0.2em} Linear algebra}
 \subsection{\textsection1. Free modules revisited}
-
+\hypertarget{Exercise VI.1.1}{}
 \begin{problem}[1.1]
 	$\neg$ Prove that $\mathbb{R}$ and $\mathbb{C}$ are isomorphic as $\mathbb{Q}$-vector spaces. (In particular, $(\mathbb{R},+$ ) and $(\mathbb{C},+)$ are isomorphic as groups.) [II.4.4]
 \end{problem}
+\begin{solution}
+The $\mathbb{Q}$-vector space $\mathbb{R}$ is a free $\mathbb{Q}$-module, it adimits a basis $B$. We can show that $B$ is a infinite set by showing that for any positive integer $n$, there exists a linearly independent subset $B_n$ such that $|B_n|=n$. An example is $B_n=\left\{1,\pi,\cdots,\pi^n\right\}$, given the fact that $\pi$ is trascendent over $\mathbb{Q}$. Let
+\begin{align*}
+	B'=B\bigcup \left\{bi\mid b\in B\right\}.
+\end{align*}
+Then we see $B'$ is a basis of $\mathbb{C}$ and $|B'|=|B|$. Therefore, $\mathbb{R}$ and $\mathbb{C}$ are isomorphic as $\mathbb{Q}$-vector spaces.
+\end{solution}
 
-
-
+\begin{problem}[1.5]
+$\triangleright$ Let $R$ be an integral domain. Prove or disprove the following:
+\begin{itemize}
+	\item Every linearly independent subset of a free $R$-module may be completed to a basis.
+	\item Every generating subset of a free $R$-module contains a basis.
+\end{itemize}
+[\S 1.3]
+\end{problem}
+\begin{solution}
+\begin{itemize}
+	\item False. Given the $\mathbb{Z}$-module $\mathbb{Z}$, $\left\{2\right\}$ is a linearly independent subset of $\mathbb{Z}$, but it cannot be completed to a basis because the dimension of $\mathbb{Z}$ is $1$.
+	\item False. Given the $\mathbb{Z}$-module $\mathbb{Z}$, $\left\{2, 3\right\}$ is a generating subset of $\mathbb{Z}$, but it does not contain a basis because neither $\left\{2\right\}$ and $\left\{3\right\}$ can generate $\mathbb{Z}$.
+\end{itemize}
+\end{solution}
 
 \subsection{\textsection4. Presentations and resolutions}
 \begin{problem}[4.1]
