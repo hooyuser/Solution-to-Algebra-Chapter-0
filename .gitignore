@@ -5,5 +5,6 @@
 *.toc
 *.thm
 .history/*
+*.synctex(busy)
 
 Solution_to_Algebra_Chapter_0.pdf
