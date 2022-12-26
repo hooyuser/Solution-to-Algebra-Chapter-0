@@ -20,3 +20,141 @@ R\cong R\left[x\right]/\left(x\right),
 \]
 we see $R$ is Noetherian.
 \end{solution}
+
+\subsection{\textsection4. Unique factorization in polynomial rings}
+\begin{problem}[4.7]
+$\triangleright$ A subset $S$ of a commutative ring $R$ is a \emph{multiplicative subset} (or \emph{multiplicatively closed}) if (i) $1 \in S$ and (ii) $s, t \in S \Longrightarrow s t \in S$. Define a relation on the set of pairs $(a, s)$ with $a \in R, s \in S$ as follows:
+$$
+(a, s) \sim\left(a^{\prime}, s^{\prime}\right) \Longleftrightarrow(\exists t \in S), t\left(s^{\prime} a-s a^{\prime}\right)=0 .
+$$
+Note that if $R$ is an integral domain and $S=R \backslash\{0\}$, then $S$ is a multiplicative subset, and the relation agrees with the relation introduced in $\S 4.2$.
+\begin{itemize}
+    \item Prove that the relation $\sim$ is an equivalence relation.
+    \item Denote by $\frac{a}{s}$ the equivalence class of $(a, s)$, and define the same operations $+$, $\cdot$ on such `fractions' as the ones introduced in the special case of $\S 4.2$. Prove that these operations are well-defined.
+    \item The set $S^{-1} R$ of fractions, endowed with the operations $+$, $\cdot$ is the \emph{localization} of $R$ at the multiplicative subset $S$. Prove that $S^{-1} R$ is a commutative ring and that the function $a \mapsto \frac{a}{1}$ defines a ring homomorphism $\ell: R \rightarrow S^{-1} R$.
+    \item Prove that $\ell(s)$ is invertible for every $s \in S$.
+    \item Prove that $R \rightarrow S^{-1} R$ is initial among ring homomorphisms $f: R \rightarrow R^{\prime}$ such that $f(s)$ is invertible in $R^{\prime}$ for every $s \in S$.
+    \item Prove that $S^{-1} R$ is an integral domain if $R$ is an integral domain.
+    \item Prove that $S^{-1} R$ is the zero-ring if and only if $0 \in S$.
+\end{itemize}
+$[4.8,4.9,4.11,4.15$, VII.2.16, VIII.1.4, VIII.2.5, VIII.2.6, VIII.2.12, §IX.9.1]
+\end{problem}
+\begin{solution}
+    \begin{itemize}
+        \item Reflexivity. 
+        \begin{align*}
+            1(sa-sa)=0\implies (a,s)\sim(a,s).
+        \end{align*}
+        Symmetry.
+        \begin{align*}
+            &(a, s) \sim\left(a^{\prime}, s^{\prime}\right) \Longleftrightarrow\left(\exists t \in S\right), t\left(s^{\prime} a-s a^{\prime}\right)=0 \\
+            \iff&  (\exists t \in S), t\left(s a^{\prime}-s^{\prime} a\right)=0\iff \left(a^{\prime}, s^{\prime}\right)  \sim (a, s).
+        \end{align*}
+        Transitivity.
+        \begin{align*}
+            &(a, s) \sim\left(a^{\prime}, s^{\prime}\right) ,\left(a^{\prime}, s^{\prime}\right) \sim \left(a'', s''\right)\\
+            \implies &\left(\exists t_1,t_2 \in S\right), t_1\left(s^{\prime} a-s a^{\prime}\right)=t_2\left(s'' a'-s' a''\right)=0  \\
+            \implies & (\exists t_1t_2s' \in S), t_1t_2s'\left(s'' a-s a''\right)=(t_2s'')(t_1s'a)-(t_1s)(t_2s'a'')\\
+            &\hspace{13.25em}=(t_2s'')(t_1sa')-(t_1s')(t_2s'' a')\\
+            &\hspace{13.25em}=0\\
+            \implies & (a, s)\sim \left(a'', s''\right) .
+        \end{align*}
+        \item Define
+        \begin{align*}
+            \frac{a_1}{s_1}+\frac{a_2}{s_2}&=\frac{a_1s_2+a_2s_1}{s_1s_2},\qquad \frac{a_1}{s_1}\cdot\frac{a_2}{s_2}=\frac{a_1a_2}{s_1s_2}.
+        \end{align*}
+        If $\frac{a_1}{s_1} = \frac{a_1^\prime}{s_1^\prime}$, then we have
+        \begin{align*}
+            &\;(s_1^\prime s_2)(a_1s_2+a_2s_1)-(s_1s_2)(a_1^\prime s_2+a_2s_1^\prime)\\
+            =&\;s_1^\prime s_2a_1s_2+s_1^\prime s_2a_2s_1-s_1s_2a_1^\prime s_2-s_1s_2a_2s_1^\prime\\
+            =&\;s_1^\prime s_2a_1s_2+s_1^\prime s_2a_2s_1-s_1^\prime s_2a_1 s_2-s_1^\prime s_2a_2s_1\\
+            =&\;0,
+        \end{align*}
+        which implies
+        \begin{align*}
+            \frac{a_1}{s_1}+\frac{a_2}{s_2}=\frac{a_1s_2+a_2s_1}{s_1s_2}= \frac{a_1^\prime s_2+a_2s_1^\prime}{s_1^\prime s_2}=\frac{a_1^\prime}{s_1^\prime}+\frac{a_2}{s_2}.
+        \end{align*}
+        If $\frac{a_2}{s_2} = \frac{a_2^\prime}{s_2^\prime}$, in a similar way, we can prove
+        \begin{align*}
+            \frac{a_1}{s_1}+\frac{a_2}{s_2}=\frac{a_1s_2+a_2s_1}{s_1s_2}= \frac{a_1s_2^\prime+a_2^\prime s_1}{s_1s_2^\prime}=\frac{a_1}{s_1}+\frac{a_2^\prime}{s_2^\prime}.
+        \end{align*}
+        Therefore, $+$ is well-defined.
+
+        If $\frac{a_1}{s_1} = \frac{a_1^\prime}{s_1^\prime}$ and $\frac{a_2}{s_2} = \frac{a_2^\prime}{s_2^\prime}$, then we have
+        \begin{align*}
+           s_1^\prime s_2^\prime a_1a_2 - s_1 s_2 a_1^\prime a_2^\prime=(s_1 a_1^\prime )( s_2 a_2^\prime) -(s_1a_1^\prime )  (s_2a_2^\prime )=0,
+        \end{align*}
+        which implies
+        \begin{align*}
+            \frac{a_1}{s_1}\cdot \frac{a_2}{s_2}=\frac{a_1a_2}{s_1s_2}= \frac{a_1^\prime a_2^\prime}{s_1^\prime s_2^\prime}=\frac{a_1^\prime}{s_1^\prime}\cdot \frac{a_2^\prime}{s_2^\prime}.
+        \end{align*}
+        Therefore, $\cdot$ is well-defined.
+        \item It is straightforward to check that $S^{-1} R$ is a commutative ring. Define
+        \begin{align*}
+            \ell: R &\longrightarrow S^{-1} R\\
+            a &\longmapsto \frac{a}{1}.
+        \end{align*}
+        Then
+        \begin{align*}
+            \ell(a+b)&=\frac{a+b}{1}=\frac{a}{1}+\frac{b}{1}= \ell(a)+\ell(b),\\
+            \ell(ab)&=\frac{ab}{1}=\frac{a}{1}\cdot\frac{b}{1}=\ell(a)\ell(b).
+        \end{align*}
+        Hence $\ell$ is a ring homomorphism.
+        \item Since
+        \begin{align*}
+            \frac{\ell(s)}{1}\frac{1}{s}=\frac{\ell(s)}{s}=\frac{s}{s}=\frac{1}{1},
+        \end{align*}
+        $\ell(s)$ is invertible in $S^{-1}R$ for every $s \in S$.
+        \item 
+        \[\xymatrix{
+			S^{-1}R
+            \ar@{-->}[r]^{g} & R'\\
+			R\ar[ru]_{f}\ar[u]^{\ell} &    
+		}\]
+        Suppose $f: R \rightarrow R^{\prime}$ is a ring homomorphism such that $f(s)$ is invertible in $R^{\prime}$ for every $s \in S$. Define
+        \begin{align*}
+            g: S^{-1}R &\longrightarrow R^{\prime}\\
+            \frac{a}{s} &\longmapsto f(s)^{-1}f(a).
+        \end{align*}
+        We can check that $g$ is a ring homomorphism as follows:
+        \begin{align*}
+           g\left(\frac{a_1}{s_1}+\frac{a_2}{s_2}\right)&=g\left(\frac{s_1a_2+s_2a_1}{s_1s_2}\right)\\
+           &=f(s_1s_2)^{-1}f(s_1a_2+s_2a_1)\\
+              &=f(s_1)^{-1}f(s_2)^{-1}f(s_1)f(a_2)+f(s_1)^{-1}f(s_2)^{-1}f(s_2)f(a_1)\\
+           &=f(s_1)^{-1}f(a_1)+f(s_2)^{-1}f(a_2)\\
+           &=g\left(\frac{a_1}{s_1}\right)+g\left(\frac{a_2}{s_2}\right),
+        \end{align*}
+        \begin{align*}
+           g\left(\frac{a_1}{s_1}\cdot \frac{a_2}{s_2}\right)&=g\left(\frac{a_1a_2}{s_1s_2}\right)\\
+              &=f(s_1s_2)^{-1}f(a_1a_2)\\
+                &=f(s_1)^{-1}f(a_1)f(s_2)^{-1}f(a_2)\\
+                &=g\left(\frac{a_1}{s_1}\right) g\left(\frac{a_2}{s_2}\right),
+        \end{align*}
+        \begin{align*}
+            g\left(\frac{1}{1}\right)&=f(1)^{-1}f(1)=1.
+        \end{align*}
+        Since
+    \begin{align*}
+        g(\ell(a))&=g\left(\frac{a}{1}\right)=f(1)^{-1}f(a)=f(a),
+    \end{align*}
+    we see $g$ gives a commutative diagram. 
+    
+    Suppose $g'$ is another ring homomorphism such that $g'\circ \ell=f$. Then we have
+    \begin{align*}
+        g'\left(\frac{a}{s}\right)&=  g'\left(\frac{1}{s}\frac{a}{1}\right)\\
+        &=g'\left(\frac{1}{s}\right)g'\left(\frac{a}{1}\right)\\
+       &= \left(g'\left(\frac{s}{1}\right)\right)^{-1}g'\left(\frac{a}{1}\right)\\
+        &=f(s)^{-1}f(a)\\
+        &=g\left(\frac{a}{s}\right),
+    \end{align*}
+    which implies $g=g'$. Therefore, $\ell:R \rightarrow S^{-1} R$ is initial among ring homomorphisms $f: R \rightarrow R^{\prime}$ such that $f(s)$ is invertible in $R^{\prime}$ for every $s \in S$.
+        \item If $R$ is an integral domain, then for any $\frac{a_1}{s_1}, \frac{a_2}{s_2} \in S^{-1} R$, we have
+        \begin{align*}
+            \frac{a_1}{s_1}\cdot\frac{a_2}{s_2}=\frac{a_1a_2}{s_1s_2}=\frac{0}{1}\implies a_1a_2=0\implies a_1=0\text{ or }a_2=0.
+        \end{align*}
+        That means $S^{-1} R$ is an integral domain.
+        \item If $0 \in S$, then for any $a,a'\in R$, $s,s' \in S$, there exists $0\in S$ such that $0(s'a-sa')=0$. Therefore, $S^{-1} R$ only contains 1 element, which implies $S^{-1} R$ is a zero-ring.
+        
+        
+    \end{itemize}
+\end{solution}

@@ -1,0 +1,70 @@
+\section{Chapter VIII.\hspace{0.2em} Linear Algebra, reprise}
+\subsection{\textsection1. Preliminaries, reprise}
+\begin{problem}[1.1]
+Let $\mathscr{F}: \mathsf{C} \rightarrow \mathsf{D}$ be a covariant functor, and assume that both $\mathsf{C}$ and $\mathsf{D}$ have products. Prove that for all objects $A, B$ of $C$, there is a unique morphism $\mathscr{F}(A \times B) \rightarrow \mathscr{F}(A) \times \mathscr{F}(B)$ such that the relevant diagram involving natural projections commutes.
+
+\hspace*{2em}If $D$ has coproducts (denoted II) and $\mathscr{G}: C \rightarrow D$ is contravariant, prove that there is a unique morphism $\mathscr{G}(A)\amalg\mathscr{G}(B) \rightarrow \mathscr{G}(A \amalg B)$ (again, such that an appropriate diagram commutes).
+\end{problem}
+\begin{solution}
+	According to the universal property of $\mathscr{F}(A \times B)$ in $\mathsf{D}$, we have 
+\[\xymatrix{
+	&\mathscr{F}(A \times B)
+	 \ar@{->}[d]_{\exists !}
+	 \ar@{->}[rd]^{\mathscr{F}(\pi_{\mathsf{C}_2})}
+	 \ar@{->}[ld]_{\mathscr{F}(\pi_{\mathsf{C}_1})}
+	& \\
+	 \mathscr{F}(A)
+	&\mathscr{F}(A) \times \mathscr{F}(B)
+	 \ar@{->}[l]^{\pi_{\mathsf{D}_1}\hspace{1.2em}}
+	 \ar@{->}[r]_{\hspace{1.5em}\pi_{\mathsf{D}_2}}
+	&\mathscr{F}(B)
+}\]
+Similarly, according to the universal property of $\mathscr{G}(A)\amalg\mathscr{G}(B)$ in $\mathsf{D}$, we have
+\[\xymatrix{
+	&\mathscr{G}(A \amalg B)        
+	& \\
+	 \mathscr{G}(A)
+	 \ar@{->}[ru]^{\mathscr{G}(i_{\mathsf{C}_2})}
+	 \ar@{->}[r]_{i_{\mathsf{D}_1}\hspace{1.5em}}
+	&\mathscr{G}(A) \amalg \mathscr{G}(B)
+	 \ar@{->}[u]^{\exists !}
+	&\mathscr{G}(B)
+	\ar@{->}[lu]_{\mathscr{G}(i_{\mathsf{C}_1})}
+	\ar@{->}[l]^{\hspace{2em}i_{\mathsf{D}_2}}
+}\]
+\end{solution}
+
+\begin{problem}[1.2]
+$\triangleright$ Let $\mathscr{F}: \mathsf{C} \rightarrow \mathsf{D}$ be a fully faithful functor. If $A, B$ are objects in $\mathsf{C}$, prove that $A \cong B$ in $\mathsf{C}$ if and only if $\mathscr{F}(A) \cong \mathscr{F}(B)$ in $\mathsf{D}$. [\S1.3]
+\end{problem}
+\begin{solution}
+	If  $A \cong B$ in $\mathsf{C}$ , then there exists $f:A\to B$ and $g:B\to A$ such that $f\circ g=\mathrm{id}_B$ and $g\circ f=\mathrm{id}_A$. Since $\mathscr{F}$ is a functor, we have $\mathscr{F}(f)\circ\mathscr{F}(g)=\mathrm{id}_{\mathscr{F}(B)}$
+	and $\mathscr{F}(g)\circ\mathscr{F}(f)=\mathrm{id}_{\mathscr{F}(A)}$. Hence  $\mathscr{F}(A) \cong \mathscr{F}(B)$ in $\mathsf{D}$.
+
+	If $\mathscr{F}(A) \cong \mathscr{F}(B)$ in $\mathsf{D}$, there exists $f':\mathscr{F}(A)\to\mathscr{F}(B)$ and $g':\mathscr{F}(B)\to\mathscr{F}(A)$ such that $f'\circ g'=\mathrm{id}_{\mathscr{F}(B)}$ and $g'\circ f'=\mathrm{id}_{\mathscr{F}(A)}$. Since $\mathscr{F}$ is fully faithful, there exists $f:A\to B$ and $g:B\to A$ such that $\mathscr{F}(f)=f'$ and $\mathscr{F}(g)=g'$. Now we have
+	\begin{align*}
+		\mathscr{F}\left(f\circ g\right)&=\mathscr{F}(f)\circ\mathscr{F}(g)=f'\circ g'=\mathrm{id}_{\mathscr{F}(B)},\\
+		\mathscr{F}\left(g\circ f\right)&=\mathscr{F}(g)\circ\mathscr{F}(f)=g'\circ f'=\mathrm{id}_{\mathscr{F}(A)},
+	\end{align*}
+	which implies $f\circ g=\mathrm{id}_B$ and $g\circ f=\mathrm{id}_A$. Hence $A \cong B$ in $\mathsf{C}$.
+\end{solution}
+
+
+\begin{problem}[1.3]
+Recall (\S II.1) that a group $G$ may be thought of as a groupoid $\mathsf{G}$ with a single object. Prove that defining the action of $G$ on an object of a category $\mathsf{C}$ is equivalent to defining a functor $\mathsf{G} \rightarrow \mathsf{C}$.
+\end{problem}
+\begin{solution}
+	Suppose a group $G$ acts on an object $B$ of a category $\mathsf{C}$ and $\mathsf{G}$ is the groupoid with a single object $A$ with $\mathrm{End}_{\mathsf{G}}(A)=G$ . Then the functor $\mathsf{G} \rightarrow \mathsf{C}$ is defined by $\mathsf{G}(A) \rightarrow B$ and $\mathsf{G}(g) \rightarrow g$ for all $g \in G$. 
+	
+	Conversely, suppose $\mathsf{G}$ is a groupoid with a single object $A$ and $F:\mathsf{G} \rightarrow \mathsf{C}$ is a functor that maps $A$ to $B$ in $\mathsf{C}$. Then the group action on $B$ is defined by 
+	\begin{align*}
+		\mathrm{Aut}_{\mathsf{G}}(A) &\longrightarrow \mathrm{Aut}_{\mathsf{C}}(B),\\
+		g &\longmapsto F(g).
+	\end{align*}
+\end{solution}
+
+\begin{problem}[1.4]
+$\neg$ Let $R$ be a commutative ring, and let $S \subseteq R$ be a multiplicative subset in the sense of Exercise V.4.7. Prove that `localization is a functor': associating with every $R$-module $M$ the localization $S^{-1} M$ (Exercise V.4.8) and with every $R$-module homomorphism $\varphi: M \rightarrow N$ the naturally induced homomorphism $S^{-1} M \rightarrow S^{-1} N$ defines a covariant functor from the category of $R$-modules to the category of $S^{-1} R$ modules. [1.25]
+\end{problem}
+\begin{solution}
+\end{solution}
