@@ -2102,7 +2102,7 @@ $m|n$, $\pi_m^n$ may not be well-defined.
 
 
 \begin{problem}[4.4]
-	Prove that no two of the groups $(\mathbb{Z}, +)$, $(\mathbb{Q}, +)$, $(\mathbb{R},+)$ are isomorphic to one another. Can you decide whether $(\mathbb{R}, +)$, $(\mathbb{C}, +)$ are isomorphic to one another? (Cf. Exercise VI.1.1.)
+	Prove that no two of the groups $(\mathbb{Z}, +)$, $(\mathbb{Q}, +)$, $(\mathbb{R},+)$ are isomorphic to one another. Can you decide whether $(\mathbb{R}, +)$, $(\mathbb{C}, +)$ are isomorphic to one another? (Cf. \hyperlink{Exercise VI.1.1}{Exercise VI.1.1}.)
 \end{problem}
 
 \begin{solution}
@@ -2114,13 +2114,13 @@ $m|n$, $\pi_m^n$ may not be well-defined.
 	\[
 	f(n)=\frac{np}{q}\ne\frac{p+1}{q}.
 	\]
-	In both cases, it implies $f(\mathbb{Z})\nsubseteq\mathbb{Q}$.  Hence we see $f$ is not a surjection, which contradicts the fact that $f:\mathbb{Z}\rightarrow\mathbb{Q}$ is an isomorphism. Compare the cardinality of $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$
+	In both cases, it implies $f(\mathbb{Z})\nsubseteq\mathbb{Q}$.  Hence we see $f$ is not a surjection, which contradicts the fact that $f:\mathbb{Z}\rightarrow\mathbb{Q}$ is an isomorphism. Comparing the cardinality of $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$
 	\[
-	|\mathbb{Z}|=|\mathbb{Q}|<|\mathbb{R}|
+	|\mathbb{Z}|=|\mathbb{Q}|<|\mathbb{R}|,
 	\] 
-	and we show there exists no such isomorphisms like $f:\mathbb{Z}\rightarrow \mathbb{R}$ or $f:\mathbb{Q}\rightarrow \mathbb{R}$. 
+	we see there exist no such isomorphisms like $f:\mathbb{Z}\rightarrow \mathbb{R}$ or $f:\mathbb{Q}\rightarrow \mathbb{R}$. 
 	
-	\noindent We can prove $(\mathbb{R}, +)$, $(\mathbb{C}, +)$ are isomorphic, if considering the both as vector spaces over $\mathbb{Q}$.
+	\noindent We can prove $(\mathbb{R}, +)$, $(\mathbb{C}, +)$ are isomorphic, if considering the both as vector spaces over $\mathbb{Q}$. The proof is given in \hyperlink{Exercise VI.1.1}{Exercise VI.1.1}.
 \end{solution}
 
 
@@ -4733,7 +4733,7 @@ Therefore, the two scalar multiplication operations $\cdot$ and $*$ coincide, wh
 
 
 \begin{problem}[5.7]
-Let $K$ be a field, and let $k \subseteq K$ be a subfield of $K .$ Show that $K$ is a vector space over $k$ (and in fact a $k$-algebra) in a natural way. In this situation, we say that $K$ is an extension of $k.$
+Let $K$ be a field, and let $k \subseteq K$ be a subfield of $K$. Show that $K$ is a vector space over $k$ (and in fact a $k$-algebra) in a natural way. In this situation, we say that $K$ is an extension of $k.$
 \end{problem}
 \begin{solution}
 	Define the scalar multiplication $\cdot$ as
@@ -5242,28 +5242,7 @@ Let $G$ be a group of order $p^{2}$. According to Corollary 1.9, the center of t
 
 
 \newpage
-\section{Chapter V.\hspace{0.2em} Irreducibility and	factorization in integral domains}
-\subsection{\textsection1. Chain conditions and existence of factorizations}
-Remember that in this section all rings are taken to be \emph{commutative}.
-
-\hypertarget{Exercise V.1.1}{}
-\begin{problem}[1.1]
-	$\triangleright$ Let $R$ be a Noetherian ring, and let $I$ be an ideal of $R$. Prove that $R / I$ is a Noetherian ring. [\textsection1.1]
-\end{problem}
-\begin{solution}
-	Let $\pi:R\to R / I$ be the projection. According to \hyperlink{Exercise III.4.2}{Exercise III.4.2}, the homomorphic image of the Noetherian ring $R$ is Noetherian. That is, $\pi(R)=R / I$ is Noetherian.
-\end{solution}
-
-\begin{problem}[1.2]
-Prove that if $R[x]$ is Noetherian, so is $R$. (This is a `converse' to Hilbert's basis theorem.)
-\end{problem}
-\begin{solution}
-According to \hyperlink{Exercise V.1.1}{Exercise V.1.1}, $R[x]$ is Noetherian implies $R\left[x\right]/\left(x\right)$ is Noetherian. Since in \hyperlink{Exercise III.4.12}{Exercise III.4.12} we have shown that
-\[
-R\cong R\left[x\right]/\left(x\right),
-\]
-we see $R$ is Noetherian.
-\end{solution}
+\include{chapter5.tex}
 
 
 \newpage
@@ -5616,46 +5595,7 @@ $$
 
 
 \newpage
-\section{Chapter VIII.\hspace{0.2em} Linear Algebra, reprise}
-\subsection{\textsection1. Preliminaries, reprise}
-\begin{problem}[1.1]
-Let $\mathscr{F}: \mathsf{C} \rightarrow \mathsf{D}$ be a covariant functor, and assume that both $\mathsf{C}$ and $\mathsf{D}$ have products. Prove that for all objects $A, B$ of $C$, there is a unique morphism $\mathscr{F}(A \times B) \rightarrow \mathscr{F}(A) \times \mathscr{F}(B)$ such that the relevant diagram involving natural projections commutes.
-
-\hspace*{2em}If $D$ has coproducts (denoted II) and $\mathscr{G}: C \rightarrow D$ is contravariant, prove that there is a unique morphism $\mathscr{G}(A)\amalg\mathscr{G}(B) \rightarrow \mathscr{G}(A \times B)$ (again, such that an appropriate diagram commutes).
-\end{problem}
-\begin{solution}
-	According to universal property of the product in $\mathsf{D}$, we have 
-\[\xymatrix{
-	&\mathscr{F}(A \times B)
-	 \ar@{->}[d]_{\exists !}
-	 \ar@{->}[rd]^{\mathscr{F}(\pi_{\mathsf{C}_2})}
-	 \ar@{->}[ld]_{\mathscr{F}(\pi_{\mathsf{C}_1})}
-	& \\
-	 \mathscr{F}(A)
-	&\mathscr{F}(A) \times \mathscr{F}(B)
-	 \ar@{->}[l]_{\pi_{\mathsf{D}_1}}\ar@{->}[r]^{\pi_{\mathsf{D}_2}}
-	&\mathscr{F}(B)
-}\]
-\end{solution}
-
-\begin{problem}[1.2]
-$\triangleright$ Let $\mathscr{F}: C \rightarrow D$ be a fully faithful functor. If $A, B$ are objects in $C$, prove that $A \cong B$ in $C$ if and only if $\mathscr{F}(A) \cong \mathscr{F}(B)$ in $D$. [\S1.3]
-\end{problem}
-\begin{solution}
-\end{solution}
-
-
-\begin{problem}[1.3]
-Recall (\S II.1) that a group $G$ may be thought of as a groupoid $\mathsf{G}$ with a single object. Prove that defining the action of $G$ on an object of a category $\mathsf{C}$ is equivalent to defining a functor $\mathsf{G} \rightarrow \mathsf{C}$.
-\end{problem}
-\begin{solution}
-\end{solution}
-
-\begin{problem}[1.4]
-$\neg$ Let $R$ be a commutative ring, and let $S \subseteq R$ be a multiplicative subset in the sense of Exercise V.4.7. Prove that 'localization is a functor': associating with every $R$-module $M$ the localization $S^{-1} M$ (Exercise V.4.8) and with every $R$-module homomorphism $\varphi: M \rightarrow N$ the naturally induced homomorphism $S^{-1} M \rightarrow S^{-1} N$ defines a covariant functor from the category of $R$-modules to the category of $S^{-1} R$ modules. [1.25]
-\end{problem}
-\begin{solution}
-\end{solution}
+\include{chapter8.tex}
 \newpage
 \section{Appendix}
 \hypertarget{Lemma II.1}{}
