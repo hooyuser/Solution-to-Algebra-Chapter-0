@@ -64,11 +64,11 @@ $[4.8,4.9,4.11,4.15$, VII.2.16, VIII.1.4, VIII.2.5, VIII.2.6, VIII.2.12, §IX.9.
         \begin{align*}
             \frac{a_1}{s_1}+\frac{a_2}{s_2}&=\frac{a_1s_2+a_2s_1}{s_1s_2},\qquad \frac{a_1}{s_1}\cdot\frac{a_2}{s_2}=\frac{a_1a_2}{s_1s_2}.
         \end{align*}
-        If $\frac{a_1}{s_1} = \frac{a_1^\prime}{s_1^\prime}$, then we have
+        If $\frac{a_1}{s_1} = \frac{a_1^\prime}{s_1^\prime}$, then there exists $t\in S$ such that $ts_1^\prime a_1= ts_1 a_1^\prime$. Hence
         \begin{align*}
-            &\;(s_1^\prime s_2)(a_1s_2+a_2s_1)-(s_1s_2)(a_1^\prime s_2+a_2s_1^\prime)\\
-            =&\;s_1^\prime s_2a_1s_2+s_1^\prime s_2a_2s_1-s_1s_2a_1^\prime s_2-s_1s_2a_2s_1^\prime\\
-            =&\;s_1^\prime s_2a_1s_2+s_1^\prime s_2a_2s_1-s_1^\prime s_2a_1 s_2-s_1^\prime s_2a_2s_1\\
+            &\;t(s_1^\prime s_2)(a_1s_2+a_2s_1)-t(s_1s_2)(a_1^\prime s_2+a_2s_1^\prime)\\
+            =&\;t\left(s_1^\prime s_2a_1s_2+s_1^\prime s_2a_2s_1-s_1s_2a_1^\prime s_2-s_1s_2a_2s_1^\prime\right)\\
+            =&\;t\left(s_1^\prime s_2a_1s_2+s_1^\prime s_2a_2s_1-s_1^\prime s_2a_1 s_2-s_1^\prime s_2a_2s_1\right)a\\
             =&\;0,
         \end{align*}
         which implies
@@ -81,9 +81,11 @@ $[4.8,4.9,4.11,4.15$, VII.2.16, VIII.1.4, VIII.2.5, VIII.2.6, VIII.2.12, §IX.9.
         \end{align*}
         Therefore, $+$ is well-defined.
 
-        If $\frac{a_1}{s_1} = \frac{a_1^\prime}{s_1^\prime}$ and $\frac{a_2}{s_2} = \frac{a_2^\prime}{s_2^\prime}$, then we have
+        If $\frac{a_1}{s_1} = \frac{a_1^\prime}{s_1^\prime}$ and $\frac{a_2}{s_2} = \frac{a_2^\prime}{s_2^\prime}$, then there exists $t_1,t_2\in S$ such that $t_1s_1^\prime a_1= t_1s_1 a_1^\prime$ and $t_2s_2^\prime a_2= t_2s_2 a_2^\prime$. Hence we have
         \begin{align*}
-           s_1^\prime s_2^\prime a_1a_2 - s_1 s_2 a_1^\prime a_2^\prime=(s_1 a_1^\prime )( s_2 a_2^\prime) -(s_1a_1^\prime )  (s_2a_2^\prime )=0,
+           (t_1t_2)(s_1^\prime s_2^\prime a_1a_2 - s_1 s_2 a_1^\prime a_2^\prime)&=(t_1s_1^\prime a_1 )( t_2s_2^\prime a_2) -(t_1 s_1a_1^\prime )  (t_2s_2a_2^\prime )\\
+           &=(t_1s_1 a_1^\prime )( t_2s_2 a_2^\prime) -(t_1 s_1a_1^\prime )  (t_2s_2a_2^\prime )\\
+           &=0,
         \end{align*}
         which implies
         \begin{align*}
@@ -167,4 +169,64 @@ $$
 Prove that this is an equivalence relation, and define an $S^{-1} R$-module structure on the set $S^{-1} M$ of equivalence classes, compatible with the $R$-module structure on $M$. The module $S^{-1} M$ is the localization of $M$ at $S$. [4.9, 4.11, 4.14, VIII.1.4, VIII.2.5, VIII.2.6]
 \end{problem}
 \begin{solution}
+    We can check that $\sim$ is an equivalence relation as follows:\\
+Reflexivity.
+    \begin{align*}
+         (\exists 1 \in S), 1\cdot\left(s m-s m\right)=0\implies (m, s) \sim\left(m, s\right).
+    \end{align*}
+    Symmetry.
+    \begin{align*}
+        &(m, s) \sim\left(m^{\prime}, s^{\prime}\right) \Longleftrightarrow\left(\exists t \in S\right), t\left(s^{\prime} m-s a^{\prime}\right)=0 \\
+        \iff&  (\exists t \in S), t\left(sm^{\prime}-s^{\prime} m\right)=0\iff \left(m^{\prime}, s^{\prime}\right)  \sim (m, s).
+    \end{align*}
+    Transitivity.
+    \begin{align*}
+        &(m, s) \sim\left(m^{\prime}, s^{\prime}\right) ,\left(m^{\prime}, s^{\prime}\right) \sim \left(m'', s''\right)\\
+        \implies &\left(\exists t_1,t_2 \in S\right), t_1\left(s^{\prime} m-s m^{\prime}\right)=t_2\left(s'' m'-s' m''\right)=0  \\
+        \implies & (\exists t_1t_2s' \in S), t_1t_2s'\left(s'' m-s m''\right)=(t_2s'')(t_1s'm)-(t_1s)(t_2s'm'')\\
+        &\hspace{13.25em}=(t_2s'')(t_1sm')-(t_1s')(t_2s'' m')\\
+        &\hspace{13.25em}=0\\
+        \implies & (m, s)\sim \left(m'', s''\right) .
+    \end{align*}
+    Denote by $\frac{m}{s}$ the equivalence class of $(m, s)$. The addtion of $S^{-1} M$ is defined as follows:
+    \begin{align*}
+        \frac{m_1}{s_1}+\frac{m_2}{s_2}&=\frac{s_2m_1+s_1m_2}{s_1s_2}.
+    \end{align*}
+    We can show that the addition is well-defined and makes $S^{-1} M$ an abelian group.\\
+    Define the scalar multiplication of $S^{-1}R$ on $S^{-1} M$ as follows:
+    \begin{align*}
+        \frac{a}{s_1}\cdot\frac{m}{s_2}&=\frac{am}{s_1s_2}.
+    \end{align*}
+    We can show that the scalar multiplication is well-defined as follows:
+    \begin{align*}
+        &\frac{a}{s_1}=\frac{a'}{s_1'},\frac{m}{s_2}=\frac{m'}{s_2'}\\
+        \implies& (\exists t_1,t_2 \in S), t_1\left(s_1a^{\prime}-s_1^{\prime} a\right)=0,t_2\left(s_2m^{\prime}-s_2^{\prime} m\right)=0\\
+        \implies& (\exists t_1t_2 \in S), t_1t_2\left(s_1's_2'am-s_1s_2a^{\prime}m^{\prime}\right)=0\\
+        \implies& \frac{am}{s_1s_2}=\frac{a'm'}{s_1's_2'}.
+    \end{align*}
+    We can check that the scalar multiplication is compatible with the addition as follows:
+    \begin{align*}
+        \frac{a}{s_1}\left(\frac{m_1}{s_2}+\frac{m_2}{s_3}\right)&= \frac{a}{s_1}\frac{s_3m_2+s_2m_1}{s_2s_3}=\frac{as_3m_2+as_2m_1}{s_1s_2s_3}=\frac{am_1}{s_1s_2}+\frac{am_2}{s_1s_3}=\frac{a}{s_1}\frac{m_1}{s_2}+\frac{a}{s_1}\frac{m_2}{s_3},\\
+        \left(\frac{a_1}{s_1}+\frac{a_2}{s_2}\right)\frac{m}{s_3}&=\frac{s_2a_1+s_1a_2}{s_1s_2}\frac{m}{s_3}=\frac{s_2a_1m+s_1a_2m}{s_1s_2s_3}=\frac{a_1m}{s_1s_3}+\frac{a_2m}{s_2s_3}=\frac{a_1}{s_1}\frac{m}{s_3}+\frac{a_2}{s_2}\frac{m}{s_3},\\
+        \left(\frac{a_1}{s_1}\frac{a_2}{s_2}\right)\frac{m}{s_3}&=\frac{a_1a_2}{s_1s_2}\frac{m}{s_3}=\frac{(a_1a_2)m}{(s_1s_2)s_3}=\frac{a_1(a_2m)}{s_1(s_2s_3)}=\frac{a_1}{s_1}\frac{a_2m}{s_2s_3}=\frac{a_1}{s_1}\left(\frac{a_2}{s_2}\frac{m}{s_3}\right),\\
+        \frac{1}{1}\frac{m}{s}&=\frac{1m}{1s}=\frac{m}{s}.
+    \end{align*}   
 \end{solution}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
