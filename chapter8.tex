@@ -63,8 +63,31 @@ Recall (\S II.1) that a group $G$ may be thought of as a groupoid $\mathsf{G}$ w
 	\end{align*}
 \end{solution}
 
+
 \begin{problem}[1.4]
-$\neg$ Let $R$ be a commutative ring, and let $S \subseteq R$ be a multiplicative subset in the sense of Exercise V.4.7. Prove that `localization is a functor': associating with every $R$-module $M$ the localization $S^{-1} M$ (Exercise V.4.8) and with every $R$-module homomorphism $\varphi: M \rightarrow N$ the naturally induced homomorphism $S^{-1} M \rightarrow S^{-1} N$ defines a covariant functor from the category of $R$-modules to the category of $S^{-1} R$ modules. [1.25]
+$\neg$ Let $R$ be a commutative ring, and let $S \subseteq R$ be a multiplicative subset in the sense of \hyperlink{Exercise V.4.7}{Exercise V.4.7} . Prove that `localization is a functor': associating with every $R$-module $M$ the localization $S^{-1} M$ (\hyperlink{Exercise V.4.8}{Exercise V.4.8}) and with every $R$-module homomorphism $\varphi: M \rightarrow N$ the naturally induced homomorphism $S^{-1} M \rightarrow S^{-1} N$ defines a covariant functor from the category of $R$-modules to the category of $S^{-1} R$ modules. [1.25]
 \end{problem}
 \begin{solution}
+
+	The functor $\mathscr{F}: R\text{-}\mathsf{Mod} \rightarrow S^{-1} R\text{-}\mathsf{Mod}$ is defined as follows:
+	\begin{itemize}
+		\item object mapping: $M \mapsto S^{-1} M$;
+		\item morphism mapping $\varphi\mapsto F(\varphi)$ is given by the following commutative diagram
+		\[\xymatrix{
+			S^{-1}M
+			\ar@{-->}[r]^{\mathscr{F}(\varphi)} & S^{-1}N\\
+			M \ar[u]^{\ell}\ar[r]_{\varphi} &  N  \ar[u]^{\ell}
+		}\]
+	\end{itemize}
+	We can check that $\mathscr{F}$ is a functor by checking the functoriality of $\mathscr{F}$
+	\begin{align*}
+		\mathscr{F}\left(\varphi\circ\varphi'\right)&=\mathscr{F}(\varphi)\circ\mathscr{F}(\varphi'),
+	\end{align*}
+	which can be derived from the following commutative diagram.
+	\[\xymatrix{
+			S^{-1}M
+			\ar@{-->}[r]^{\mathscr{F}(\varphi)} & S^{-1}N\ar@{-->}[r]^{\mathscr{F}(\varphi')}& S^{-1}L\\
+			M \ar[u]^{\ell}\ar[r]_{\varphi} &  N  \ar[u]^{\ell}\ar[r]_{\varphi'}& L  \ar[u]^{\ell}
+		}\]
+	
 \end{solution}
