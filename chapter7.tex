@@ -228,14 +228,14 @@ we see that $\operatorname{Aut}_{k}(F)$ acts on the set of roots of $f(x)$ conta
 
 \hypertarget{Exercise VII.1.13}{}
 \begin{problem}[1.13]
-$\neg$ Define the trace $\operatorname{tr}_{k \subseteq F}(\alpha)$ of an element $\alpha$ of a finite extension $F$ of a field $k$ by following the lead of Exercise 1.12. Prove that the trace is additive:
+$\neg$ Define the trace $\operatorname{tr}_{k \subseteq F}(\alpha)$ of an element $\alpha$ of a finite extension $F$ of a field $k$ by following the lead of \hyperlink{Exercise VII.1.12}{Exercise VII.1.12}. Prove that the trace is additive:
 $$
 \operatorname{tr}_{k \subseteq F}(\alpha+\beta)=\operatorname{tr}_{k \subseteq F}(\alpha)+\operatorname{tr}_{k \subseteq F}(\beta)
 $$
 for $\alpha, \beta \in F$. Compute the trace of an element of an extension $\mathbb{Q} \subseteq \mathbb{Q}(\sqrt{d})$, for $d$ an integer that is not a square. [1.14, 1.15, 4.19, VIII.1.5]
 \end{problem}
 \begin{solution}
-	Given $c=a+b\sqrt{d}\in \mathbb{Q}\left(\sqrt{d}\right)$, the trace $\mathrm{tr}_{\mathbb{Q} \subseteq \mathbb{Q}(\sqrt{d})}(c)=\det(B)=2a$.
+	Given $c=a+b\sqrt{d}\in \mathbb{Q}\left(\sqrt{d}\right)$, the trace $\mathrm{tr}_{\mathbb{Q} \subseteq \mathbb{Q}(\sqrt{d})}(c)=\operatorname{tr}(B)=2a$.
 \end{solution}
 
 \begin{problem}[1.14]
@@ -245,3 +245,157 @@ $$
 $$
 (Cf. \hyperlink{Exercise VII.1.12}{Exercise VII.1.12} and \hyperlink{Exercise VII.1.13}{Exercise VII.1.13}). [4.19]
 \end{problem}
+\begin{solution}
+	Since $p(x)=x^{d}+a_{d-1} x^{d-1}+\cdots+a_{0}$ is the minimal polynomial of $\alpha$, we see $1,\alpha,\cdots,\alpha^{d-1}$ is the basis of the $k$-vector space $k(\alpha)$ and  
+	\begin{align*}
+		p(\alpha)=\alpha^{d}+a_{d-1} \alpha^{d-1}+\cdots+a_{0}=0
+	\end{align*}	
+	The matrix representation of the linear map $F:z\mapsto \alpha z$ is
+	\begin{align*}
+		&\hspace{15pt}\left(F(1),F\left(\alpha\right),\cdots,F\left(\alpha^{d-1}\right)\right)\\
+		&=\left(1,\alpha,\alpha^2,\cdots,\alpha^{d-1}\right)
+		\begin{pmatrix}
+			0&0&0&\cdots&0&-a_0\\
+			1&0&0&\cdots&0&-a_1\\
+			0&1&0&\cdots&0&-a_2\\
+			\vdots&\vdots&\vdots&&\vdots&\vdots\\
+			0&0&0&\cdots&0&-a_{d-2}\\
+			0&0&0&\cdots&1&-a_{d-1}
+		\end{pmatrix}\\
+		&=\left(1,\alpha\right)A. 	
+	\end{align*}
+Thus we have
+	\begin{align*}
+		\operatorname{tr}_{k \subseteq k(\alpha)}(\alpha)=\operatorname{tr}(A)=-a_{d-1}
+	\end{align*}
+	and
+	\begin{align*}
+		 N_{k \subseteq k(\alpha)}(\alpha)=\det(A)=(-1)^{d-1} (-a_{0})= (-1)^{d} a_{0}.
+	\end{align*}
+\end{solution}
+
+
+\begin{problem}[1.16]
+$\triangleright$ Let $k \subseteq L \subseteq F$ be fields, and let $\alpha \in F$. If $k \subseteq k(\alpha)$ is a finite extension, then $L \subseteq L(\alpha)$ is finite and $[L(\alpha): L] \leq[k(\alpha): k]$. [§1.3]
+\end{problem}
+\begin{solution}
+	Since $k \subseteq k(\alpha)$ is a finite extension, it is a simple algebraic extension and there exists a minimal polynomial $p(t)$ of $\alpha$ over $k$. Since $p(t)$ can be seen as a polynomial in $L$ and $p(\alpha)=0$, we have $L \subseteq L(\alpha)$ is finite. Since the degree of the minimal polynomial of $\alpha$ over $L$ is not greater than the degree of $p(t)$, we have $[L(\alpha): L] \leq[k(\alpha): k]$.
+\end{solution}
+
+\begin{problem}[1.20]
+Let $p$ be a prime integer, and let $\alpha=\sqrt[p]{2} \in \mathbb{R}$. Let $g(x) \in \mathbb{Q}[x]$ be any nonconstant polynomial of degree $<p$. Prove that $\alpha$ may be expressed as a polynomial in $g(\alpha)$ with rational coefficients.\\
+Prove that an analogous statement for $\sqrt[4]{2}$ is false.
+\end{problem}
+\begin{solution}
+It is easy to see that $\mathbb{Q}\subseteq \mathbb{Q}(g(\alpha)) \subseteq\mathbb{Q}(\alpha)$. Since $f(t)=x^p-2$ is irredicible over $\mathbb{Q}$ and $f(\alpha)=0$, $\mathbb{Q}\subseteq \mathbb{Q}(\alpha)$ is a $p$ degree extension. If $p$ is a prime integer, then the degree fo the finite extension $\mathbb{Q}\subseteq \mathbb{Q}(g(\alpha))$ is 1 or $p$. Note that $g(\alpha)\notin \mathbb{Q}$. There must be $\mathbb{Q}(g(\alpha))=\mathbb{Q}(\alpha)$. Thus we see there exists $h\in \mathbb{Q}[x]$ such that $\alpha = h(g(\alpha))$ with rational coefficients.
+
+If $p=4$, then we can take $g(x)=x^2$. Now we have $g(\alpha)=\sqrt{2}$. For the tower of field extensions $\mathbb{Q}\subseteq \mathbb{Q}(\sqrt{2}) \subseteq\mathbb{Q}(\sqrt[4]{2})$, it is easy to check that both $\mathbb{Q}\subseteq \mathbb{Q}(\sqrt{2}) $ and $ \mathbb{Q}(\sqrt{2}) \subseteq\mathbb{Q}(\sqrt[4]{2})$ are quadratic extensions. Hence the intermediate field $ \mathbb{Q}(\sqrt{2})$ is not equal to $\mathbb{Q}$ or $\mathbb{Q}(\sqrt[4]{2})$. Therefore, we can conclude that $\alpha=\sqrt[4]{2}$ cannot be expressed as a polynomial in $g(\alpha)=\sqrt{2}$ with rational coefficients.
+\end{solution}
+
+
+\begin{problem}[1.22]
+	 Let $k \subseteq F$ be a field extension, and let $\alpha \in F, \beta \in F$ be algebraic, of degree $d, e$, resp. Assume $d, e$ are relatively prime, and let $p(x)$ be the minimal polynomial of $\beta$ over $k$. Prove $p(x)$ is irreducible over $k(\alpha)$.
+	\end{problem}
+\begin{solution}
+	By the tower properties of finite field extensions $k \subseteq k(\alpha) \subseteq k(\alpha,\beta)$ and  $k \subseteq k(\beta) \subseteq k(\alpha,\beta)$, we have $d$ divides $[k(\alpha,\beta): k]$ and $e$ divides $[k(\alpha,\beta): k]$. Since $d$ and $e$ are relatively prime, we have $[k(\alpha,\beta): k]\ge de$. Since $p(\beta)=0$, the minimal polynomial of $\beta$ over $k(\alpha)$ divides $p(x)$, which implies $ [k(\alpha)(\beta): k(\alpha)]\le \deg(p)=e$. By the tower property of finite field extensions $k \subseteq k(\alpha) \subseteq k(\alpha,\beta)$, we have $[k(\alpha,\beta): k]\le de$, which forces $[k(\alpha,\beta): k]= de$ and $[k(\alpha)(\beta): k(\alpha)]=\deg(p)=e$. Thus we see $p(x)$ is the minimal polynomial of $\beta$ over $k(\alpha)$, and hence $p(x)$ is irreducible over $k(\alpha)$.
+\end{solution}
+
+\begin{problem}[1.23]
+Express $\sqrt{2}$ explicitly as a polynomial function in $\sqrt{2}+\sqrt{3}$ with rational coefficients.
+\end{problem}
+\begin{solution}
+	Suppose $f(x)=a+b x+c x^2+d x^3$ is a polynomial in $\mathbb{Q}[x]$.
+	\begin{align*}
+		&\;a+b\left(\sqrt{2}+\sqrt{3}\right)+c\left(\sqrt{2}+\sqrt{3}\right)^2+d\left(\sqrt{2}+\sqrt{3}\right)^3\\
+		=&\;a+b\left(\sqrt{2}+\sqrt{3}\right)+c\left(5+2\sqrt{6}\right)+d\left(11\sqrt{2}+9\sqrt{3}\right)\\
+		=&\;a+5c+(b+11d)\sqrt{2}+(b+9d)\sqrt{3}+2c \sqrt{6}
+	\end{align*}
+	Solve
+	\begin{align*}
+		a+5c&=0\\
+		b+11d&=1\\
+		b+9d&=0\\
+		2c&=0
+	\end{align*}
+	and we get $a=0, b=-\frac{9}{2}, c=0, d=\frac{1}{2}$. Therefore, $\sqrt{2}$ can be expressed as
+	\[
+		\sqrt{2}=f\left(\sqrt{2}+\sqrt{3}\right)=\frac{1}{2}\left(\sqrt{2}+\sqrt{3}\right)^3-\frac{9}{2}\left(\sqrt{2}+\sqrt{3}\right)	.
+	\]
+\end{solution}
+
+\begin{problem}[1.25]
+$\neg$ Let $\xi:=\sqrt{2+\sqrt{2}}$.
+	\begin{itemize}
+		\item Find the minimal polynomial of $\xi$ over $\mathbb{Q}$, and show that $\mathbb{Q}(\xi)$ has degree 4 over $\mathbb{Q}$.
+		\item Prove that $\sqrt{2-\sqrt{2}}$ is another root of the minimal polynomial of $\xi$.
+		\item Prove that $\sqrt{2-\sqrt{2}} \in \mathbb{Q}(\xi)$. (Hint: $\left.(a+b)(a-b)=a^2-b^2.\right)$
+		\item By Proposition 1.5, sending $\xi$ to $\sqrt{2-\sqrt{2}}$ defines an automorphism of $\mathbb{Q}(\xi)$ over $\mathbb{Q}$. Find the matrix of this automorphism w.r.t. the basis $1, \xi, \xi^2, \xi^3$.
+		\item Prove that $\operatorname{Aut}_{\mathbb{Q}}(\mathbb{Q}(\xi))$ is cyclic of order 4.
+	\end{itemize}
+[6.6]
+\end{problem}
+\begin{solution}
+	\begin{itemize}
+		\item Let 
+		\[
+			p(x)=\left(x^2-2\right)^2-2=x^4-4x^2+2.
+		\]
+		By Eisenstein's criterion, $p(x)$ is irreducible over $\mathbb{Q}$. Since $p(\xi)=0$, $p(x)$ is the minimal polynomial of $\xi$ over $\mathbb{Q}$. Therefore, $\mathbb{Q}(\xi)$ has degree 4 over $\mathbb{Q}$.
+		\item It is straightforward to check that $p\left(\sqrt{2-\sqrt{2}}\right)=0$.
+		\item 
+		\begin{align*}
+			\sqrt{2-\sqrt{2}}=\sqrt{\frac{\left(2-\sqrt{2}\right)\left(2+\sqrt{2}\right)}{2+\sqrt{2}}}=\frac{\sqrt{2}}{\sqrt{2+\sqrt{2}}}=\frac{\xi^2-2}{\xi}
+		\end{align*}
+		\item Suppose $\sigma$ is an automorphism of $\mathbb{Q}(\xi)$ over $\mathbb{Q}$ sending $\xi$ to $\sqrt{2-\sqrt{2}}$. We need express $\sigma(1),\sigma(\xi),\sigma(\xi^2),\sigma(\xi^3)$ as the linear combination of $1, \xi, \xi^2, \xi^3$. Note 
+		\begin{align*}
+			\sigma(\xi)&=\sqrt{2-\sqrt{2}}=\xi-\frac{2}{\xi}.
+		\end{align*}
+		We may express $\frac{1}{\xi}$ as a linear combination of $\xi$ and $\xi^3$. Suppose there exists $a,b\in \mathbb{Q}$ such that
+		\[
+			\frac{1}{\xi}=a\xi+b\xi^3.
+		\]
+		Then we have
+		\begin{align*}
+			&\;a\xi^2+b\xi^4\\
+			=&\;a(2+\sqrt{2})+b(6+4\sqrt{2})\\
+			=&\;2a+6b+(a+4b)\sqrt{2}\\
+			=&\;1,
+		\end{align*}
+		which implies $a=2$, $b=-\frac{1}{2}$ and $\frac{1}{\xi}=2\xi-\frac{1}{2}\xi^3$. Therefore, 
+		\begin{align*}
+			\sigma(\xi)&=\xi-\frac{2}{\xi}=\xi-2\left(2\xi-\frac{1}{2}\xi^3\right)=-3\xi+\xi^3\\
+			\sigma\left(\xi^2\right)&=\sigma(\xi)^2=2-\sqrt{2}=4-\xi^2\\
+			\sigma\left(\xi^3\right)&=\left(\xi-\frac{2}{\xi}\right)\left(4-\xi^2\right)=-\xi^3+6 \xi-\frac{8}{\xi}=-\xi^3+6 \xi-8\left(2\xi-\frac{1}{2}\xi^3\right)=-10\xi+3\xi^3.
+		\end{align*}
+		and the matrix representation of $\sigma$ w.r.t. the basis $1, \xi, \xi^2, \xi^3$ is 
+		\begin{align*}
+			&\hspace{15pt}\left(\sigma(1),\sigma(\xi),\sigma(\xi^2),\sigma(\xi^3)\right)\\
+			&=\left(1, \xi, \xi^2, \xi^3\right)
+			\begin{pmatrix}
+				1&0&4&0\\
+				0&-3&0&-10\\
+				0&0&-1&0\\
+				0&1&0&3
+			\end{pmatrix}\\
+			&=\left(1, \xi, \xi^2, \xi^3\right)A.
+		\end{align*}
+		\item Since
+		\[
+			x_1=\sqrt{2+\sqrt{2}},\quad x_2=\sqrt{2-\sqrt{2}},\quad x_3=-\sqrt{2+\sqrt{2}},\quad x_4=-\sqrt{2-\sqrt{2}}
+		\]
+		are the all roots of $p(x)$ over $\overline{\mathbb{Q}}$ and $\mathbb{Q}(\xi)=\mathbb{Q}(x_1,x_2,x_3,x_4)$, we see $\mathbb{Q}\subseteq\mathbb{Q}(\xi)$ is a Galois extension and the Galois group $\operatorname{Aut}_{\mathbb{Q}}(\mathbb{Q}(\xi))$ is of order 4. By calculating the characteristic polynomial of $A$
+		\begin{align*}
+			\det\left(\lambda I-A\right)&=\det \begin{pmatrix}
+				\lambda-1&0&-4&0\\
+				0&\lambda+3&0&10\\
+				0&0&\lambda+1&0\\
+				0&-1&0&\lambda-3
+			\end{pmatrix}\\
+			&=(\lambda-1)\left((\lambda+3)(\lambda+1)(\lambda-3)+10(\lambda+1)\right)\\
+			&=(\lambda-1)(\lambda+1)\left(\lambda^2+1\right)\\
+			&=\lambda^4-1,
+		\end{align*}
+		we have $A^4=I$. Since $A^2\ne I$, the order of $\sigma\in \operatorname{Aut}_{\mathbb{Q}}(\mathbb{Q}(\xi))$ is 4. Therefore, $\operatorname{Aut}_{\mathbb{Q}}(\mathbb{Q}(\xi))$ is a cyclic group of order 4.
+	\end{itemize}
+\end{solution}
+
