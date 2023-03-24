@@ -399,3 +399,68 @@ $\neg$ Let $\xi:=\sqrt{2+\sqrt{2}}$.
 	\end{itemize}
 \end{solution}
 
+\section{\textsection3. Geometric impossibilities}
+\begin{problem}[3.14]
+Prove that the regular 9-gon is not constructible.|
+\end{problem}
+\begin{solution}
+Suppose $\xi=e^{2\pi i/9}$. We can check that the 9th cyclotomic polynomial 
+\[
+	\Phi_9(x)=x^6+x^3+1,
+\]
+is the minimal polynomial $\xi$ over $\mathbb{Q}$. Therefore, $\mathbb{Q}(\xi)$ is a extension of degree 6 over $\mathbb{Q}$. Since 6 is not a power of 2, the regular 9-gon is not constructible.
+\end{solution}
+
+\begin{problem}[3.15]
+$\triangleright$ Prove that if $2^k+1$ is prime, then $k$ is a power of 2. [\textsection3.3]
+\end{problem}
+\begin{solution}
+If $k=0$, the proposition is trivial. If $k\ne0$, we can suppose $k=n2^m$ where $n$ is an odd number. Since
+\[
+	2^k+1=\left(2^{2^m}\right)^n+1=\left(2^{2^m}+1\right)\left(2^{(n-1)2^m}-2^{(n-2)2^m}+\cdots+2^{2\cdot 2^m}-2^{ 2^m}+1\right)
+\]
+is prime, there msut be $n=1$, which implies $k$ is a power of 2.
+\end{solution}
+\section{\textsection4. Field extensions, II}
+\begin{problem}[4.2]
+Describe the splitting field of $x^6+x^3+1$ over $\mathbb{Q}$. Do the same for $x^4+4$.
+\end{problem}
+\begin{solution}
+Suppose $\xi=e^{\frac{2\pi i}{9}}$. Then $x^6+x^3+1$ is the 9th cyclotomic polynomial
+\[
+	\Phi_9(x)=x^6+x^3+1=\left(x-\xi\right)\left(x-\xi^2\right)\left(x-\xi^4\right)\left(x-\xi^5\right)\left(x-\xi^7\right)\left(x-\xi^8\right).
+\]
+The splitting field of $\Phi_9(x)$ over $\mathbb{Q}$ is $\mathbb{Q}(\xi,\xi^2,\xi^4,\xi^5,\xi^7,\xi^8)$. 
+
+\begin{align*}
+	x^4+4=(x^2+2i)(x^2-2i)=(x-(1+i))(x-(-1-i))(x-(-1+i))(x-(1-i)).
+\end{align*}
+The splitting field of $x^4+4$ over $\mathbb{Q}$ is $\mathbb{Q}(1+i,-1-i,-1+i,1-i)=\mathbb{Q}(i)$.
+\end{solution}
+
+\begin{problem}[4.3]
+$\triangleright$ Find the order of the automorphism group of the splitting field of $x^4+2$ over $\mathbb{Q}$ (cf. Example 4.6). [\$4.1]
+\end{problem}
+\begin{solution}
+\[
+x^4+2=(x^2+\sqrt{2}i)(x^2-\sqrt{2}i)=\left(x-\frac{1+i}{\sqrt[4]{2}}\right)\left(x-\frac{-1-i}{\sqrt[4]{2}}\right)\left(x-\frac{-1+i}{\sqrt[4]{2}}\right)\left(x-\frac{1-i}{\sqrt[4]{2}}\right).
+\]
+The splitting field of $x^4+2$ over $\mathbb{Q}$ is $\mathbb{Q}\left(\frac{1+i}{\sqrt[4]{2}},\frac{-1-i}{\sqrt[4]{2}},\frac{-1+i}{\sqrt[4]{2}},\frac{1-i}{\sqrt[4]{2}}\right)=\mathbb{Q}\left(\sqrt[4]{2},i\right)$.
+
+For the field extension $\mathbb{Q}\subseteq\mathbb{Q}(\sqrt[4]{2})$, since the minimal polynomial of $\sqrt[4]{2}$ over $\mathbb{Q}$ is $x^4-2$, we have $[\mathbb{Q}(\sqrt[4]{2}): \mathbb{Q}]=4$. For the field extension $\mathbb{Q}(\sqrt[4]{2})\subseteq\mathbb{Q}(\sqrt[4]{2},i)$, since the minimal polynomial of $i$ over $\mathbb{Q}(\sqrt[4]{2})$ is $x^2+1$, we have $[\mathbb{Q}(\sqrt[4]{2},i): \mathbb{Q}(\sqrt[4]{2})]=2$. By the tower property, we have 
+\[
+	[\mathbb{Q}(\sqrt[4]{2},i): \mathbb{Q}]=[\mathbb{Q}(\sqrt[4]{2},i): \mathbb{Q}(\sqrt[4]{2})][\mathbb{Q}(\sqrt[4]{2}): \mathbb{Q}]=2\times 4=8.
+\]
+Since $\mathbb{Q}\subseteq\mathbb{Q}(\sqrt[4]{2},i)$ is a Galois extension, the order of the Galois group $\operatorname{Aut}_{\mathbb{Q}}\left(\mathbb{Q}(\sqrt[4]{2},i)\right)$ is 8.
+\end{solution}
+
+\begin{problem}[4.4]
+Prove that the field $\mathbb{Q}(\sqrt[4]{2})$ is not the splitting field of any polynomial over $\mathbb{Q}$.
+\end{problem}
+\begin{solution}
+The polynomial $p(x)=x^4-2\in\mathbb{Q}[x]$ has root over $\mathbb{Q}(\sqrt[4]{2})$ because $p\left(\sqrt[4]{2}\right)=0$. However,
+\[
+p(x)=\left(x-\sqrt[4]{2}\right)\left(x+\sqrt[4]{2}\right)\left(x-\sqrt[4]{2}i\right)\left(x+\sqrt[4]{2}i\right)
+\]
+does not split over $\mathbb{Q}(\sqrt[4]{2})$ because $\sqrt[4]{2}i\notin \mathbb{Q}(\sqrt[4]{2})$, which implies that $\mathbb{Q}\subseteq\mathbb{Q}(\sqrt[4]{2})$ is not a normal extension and is not the splitting field of any polynomial over $\mathbb{Q}$.
+\end{solution}
