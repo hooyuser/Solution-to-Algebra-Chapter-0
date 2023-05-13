@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - '.github/**'
       - '.gitignore'
+      - '**.md'
 jobs:
   build_latex_and_release:
     runs-on: ubuntu-latest

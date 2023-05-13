@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - '.github/**'
       - '.gitignore'
+      - '**.md'
 env:
   TEX_FILE_NAME: Solution_to_Algebra_Chapter_0
 jobs:
