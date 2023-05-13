@@ -1144,6 +1144,15 @@ and itself? [\textsection II.2.1]
 	What are the final objects in the category considered in \S5.3? [\S5.3]
 \end{problem}
 \begin{solution}
+	The final objects are morphisms to any singletons, i.e.\ $f:A\to\{\bullet\}$.
+	
+	For any set $Z$, there exists exactly one function $\sigma:Z\to\{\bullet\}$ which maps all elements in $Z$ to $\bullet$.
+	Thus, for any object $(\varphi,Z)$ of the category considered in \S5.3, there exists a unique morphism determined by $\sigma$:
+	\[\begin{tikzcd}[column sep=tiny]
+	Z \arrow[rr,"\sigma"] && \{\bullet\} \\
+	&A \arrow[ul,"\varphi"] \arrow[ur,swap,"f"]&
+	\end{tikzcd}.\]
+	Hence, $f$ is the final object.
 \end{solution}
 
 % Problem 5.6
