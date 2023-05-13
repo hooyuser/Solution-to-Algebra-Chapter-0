@@ -1067,15 +1067,9 @@ and itself? [\textsection II.2.1]
 	The notions of monomorphism and epimorphism transfer over as follows.
 	
 	\begin{enumerate}
-		\item A multiset-function $f:\hat{S}\to\hat{T}$ is a monomorphism iff for all
-		$s_1,s_2\in S$, if $f(s_1)\approx f(s_2)$ then $s_1\sim s_2$.
-		\item A multiset-function $f:\hat{S}\to\hat{T}$ is an epimorphism iff for all
-		$t\in T$, there is an $s\in S$ such that $f(s)\approx t$.
+		\item A morphism $f:\hat{S}\to\hat{T}$ is a monomorphism iff $f$ as a set mapping from $S$ to $T$ is injective.
+		\item A morphism $f:\hat{S}\to\hat{T}$ is an epimorphism iff $f$ as a set mapping from $S$ to $T$ is surjective.
 	\end{enumerate}
-	
-	(Since $\sim$ and $\approx$ are equivalence relations and since these
-	definitions are analogous to monos and epis in $\Set$, the proof that these
-	really are monos and epis is analogous.)
 \end{solution}
 
 
