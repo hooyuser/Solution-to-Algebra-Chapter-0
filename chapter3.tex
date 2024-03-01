@@ -1347,15 +1347,11 @@ Let $K$ be a field, and let $k \subseteq K$ be a subfield of $K$. Show that $K$ 
 Let $R$ be a ring, $M$ an $R$-module, and $p : M \to M$ an $R$-module homomorphism such that $p^2 = p$. (Such a map is called a projection.) Prove that $M\cong\ker p \oplus\im p$.
 \end{problem}
 \begin{solution}
-Since $x=p((p-id_M)x)\in M$, $p$ must be an epimorphism and $M\cong\im p\cong M/\ker p$. For all $x\in\ker p \cap \im p$, we can assume $x=py$ and deduce that $0=px=p^2y=py=x$. Thus we have $\ker p \cap \im p=\{0\}$ and
+For any $x\in\ker p \cap \im p$, we can assume $x=py$ and deduce that $0=px=p^2y=py=x$. Thus we have $\ker p \cap \im p=\{0\}$. Furthermore, for any $m\in M$,
 \[
-\frac{\ker p \oplus\im p}{\ker p}\cong\frac{\im p}{\ker p \cap \im p}\cong\im p,
-\]
-which implies
-\[
-\frac{\ker p \oplus\im p}{M}\cong\frac{\ker p \oplus\im p/\ker p}{M/\ker p}\cong\frac{\im p}{ \im p}\cong\{0\}.
-\]
-Therefore we show that $M\cong\ker p \oplus\im p$.
+	p(m - p(m)) = p(m) - p^2(m) = p(m) - p(m) = 0\implies m - p(m)\in \ker p.
+\] 
+This implies $m = \left(m - p(m)\right) + p(m)\in \ker p \oplus \im p$, thereby establishing the isomorphism $M \cong \ker p \oplus \im p$.
 \end{solution}
 
 
