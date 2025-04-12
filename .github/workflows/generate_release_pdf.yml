@@ -1,40 +1,15 @@
 name: Generate Release PDF
-on: 
+
+on:
   push:
     branches:
       - master
     paths-ignore:
-      - '.github/**'
-      - '.gitignore'
       - '**.md'
+      - '.gitignore'
+
 jobs:
-  build_latex_and_release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v2
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: Solution_to_Algebra_Chapter_0.tex
-      - name: Delete old Release
-        uses: actions/github-script@v5
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            const { owner, repo } = context.repo
-            try {
-              const { data: { id } } = await github.rest.repos.getLatestRelease({ owner, repo })
-              await github.rest.repos.deleteRelease({ owner, repo, release_id: id })
-            } catch {}
-      - name: Generate release tag
-        id: tag
-        run: |
-          echo "::set-output name=release_tag::latest_$(date +"%Y-%m-%d_%H-%M")"
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          name: latest version
-          body: Latest version of `Solution_to_Algebra_Chapter_0.pdf`
-          tag_name: ${{ steps.tag.outputs.release_tag }}
-          files: Solution_to_Algebra_Chapter_0.pdf
+  release_pdf:
+    uses: hooyuser/pdf-ci-templates/.github/workflows/pdf-release.yml@main
+    with:
+      TEX_FILE_NAME: Solution_to_Algebra_Chapter_0
