@@ -10,6 +10,6 @@ on:
 
 jobs:
   release_pdf:
-    uses: hooyuser/pdf-ci-templates/.github/workflows/pdf-release.yml@main
+    uses: hooyuser/pdf-ci-templates/.github/workflows/latex-pdf-release.yml@main
     with:
       TEX_FILE_NAME: Solution_to_Algebra_Chapter_0
