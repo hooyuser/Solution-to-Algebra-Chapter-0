@@ -1,6 +1,6 @@
 # Solution to Algebra Chapter 0
-![Lines of code](https://tokei.rs/b1/github/hooyuser/Solution-to-Algebra-Chapter-0)
-![GitHub repo size](https://img.shields.io/github/repo-size/hooyuser/Solution-to-Algebra-Chapter-0?style=plastic)
+![Lines of Code](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/hooyuser/github-badges/main/badges/hooyuser-Solution-to-Algebra-Chapter-0.json)
+![GitHub repo size](https://img.shields.io/github/repo-size/hooyuser/Solution-to-Algebra-Chapter-0)
 
 **Preview Here**: [Solution to Algebra, Chapter 0.pdf](https://hooyuser.github.io/Solution-to-Algebra-Chapter-0/Solution_to_Algebra_Chapter_0.pdf)
 
@@ -11,3 +11,9 @@ I find this approach to be particularly appealing. So I'm enthusiastic to share 
 
 As a beginner, I'm trying to make my proof explict and detailed, but unfortunately it seems verbose and tedious sometimes. 
 Anyway, I would appreciate it if you can point out my mistakes, big or small.
+
+<div align="center">
+  <h3>Project Growth</h3>
+  <img src="https://raw.githubusercontent.com/hooyuser/github-badges/main/diagrams/hooyuser-Solution-to-Algebra-Chapter-0.svg" width="600px" />
+  <p><i>Tracking Lines of Code over time</i></p>
+</div>
