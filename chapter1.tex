@@ -267,23 +267,26 @@ and itself? [\textsection II.2.1]
 
 \begin{solution}
 	A function $f:A\to B$ is an \textit{epimorphism} if and only if for all sets $Z$
-	and all functions $b':Z\to B$, there is a function $a':Z\to A$ such that $f\circ
-	a' = b'$. Now we will show that $f$ is a surjection if and only if it is an
-	epimorphism.
+	and all functions $\beta',\beta'':B\to Z$, if $\beta'\circ f = \beta''\circ f$,
+	then $\beta' = \beta''$. Now we will show that $f$ is a surjection if and only if
+	it is an epimorphism.
 	
 	($\implies$) Suppose that $f:A\to B$ is surjective. Let $Z$ be a set and
-	$b':Z\to B$ a function. We need to construct a function $a':Z\to A$ such that
-	$f\circ a' = b'$. Fix $z\in Z$. Suppose $b=b'(z)\in B$. Since $b\in B$ and $f$
-	is surjective, there exists an $a\in A$ such $f(a) = b$. Now, define $a'(z) =
-	a$ this way for each $z\in Z$. Then $f\circ a'(z) = b'(z)$ for all $z\in Z$, so
-	$f\circ a' = b'$. Hence $f$ is an epimorphism.
+	$\beta',\beta'':B\to Z$ be functions such that $\beta'\circ f = \beta''\circ f$.
+	We need to show that $\beta' = \beta''$. Let $b\in B$. Since $f$ is surjective,
+	there exists an $a\in A$ such that $f(a) = b$. Then $\beta'(b) = \beta'(f(a)) =
+	(\beta'\circ f)(a) = (\beta''\circ f)(a) = \beta''(f(a)) = \beta''(b)$. Since
+	$b\in B$ was arbitrary, $\beta' = \beta''$. Hence $f$ is an epimorphism.
 	
-	($\impliedby$) Suppose that $f$ is an epimorphism. Let $b':B\to B$ be a
-	bijection. Since $f$ is an epimophism, there is a function $a':B\to A$ such that
-	$f\circ a' = b'$. Let $b\in B$. Since $b'$ is a bijection, there is a unique
-	element $y\in B$ such that $b'(y) = b$. Furthermore, we have that $(f\circ
-	a')(y) = b$. In other words, $a = a'(y)$ is an element in $a$ such that $f(a) =
-	b$. Hence $f$ is surjective, as required.
+	($\impliedby$) Suppose that $f$ is an epimorphism. We need to show that $f$ is
+	surjective. Let $Z = \{0,1\}$ be a two-element set. Define $\beta':B\to Z$ by
+	$\beta'(b) = \begin{cases} 0 & \text{if } b\in \im(f) \\ 1 & \text{if } b\notin
+	\im(f) \end{cases}$ and define $\beta'':B\to Z$ by $\beta''(b) = 0$ for all $b\in
+	B$. Note that for any $a\in A$, we have $f(a)\in\im(f)$, so $\beta'(f(a)) = 0 =
+	\beta''(f(a))$. Thus $\beta'\circ f = \beta''\circ f$. Since $f$ is an
+	epimorphism, we have $\beta' = \beta''$. This means that $\beta'(b) = 0$ for all
+	$b\in B$, which implies that $b\in\im(f)$ for all $b\in B$. Therefore $\im(f) =
+	B$, so $f$ is surjective.
 \end{solution}
 
 
